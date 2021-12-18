@@ -1,7 +1,15 @@
-.vscode/**
-!.vscode/tasks.json
+*.tar
+node_modules
+npm-debug.log
+build
+**/.git
 docker-compose.yaml
-build/
+docker-compose.yaml.example
+.dockerignore
+Dockerfile
+docker-build.sh
+.vscode/
+README.md
 
 # Logs
 logs
@@ -25,7 +33,6 @@ lib-cov
 
 # Coverage directory used by tools like istanbul
 coverage
-*.tar
 *.lcov
 
 # nyc test coverage
