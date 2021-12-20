@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Dropdown } from "react-bulma-components";
 import SearchDropdownInput from "./SearchDropdownInput";
 import SearchDropdownItem, { ISearchDropdownItem } from "./SearchDropdownItem";
@@ -13,6 +13,7 @@ export interface ISearchDropdown {
     title?: string;
     searchPlaceholder?: string;
     defaultLabel?: ISearchDropdownLabel;
+    waitUntilSearch?: number;
 }
 
 export default function SearchDropdown({
@@ -21,8 +22,12 @@ export default function SearchDropdown({
     onSearch,
     searchPlaceholder,
     defaultLabel,
+    waitUntilSearch,
 }: ISearchDropdown): JSX.Element {
     const [keyword, setKeyword] = useState<string>("");
+    const keywordRef = useRef(keyword);
+    keywordRef.current = keyword;
+
     const [labelProps, setLabelProps] = useState<ISearchDropdownLabel>(
         defaultLabel ? defaultLabel : { title: "-" }
     );
@@ -33,8 +38,13 @@ export default function SearchDropdown({
     };
 
     const handleSearch = (value: string) => {
+        window.setTimeout(() => {
+            if (value === keywordRef.current) {
+                onSearch(value);
+                console.log(value);
+            }
+        }, waitUntilSearch || 500);
         setKeyword(value);
-        onSearch(value);
     };
 
     return (
