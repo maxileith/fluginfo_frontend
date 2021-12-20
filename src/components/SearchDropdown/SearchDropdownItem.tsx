@@ -17,7 +17,7 @@ export default function SearchDropdownItem({
     onSelect,
 }: ISearchDropdownItem): JSX.Element {
     return (
-        <Dropdown.Item renderAs="a" value={value} onClick={onSelect}>
+        <Dropdown.Item renderAs="a" value={value} onClick={onSelect} pr={4}>
             <SearchDropdownLabel
                 title={title}
                 icon={icon}

@@ -38,7 +38,7 @@ export default function SearchDropdown({
     };
 
     return (
-        <Dropdown label={<SearchDropdownLabel {...labelProps} />} closeOnSelect>
+        <Dropdown label={<SearchDropdownLabel {...labelProps} />}>
             <SearchDropdownInput
                 value={keyword}
                 onChange={handleSearch}

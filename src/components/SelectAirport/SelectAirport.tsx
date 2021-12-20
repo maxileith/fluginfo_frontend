@@ -29,7 +29,7 @@ export default function SelectAirport({
             const airports: IAirports[] = data.data.data;
             setDropdownItems(
                 airports.map((airport) => ({
-                    title: `${airport.iata} - ${airport.city} ${airport.name}`,
+                    title: `${airport.iata} - ${airport.city}`,
                     imageUrl: `${API.defaults.baseURL}/metadata/countries/flag/?countryCode=${airport.countryCode}`,
                     value: airport.iata,
                 }))
