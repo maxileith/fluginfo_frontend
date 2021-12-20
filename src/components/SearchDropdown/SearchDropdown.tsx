@@ -41,7 +41,6 @@ export default function SearchDropdown({
         window.setTimeout(() => {
             if (value === keywordRef.current) {
                 onSearch(value);
-                console.log(value);
             }
         }, waitUntilSearch || 500);
         setKeyword(value);

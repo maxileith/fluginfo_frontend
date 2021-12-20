@@ -6,6 +6,7 @@ import IAirports from "../../apiInterfaces/IAirports";
 import {
     faPlaneArrival,
     faPlaneDeparture,
+    faQuestion,
 } from "@fortawesome/free-solid-svg-icons";
 
 export interface ISelectAirport {
@@ -25,15 +26,31 @@ export default function SelectAirport({
         API.get(
             `metadata/airports/search/?s=${encodeURIComponent(keyword)}`
         ).then((data) => {
-            console.log(data);
             const airports: IAirports[] = data.data.data;
-            setDropdownItems(
-                airports.map((airport) => ({
-                    title: `${airport.iata} - ${airport.city}`,
-                    imageUrl: `${API.defaults.baseURL}/metadata/countries/flag/?countryCode=${airport.countryCode}`,
-                    value: airport.iata,
-                }))
-            );
+            var items: ISearchDropdownItem[] = airports.map((airport) => ({
+                title: `${airport.iata} - ${airport.city}`,
+                imageUrl: `${API.defaults.baseURL}/metadata/countries/flag/?countryCode=${airport.countryCode}`,
+                value: airport.iata,
+            }));
+
+            if (
+                keyword.indexOf(" ") <= -1 &&
+                !items.find(
+                    (i: ISearchDropdownItem) =>
+                        i.value.toUpperCase() === keyword.toUpperCase()
+                )
+            ) {
+                items = [
+                    {
+                        title: keyword.toUpperCase(),
+                        value: keyword.toUpperCase(),
+                        icon: faQuestion,
+                    },
+                    ...items,
+                ];
+            }
+
+            setDropdownItems(items);
         });
         // TODO: Error handling
     };
@@ -47,6 +64,7 @@ export default function SelectAirport({
                 title: "Select Airport",
                 icon: type === "departure" ? faPlaneDeparture : faPlaneArrival,
             }}
+            searchPlaceholder="Search"
         />
     );
 }
