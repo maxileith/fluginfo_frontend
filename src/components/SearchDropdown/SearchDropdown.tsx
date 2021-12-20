@@ -1,5 +1,7 @@
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRef, useState } from "react";
-import { Dropdown } from "react-bulma-components";
+import { Dropdown, Icon } from "react-bulma-components";
 import SearchDropdownInput from "./SearchDropdownInput";
 import SearchDropdownItem, { ISearchDropdownItem } from "./SearchDropdownItem";
 import SearchDropdownLabel, {
@@ -47,7 +49,14 @@ export default function SearchDropdown({
     };
 
     return (
-        <Dropdown label={<SearchDropdownLabel {...labelProps} />}>
+        <Dropdown
+            label={<SearchDropdownLabel {...labelProps} />}
+            icon={
+                <Icon ml="1">
+                    <FontAwesomeIcon icon={faAngleDown} />
+                </Icon>
+            }
+        >
             <SearchDropdownInput
                 value={keyword}
                 onChange={handleSearch}
