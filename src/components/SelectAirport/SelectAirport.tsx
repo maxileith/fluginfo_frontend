@@ -34,10 +34,10 @@ export default function SelectAirport({
             }));
 
             if (
+                keyword !== "" &&
                 keyword.indexOf(" ") <= -1 &&
                 !items.find(
-                    (i: ISearchDropdownItem) =>
-                        i.value.toUpperCase() === keyword.toUpperCase()
+                    (i) => i.value.toUpperCase() === keyword.toUpperCase()
                 )
             ) {
                 items = [
