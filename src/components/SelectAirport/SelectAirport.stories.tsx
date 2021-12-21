@@ -11,14 +11,14 @@ const Template: ComponentStory<typeof SelectAirport> = (
     args: ISelectAirport
 ) => <SelectAirport {...args} />;
 
-export const Arrival = Template.bind({});
-Arrival.args = {
+export const Origin = Template.bind({});
+Origin.args = {
     onSelect: console.log,
-    type: "arrival",
+    type: "origin",
 };
 
-export const Departure = Template.bind({});
-Departure.args = {
-    ...Arrival.args,
-    type: "departure",
+export const Destination = Template.bind({});
+Destination.args = {
+    ...Origin.args,
+    type: "destination",
 };

@@ -2,7 +2,7 @@ import SearchDropdown from "../SearchDropdown/SearchDropdown";
 import API from "../../Api";
 import { ISearchDropdownItem } from "../SearchDropdown/SearchDropdownItem";
 import { useState } from "react";
-import IAirports from "../../apiInterfaces/IAirports";
+import IAirports from "../../api/interfaces/IAirports";
 import {
     faPlaneArrival,
     faPlaneDeparture,
@@ -11,7 +11,7 @@ import {
 
 export interface ISelectAirport {
     onSelect: (iata: string) => void;
-    type: "departure" | "arrival";
+    type: "origin" | "destination";
 }
 
 export default function SelectAirport({
@@ -61,8 +61,11 @@ export default function SelectAirport({
             dropdownItems={dropdownItems}
             onSearch={handleSearch}
             defaultLabel={{
-                title: "Select Airport",
-                icon: type === "departure" ? faPlaneDeparture : faPlaneArrival,
+                title:
+                    type === "origin"
+                        ? "Origin Airport"
+                        : "Destination Airport",
+                icon: type === "origin" ? faPlaneDeparture : faPlaneArrival,
             }}
             searchPlaceholder="Search"
         />
