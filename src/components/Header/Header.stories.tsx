@@ -11,4 +11,6 @@ const Template: ComponentStory<typeof Header> = (args: IHeader) => (
 );
 
 export const Standard = Template.bind({});
-Standard.args = {};
+Standard.args = {
+    navigate: () => {},
+};

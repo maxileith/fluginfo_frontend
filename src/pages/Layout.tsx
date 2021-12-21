@@ -1,14 +1,15 @@
+import { NavigateFunction } from "react-router-dom";
 import CustomFooter from "../components/CustomFooter/CustomFooter";
-import Header from "../components/Header/Header";
+import Header, { IHeader } from "../components/Header/Header";
 
-export interface ILayout {
+export interface ILayout extends IHeader {
     children: React.ReactNode;
 }
 
-export default function Layout({ children }: ILayout): JSX.Element {
+export default function Layout({ children, navigate }: ILayout): JSX.Element {
     return (
         <>
-            <Header />
+            <Header navigate={navigate} />
             {children}
             <CustomFooter />
         </>

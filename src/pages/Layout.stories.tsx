@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
+import * as HeaderStories from "../components/Header/Header.stories";
 import Layout, { ILayout } from "./Layout";
 
 export default {
@@ -13,4 +14,5 @@ const Template: ComponentStory<typeof Layout> = (args: ILayout) => (
 export const Standard = Template.bind({});
 Standard.args = {
     children: <p>Some Content</p>,
+    ...HeaderStories.Standard.args,
 };
