@@ -1,4 +1,3 @@
-import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import FlightOfferForm, { IFlightOfferForm } from "./FlightOfferForm";
 import moment from "moment";

@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { Heading, Navbar } from "react-bulma-components";
+import { NavigateFunction, useNavigate } from "react-router-dom";
 
-export interface IHeaderBar {}
+export interface IHeader {}
 
-export default function HeaderBar({}: IHeaderBar): JSX.Element {
+export default function Header({}: IHeader): JSX.Element {
     const [isActive, setIsActive] = useState<boolean>(false);
+
+    const navigate: NavigateFunction = useNavigate();
 
     return (
         <Navbar fixed="top" color="info" active={isActive}>
@@ -18,8 +21,12 @@ export default function HeaderBar({}: IHeaderBar): JSX.Element {
             </Navbar.Brand>
             <Navbar.Menu>
                 <Navbar.Container>
-                    <Navbar.Item href="#">Offer Search</Navbar.Item>
-                    <Navbar.Item href="#">Seat Availability</Navbar.Item>
+                    <Navbar.Item onClick={() => navigate("/offer-search")}>
+                        Offer Search
+                    </Navbar.Item>
+                    <Navbar.Item onClick={() => navigate("/availability")}>
+                        Availability
+                    </Navbar.Item>
                 </Navbar.Container>
             </Navbar.Menu>
         </Navbar>

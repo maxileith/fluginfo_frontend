@@ -1,26 +1,19 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
 import "bulma/css/bulma.css";
-import { Button } from "react-bulma-components";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import Layout from "./pages/Layout";
+import Availability from "./pages/Availability";
+import OfferSearch from "./pages/OfferSearch";
 
 export default function App() {
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <Button>src/App.tsx</Button> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
-        </div>
+        <BrowserRouter>
+            <Layout>
+                <Routes>
+                    <Route path="/offer-search" element={<OfferSearch />} />
+                    <Route path="/availability" element={<Availability />} />
+                    <Route path="*" element={<Navigate to="/offer-search" />} />
+                </Routes>
+            </Layout>
+        </BrowserRouter>
     );
 }
