@@ -40,6 +40,7 @@ export interface IFlightOfferForm {
     setAirlineWhitelist: (whitelist: string) => void;
     setAirlineBlacklist: (blacklist: string) => void;
     onSearch: () => void;
+    loading?: boolean;
 }
 
 export default function FlightOfferForm({
@@ -64,6 +65,7 @@ export default function FlightOfferForm({
     setAirlineWhitelist,
     setAirlineBlacklist,
     onSearch,
+    loading,
 }: IFlightOfferForm): JSX.Element {
     const [showAdvanced, setShowAdvanced] = useState<boolean>(false);
     const [listType, setListType] = useState<TListType>("whitelist");
@@ -357,6 +359,7 @@ export default function FlightOfferForm({
                         disabled={!readyForTakeOff}
                         onClick={onSearch}
                         type="button"
+                        loading={loading}
                     >
                         <span>Take Off</span>
                         <Icon ml={1}>

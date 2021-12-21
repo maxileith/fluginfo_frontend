@@ -23,6 +23,7 @@ export default function OfferSearch(): JSX.Element {
     const [airlineBlacklist, setAirlineBlacklist] = useState<string>("");
 
     const [offers, setOffers] = useState<IOffer[]>([]);
+    const [loading, setLoading] = useState<boolean>(false);
 
     const prepareSearchProps = (): IOfferSearch => {
         var props: IOfferSearch = {
@@ -45,11 +46,15 @@ export default function OfferSearch(): JSX.Element {
     };
 
     const handleSearch = (): void => {
+        setLoading(true);
         var searchProps: IOfferSearch = prepareSearchProps();
-        API.get("offers/search/", { params: searchProps }).then((response) => {
-            setOffers(response.data.data as IOffer[]);
-            console.log(response.data.data);
-        });
+        API.get("offers/search/", { params: searchProps })
+            .then((response) => {
+                setOffers(response.data.data as IOffer[]);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
         // TODO: Error handling
     };
 
@@ -77,6 +82,7 @@ export default function OfferSearch(): JSX.Element {
                 setAirlineWhitelist={setAirlineWhitelist}
                 setAirlineBlacklist={setAirlineBlacklist}
                 onSearch={handleSearch}
+                loading={loading}
             />
             {offers.map((offer) => (
                 <p key={offer.hash}>{offer.hash}</p>
