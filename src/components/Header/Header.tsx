@@ -24,8 +24,8 @@ export default function Header({ navigate }: IHeader): JSX.Element {
                     <Navbar.Item onClick={() => navigate("/offer-search")}>
                         Offer Search
                     </Navbar.Item>
-                    <Navbar.Item onClick={() => navigate("/availability")}>
-                        Availability
+                    <Navbar.Item onClick={() => navigate("/status")}>
+                        Status
                     </Navbar.Item>
                 </Navbar.Container>
             </Navbar.Menu>

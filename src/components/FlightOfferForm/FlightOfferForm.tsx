@@ -155,6 +155,7 @@ export default function FlightOfferForm({
                                             e: ChangeEvent<HTMLInputElement>
                                         ) => setDepartureDate(e.target.value)}
                                         required
+                                        min={moment().format("YYYY-MM-DD")}
                                     />
                                     <Icon align="left">
                                         <FontAwesomeIcon icon={faCalendar} />
@@ -167,6 +168,7 @@ export default function FlightOfferForm({
                                         onChange={(
                                             e: ChangeEvent<HTMLInputElement>
                                         ) => setReturnDate(e.target.value)}
+                                        min={departureDate}
                                     />
                                     <Icon align="left">
                                         <FontAwesomeIcon icon={faCalendar} />
@@ -264,10 +266,11 @@ export default function FlightOfferForm({
                                             e.target.value as TTravelClass
                                         )
                                     }
-                                    defaultValue="ECONOMY"
+                                    defaultValue="ALL"
                                     required
                                     value={travelClass}
                                 >
+                                    <option value="ALL">No Preference</option>
                                     <option value="ECONOMY">Economy</option>
                                     <option value="PREMIUM_ECONOMY">
                                         Premium Economy

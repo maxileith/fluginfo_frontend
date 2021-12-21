@@ -26,6 +26,7 @@ export default function CustomFooter({}: ICustomFooter): JSX.Element {
                 style={{
                     margin: "2rem -1rem -1rem -1rem",
                     visibility: "hidden",
+                    zIndex: -10,
                 }}
             >
                 {footerContent}
@@ -38,6 +39,7 @@ export default function CustomFooter({}: ICustomFooter): JSX.Element {
                     left: "0",
                     width: "100%",
                     marginTop: "2rem",
+                    zIndex: 10,
                 }}
             >
                 {footerContent}

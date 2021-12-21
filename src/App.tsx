@@ -8,8 +8,8 @@ import {
     useNavigate,
 } from "react-router-dom";
 import Layout from "./pages/Layout";
-import Availability from "./pages/Availability";
 import OfferSearch from "./pages/OfferSearch";
+import Status from "./pages/Status";
 
 export default function App() {
     return (
@@ -25,7 +25,7 @@ function NavigateWrapper(): JSX.Element {
         <Layout navigate={navigate}>
             <Routes>
                 <Route path="/offer-search" element={<OfferSearch />} />
-                <Route path="/availability" element={<Availability />} />
+                <Route path="/status" element={<Status />} />
                 <Route path="*" element={<Navigate to="/offer-search" />} />
             </Routes>
         </Layout>

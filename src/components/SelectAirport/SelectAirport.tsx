@@ -2,7 +2,7 @@ import SearchDropdown from "../SearchDropdown/SearchDropdown";
 import API from "../../Api";
 import { ISearchDropdownItem } from "../SearchDropdown/SearchDropdownItem";
 import { useState } from "react";
-import IAirports from "../../api/interfaces/IAirports";
+import IAirport from "../../api/interfaces/IAirport";
 import {
     faPlaneArrival,
     faPlaneDeparture,
@@ -23,35 +23,35 @@ export default function SelectAirport({
     );
 
     const handleSearch = (keyword: string) => {
-        API.get(
-            `metadata/airports/search/?s=${encodeURIComponent(keyword)}`
-        ).then((data) => {
-            const airports: IAirports[] = data.data.data;
-            var items: ISearchDropdownItem[] = airports.map((airport) => ({
-                title: `${airport.iata} - ${airport.city}`,
-                imageUrl: `${API.defaults.baseURL}/metadata/countries/flag/?countryCode=${airport.countryCode}`,
-                value: airport.iata,
-            }));
+        API.get("metadata/airports/search/", { params: { s: keyword } }).then(
+            (data) => {
+                const airports: IAirport[] = data.data.data;
+                var items: ISearchDropdownItem[] = airports.map((airport) => ({
+                    title: `${airport.iata} - ${airport.city}`,
+                    imageUrl: `${API.defaults.baseURL}/metadata/countries/flag/?countryCode=${airport.countryCode}`,
+                    value: airport.iata,
+                }));
 
-            if (
-                keyword !== "" &&
-                keyword.indexOf(" ") <= -1 &&
-                !items.find(
-                    (i) => i.value.toUpperCase() === keyword.toUpperCase()
-                )
-            ) {
-                items = [
-                    {
-                        title: keyword.toUpperCase(),
-                        value: keyword.toUpperCase(),
-                        icon: faQuestion,
-                    },
-                    ...items,
-                ];
+                if (
+                    keyword !== "" &&
+                    keyword.indexOf(" ") <= -1 &&
+                    !items.find(
+                        (i) => i.value.toUpperCase() === keyword.toUpperCase()
+                    )
+                ) {
+                    items = [
+                        {
+                            title: keyword.toUpperCase(),
+                            value: keyword.toUpperCase(),
+                            icon: faQuestion,
+                        },
+                        ...items,
+                    ];
+                }
+
+                setDropdownItems(items);
             }
-
-            setDropdownItems(items);
-        });
+        );
         // TODO: Error handling
     };
 
