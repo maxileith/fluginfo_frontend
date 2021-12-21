@@ -287,7 +287,7 @@ export default function FlightOfferForm({
                     <>
                         <Form.Field>
                             <Form.Label>Filter Airlines</Form.Label>
-                            <Form.Field kind="group">
+                            <Form.Field kind="group" multiline>
                                 <Form.Control>
                                     <Form.Radio
                                         name="listType"
