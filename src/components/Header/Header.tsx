@@ -1,13 +1,18 @@
 import { useState } from "react";
 import { Heading, Navbar } from "react-bulma-components";
-import { NavigateFunction, useNavigate } from "react-router-dom";
+import { NavigateFunction, To, useNavigate } from "react-router-dom";
 
 export interface IHeader {}
 
 export default function Header({}: IHeader): JSX.Element {
     const [isActive, setIsActive] = useState<boolean>(false);
 
-    const navigate: NavigateFunction = useNavigate();
+    var navigate: NavigateFunction;
+    try {
+        navigate = useNavigate();
+    } catch (e) {
+        navigate = () => {};
+    }
 
     return (
         <Navbar fixed="top" color="info" active={isActive}>
