@@ -22,11 +22,11 @@ export interface IItinerary {
     carriers: ICarrier[];
     departure: IStop;
     arrival: IStop;
+    classes: TTravelClass[];
 }
 
 export default interface IOffer {
     hash: string;
     price: string;
-    classes: TTravelClass[];
     itineraries: IItinerary[];
 }

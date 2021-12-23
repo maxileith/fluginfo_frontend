@@ -9,6 +9,11 @@ export interface IHeader {
 export default function Header({ navigate }: IHeader): JSX.Element {
     const [isActive, setIsActive] = useState<boolean>(false);
 
+    const navigateWrapper = (location: string) => {
+        navigate(location);
+        setIsActive(false);
+    };
+
     return (
         <Navbar fixed="top" color="info" active={isActive}>
             <Navbar.Brand>
@@ -21,10 +26,12 @@ export default function Header({ navigate }: IHeader): JSX.Element {
             </Navbar.Brand>
             <Navbar.Menu>
                 <Navbar.Container>
-                    <Navbar.Item onClick={() => navigate("/offer-search")}>
+                    <Navbar.Item
+                        onClick={() => navigateWrapper("/offer-search")}
+                    >
                         Offer Search
                     </Navbar.Item>
-                    <Navbar.Item onClick={() => navigate("/status")}>
+                    <Navbar.Item onClick={() => navigateWrapper("/status")}>
                         Status
                     </Navbar.Item>
                 </Navbar.Container>

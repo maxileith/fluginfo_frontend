@@ -1,11 +1,12 @@
 import moment from "moment";
 import { useState } from "react";
-import { Container } from "react-bulma-components";
+import { Container, Pagination } from "react-bulma-components";
 import IOfferSearch from "../api/interfaces/IOfferSearch";
 import TTravelClass from "../api/types/TTravelClass";
 import FlightOfferForm from "../components/FlightOfferForm/FlightOfferForm";
 import API from "../Api";
 import IOffer from "../api/interfaces/IOffer";
+import OfferElement from "../components/OfferElement/OfferElement";
 
 export default function OfferSearch(): JSX.Element {
     const [departureDate, setDepartureDate] = useState<string>(
@@ -24,6 +25,9 @@ export default function OfferSearch(): JSX.Element {
 
     const [offers, setOffers] = useState<IOffer[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
+
+    const [page, setPage] = useState<number>(1);
+    const itemsPerPage: number = 2;
 
     const prepareSearchProps = (): IOfferSearch => {
         var props: IOfferSearch = {
@@ -46,6 +50,7 @@ export default function OfferSearch(): JSX.Element {
     };
 
     const handleSearch = (): void => {
+        setPage(1);
         setLoading(true);
         var searchProps: IOfferSearch = prepareSearchProps();
         API.get("offers/search/", { params: searchProps })
@@ -84,9 +89,22 @@ export default function OfferSearch(): JSX.Element {
                 onSearch={handleSearch}
                 loading={loading}
             />
-            {offers.map((offer) => (
-                <p key={offer.hash}>{offer.hash}</p>
-            ))}
+            {offers
+                .slice(itemsPerPage * (page - 1), itemsPerPage * page)
+                .map((offer) => (
+                    <OfferElement key={offer.hash} offer={offer} />
+                ))}
+            <Pagination
+                total={Math.ceil(offers.length / itemsPerPage) || 1}
+                current={page}
+                delta={2}
+                showPrevNext={false}
+                autoHide
+                onChange={setPage}
+                disabled={loading}
+                showFirstLast={false}
+                align="center"
+            />
         </Container>
     );
 }
