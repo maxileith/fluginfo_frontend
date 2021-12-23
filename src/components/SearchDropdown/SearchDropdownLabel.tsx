@@ -23,7 +23,12 @@ export default function SearchDropdownLabel({
             )}
             {imageUrl && (
                 <Media.Item align="left" renderAs="figure">
-                    <Image src={imageUrl} size={24} display="inline-flex" />
+                    <Image
+                        src={imageUrl}
+                        size={24}
+                        display="inline-flex"
+                        alt="Country Flag"
+                    />
                 </Media.Item>
             )}
             <Media.Item>

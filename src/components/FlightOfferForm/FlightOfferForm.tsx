@@ -12,6 +12,7 @@ import moment from "moment";
 import { ChangeEvent, CSSProperties, useState } from "react";
 import { Box, Button, Columns, Form, Icon } from "react-bulma-components";
 import TTravelClass from "../../api/types/TTravelClass";
+import travelClassEnhance from "../../utils/travelClassEnhance";
 import SelectAirport from "../SelectAirport/SelectAirport";
 
 type TListType = "whitelist" | "blacklist";
@@ -272,13 +273,21 @@ export default function FlightOfferForm({
                                     required
                                     value={travelClass}
                                 >
-                                    <option value="ALL">No Preference</option>
-                                    <option value="ECONOMY">Economy</option>
-                                    <option value="PREMIUM_ECONOMY">
-                                        Premium Economy
+                                    <option value="ALL">
+                                        {travelClassEnhance("ALL")}
                                     </option>
-                                    <option value="BUSINESS">Business</option>
-                                    <option value="FIRST">First</option>
+                                    <option value="ECONOMY">
+                                        {travelClassEnhance("ECONOMY")}
+                                    </option>
+                                    <option value="PREMIUM_ECONOMY">
+                                        {travelClassEnhance("PREMIUM_ECONOMY")}
+                                    </option>
+                                    <option value="BUSINESS">
+                                        {travelClassEnhance("BUSINESS")}
+                                    </option>
+                                    <option value="FIRST">
+                                        {travelClassEnhance("FIRST")}
+                                    </option>
                                 </Form.Select>
                                 <Icon align="left">
                                     <FontAwesomeIcon icon={faStar} />

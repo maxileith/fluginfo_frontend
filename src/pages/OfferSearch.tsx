@@ -1,6 +1,6 @@
 import moment from "moment";
 import { useState } from "react";
-import { Container, Pagination } from "react-bulma-components";
+import { Box, Container, Heading, Pagination } from "react-bulma-components";
 import IOfferSearch from "../api/interfaces/IOfferSearch";
 import TTravelClass from "../api/types/TTravelClass";
 import FlightOfferForm from "../components/FlightOfferForm/FlightOfferForm";
@@ -25,9 +25,10 @@ export default function OfferSearch(): JSX.Element {
 
     const [offers, setOffers] = useState<IOffer[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
+    const [fresh, setFresh] = useState<boolean>(true);
 
     const [page, setPage] = useState<number>(1);
-    const itemsPerPage: number = 2;
+    const itemsPerPage: number = 20;
 
     const prepareSearchProps = (): IOfferSearch => {
         var props: IOfferSearch = {
@@ -57,14 +58,35 @@ export default function OfferSearch(): JSX.Element {
             .then((response) => {
                 setOffers(response.data.data as IOffer[]);
             })
+            .catch((error) => {
+                switch (error.response.status) {
+                    case 404:
+                        setOffers([] as IOffer[]);
+                        break;
+                    case 400:
+                        setOffers([] as IOffer[]);
+                        break;
+                    default:
+                        // TODO: handle error
+                        break;
+                }
+            })
             .finally(() => {
                 setLoading(false);
+                setFresh(false);
             });
         // TODO: Error handling
     };
 
+    const handleDetails = (hash: string): void => {
+        console.log(hash);
+    };
+
     return (
         <Container breakpoint="desktop" max mt={4}>
+            <Heading>Offer Search</Heading>
+            <Heading subtitle>Find your desired flight.</Heading>
+
             <FlightOfferForm
                 departureDate={departureDate}
                 setDepartureDate={setDepartureDate}
@@ -89,10 +111,30 @@ export default function OfferSearch(): JSX.Element {
                 onSearch={handleSearch}
                 loading={loading}
             />
+            <Box invisible={fresh}>
+                <p>
+                    {offers.length ? (
+                        <>
+                            We have found{" "}
+                            <strong>{offers.length} flights</strong> matching
+                            your search criteria.
+                        </>
+                    ) : (
+                        <>
+                            We have found <strong>no flights</strong> matching
+                            your search criteria.
+                        </>
+                    )}
+                </p>
+            </Box>
             {offers
                 .slice(itemsPerPage * (page - 1), itemsPerPage * page)
                 .map((offer) => (
-                    <OfferElement key={offer.hash} offer={offer} />
+                    <OfferElement
+                        key={offer.hash}
+                        offer={offer}
+                        showDetails={handleDetails}
+                    />
                 ))}
             <Pagination
                 total={Math.ceil(offers.length / itemsPerPage) || 1}

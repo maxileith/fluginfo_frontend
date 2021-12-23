@@ -17,6 +17,9 @@ import {
     faPlaneDeparture,
     faStar,
 } from "@fortawesome/free-solid-svg-icons";
+import moment from "moment";
+import React from "react";
+import travelClassEnhance from "../../utils/travelClassEnhance";
 
 export interface IOfferItinerary {
     itinerary: IItinerary;
@@ -41,15 +44,24 @@ export default function OfferItinerary({
         ? `${API.defaults.baseURL}/metadata/countries/flag/?countryCode=${itinerary.arrival.airport.countryCode}`
         : undefined;
 
+    const departureTime: string = moment(itinerary.departure.at).format(
+        "h:mm a (Do MMMM)"
+    );
+    const arrivalTime: string = moment(itinerary.arrival.at).format(
+        "h:mm a (Do MMMM)"
+    );
+
     return (
         <>
-            <Columns breakpoint="mobile">
+            <Columns breakpoint="tablet">
                 <Columns.Column>
                     <SearchDropdownLabel
                         title={departureTitle}
                         imageUrl={departureImg}
                         icon={faPlaneDeparture}
                     />
+                    <div />
+                    <SearchDropdownLabel title={departureTime} icon={faClock} />
                 </Columns.Column>
                 <Columns.Column>
                     <SearchDropdownLabel
@@ -57,9 +69,11 @@ export default function OfferItinerary({
                         imageUrl={arrivalImg}
                         icon={faPlaneArrival}
                     />
+                    <div />
+                    <SearchDropdownLabel title={arrivalTime} icon={faClock} />
                 </Columns.Column>
             </Columns>
-            <Columns>
+            <Columns breakpoint="tablet">
                 <Columns.Column>
                     <Content>
                         <Tag.Group
@@ -85,7 +99,9 @@ export default function OfferItinerary({
                             my={marginTagsY}
                             mr={marginTagsRight}
                         >
-                            <Tag color="warning">{itinerary.stops}</Tag>
+                            <Tag color="warning">
+                                {itinerary.stops || "Non-Stop"}
+                            </Tag>
                             <Tag>
                                 <Icon>
                                     <FontAwesomeIcon icon={faMapMarker} />
@@ -100,7 +116,9 @@ export default function OfferItinerary({
                                 my={marginTagsY}
                                 mr={marginTagsRight}
                             >
-                                <Tag color="primary">{c}</Tag>
+                                <Tag color="primary">
+                                    {travelClassEnhance(c)}
+                                </Tag>
                                 <Tag>
                                     <Icon>
                                         <FontAwesomeIcon icon={faStar} />
@@ -111,16 +129,26 @@ export default function OfferItinerary({
                     </Content>
                 </Columns.Column>
                 <Columns.Column>
-                    <Media>
+                    <Media mobile={{ display: "hidden" }}>
                         {itinerary.carriers.map((carrier) => (
                             <Media.Item align="left" key={carrier.carrierCode}>
                                 <Image
-                                    src={`${API.defaults.baseURL}/metadata/airlines/logo/?filetype=png&height=64&iata=${carrier.carrierCode}&shape=tail&width=64`}
+                                    src={`${API.defaults.baseURL}/metadata/airlines/logo/?filetype=png&height=64&iata=${carrier.carrierCode}&shape=square&width=64`}
                                     size={64}
+                                    alt={carrier.carrier}
                                 />
                             </Media.Item>
                         ))}
                     </Media>
+                    <Content tablet={{ display: "hidden" }}>
+                        {itinerary.carriers.map((carrier, index) => (
+                            <React.Fragment key={carrier.carrierCode}>
+                                <span>{carrier.carrier}</span>
+                                {index !== itinerary.carriers.length - 1 &&
+                                    " • "}
+                            </React.Fragment>
+                        ))}
+                    </Content>
                 </Columns.Column>
             </Columns>
         </>
