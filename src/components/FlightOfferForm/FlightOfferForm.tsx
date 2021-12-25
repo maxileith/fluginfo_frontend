@@ -15,7 +15,7 @@ import TTravelClass from "../../api/types/TTravelClass";
 import travelClassEnhance from "../../utils/travelClassEnhance";
 import SelectAirport from "../SelectAirport/SelectAirport";
 
-type TListType = "whitelist" | "blacklist";
+export type TListType = "whitelist" | "blacklist";
 
 const travelerStyle: CSSProperties = { flexShrink: "unset", maxWidth: 125 };
 
@@ -38,7 +38,11 @@ export interface IFlightOfferForm {
     setInfants: (infants: number) => void;
     travelClass: TTravelClass;
     setTravelClass: (travelClass: TTravelClass) => void;
+    airlineListType: TListType;
+    setAirlineListType: (type: TListType) => void;
+    airlineWhitelist: string;
     setAirlineWhitelist: (whitelist: string) => void;
+    airlineBlacklist: string;
     setAirlineBlacklist: (blacklist: string) => void;
     onSearch: () => void;
     loading?: boolean;
@@ -63,18 +67,21 @@ export default function FlightOfferForm({
     setInfants,
     travelClass,
     setTravelClass,
+    airlineListType,
+    setAirlineListType,
+    airlineWhitelist,
     setAirlineWhitelist,
+    airlineBlacklist,
     setAirlineBlacklist,
     onSearch,
     loading,
 }: IFlightOfferForm): JSX.Element {
-    const [showAdvanced, setShowAdvanced] = useState<boolean>(false);
-    const [listType, setListType] = useState<TListType>("whitelist");
-    const [listValue, setListValue] = useState<string>("");
+    const [showAdvanced, setShowAdvanced] = useState<boolean>(
+        airlineWhitelist !== "" || airlineBlacklist !== ""
+    );
 
     const updateListValue = (value: string) => {
-        setListValue(value);
-        if (listType === "blacklist") {
+        if (airlineListType === "blacklist") {
             setAirlineBlacklist(value);
         } else {
             setAirlineWhitelist(value);
@@ -82,13 +89,13 @@ export default function FlightOfferForm({
     };
 
     const changeListType = (newType: TListType) => {
-        setListType(newType);
+        setAirlineListType(newType);
         if (newType === "blacklist") {
-            setAirlineBlacklist(listValue);
+            setAirlineBlacklist(airlineWhitelist);
             setAirlineWhitelist("");
         } else {
+            setAirlineWhitelist(airlineBlacklist);
             setAirlineBlacklist("");
-            setAirlineWhitelist(listValue);
         }
     };
 
@@ -304,7 +311,9 @@ export default function FlightOfferForm({
                                 <Form.Control>
                                     <Form.Radio
                                         name="listType"
-                                        checked={listType === "whitelist"}
+                                        checked={
+                                            airlineListType === "whitelist"
+                                        }
                                         onChange={(
                                             e: ChangeEvent<HTMLInputElement>
                                         ) =>
@@ -318,7 +327,9 @@ export default function FlightOfferForm({
                                     </Form.Radio>
                                     <Form.Radio
                                         name="listType"
-                                        checked={listType === "blacklist"}
+                                        checked={
+                                            airlineListType === "blacklist"
+                                        }
                                         onChange={(
                                             e: ChangeEvent<HTMLInputElement>
                                         ) =>
@@ -335,7 +346,11 @@ export default function FlightOfferForm({
                                     <Form.Input
                                         type="text"
                                         placeholder="IATA Codes"
-                                        value={listValue}
+                                        value={
+                                            airlineListType === "blacklist"
+                                                ? airlineBlacklist
+                                                : airlineWhitelist
+                                        }
                                         onChange={(
                                             e: ChangeEvent<HTMLInputElement>
                                         ) => {
@@ -354,6 +369,9 @@ export default function FlightOfferForm({
                         type="button"
                         color="info"
                         colorVariant="light"
+                        disabled={
+                            airlineBlacklist !== "" || airlineWhitelist !== ""
+                        }
                     >
                         <span>
                             {showAdvanced ? "Hide" : "Show"} Advanced Settings

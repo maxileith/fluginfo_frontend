@@ -34,4 +34,8 @@ Standard.args = {
     setAirlineWhitelist: (s) => console.log(`airline whitelist: ${s}`),
     setAirlineBlacklist: (s) => console.log(`airline blacklist: ${s}`),
     onSearch: () => console.log("search triggered"),
+    airlineBlacklist: "",
+    airlineWhitelist: "",
+    airlineListType: "blacklist",
+    setAirlineListType: (s) => console.log(`list type: ${s}`),
 };

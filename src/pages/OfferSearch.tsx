@@ -3,7 +3,9 @@ import { useState } from "react";
 import { Box, Container, Heading, Pagination } from "react-bulma-components";
 import IOfferSearch from "../api/interfaces/IOfferSearch";
 import TTravelClass from "../api/types/TTravelClass";
-import FlightOfferForm from "../components/FlightOfferForm/FlightOfferForm";
+import FlightOfferForm, {
+    TListType,
+} from "../components/FlightOfferForm/FlightOfferForm";
 import API from "../Api";
 import IOffer from "../api/interfaces/IOffer";
 import OfferElement from "../components/OfferElement/OfferElement";
@@ -44,6 +46,9 @@ export default function OfferSearch(): JSX.Element {
     );
     const [airlineBlacklist, setAirlineBlacklist] = useState<string>(
         urlParams.get("airlineBlacklist") || ""
+    );
+    const [airlineListType, setAirlineListType] = useState<TListType>(
+        airlineBlacklist === "" ? "whitelist" : "blacklist"
     );
 
     const [offers, setOffers] = useState<IOffer[]>([]);
@@ -129,8 +134,12 @@ export default function OfferSearch(): JSX.Element {
                 setInfants={setInfants}
                 travelClass={travelClass}
                 setTravelClass={setTravelClass}
+                airlineWhitelist={airlineWhitelist}
                 setAirlineWhitelist={setAirlineWhitelist}
+                airlineBlacklist={airlineBlacklist}
                 setAirlineBlacklist={setAirlineBlacklist}
+                airlineListType={airlineListType}
+                setAirlineListType={setAirlineListType}
                 onSearch={handleSearch}
                 loading={loading}
             />
