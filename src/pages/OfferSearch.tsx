@@ -111,7 +111,7 @@ export default function OfferSearch(): JSX.Element {
     };
 
     return (
-        <Container breakpoint="desktop" max m={4}>
+        <Container breakpoint="desktop" max mt={4} my={4}>
             <Heading>Offer Search</Heading>
             <Heading subtitle>Find your desired flight.</Heading>
 

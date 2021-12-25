@@ -80,6 +80,13 @@ export default function FlightOfferForm({
         airlineWhitelist !== "" || airlineBlacklist !== ""
     );
 
+    const [defaultOriginAirport] = useState<string | undefined>(
+        originAirport !== "" ? originAirport : undefined
+    );
+    const [defaultDestinationAirport] = useState<string | undefined>(
+        destinationAirport !== "" ? destinationAirport : undefined
+    );
+
     const updateListValue = (value: string) => {
         if (airlineListType === "blacklist") {
             setAirlineBlacklist(value);
@@ -130,12 +137,16 @@ export default function FlightOfferForm({
                                     <SelectAirport
                                         type="origin"
                                         onSelect={setOriginAirport}
+                                        defaultAirport={defaultOriginAirport}
                                     />
                                 </Form.Control>
                                 <Form.Control>
                                     <SelectAirport
                                         type="destination"
                                         onSelect={setDestinationAirport}
+                                        defaultAirport={
+                                            defaultDestinationAirport
+                                        }
                                     />
                                 </Form.Control>
                             </Form.Field>

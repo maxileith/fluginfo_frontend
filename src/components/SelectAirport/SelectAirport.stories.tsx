@@ -21,4 +21,5 @@ export const Destination = Template.bind({});
 Destination.args = {
     ...Origin.args,
     type: "destination",
+    defaultAirport: undefined,
 };

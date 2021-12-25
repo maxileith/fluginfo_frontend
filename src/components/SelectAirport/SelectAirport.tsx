@@ -12,15 +12,32 @@ import {
 export interface ISelectAirport {
     onSelect: (iata: string) => void;
     type: "origin" | "destination";
+    defaultAirport?: string;
 }
 
 export default function SelectAirport({
     onSelect,
     type,
+    defaultAirport,
 }: ISelectAirport): JSX.Element {
     const [dropdownItems, setDropdownItems] = useState<ISearchDropdownItem[]>(
         []
     );
+
+    const defaultLabel =
+        defaultAirport !== undefined
+            ? {
+                  title: defaultAirport,
+                  value: defaultAirport,
+                  icon: faQuestion,
+              }
+            : {
+                  title:
+                      type === "origin"
+                          ? "Origin Airport"
+                          : "Destination Airport",
+                  icon: type === "origin" ? faPlaneDeparture : faPlaneArrival,
+              };
 
     const handleSearch = (keyword: string) => {
         API.get("metadata/airports/search/", { params: { s: keyword } }).then(
@@ -60,13 +77,7 @@ export default function SelectAirport({
             onSelect={onSelect}
             dropdownItems={dropdownItems}
             onSearch={handleSearch}
-            defaultLabel={{
-                title:
-                    type === "origin"
-                        ? "Origin Airport"
-                        : "Destination Airport",
-                icon: type === "origin" ? faPlaneDeparture : faPlaneArrival,
-            }}
+            defaultLabel={defaultLabel}
             searchPlaceholder="Search"
         />
     );
