@@ -9,19 +9,42 @@ import IOffer from "../api/interfaces/IOffer";
 import OfferElement from "../components/OfferElement/OfferElement";
 
 export default function OfferSearch(): JSX.Element {
+    const queryString: string = window.location.search;
+    const urlParams: URLSearchParams = new URLSearchParams(queryString);
+
     const [departureDate, setDepartureDate] = useState<string>(
-        moment().format("YYYY-MM-DD")
+        urlParams.get("departureDate") || moment().format("YYYY-MM-DD")
     );
-    const [returnDate, setReturnDate] = useState<string>("");
-    const [originAirport, setOriginAirport] = useState<string>("");
-    const [destinationAirport, setDestinationAirport] = useState<string>("");
-    const [nonStop, setNonStop] = useState<boolean>(false);
-    const [adults, setAdults] = useState<number>(1);
-    const [children, setChildren] = useState<number>(0);
-    const [infants, setInfants] = useState<number>(0);
-    const [travelClass, setTravelClass] = useState<TTravelClass>("ALL");
-    const [airlineWhitelist, setAirlineWhitelist] = useState<string>("");
-    const [airlineBlacklist, setAirlineBlacklist] = useState<string>("");
+    const [returnDate, setReturnDate] = useState<string>(
+        urlParams.get("returnDate") || ""
+    );
+    const [originAirport, setOriginAirport] = useState<string>(
+        urlParams.get("originAirport") || ""
+    );
+    const [destinationAirport, setDestinationAirport] = useState<string>(
+        urlParams.get("destinationAirport") || ""
+    );
+    const [nonStop, setNonStop] = useState<boolean>(
+        urlParams.get("nonStop") ? urlParams.get("nonStop") === "true" : false
+    );
+    const [adults, setAdults] = useState<number>(
+        Number(urlParams.get("adults")) || 1
+    );
+    const [children, setChildren] = useState<number>(
+        Number(urlParams.get("children")) || 0
+    );
+    const [infants, setInfants] = useState<number>(
+        Number(urlParams.get("infants")) || 0
+    );
+    const [travelClass, setTravelClass] = useState<TTravelClass>(
+        (urlParams.get("travelClass") as TTravelClass) || "ALL"
+    );
+    const [airlineWhitelist, setAirlineWhitelist] = useState<string>(
+        urlParams.get("airlineWhitelist") || ""
+    );
+    const [airlineBlacklist, setAirlineBlacklist] = useState<string>(
+        urlParams.get("airlineBlacklist") || ""
+    );
 
     const [offers, setOffers] = useState<IOffer[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
@@ -83,7 +106,7 @@ export default function OfferSearch(): JSX.Element {
     };
 
     return (
-        <Container breakpoint="desktop" max mt={4}>
+        <Container breakpoint="desktop" max m={4}>
             <Heading>Offer Search</Heading>
             <Heading subtitle>Find your desired flight.</Heading>
 
