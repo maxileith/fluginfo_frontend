@@ -269,7 +269,6 @@ export default function FlightOfferForm({
                                             e.target.value as TTravelClass
                                         )
                                     }
-                                    defaultValue="ALL"
                                     required
                                     value={travelClass}
                                 >
