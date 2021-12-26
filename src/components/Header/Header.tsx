@@ -27,7 +27,7 @@ export default function Header({ navigate }: IHeader): JSX.Element {
             <Navbar.Menu>
                 <Navbar.Container>
                     <Navbar.Item
-                        onClick={() => navigateWrapper("/offer-search")}
+                        onClick={() => navigateWrapper("/offer/search")}
                     >
                         Offer Search
                     </Navbar.Item>

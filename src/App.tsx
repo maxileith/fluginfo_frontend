@@ -24,9 +24,9 @@ function NavigateWrapper(): JSX.Element {
     return (
         <Layout navigate={navigate}>
             <Routes>
-                <Route path="/offer-search" element={<OfferSearch />} />
+                <Route path="/offer/search" element={<OfferSearch />} />
                 <Route path="/status" element={<Status />} />
-                <Route path="*" element={<Navigate to="/offer-search" />} />
+                <Route path="*" element={<Navigate to="/offer/search" />} />
             </Routes>
         </Layout>
     );

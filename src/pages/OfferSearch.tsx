@@ -9,43 +9,57 @@ import FlightOfferForm, {
 import API from "../Api";
 import IOffer from "../api/interfaces/IOffer";
 import OfferElement from "../components/OfferElement/OfferElement";
+import useQueryState from "../utils/useQueryState";
 
 export default function OfferSearch(): JSX.Element {
-    const queryString: string = window.location.search;
-    const urlParams: URLSearchParams = new URLSearchParams(queryString);
-
-    const [departureDate, setDepartureDate] = useState<string>(
-        urlParams.get("departureDate") || moment().format("YYYY-MM-DD")
+    const [departureDate, setDepartureDate] = useQueryState<string>(
+        moment().format("YYYY-MM-DD"),
+        "departureDate"
     );
-    const [returnDate, setReturnDate] = useState<string>(
-        urlParams.get("returnDate") || ""
+    const [returnDate, setReturnDate] = useQueryState<string>("", "returnDate");
+    const [originAirport, setOriginAirport] = useQueryState<string>(
+        "",
+        "originAirport"
     );
-    const [originAirport, setOriginAirport] = useState<string>(
-        urlParams.get("originAirport") || ""
+    const [destinationAirport, setDestinationAirport] = useQueryState<string>(
+        "",
+        "destinationAirport"
     );
-    const [destinationAirport, setDestinationAirport] = useState<string>(
-        urlParams.get("destinationAirport") || ""
+    const [nonStop, setNonStop] = useQueryState<boolean>(
+        false,
+        "nonStop",
+        (value: boolean) => (value ? "true" : "false"),
+        (value: string) => value === "true"
     );
-    const [nonStop, setNonStop] = useState<boolean>(
-        urlParams.get("nonStop") ? urlParams.get("nonStop") === "true" : false
+    const [adults, setAdults] = useQueryState<number>(
+        1,
+        "adults",
+        (v) => String(v),
+        (v) => Number(v)
     );
-    const [adults, setAdults] = useState<number>(
-        Number(urlParams.get("adults")) || 1
+    const [children, setChildren] = useQueryState<number>(
+        0,
+        "children",
+        (v) => String(v),
+        (v) => Number(v)
     );
-    const [children, setChildren] = useState<number>(
-        Number(urlParams.get("children")) || 0
+    const [infants, setInfants] = useQueryState<number>(
+        0,
+        "infants",
+        (v) => String(v),
+        (v) => Number(v)
     );
-    const [infants, setInfants] = useState<number>(
-        Number(urlParams.get("infants")) || 0
+    const [travelClass, setTravelClass] = useQueryState<TTravelClass>(
+        "ALL",
+        "travelClass"
     );
-    const [travelClass, setTravelClass] = useState<TTravelClass>(
-        (urlParams.get("travelClass") as TTravelClass) || "ALL"
+    const [airlineWhitelist, setAirlineWhitelist] = useQueryState<string>(
+        "",
+        "airlineWhitelist"
     );
-    const [airlineWhitelist, setAirlineWhitelist] = useState<string>(
-        urlParams.get("airlineWhitelist") || ""
-    );
-    const [airlineBlacklist, setAirlineBlacklist] = useState<string>(
-        urlParams.get("airlineBlacklist") || ""
+    const [airlineBlacklist, setAirlineBlacklist] = useQueryState<string>(
+        "",
+        "airlineBlacklist"
     );
     const [airlineListType, setAirlineListType] = useState<TListType>(
         airlineBlacklist === "" ? "whitelist" : "blacklist"
@@ -55,7 +69,7 @@ export default function OfferSearch(): JSX.Element {
     const [loading, setLoading] = useState<boolean>(false);
     const [fresh, setFresh] = useState<boolean>(true);
 
-    const [page, setPage] = useState<number>(1);
+    const [page, setPage] = useQueryState<number>(1, "page");
     const itemsPerPage: number = 20;
 
     const prepareSearchProps = (): IOfferSearch => {
