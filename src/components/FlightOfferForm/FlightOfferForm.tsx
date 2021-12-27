@@ -97,13 +97,6 @@ export default function FlightOfferForm({
 
     const changeListType = (newType: TListType) => {
         setAirlineListType(newType);
-        if (newType === "blacklist") {
-            setAirlineBlacklist(airlineWhitelist);
-            setAirlineWhitelist("");
-        } else {
-            setAirlineWhitelist(airlineBlacklist);
-            setAirlineBlacklist("");
-        }
     };
 
     const routeComplete: boolean =

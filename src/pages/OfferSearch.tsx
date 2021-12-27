@@ -46,8 +46,9 @@ export default function OfferSearch(): JSX.Element {
         "",
         "airlineBlacklist"
     );
-    const [airlineListType, setAirlineListType] = useState<TListType>(
-        airlineBlacklist === "" ? "whitelist" : "blacklist"
+    const [airlineListType, setAirlineListType] = useQueryState<TListType>(
+        "whitelist",
+        "airlineListType"
     );
 
     const [offers, setOffers] = useState<IOffer[]>([]);
