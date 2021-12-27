@@ -29,26 +29,11 @@ export default function OfferSearch(): JSX.Element {
         false,
         "nonStop",
         (value: boolean) => (value ? "true" : "false"),
-        (value: string) => value === "true"
+        (value: string | null) => value === "true"
     );
-    const [adults, setAdults] = useQueryState<number>(
-        1,
-        "adults",
-        (v) => String(v),
-        (v) => Number(v)
-    );
-    const [children, setChildren] = useQueryState<number>(
-        0,
-        "children",
-        (v) => String(v),
-        (v) => Number(v)
-    );
-    const [infants, setInfants] = useQueryState<number>(
-        0,
-        "infants",
-        (v) => String(v),
-        (v) => Number(v)
-    );
+    const [adults, setAdults] = useQueryState<number>(1, "adults");
+    const [children, setChildren] = useQueryState<number>(0, "children");
+    const [infants, setInfants] = useQueryState<number>(0, "infants");
     const [travelClass, setTravelClass] = useQueryState<TTravelClass>(
         "ALL",
         "travelClass"

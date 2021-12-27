@@ -12,15 +12,17 @@ export default function useQueryState<T>(
     const [searchParams] = useSearchParams();
     const navigate = useNavigate();
 
+    const paramValue = searchParams.get(paramName);
+
     const [stateValue, setStateValue] = useState<T>(
-        deserialize(searchParams.get(paramName) as string) || defaultValue
+        paramValue === null ? defaultValue : deserialize(paramValue)
     );
 
     useEffect(() => {
         const serializedValue =
             stateValue === null ? null : serialize(stateValue);
 
-        if (searchParams.get(paramName) !== serializedValue) {
+        if (paramValue !== serializedValue) {
             if (serializedValue !== null) {
                 searchParams.set(paramName, serializedValue);
             } else {
@@ -31,11 +33,10 @@ export default function useQueryState<T>(
     }, [stateValue]);
 
     useEffect(() => {
-        const deserializedValue = deserialize(
-            searchParams.get(paramName) as string
-        );
+        const deserializedValue =
+            paramValue === null ? null : deserialize(paramValue);
 
-        setStateValue(deserializedValue);
+        setStateValue(deserializedValue || defaultValue);
     }, [searchParams]);
 
     return [stateValue, setStateValue];
