@@ -95,10 +95,6 @@ export default function FlightOfferForm({
         }
     };
 
-    const changeListType = (newType: TListType) => {
-        setAirlineListType(newType);
-    };
-
     const routeComplete: boolean =
         originAirport !== "" && destinationAirport !== "";
 
@@ -321,7 +317,7 @@ export default function FlightOfferForm({
                                         onChange={(
                                             e: ChangeEvent<HTMLInputElement>
                                         ) =>
-                                            changeListType(
+                                            setAirlineListType(
                                                 e.target.value as TListType
                                             )
                                         }
@@ -337,7 +333,7 @@ export default function FlightOfferForm({
                                         onChange={(
                                             e: ChangeEvent<HTMLInputElement>
                                         ) =>
-                                            changeListType(
+                                            setAirlineListType(
                                                 e.target.value as TListType
                                             )
                                         }
