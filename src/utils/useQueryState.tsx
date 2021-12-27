@@ -28,7 +28,7 @@ export default function useQueryState<T>(
             } else {
                 searchParams.delete(paramName);
             }
-            navigate(`?${searchParams.toString()}`);
+            navigate(`?${searchParams.toString()}`, { replace: true });
         }
     }, [stateValue]);
 
