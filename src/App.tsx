@@ -8,6 +8,7 @@ import {
     useNavigate,
 } from "react-router-dom";
 import Layout from "./pages/Layout";
+import OfferDetails from "./pages/OfferDetails";
 import OfferSearch from "./pages/OfferSearch";
 import Status from "./pages/Status";
 
@@ -25,6 +26,7 @@ function NavigateWrapper(): JSX.Element {
         <Layout navigate={navigate}>
             <Routes>
                 <Route path="/offer/search" element={<OfferSearch />} />
+                <Route path="/offer/details/:hash" element={<OfferDetails />} />
                 <Route path="/status" element={<Status />} />
                 <Route path="*" element={<Navigate to="/offer/search" />} />
             </Routes>
