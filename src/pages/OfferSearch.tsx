@@ -10,11 +10,13 @@ import API from "../Api";
 import IOffer from "../api/interfaces/IOffer";
 import OfferElement from "../components/OfferElement/OfferElement";
 import useQueryState from "../utils/useQueryState";
+import { useNavigate } from "react-router";
 
 export default function OfferSearch(): JSX.Element {
     const [departureDate, setDepartureDate] = useQueryState<string>(
         moment().format("YYYY-MM-DD"),
-        "departureDate"
+        "departureDate",
+        { alwaysInUrl: true }
     );
     const [returnDate, setReturnDate] = useQueryState<string>("", "returnDate");
     const [originAirport, setOriginAirport] = useQueryState<string>(
@@ -25,12 +27,10 @@ export default function OfferSearch(): JSX.Element {
         "",
         "destinationAirport"
     );
-    const [nonStop, setNonStop] = useQueryState<boolean>(
-        false,
-        "nonStop",
-        (value: boolean) => (value ? "true" : "false"),
-        (value: string | null) => value === "true"
-    );
+    const [nonStop, setNonStop] = useQueryState<boolean>(false, "nonStop", {
+        serialize: (value: boolean) => (value ? "true" : "false"),
+        deserialize: (value: string | null) => value === "true",
+    });
     const [adults, setAdults] = useQueryState<number>(1, "adults");
     const [children, setChildren] = useQueryState<number>(0, "children");
     const [infants, setInfants] = useQueryState<number>(0, "infants");
@@ -57,6 +57,8 @@ export default function OfferSearch(): JSX.Element {
 
     const [page, setPage] = useQueryState<number>(1, "page");
     const itemsPerPage: number = 20;
+
+    const navigate = useNavigate();
 
     const prepareSearchProps = (): IOfferSearch => {
         var props: IOfferSearch = {
@@ -107,7 +109,7 @@ export default function OfferSearch(): JSX.Element {
     };
 
     const handleDetails = (hash: string): void => {
-        console.log(hash);
+        navigate(`/offer/details/${hash}/`);
     };
 
     return (
