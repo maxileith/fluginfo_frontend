@@ -1,4 +1,4 @@
-import { NavigateFunction } from "react-router-dom";
+import { Container } from "react-bulma-components";
 import CustomFooter from "../components/CustomFooter/CustomFooter";
 import Header, { IHeader } from "../components/Header/Header";
 
@@ -10,7 +10,9 @@ export default function Layout({ children, navigate }: ILayout): JSX.Element {
     return (
         <>
             <Header navigate={navigate} />
-            {children}
+            <Container breakpoint="desktop" max p={4} pb={0}>
+                {children}
+            </Container>
             <CustomFooter />
         </>
     );

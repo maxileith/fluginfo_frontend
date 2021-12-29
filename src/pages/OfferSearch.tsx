@@ -1,6 +1,6 @@
 import moment from "moment";
 import { useState } from "react";
-import { Box, Container, Heading, Pagination } from "react-bulma-components";
+import { Box, Heading, Pagination } from "react-bulma-components";
 import IOfferSearch from "../api/interfaces/IOfferSearch";
 import TTravelClass from "../api/types/TTravelClass";
 import FlightOfferForm, {
@@ -113,7 +113,7 @@ export default function OfferSearch(): JSX.Element {
     };
 
     return (
-        <Container breakpoint="desktop" max mt={4} my={4}>
+        <>
             <Heading>Offer Search</Heading>
             <Heading subtitle>Find your desired flight.</Heading>
 
@@ -181,6 +181,6 @@ export default function OfferSearch(): JSX.Element {
                 showFirstLast={false}
                 align="center"
             />
-        </Container>
+        </>
     );
 }
