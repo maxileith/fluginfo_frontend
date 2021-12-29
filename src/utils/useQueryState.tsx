@@ -17,7 +17,10 @@ export default function useQueryState<T>(
     // specify default values of options
     const o = {
         serialize: (value: T) => String(value),
-        deserialize: (value: string) => value as unknown as T,
+        deserialize: (value: string): T =>
+            typeof defaultValue === "number"
+                ? (Number(value) as unknown as T)
+                : (value as unknown as T),
         alwaysInUrl: false,
         ...options,
     };
