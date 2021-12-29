@@ -1,16 +1,14 @@
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Container, Content, Footer, Hero } from "react-bulma-components";
+import { Container, Content, Footer } from "react-bulma-components";
 
-export interface ICustomFooter {}
-
-export default function CustomFooter({}: ICustomFooter): JSX.Element {
+export default function CustomFooter(): JSX.Element {
     const footerContent = (
         <Container>
             <Content style={{ textAlign: "center" }}>
                 <p>
                     Made with <FontAwesomeIcon icon={faHeart} /> by{" "}
-                    <a href="https://leith.de" target="_blank">
+                    <a href="https://leith.de" target="_blank" rel="noreferrer">
                         Maximilian Leith
                     </a>
                     .
