@@ -91,8 +91,6 @@ export default function OfferSearch(): JSX.Element {
             .catch((error) => {
                 switch (error.response.status) {
                     case 404:
-                        setOffers([] as IOffer[]);
-                        break;
                     case 400:
                         setOffers([] as IOffer[]);
                         break;
