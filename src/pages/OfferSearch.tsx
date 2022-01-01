@@ -60,8 +60,10 @@ export default function OfferSearch(): JSX.Element {
 
     const navigate = useNavigate();
 
-    const prepareSearchProps = (): IOfferSearch => {
-        var props: IOfferSearch = {
+    const handleSearch = (): void => {
+        setPage(1);
+        setLoading(true);
+        var searchProps: IOfferSearch = {
             adults: adults,
             children: children,
             infants: infants,
@@ -69,21 +71,18 @@ export default function OfferSearch(): JSX.Element {
             departureDate: departureDate,
             destinationLocationCode: destinationAirport,
             originLocationCode: originAirport,
+            travelClass: travelClass !== "ALL" ? travelClass : undefined,
+            excludedAirlineCodes:
+                airlineListType === "blacklist" && airlineBlacklist !== ""
+                    ? airlineBlacklist
+                    : undefined,
+            includedAirlineCodes:
+                airlineListType === "whitelist" && airlineWhitelist !== ""
+                    ? airlineWhitelist
+                    : undefined,
+            returnDate: returnDate !== "" ? returnDate : undefined,
         };
-        // now add optional parameters if provided
-        if (travelClass !== "ALL") props.travelClass = travelClass;
-        if (airlineBlacklist !== "")
-            props.excludedAirlineCodes = airlineBlacklist;
-        if (airlineWhitelist !== "")
-            props.includedAirlineCodes = airlineWhitelist;
-        if (returnDate !== "") props.returnDate = returnDate;
-        return props;
-    };
-
-    const handleSearch = (): void => {
-        setPage(1);
-        setLoading(true);
-        var searchProps: IOfferSearch = prepareSearchProps();
+        console.log(searchProps);
         API.get("offers/search/", { params: searchProps })
             .then((response) => {
                 setOffers(response.data.data as IOffer[]);
