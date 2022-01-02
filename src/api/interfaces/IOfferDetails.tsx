@@ -1,11 +1,10 @@
 import TTravelClass from "../types/TTravelClass";
-import IAirport from "./IAirport";
-import { IDuration } from "./IOffer";
+import { IDuration, IStop } from "./IOffer";
 
 export interface ISegment {
     id: number;
-    departure: IAirport;
-    arrival: IAirport;
+    departure: IStop;
+    arrival: IStop;
     flightNumber: string;
     carrierCode: string;
     carrier: string;

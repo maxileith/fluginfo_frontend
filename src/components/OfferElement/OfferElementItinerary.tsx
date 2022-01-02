@@ -21,13 +21,13 @@ import moment from "moment";
 import React from "react";
 import travelClassEnhance from "../../utils/travelClassEnhance";
 
-export interface IOfferItinerary {
+export interface IOfferElementItinerary {
     itinerary: IItinerary;
 }
 
-export default function OfferItinerary({
+export default function OfferElementItinerary({
     itinerary,
-}: IOfferItinerary): JSX.Element {
+}: IOfferElementItinerary): JSX.Element {
     const marginTagsRight: number = 2;
     const marginTagsY: number = 1;
 

@@ -1,6 +1,6 @@
 import { Box, Button, Columns, Heading, Icon } from "react-bulma-components";
 import IOffer from "../../api/interfaces/IOffer";
-import OfferItinerary from "../OfferItinerary/OfferItinerary";
+import OfferElementItinerary from "./OfferElementItinerary";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfo } from "@fortawesome/free-solid-svg-icons";
@@ -20,7 +20,7 @@ export default function OfferElement({
                 <Columns.Column size={9}>
                     {offer.itineraries.map((itinerary, index) => (
                         <React.Fragment key={index}>
-                            <OfferItinerary itinerary={itinerary} />
+                            <OfferElementItinerary itinerary={itinerary} />
                             {offer.itineraries.length - 1 !== index && <hr />}
                         </React.Fragment>
                     ))}
