@@ -17,7 +17,7 @@ export default function Header({ navigate }: IHeader): JSX.Element {
     return (
         <Navbar fixed="top" color="info" active={isActive}>
             <Navbar.Brand>
-                <Navbar.Item>
+                <Navbar.Item onClick={() => navigateWrapper("/offer/search")}>
                     <Heading size={4} weight="light" style={{ color: "white" }}>
                         Fluginfo
                     </Heading>
