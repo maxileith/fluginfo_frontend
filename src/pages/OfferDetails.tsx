@@ -37,6 +37,10 @@ export default function OfferDetails(): JSX.Element {
         // TODO: Error handling
     }, [hash]);
 
+    const handleShowSeatmap = (segment: number) => {
+        console.log(`show seatmap: ${segment}`);
+    };
+
     return (
         <>
             {loading && <CenteredLoader />}
@@ -64,7 +68,7 @@ export default function OfferDetails(): JSX.Element {
                     <Heading subtitle mb={6}>
                         A closer look at the offer.
                     </Heading>
-                    <OD details={details} showSeatmap={console.log} />
+                    <OD details={details} showSeatmap={handleShowSeatmap} />
                 </>
             )}
         </>

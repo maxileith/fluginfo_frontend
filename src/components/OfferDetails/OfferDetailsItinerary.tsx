@@ -9,5 +9,5 @@ export default function OfferDetailsItinerary({
     itinerary,
     showSeatmap,
 }: IOfferDetailsItinerary): JSX.Element {
-    return <></>;
+    return <>Test</>;
 }

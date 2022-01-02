@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Heading } from "react-bulma-components";
 import IOD from "../../api/interfaces/IOfferDetails";
+import OfferDetailsItinerary from "./OfferDetailsItinerary";
 
 export interface IOfferDetails {
     details: IOD;
@@ -18,7 +19,10 @@ export default function OfferDetails({
                     {details.itineraries.length !== 1 && (
                         <Heading size={4}>{index + 1}. Itinerary</Heading>
                     )}
-                    <Box>yeet</Box>
+                    <OfferDetailsItinerary
+                        itinerary={itinerary}
+                        showSeatmap={showSeatmap}
+                    />
                 </React.Fragment>
             ))}
         </>
