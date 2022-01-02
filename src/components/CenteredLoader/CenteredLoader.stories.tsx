@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import CenteredLoader from "./CenteredLoader";
 
 export default {
-    title: "CenteredLoader/CenteredLoader",
+    title: "Centered/CenteredLoader",
     component: CenteredLoader,
 } as ComponentMeta<typeof CenteredLoader>;
 

@@ -3,41 +3,67 @@ import { useParams } from "react-router";
 import CenteredLoader from "../components/CenteredLoader/CenteredLoader";
 import API from "../Api";
 import IOfferDetails from "../api/interfaces/IOfferDetails";
+import CenteredContent from "../components/CenteredContainer/CenteredContainer";
+import { Box, Button, Heading, Icon } from "react-bulma-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 export default function OfferDetails(): JSX.Element {
     const { hash } = useParams();
-
     const [loading, setLoading] = useState<boolean>(true);
     const [details, setDetails] = useState<IOfferDetails | undefined>(
         undefined
     );
+    const [errorCode, setErrorCode] = useState<number | undefined>(undefined);
 
     useEffect(() => {
+        setLoading(true);
+        setDetails(undefined);
+        setErrorCode(undefined);
         API.get("offers/details/", { params: { id: hash } })
             .then((response) => {
                 setDetails(response.data as IOfferDetails);
             })
             .catch((error) => {
-                switch (error.response.status) {
-                    case 404:
-                    case 400:
-                        setDetails(undefined);
-                        break;
-                    default:
-                        // TODO: handle error
-                        break;
-                }
+                setErrorCode(error.response.status);
+                // TODO: handle error
             })
             .finally(() => {
                 setLoading(false);
             });
         // TODO: Error handling
-        console.log(hash);
     }, [hash]);
 
-    useEffect(() => {
-        console.log(details);
-    }, [details]);
-
-    return <>{loading ? <CenteredLoader /> : <p>{hash}</p>}</>;
+    return (
+        <>
+            {loading && <CenteredLoader />}
+            {errorCode && (
+                <CenteredContent>
+                    <Heading>Error {errorCode}</Heading>
+                    <Heading subtitle>
+                        {errorCode === 404
+                            ? "The selected offer does not exist or has expired."
+                            : "An error occured."}
+                    </Heading>
+                    <Link to="/offer/search">
+                        <Button color="info">
+                            Offer Search
+                            <Icon ml={1}>
+                                <FontAwesomeIcon icon={faSearch} />
+                            </Icon>
+                        </Button>
+                    </Link>
+                </CenteredContent>
+            )}
+            {details && (
+                <>
+                    <Heading>Offer Details</Heading>
+                    <Box>
+                        <p>Test</p>
+                    </Box>
+                </>
+            )}
+        </>
+    );
 }
