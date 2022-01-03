@@ -1,13 +1,13 @@
 import moment from "moment";
 import { useState } from "react";
 import { Box, Heading, Pagination } from "react-bulma-components";
-import IOfferSearch from "../api/interfaces/IOfferSearch";
-import TTravelClass from "../api/types/TTravelClass";
+import IApiOfferSearch from "../api/interfaces/IApiOfferSearch";
+import TApiTravelClass from "../api/types/TApiTravelClass";
 import FlightOfferForm, {
     TListType,
 } from "../components/FlightOfferForm/FlightOfferForm";
 import API from "../Api";
-import IOffer from "../api/interfaces/IOffer";
+import IApiOffer from "../api/interfaces/IApiOffer";
 import OfferElement from "../components/OfferElement/OfferElement";
 import useQueryState from "../utils/useQueryState";
 import { useNavigate } from "react-router";
@@ -34,7 +34,7 @@ export default function OfferSearch(): JSX.Element {
     const [adults, setAdults] = useQueryState<number>(1, "adults");
     const [children, setChildren] = useQueryState<number>(0, "children");
     const [infants, setInfants] = useQueryState<number>(0, "infants");
-    const [travelClass, setTravelClass] = useQueryState<TTravelClass>(
+    const [travelClass, setTravelClass] = useQueryState<TApiTravelClass>(
         "ALL",
         "travelClass"
     );
@@ -51,7 +51,7 @@ export default function OfferSearch(): JSX.Element {
         "airlineListType"
     );
 
-    const [offers, setOffers] = useState<IOffer[]>([]);
+    const [offers, setOffers] = useState<IApiOffer[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
     const [fresh, setFresh] = useState<boolean>(true);
 
@@ -63,7 +63,7 @@ export default function OfferSearch(): JSX.Element {
     const handleSearch = (): void => {
         setPage(1);
         setLoading(true);
-        var searchProps: IOfferSearch = {
+        var searchProps: IApiOfferSearch = {
             adults: adults,
             children: children,
             infants: infants,
@@ -85,13 +85,13 @@ export default function OfferSearch(): JSX.Element {
         console.log(searchProps);
         API.get("offers/search/", { params: searchProps })
             .then((response) => {
-                setOffers(response.data.data as IOffer[]);
+                setOffers(response.data.data as IApiOffer[]);
             })
             .catch((error) => {
                 switch (error.response.status) {
                     case 404:
                     case 400:
-                        setOffers([] as IOffer[]);
+                        setOffers([] as IApiOffer[]);
                         break;
                     default:
                         // TODO: handle error

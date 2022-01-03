@@ -2,19 +2,18 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import CenteredLoader from "../components/CenteredLoader/CenteredLoader";
 import API from "../Api";
-import IOfferDetails from "../api/interfaces/IOfferDetails";
+import IApiOfferDetails from "../api/interfaces/IApiOfferDetails";
 import CenteredContent from "../components/CenteredContainer/CenteredContainer";
 import { Button, Heading, Icon } from "react-bulma-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import OD from "../components/OfferDetails/OfferDetails";
-import * as OfferDetailsStories from "../components/OfferDetails/OfferDetails.stories";
 
 export default function OfferDetails(): JSX.Element {
     const { hash } = useParams();
     const [loading, setLoading] = useState<boolean>(true);
-    const [details, setDetails] = useState<IOfferDetails | undefined>(
+    const [details, setDetails] = useState<IApiOfferDetails | undefined>(
         undefined
     );
     const [errorCode, setErrorCode] = useState<number | undefined>(undefined);
@@ -25,7 +24,7 @@ export default function OfferDetails(): JSX.Element {
         setErrorCode(undefined);
         API.get("offers/details/", { params: { id: hash } })
             .then((response) => {
-                setDetails(response.data as IOfferDetails);
+                setDetails(response.data as IApiOfferDetails);
             })
             .catch((error) => {
                 setErrorCode(error.response.status);

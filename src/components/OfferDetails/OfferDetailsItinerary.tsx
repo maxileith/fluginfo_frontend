@@ -1,7 +1,7 @@
-import { IItinerary } from "../../api/interfaces/IOfferDetails";
+import { IApiItinerary } from "../../api/interfaces/IApiOfferDetails";
 
 export interface IOfferDetailsItinerary {
-    itinerary: IItinerary;
+    itinerary: IApiItinerary;
     showSeatmap: (segment: number) => void;
 }
 

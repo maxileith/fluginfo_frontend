@@ -1,12 +1,12 @@
 import { Box, Button, Columns, Heading, Icon } from "react-bulma-components";
-import IOffer from "../../api/interfaces/IOffer";
+import IApiOffer from "../../api/interfaces/IApiOffer";
 import OfferElementItinerary from "./OfferElementItinerary";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfo } from "@fortawesome/free-solid-svg-icons";
 
 export interface IOfferElement {
-    offer: IOffer;
+    offer: IApiOffer;
     showDetails: (hash: string) => void;
 }
 

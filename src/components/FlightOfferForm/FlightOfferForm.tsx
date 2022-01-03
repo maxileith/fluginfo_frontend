@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import { ChangeEvent, CSSProperties, useState } from "react";
 import { Box, Button, Columns, Form, Icon } from "react-bulma-components";
-import TTravelClass from "../../api/types/TTravelClass";
+import TApiTravelClass from "../../api/types/TApiTravelClass";
 import travelClassEnhance from "../../utils/travelClassEnhance";
 import SelectAirport from "../SelectAirport/SelectAirport";
 
@@ -36,8 +36,8 @@ export interface IFlightOfferForm {
     setChildren: (children: number) => void;
     infants: number;
     setInfants: (infants: number) => void;
-    travelClass: TTravelClass;
-    setTravelClass: (travelClass: TTravelClass) => void;
+    travelClass: TApiTravelClass;
+    setTravelClass: (travelClass: TApiTravelClass) => void;
     airlineListType: TListType;
     setAirlineListType: (type: TListType) => void;
     airlineWhitelist: string;
@@ -273,7 +273,7 @@ export default function FlightOfferForm({
                                         e: ChangeEvent<HTMLSelectElement>
                                     ) =>
                                         setTravelClass(
-                                            e.target.value as TTravelClass
+                                            e.target.value as TApiTravelClass
                                         )
                                     }
                                     required

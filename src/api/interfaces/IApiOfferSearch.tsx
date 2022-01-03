@@ -1,6 +1,6 @@
-import TTravelClass from "../types/TTravelClass";
+import TApiTravelClass from "../types/TApiTravelClass";
 
-export default interface IOfferSearch {
+export default interface IApiOfferSearch {
     adults: number;
     children?: number;
     departureDate: string;
@@ -12,5 +12,5 @@ export default interface IOfferSearch {
     nonStop?: boolean;
     originLocationCode: string;
     returnDate?: string;
-    travelClass?: TTravelClass;
+    travelClass?: TApiTravelClass;
 }

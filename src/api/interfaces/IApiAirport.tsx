@@ -1,4 +1,4 @@
-export default interface IAirport {
+export default interface IApiAirport {
     iata: string;
     name?: string;
     city?: string;

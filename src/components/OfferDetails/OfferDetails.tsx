@@ -1,10 +1,10 @@
 import React from "react";
-import { Box, Heading } from "react-bulma-components";
-import IOD from "../../api/interfaces/IOfferDetails";
+import { Heading } from "react-bulma-components";
+import IApiOfferDetails from "../../api/interfaces/IApiOfferDetails";
 import OfferDetailsItinerary from "./OfferDetailsItinerary";
 
 export interface IOfferDetails {
-    details: IOD;
+    details: IApiOfferDetails;
     showSeatmap: (segment: number) => void;
 }
 

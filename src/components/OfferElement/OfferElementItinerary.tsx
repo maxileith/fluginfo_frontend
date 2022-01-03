@@ -6,7 +6,7 @@ import {
     Media,
     Tag,
 } from "react-bulma-components";
-import { IItinerary } from "../../api/interfaces/IOffer";
+import { IApiItinerary } from "../../api/interfaces/IApiOffer";
 import API from "../../Api";
 import SearchDropdownLabel from "../SearchDropdown/SearchDropdownLabel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -22,7 +22,7 @@ import React from "react";
 import travelClassEnhance from "../../utils/travelClassEnhance";
 
 export interface IOfferElementItinerary {
-    itinerary: IItinerary;
+    itinerary: IApiItinerary;
 }
 
 export default function OfferElementItinerary({

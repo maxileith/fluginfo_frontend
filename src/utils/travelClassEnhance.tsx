@@ -1,6 +1,8 @@
-import TTravelClass from "../api/types/TTravelClass";
+import TApiTravelClass from "../api/types/TApiTravelClass";
 
-export default function travelClassEnhance(travelClass: TTravelClass): string {
+export default function travelClassEnhance(
+    travelClass: TApiTravelClass
+): string {
     switch (travelClass) {
         case "ALL":
             return "No Preference";

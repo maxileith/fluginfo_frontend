@@ -2,7 +2,7 @@ import SearchDropdown from "../SearchDropdown/SearchDropdown";
 import API from "../../Api";
 import { ISearchDropdownItem } from "../SearchDropdown/SearchDropdownItem";
 import { useState } from "react";
-import IAirport from "../../api/interfaces/IAirport";
+import IApiAirport from "../../api/interfaces/IApiAirport";
 import {
     faPlaneArrival,
     faPlaneDeparture,
@@ -42,7 +42,7 @@ export default function SelectAirport({
     const handleSearch = (keyword: string) => {
         API.get("metadata/airports/search/", { params: { s: keyword } }).then(
             (data) => {
-                const airports: IAirport[] = data.data.data;
+                const airports: IApiAirport[] = data.data.data;
                 var items: ISearchDropdownItem[] = airports.map((airport) => ({
                     title: `${airport.iata} - ${airport.city}`,
                     imageUrl: `${API.defaults.baseURL}/metadata/countries/flag/?countryCode=${airport.countryCode}`,
