@@ -8,6 +8,8 @@ import {
     faPlaneDeparture,
     faQuestion,
 } from "@fortawesome/free-solid-svg-icons";
+import { toast } from "react-toastify";
+import unknownErrorHandling from "../../utils/unknownErrorHandling";
 
 export interface ISelectAirport {
     onSelect: (iata: string) => void;
@@ -40,8 +42,8 @@ export default function SelectAirport({
               };
 
     const handleSearch = (keyword: string) => {
-        API.get("metadata/airports/search/", { params: { s: keyword } }).then(
-            (data) => {
+        API.get("metadata/airports/search/", { params: { s: keyword } })
+            .then((data) => {
                 const airports: IApiAirport[] = data.data.data;
                 var items: ISearchDropdownItem[] = airports.map((airport) => ({
                     title: `${airport.iata} - ${airport.city}`,
@@ -65,11 +67,21 @@ export default function SelectAirport({
                         ...items,
                     ];
                 }
-
                 setDropdownItems(items);
-            }
-        );
-        // TODO: Error handling
+            })
+            .catch((error) => {
+                setDropdownItems([] as ISearchDropdownItem[]);
+                switch (error.response.status) {
+                    case 400:
+                        toast.error("Bad Request.");
+                        break;
+                    case 404:
+                        break;
+                    default:
+                        unknownErrorHandling(error.response.status);
+                        break;
+                }
+            });
     };
 
     return (

@@ -11,6 +11,8 @@ import IApiOffer from "../api/interfaces/IApiOffer";
 import OfferElement from "../components/OfferElement/OfferElement";
 import useQueryState from "../utils/useQueryState";
 import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
+import unknownErrorHandling from "../utils/unknownErrorHandling";
 
 export default function OfferSearch(): JSX.Element {
     const [departureDate, setDepartureDate] = useQueryState<string>(
@@ -82,19 +84,20 @@ export default function OfferSearch(): JSX.Element {
                     : undefined,
             returnDate: returnDate !== "" ? returnDate : undefined,
         };
-        console.log(searchProps);
         API.get("offers/search/", { params: searchProps })
             .then((response) => {
                 setOffers(response.data.data as IApiOffer[]);
             })
             .catch((error) => {
+                setOffers([] as IApiOffer[]);
                 switch (error.response.status) {
-                    case 404:
                     case 400:
-                        setOffers([] as IApiOffer[]);
+                        toast.error("Bad Request.");
+                        break;
+                    case 404:
                         break;
                     default:
-                        // TODO: handle error
+                        unknownErrorHandling(error.response.status);
                         break;
                 }
             })
@@ -102,7 +105,6 @@ export default function OfferSearch(): JSX.Element {
                 setLoading(false);
                 setFresh(false);
             });
-        // TODO: Error handling
     };
 
     const handleDetails = (hash: string): void => {

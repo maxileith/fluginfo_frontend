@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { NavigateFunction, useNavigate, useParams } from "react-router";
 import CenteredLoader from "../components/CenteredLoader/CenteredLoader";
 import API from "../Api";
 import IApiOfferDetails from "../api/interfaces/IApiOfferDetails";
-import CenteredContent from "../components/CenteredContainer/CenteredContainer";
-import { Button, Heading, Icon } from "react-bulma-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Heading } from "react-bulma-components";
 import OD from "../components/OfferDetails/OfferDetails";
+import { toast } from "react-toastify";
+import unknownErrorHandling from "../utils/unknownErrorHandling";
 
 export default function OfferDetails(): JSX.Element {
     const { hash } = useParams();
@@ -16,24 +14,32 @@ export default function OfferDetails(): JSX.Element {
     const [details, setDetails] = useState<IApiOfferDetails | undefined>(
         undefined
     );
-    const [errorCode, setErrorCode] = useState<number | undefined>(undefined);
+    const navigate: NavigateFunction = useNavigate();
 
     useEffect(() => {
         setLoading(true);
         setDetails(undefined);
-        setErrorCode(undefined);
         API.get("offers/details/", { params: { id: hash } })
             .then((response) => {
                 setDetails(response.data as IApiOfferDetails);
             })
             .catch((error) => {
-                setErrorCode(error.response.status);
-                // TODO: handle error
+                setDetails(undefined);
+                switch (error.response.status) {
+                    case 404:
+                        toast.error(
+                            "The selected offer does not exist or has expired."
+                        );
+                        navigate("/offer/search", { replace: true });
+                        break;
+                    default:
+                        unknownErrorHandling(error.response.status);
+                        break;
+                }
             })
             .finally(() => {
                 setLoading(false);
             });
-        // TODO: Error handling
     }, [hash]);
 
     const handleShowSeatmap = (segment: number) => {
@@ -43,24 +49,6 @@ export default function OfferDetails(): JSX.Element {
     return (
         <>
             {loading && <CenteredLoader />}
-            {errorCode && (
-                <CenteredContent>
-                    <Heading>Error {errorCode}</Heading>
-                    <Heading subtitle>
-                        {errorCode === 404
-                            ? "The selected offer does not exist or has expired."
-                            : "An error occured."}
-                    </Heading>
-                    <Link to="/offer/search">
-                        <Button color="info">
-                            Offer Search
-                            <Icon ml={1}>
-                                <FontAwesomeIcon icon={faSearch} />
-                            </Icon>
-                        </Button>
-                    </Link>
-                </CenteredContent>
-            )}
             {details && (
                 <>
                     <Heading>Offer Details</Heading>
