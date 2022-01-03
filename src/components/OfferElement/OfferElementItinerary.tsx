@@ -28,7 +28,7 @@ export interface IOfferElementItinerary {
 export default function OfferElementItinerary({
     itinerary,
 }: IOfferElementItinerary): JSX.Element {
-    const marginTagsRight: number = 2;
+    const marginTagsX: number = 1;
     const marginTagsY: number = 1;
 
     const departureTitle = itinerary.departure.airport.city
@@ -80,12 +80,12 @@ export default function OfferElementItinerary({
                             hasAddons
                             display="inline-flex"
                             my={marginTagsY}
-                            mr={marginTagsRight}
+                            mx={marginTagsX}
                         >
                             <Tag color="info">
                                 {itinerary.duration.hours !== 0 &&
-                                    `${itinerary.duration.hours} Hours `}
-                                {`${itinerary.duration.minutes} Minutes`}
+                                    `${itinerary.duration.hours}h `}
+                                {`${itinerary.duration.minutes}min`}
                             </Tag>
                             <Tag>
                                 <Icon>
@@ -97,7 +97,7 @@ export default function OfferElementItinerary({
                             hasAddons
                             display="inline-flex"
                             my={marginTagsY}
-                            mr={marginTagsRight}
+                            mx={marginTagsX}
                         >
                             <Tag color="warning">
                                 {itinerary.stops || "Non-Stop"}
@@ -114,7 +114,7 @@ export default function OfferElementItinerary({
                                 key={index}
                                 display="inline-flex"
                                 my={marginTagsY}
-                                mr={marginTagsRight}
+                                mx={marginTagsX}
                             >
                                 <Tag color="primary">
                                     {travelClassEnhance(c)}

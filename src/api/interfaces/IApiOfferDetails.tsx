@@ -11,7 +11,7 @@ export interface IApiSegment {
     duration: IApiDuration;
     aircraft: string;
     cabin: TApiTravelClass;
-    class: string;
+    classId: string;
 }
 
 export interface IApiItinerary {

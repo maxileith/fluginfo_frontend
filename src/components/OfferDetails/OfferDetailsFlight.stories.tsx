@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import * as OfferDetailsSegmentStories from "./OfferDetailsSegment.stories";
+import * as OfferDetailsItineraryStories from "./OfferDetailsItinerary.stories";
 import OfferDetailsFlight, { IOfferDetailsFlight } from "./OfferDetailsFlight";
 
 export default {
@@ -12,4 +12,12 @@ const Template: ComponentStory<typeof OfferDetailsFlight> = (
 ) => <OfferDetailsFlight {...args} />;
 
 export const Standard = Template.bind({});
-Standard.args = OfferDetailsSegmentStories.Standard.args?.segment;
+Standard.args = {
+    departureTime:
+        OfferDetailsItineraryStories.Standard.args?.itinerary?.segments[0]
+            .departure.at,
+    arrivalTime:
+        OfferDetailsItineraryStories.Standard.args?.itinerary?.segments[0]
+            .arrival.at,
+    ...OfferDetailsItineraryStories.Standard.args?.itinerary?.segments[0],
+};

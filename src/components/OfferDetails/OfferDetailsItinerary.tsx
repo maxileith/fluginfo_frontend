@@ -1,6 +1,8 @@
+import React from "react";
 import { Box, Columns } from "react-bulma-components";
 import { IApiItinerary } from "../../api/interfaces/IApiOfferDetails";
-import OfferDetailsSegment from "./OfferDetailsSegment";
+import OfferDetailsFlight from "./OfferDetailsFlight";
+import OfferDetailsAirport from "./OfferDetailsAirport";
 
 export interface IOfferDetailsItinerary {
     itinerary: IApiItinerary;
@@ -15,15 +17,41 @@ export default function OfferDetailsItinerary({
         <Box>
             <Columns>
                 {itinerary.segments.map((segment, index) => (
-                    <>
-                        <Columns.Column key={segment.id}>
-                            <OfferDetailsSegment
-                                segment={segment}
-                                showSeatmap={() => showSeatmap(segment.id)}
+                    <React.Fragment key={segment.id}>
+                        {index === 0 && (
+                            <Columns.Column paddingless>
+                                <OfferDetailsAirport
+                                    airport={segment.departure.airport}
+                                    type="origin"
+                                />
+                            </Columns.Column>
+                        )}
+
+                        <Columns.Column paddingless>
+                            <OfferDetailsFlight
+                                flightNumber={segment.flightNumber}
+                                aircraft={segment.aircraft}
+                                carrier={segment.carrier}
+                                carrierCode={segment.carrierCode}
+                                duration={segment.duration}
+                                cabin={segment.cabin}
+                                classId={segment.classId}
+                                departureTime={segment.departure.at}
+                                arrivalTime={segment.arrival.at}
                             />
                         </Columns.Column>
-                        {index + 1 !== itinerary.segments.length && <hr />}
-                    </>
+
+                        <Columns.Column paddingless>
+                            <OfferDetailsAirport
+                                airport={segment.arrival.airport}
+                                type={
+                                    index + 1 === itinerary.segments.length
+                                        ? "destination"
+                                        : "change"
+                                }
+                            />
+                        </Columns.Column>
+                    </React.Fragment>
                 ))}
             </Columns>
         </Box>
