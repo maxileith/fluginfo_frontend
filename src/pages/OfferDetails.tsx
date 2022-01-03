@@ -40,7 +40,7 @@ export default function OfferDetails(): JSX.Element {
             .finally(() => {
                 setLoading(false);
             });
-    }, [hash]);
+    }, [hash, navigate]);
 
     const handleShowSeatmap = (segment: number) => {
         console.log(`show seatmap: ${segment}`);

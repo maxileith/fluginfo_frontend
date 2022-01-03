@@ -5,7 +5,7 @@ import OfferDetailsItinerary, {
 } from "./OfferDetailsItinerary";
 
 export default {
-    title: "OfferDetailsItineraryComponent/Overview",
+    title: "OfferDetailsComponent/Itinerary",
     component: OfferDetailsItinerary,
 } as ComponentMeta<typeof OfferDetailsItinerary>;
 

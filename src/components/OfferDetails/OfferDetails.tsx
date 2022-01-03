@@ -25,6 +25,8 @@ export default function OfferDetails({
                     />
                 </React.Fragment>
             ))}
+            <hr />
+            <Heading textAlign="right">{details.price}</Heading>
         </>
     );
 }
