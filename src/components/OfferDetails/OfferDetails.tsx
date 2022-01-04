@@ -15,18 +15,19 @@ export default function OfferDetails({
     return (
         <>
             {details.itineraries.map((itinerary, index) => (
-                <React.Fragment key={index}>
-                    {details.itineraries.length !== 1 && (
-                        <Heading size={4}>{index + 1}. Itinerary</Heading>
-                    )}
-                    <OfferDetailsItinerary
-                        itinerary={itinerary}
-                        showSeatmap={showSeatmap}
-                    />
-                </React.Fragment>
+                <OfferDetailsItinerary
+                    itinerary={itinerary}
+                    showSeatmap={showSeatmap}
+                    key={index}
+                />
             ))}
             <hr />
-            <Heading textAlign="right">{details.price}</Heading>
+            <Heading textAlign="right" mobile={{ display: "hidden" }}>
+                {details.price}
+            </Heading>
+            <Heading textAlign="center" tablet={{ display: "hidden" }}>
+                {details.price}
+            </Heading>
         </>
     );
 }

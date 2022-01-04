@@ -8,10 +8,17 @@ import {
     Image,
     Tag,
     Icon,
+    Container,
+    Columns,
 } from "react-bulma-components";
 import API from "../../Api";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClock, faPlane, faStar } from "@fortawesome/free-solid-svg-icons";
+import {
+    faClock,
+    faPlane,
+    faRoute,
+    faStar,
+} from "@fortawesome/free-solid-svg-icons";
 import travelClassEnhance from "../../utils/travelClassEnhance";
 
 export interface IOfferDetailsFlight {
@@ -40,27 +47,8 @@ export default function OfferDetailsFlight({
     const marginTagsRight: number = 2;
     const marginTagsY: number = 1;
 
-    return (
-        <Content textAlign="center">
-            <Image
-                src={`${API.defaults.baseURL}/metadata/airlines/logo/?filetype=png&height=64&iata=${carrierCode}&shape=tail&width=64`}
-                alt={`${carrier} logo`}
-                size={64}
-                style={{ margin: "-2.55rem auto -.5rem auto" }}
-            />
-            <Progress
-                style={{
-                    marginLeft: "-50%",
-                    marginRight: "-50%",
-                    width: "200%",
-                    height: ".5rem",
-                }}
-                value={0}
-            />
-            <Heading size={6}>{flightNumber}</Heading>
-            <Heading size={6} subtitle weight="light">
-                {carrier}
-            </Heading>
+    const tags = (
+        <>
             <Tag.Group
                 hasAddons
                 display="inline-flex"
@@ -105,6 +93,101 @@ export default function OfferDetailsFlight({
                     </Icon>
                 </Tag>
             </Tag.Group>
-        </Content>
+        </>
+    );
+
+    return (
+        <>
+            <Content textAlign="center" mobile={{ display: "hidden" }}>
+                <Image
+                    src={`${API.defaults.baseURL}/metadata/airlines/logo/?filetype=png&height=64&iata=${carrierCode}&shape=tail&width=64`}
+                    alt={`${carrier} logo`}
+                    size={64}
+                    style={{
+                        margin: "-2.3rem auto 0 auto",
+                    }}
+                />
+                <Container
+                    style={{
+                        marginTop: "-2.3em",
+                        marginBottom: ".25em",
+                        width: "200%",
+                        marginLeft: "-50%",
+                    }}
+                >
+                    <Tag color="danger">
+                        {moment(departureTime).format("h:mm a")}
+                    </Tag>
+                    <span style={{ width: 85, display: "inline-block" }} />
+                    <Tag color="danger">
+                        {moment(arrivalTime).format("h:mm a")}
+                    </Tag>
+                </Container>
+                <Progress
+                    style={{
+                        marginLeft: "-50%",
+                        marginRight: "-50%",
+                        width: "200%",
+                        height: ".5rem",
+                    }}
+                    value={0}
+                />
+                <Heading size={6}>{flightNumber}</Heading>
+                <Heading size={6} subtitle weight="light">
+                    {carrier}
+                </Heading>
+                {tags}
+            </Content>
+
+            <Content textAlign="left" tablet={{ display: "hidden" }}>
+                <div
+                    style={{
+                        borderLeft: "3px solid hsl(0, 0%, 96%)",
+                        height: 1000,
+                        marginTop: -500,
+                        marginBottom: -500,
+                        transform: "translateX(23px)",
+                        zIndex: 1,
+                    }}
+                />
+                <Columns breakpoint="mobile" vCentered>
+                    <Columns.Column narrow p={1}>
+                        <Image
+                            src={`${API.defaults.baseURL}/metadata/airlines/logo/?filetype=png&height=48&iata=${carrierCode}&shape=square&width=48`}
+                            alt={`${carrier} logo`}
+                            style={{ width: 48, zIndex: 2 }}
+                            mx={2}
+                            backgroundColor="white"
+                        />
+                    </Columns.Column>
+                    <Columns.Column>
+                        <Heading size={6}>{flightNumber}</Heading>
+                        <Heading size={6} subtitle weight="light">
+                            {carrier}
+                        </Heading>
+                        <Tag.Group
+                            hasAddons
+                            display="inline-flex"
+                            my={marginTagsY}
+                            mr={marginTagsRight}
+                        >
+                            <Tag color="danger">
+                                {moment(departureTime).format("h:mm a")}
+                            </Tag>
+                            <Tag>
+                                <Icon>
+                                    <FontAwesomeIcon icon={faRoute} />
+                                </Icon>
+                            </Tag>
+                            <Tag color="danger">
+                                {moment(arrivalTime).format("h:mm a")}
+                            </Tag>
+                        </Tag.Group>
+                        <br />
+                        {tags}
+                    </Columns.Column>
+                </Columns>
+            </Content>
+        </>
     );
 }

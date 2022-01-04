@@ -55,6 +55,7 @@ export default function OfferDetails(): JSX.Element {
                     <Heading subtitle mb={6}>
                         A closer look at the offer.
                     </Heading>
+                    <hr />
                     <OD details={details} showSeatmap={handleShowSeatmap} />
                 </>
             )}

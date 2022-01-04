@@ -1,6 +1,13 @@
 import { faFlag, faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Content, Image, Heading, Tag, Icon } from "react-bulma-components";
+import {
+    Content,
+    Image,
+    Heading,
+    Tag,
+    Icon,
+    Columns,
+} from "react-bulma-components";
 import API from "../../Api";
 import IApiAirport from "../../api/interfaces/IApiAirport";
 
@@ -25,36 +32,85 @@ export default function OfferDetailsAirport({
     }
 
     return (
-        <Content textAlign="center">
-            {airport.countryCode ? (
-                <Image
-                    src={`${API.defaults.baseURL}/metadata/countries/flag/?countryCode=${airport.countryCode}`}
-                    alt={airport.country ? `${airport.country} flag` : "flag"}
-                    rounded
-                    style={{ maxWidth: 64, margin: "0 auto" }}
-                />
-            ) : (
-                <Icon mt={2}>
-                    <FontAwesomeIcon icon={faFlag} size="2x" />
-                </Icon>
-            )}
-            <Heading size={6}>{airport.iata}</Heading>
-            <Heading size={6} subtitle weight="light">
-                {airportHeading}
-            </Heading>
-            <Tag.Group
-                hasAddons
-                display="inline-flex"
-                my={marginTagsY}
-                mx={marginTagsX}
-            >
-                <Tag color="dark">UTC{airport.timezone}</Tag>
-                <Tag>
-                    <Icon>
-                        <FontAwesomeIcon icon={faGlobe} />
+        <>
+            <Content textAlign="center" mobile={{ display: "hidden" }}>
+                {airport.countryCode ? (
+                    <Image
+                        src={`${API.defaults.baseURL}/metadata/countries/flag/?countryCode=${airport.countryCode}`}
+                        alt={
+                            airport.country ? `${airport.country} flag` : "flag"
+                        }
+                        rounded
+                        style={{ maxWidth: 80, margin: "0 auto", zIndex: 2 }}
+                    />
+                ) : (
+                    <Icon mt={2} style={{ zIndex: 2 }}>
+                        <FontAwesomeIcon icon={faFlag} size="2x" />
                     </Icon>
-                </Tag>
-            </Tag.Group>
-        </Content>
+                )}
+                <Heading size={6}>{airport.iata}</Heading>
+                <Heading size={6} subtitle weight="light">
+                    {airportHeading}
+                </Heading>
+                <Tag.Group
+                    hasAddons
+                    display="inline-flex"
+                    my={marginTagsY}
+                    mx={marginTagsX}
+                >
+                    <Tag color="dark">UTC{airport.timezone}</Tag>
+                    <Tag>
+                        <Icon>
+                            <FontAwesomeIcon icon={faGlobe} />
+                        </Icon>
+                    </Tag>
+                </Tag.Group>
+            </Content>
+
+            <Content textAlign="left" tablet={{ display: "hidden" }}>
+                <Columns breakpoint="mobile" vCentered>
+                    <Columns.Column narrow p={1}>
+                        {airport.countryCode ? (
+                            <Image
+                                src={`${API.defaults.baseURL}/metadata/countries/flag/?countryCode=${airport.countryCode}`}
+                                alt={
+                                    airport.country
+                                        ? `${airport.country} flag`
+                                        : "flag"
+                                }
+                                rounded
+                                style={{ width: 48, zIndex: 2 }}
+                                mx={2}
+                            />
+                        ) : (
+                            <Icon mt={2} mx={2} style={{ zIndex: 2 }}>
+                                <FontAwesomeIcon icon={faFlag} size="2x" />
+                            </Icon>
+                        )}
+                    </Columns.Column>
+                    <Columns.Column>
+                        <Heading size={6}>
+                            {airport.iata}
+                            <Tag.Group
+                                hasAddons
+                                display="inline-flex"
+                                my={marginTagsY}
+                                mx={marginTagsX}
+                            >
+                                <Tag color="dark">UTC{airport.timezone}</Tag>
+                                <Tag>
+                                    <Icon>
+                                        <FontAwesomeIcon icon={faGlobe} />
+                                    </Icon>
+                                </Tag>
+                            </Tag.Group>
+                        </Heading>
+                        <Heading size={6} subtitle weight="light">
+                            {airportHeading}
+                        </Heading>
+                    </Columns.Column>
+                </Columns>
+            </Content>
+        </>
     );
 }

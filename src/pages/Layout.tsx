@@ -10,7 +10,7 @@ export default function Layout({ children, navigate }: ILayout): JSX.Element {
     return (
         <>
             <Header navigate={navigate} />
-            <Container breakpoint="desktop" max p={4} pb={0}>
+            <Container breakpoint="fullhd" max p={4} pb={0}>
                 {children}
             </Container>
             <CustomFooter />
