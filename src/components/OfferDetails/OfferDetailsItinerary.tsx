@@ -82,6 +82,7 @@ export default function OfferDetailsItinerary({
                                     classId={segment.classId}
                                     departureTime={segment.departure.at}
                                     arrivalTime={segment.arrival.at}
+                                    showSeatmap={() => showSeatmap(segment.id)}
                                 />
                             </Columns.Column>
 

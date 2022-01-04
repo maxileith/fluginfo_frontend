@@ -44,27 +44,29 @@ export default function OfferDetailsAirport({
                         style={{ maxWidth: 80, margin: "0 auto", zIndex: 2 }}
                     />
                 ) : (
-                    <Icon mt={2} style={{ zIndex: 2 }}>
-                        <FontAwesomeIcon icon={faFlag} size="2x" />
+                    <Icon mt={2} style={{ zIndex: 2, position: "relative" }}>
+                        <FontAwesomeIcon icon={faFlag} size="3x" />
                     </Icon>
                 )}
                 <Heading size={6}>{airport.iata}</Heading>
                 <Heading size={6} subtitle weight="light">
                     {airportHeading}
                 </Heading>
-                <Tag.Group
-                    hasAddons
-                    display="inline-flex"
-                    my={marginTagsY}
-                    mx={marginTagsX}
-                >
-                    <Tag color="dark">UTC{airport.timezone}</Tag>
-                    <Tag>
-                        <Icon>
-                            <FontAwesomeIcon icon={faGlobe} />
-                        </Icon>
-                    </Tag>
-                </Tag.Group>
+                {airport.timezone && (
+                    <Tag.Group
+                        hasAddons
+                        display="inline-flex"
+                        my={marginTagsY}
+                        mx={marginTagsX}
+                    >
+                        <Tag color="dark">UTC{airport.timezone}</Tag>
+                        <Tag>
+                            <Icon>
+                                <FontAwesomeIcon icon={faGlobe} />
+                            </Icon>
+                        </Tag>
+                    </Tag.Group>
+                )}
             </Content>
 
             <Content textAlign="left" tablet={{ display: "hidden" }}>
@@ -83,7 +85,15 @@ export default function OfferDetailsAirport({
                                 mx={2}
                             />
                         ) : (
-                            <Icon mt={2} mx={2} style={{ zIndex: 2 }}>
+                            <Icon
+                                mt={2}
+                                mx={2}
+                                style={{
+                                    zIndex: 2,
+                                    position: "relative",
+                                    width: 48,
+                                }}
+                            >
                                 <FontAwesomeIcon icon={faFlag} size="2x" />
                             </Icon>
                         )}
@@ -91,19 +101,23 @@ export default function OfferDetailsAirport({
                     <Columns.Column>
                         <Heading size={6}>
                             {airport.iata}
-                            <Tag.Group
-                                hasAddons
-                                display="inline-flex"
-                                my={marginTagsY}
-                                mx={marginTagsX}
-                            >
-                                <Tag color="dark">UTC{airport.timezone}</Tag>
-                                <Tag>
-                                    <Icon>
-                                        <FontAwesomeIcon icon={faGlobe} />
-                                    </Icon>
-                                </Tag>
-                            </Tag.Group>
+                            {airport.timezone && (
+                                <Tag.Group
+                                    hasAddons
+                                    display="inline-flex"
+                                    my={marginTagsY}
+                                    mx={marginTagsX}
+                                >
+                                    <Tag color="dark">
+                                        UTC{airport.timezone}
+                                    </Tag>
+                                    <Tag>
+                                        <Icon>
+                                            <FontAwesomeIcon icon={faGlobe} />
+                                        </Icon>
+                                    </Tag>
+                                </Tag.Group>
+                            )}
                         </Heading>
                         <Heading size={6} subtitle weight="light">
                             {airportHeading}

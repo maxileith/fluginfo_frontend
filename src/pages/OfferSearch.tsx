@@ -84,7 +84,7 @@ export default function OfferSearch(): JSX.Element {
                     : undefined,
             returnDate: returnDate !== "" ? returnDate : undefined,
         };
-        API.get("offers/search/", { params: searchProps })
+        API.get("/offers/search/", { params: searchProps })
             .then((response) => {
                 setOffers(response.data.data as IApiOffer[]);
             })

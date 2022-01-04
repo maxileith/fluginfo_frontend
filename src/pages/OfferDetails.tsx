@@ -19,7 +19,7 @@ export default function OfferDetails(): JSX.Element {
     useEffect(() => {
         setLoading(true);
         setDetails(undefined);
-        API.get("offers/details/", { params: { id: hash } })
+        API.get("/offers/details/", { params: { id: hash } })
             .then((response) => {
                 setDetails(response.data as IApiOfferDetails);
             })

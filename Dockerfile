@@ -25,6 +25,7 @@ RUN npm run build
 FROM nginx:1.20-alpine
 # copy build to webroot
 COPY --from=build /app/build /usr/share/nginx/html
+RUN rm /usr/share/nginx/html/backendBaseUrl.txt
 # copy nginx configuration
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 # copy start script

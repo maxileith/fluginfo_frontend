@@ -10,6 +10,7 @@ import {
     Icon,
     Container,
     Columns,
+    Button,
 } from "react-bulma-components";
 import API from "../../Api";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -18,6 +19,7 @@ import {
     faPlane,
     faRoute,
     faStar,
+    faTh,
 } from "@fortawesome/free-solid-svg-icons";
 import travelClassEnhance from "../../utils/travelClassEnhance";
 
@@ -31,6 +33,7 @@ export interface IOfferDetailsFlight {
     classId: string;
     departureTime: string;
     arrivalTime: string;
+    showSeatmap: () => void;
 }
 
 export default function OfferDetailsFlight({
@@ -43,6 +46,7 @@ export default function OfferDetailsFlight({
     arrivalTime,
     cabin,
     classId,
+    showSeatmap,
 }: IOfferDetailsFlight): JSX.Element {
     const marginTagsRight: number = 2;
     const marginTagsY: number = 1;
@@ -93,6 +97,18 @@ export default function OfferDetailsFlight({
                     </Icon>
                 </Tag>
             </Tag.Group>
+            <hr style={{ margin: "0 0 .5rem 0" }} />
+            <Button
+                color="link"
+                onClick={showSeatmap}
+                type="button"
+                size="small"
+            >
+                <span>Seatmap</span>
+                <Icon ml={1}>
+                    <FontAwesomeIcon icon={faTh} />
+                </Icon>
+            </Button>
         </>
     );
 
@@ -115,11 +131,11 @@ export default function OfferDetailsFlight({
                         marginLeft: "-50%",
                     }}
                 >
-                    <Tag color="info">
+                    <Tag color="dark">
                         {moment(departureTime).format("h:mm a")}
                     </Tag>
                     <span style={{ width: 85, display: "inline-block" }} />
-                    <Tag color="info">
+                    <Tag color="dark">
                         {moment(arrivalTime).format("h:mm a")}
                     </Tag>
                 </Container>
@@ -171,7 +187,7 @@ export default function OfferDetailsFlight({
                             my={marginTagsY}
                             mr={marginTagsRight}
                         >
-                            <Tag color="info">
+                            <Tag color="dark">
                                 {moment(departureTime).format("h:mm a")}
                             </Tag>
                             <Tag>
@@ -179,7 +195,7 @@ export default function OfferDetailsFlight({
                                     <FontAwesomeIcon icon={faRoute} />
                                 </Icon>
                             </Tag>
-                            <Tag color="info">
+                            <Tag color="dark">
                                 {moment(arrivalTime).format("h:mm a")}
                             </Tag>
                         </Tag.Group>
