@@ -7,6 +7,7 @@ import API from "../Api";
 import IApiStatus from "../api/interfaces/IApiStatus";
 import { toast } from "react-toastify";
 import unknownErrorHandling from "../utils/unknownErrorHandling";
+import StatusDisplay from "../components/StatusDisplay/StatusDisplay";
 
 export default function Status(): JSX.Element {
     const [flightNumber, setFlightNumber] = useQueryState<string>(
@@ -72,6 +73,8 @@ export default function Status(): JSX.Element {
                 onSearch={handleSearch}
                 loading={loading}
             />
+
+            {status && <StatusDisplay status={status} />}
         </>
     );
 }

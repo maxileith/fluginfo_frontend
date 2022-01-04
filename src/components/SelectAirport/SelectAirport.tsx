@@ -71,6 +71,10 @@ export default function SelectAirport({
             })
             .catch((error) => {
                 setDropdownItems([] as ISearchDropdownItem[]);
+                if (error.response === undefined) {
+                    toast.error("Network Error.");
+                    return;
+                }
                 switch (error.response.status) {
                     case 400:
                         toast.error("Bad Request.");

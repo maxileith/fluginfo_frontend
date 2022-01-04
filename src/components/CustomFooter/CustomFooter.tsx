@@ -22,9 +22,8 @@ export default function CustomFooter(): JSX.Element {
             <Footer
                 py={4}
                 style={{
-                    margin: "2rem -1rem -1rem -1rem",
+                    margin: "2rem 0 -1rem 0",
                     visibility: "hidden",
-                    zIndex: -10,
                 }}
             >
                 {footerContent}
