@@ -9,7 +9,9 @@ instance
         instance.defaults.baseURL = response.data;
     })
     .catch(() => {
-        toast.error("Failed to determine backend base URL.");
+        toast.error(
+            "Failed to determine backend base URL. Fallback to default."
+        );
         instance.defaults.baseURL = "http://localhost:8000";
     });
 
