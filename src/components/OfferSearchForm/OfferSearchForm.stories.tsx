@@ -1,15 +1,15 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import FlightOfferForm, { IFlightOfferForm } from "./FlightOfferForm";
+import OfferSearchForm, { IOfferSearchForm } from "./OfferSearchForm";
 import moment from "moment";
 
 export default {
-    title: "FlightOfferForm/Standard",
-    component: FlightOfferForm,
-} as ComponentMeta<typeof FlightOfferForm>;
+    title: "OfferSearchForm/Standard",
+    component: OfferSearchForm,
+} as ComponentMeta<typeof OfferSearchForm>;
 
-const Template: ComponentStory<typeof FlightOfferForm> = (
-    args: IFlightOfferForm
-) => <FlightOfferForm {...args} />;
+const Template: ComponentStory<typeof OfferSearchForm> = (
+    args: IOfferSearchForm
+) => <OfferSearchForm {...args} />;
 
 export const Standard = Template.bind({});
 Standard.args = {

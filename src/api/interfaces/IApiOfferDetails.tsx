@@ -1,5 +1,6 @@
 import TApiTravelClass from "../types/TApiTravelClass";
-import { IApiDuration, IApiStop } from "./IApiOffer";
+import IApiDuration from "./IApiDuration";
+import IApiStop from "./IApiStop";
 
 export interface IApiSegment {
     id: number;

@@ -1,4 +1,3 @@
-import { IApiDuration } from "../../api/interfaces/IApiOffer";
 import TApiTravelClass from "../../api/types/TApiTravelClass";
 import moment from "moment";
 import {
@@ -22,6 +21,7 @@ import {
     faTh,
 } from "@fortawesome/free-solid-svg-icons";
 import travelClassEnhance from "../../utils/travelClassEnhance";
+import IApiDuration from "../../api/interfaces/IApiDuration";
 
 export interface IOfferDetailsFlight {
     flightNumber: string;

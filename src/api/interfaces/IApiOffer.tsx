@@ -1,19 +1,10 @@
 import TApiTravelClass from "../types/TApiTravelClass";
-import IApiAirport from "./IApiAirport";
-
-export interface IApiDuration {
-    hours: number;
-    minutes: number;
-}
+import IApiDuration from "./IApiDuration";
+import IApiStop from "./IApiStop";
 
 export interface IApiCarrier {
     carrierCode: string;
     carrier: string;
-}
-
-export interface IApiStop {
-    airport: IApiAirport;
-    at: string;
 }
 
 export interface IApiItinerary {

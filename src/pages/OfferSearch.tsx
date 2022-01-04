@@ -3,9 +3,9 @@ import { useState } from "react";
 import { Box, Heading, Pagination } from "react-bulma-components";
 import IApiOfferSearch from "../api/interfaces/IApiOfferSearch";
 import TApiTravelClass from "../api/types/TApiTravelClass";
-import FlightOfferForm, {
+import OfferSearchForm, {
     TListType,
-} from "../components/FlightOfferForm/FlightOfferForm";
+} from "../components/OfferSearchForm/OfferSearchForm";
 import API from "../Api";
 import IApiOffer from "../api/interfaces/IApiOffer";
 import OfferElement from "../components/OfferElement/OfferElement";
@@ -116,7 +116,7 @@ export default function OfferSearch(): JSX.Element {
             <Heading>Offer Search</Heading>
             <Heading subtitle>Find your desired flight.</Heading>
 
-            <FlightOfferForm
+            <OfferSearchForm
                 departureDate={departureDate}
                 setDepartureDate={setDepartureDate}
                 returnDate={returnDate}
