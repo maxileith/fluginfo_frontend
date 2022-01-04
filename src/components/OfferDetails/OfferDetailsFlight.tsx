@@ -115,11 +115,11 @@ export default function OfferDetailsFlight({
                         marginLeft: "-50%",
                     }}
                 >
-                    <Tag color="danger">
+                    <Tag color="info">
                         {moment(departureTime).format("h:mm a")}
                     </Tag>
                     <span style={{ width: 85, display: "inline-block" }} />
-                    <Tag color="danger">
+                    <Tag color="info">
                         {moment(arrivalTime).format("h:mm a")}
                     </Tag>
                 </Container>
@@ -171,7 +171,7 @@ export default function OfferDetailsFlight({
                             my={marginTagsY}
                             mr={marginTagsRight}
                         >
-                            <Tag color="danger">
+                            <Tag color="info">
                                 {moment(departureTime).format("h:mm a")}
                             </Tag>
                             <Tag>
@@ -179,7 +179,7 @@ export default function OfferDetailsFlight({
                                     <FontAwesomeIcon icon={faRoute} />
                                 </Icon>
                             </Tag>
-                            <Tag color="danger">
+                            <Tag color="info">
                                 {moment(arrivalTime).format("h:mm a")}
                             </Tag>
                         </Tag.Group>
