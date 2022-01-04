@@ -38,7 +38,7 @@ function NavigateWrapper(): JSX.Element {
                 autoClose={7000}
                 hideProgressBar={false}
                 pauseOnHover={true}
-                pauseOnFocusLoss={true}
+                pauseOnFocusLoss={false}
                 closeOnClick={false}
                 newestOnTop={true}
                 draggable={true}

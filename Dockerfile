@@ -27,7 +27,10 @@ FROM nginx:1.20-alpine
 COPY --from=build /app/build /usr/share/nginx/html
 # copy nginx configuration
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+# copy start script
+COPY ./docker-start.sh ./docker-start.sh
+RUN chmod +x ./docker-start.sh
 # open port 80
 EXPOSE 80
-# start server / run in the foreground
-CMD ["nginx", "-g", "daemon off;"]
+# start server
+CMD ["./docker-start.sh"]
