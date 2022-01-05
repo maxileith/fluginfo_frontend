@@ -8,8 +8,11 @@ import IApiStatus from "../api/interfaces/IApiStatus";
 import { toast } from "react-toastify";
 import unknownErrorHandling from "../utils/unknownErrorHandling";
 import StatusDisplay from "../components/StatusDisplay/StatusDisplay";
+import { NavigateFunction, useNavigate } from "react-router";
 
 export default function Status(): JSX.Element {
+    const navigate: NavigateFunction = useNavigate();
+
     const [flightNumber, setFlightNumber] = useQueryState<string>(
         "",
         "flightNumber"
@@ -31,7 +34,15 @@ export default function Status(): JSX.Element {
     };
 
     const showSeatmap = (classId: string) => {
-        console.log(classId);
+        if (status) {
+            navigate(
+                `/status/seatmap/${status.flightNumber}/${currentlyDisplayedDate}/${classId}`
+            );
+        } else {
+            toast.error(
+                "Could not determine flight information to show the seatmap."
+            );
+        }
     };
 
     const dateNotPast: boolean = date >= moment().format("YYYY-MM-DD");

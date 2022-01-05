@@ -103,6 +103,7 @@ export default function OfferDetailsFlight({
                 onClick={showSeatmap}
                 type="button"
                 size="small"
+                colorVariant="light"
             >
                 <span>Seatmap</span>
                 <Icon ml={1}>

@@ -1,6 +1,6 @@
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Columns, Heading, Icon, Table } from "react-bulma-components";
+import { Button, Columns, Heading, Icon, Table } from "react-bulma-components";
 import { IApiAvailableSeats } from "../../api/interfaces/IApiStatus";
 
 export interface IStatusDisplayAvailableSeats {
@@ -43,15 +43,16 @@ export default function StatusDisplayAvailableSeats({
                                         <th>{seat.classId}</th>
                                         <td>{seat.seats}</td>
                                         <td>
-                                            <a
-                                                onClick={(e) => {
-                                                    e.preventDefault();
+                                            <Button
+                                                onClick={() => {
                                                     showSeatmap(seat.classId);
                                                 }}
-                                                href="#!"
+                                                size="small"
+                                                color="link"
+                                                colorVariant="light"
                                             >
                                                 Seatmap
-                                            </a>
+                                            </Button>
                                         </td>
                                     </tr>
                                 ))}

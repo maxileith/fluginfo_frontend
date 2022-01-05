@@ -50,7 +50,7 @@ export default function OfferDetails(): JSX.Element {
     }, [hash, navigate]);
 
     const handleShowSeatmap = (segment: number) => {
-        console.log(`show seatmap: ${segment}`);
+        navigate(`/offer/seatmap/${hash}/${segment}`);
     };
 
     return (

@@ -8,7 +8,11 @@ export default function CustomFooter(): JSX.Element {
             <Content style={{ textAlign: "center" }}>
                 <p>
                     Made with <FontAwesomeIcon icon={faHeart} /> by{" "}
-                    <a href="https://leith.de" target="_blank" rel="noreferrer">
+                    <a
+                        href="https://de.linkedin.com/in/maxileith"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
                         Maximilian Leith
                     </a>
                     .

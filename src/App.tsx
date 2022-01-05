@@ -18,6 +18,7 @@ import { useEffect, useState } from "react";
 import CenteredLoader from "./components/CenteredLoader/CenteredLoader";
 import API from "./Api";
 import axios from "axios";
+import Seatmap from "./pages/Seatmap";
 
 export default function App() {
     const [baseURL, setBaseURL] = useState<string>();
@@ -63,7 +64,15 @@ function NavigateWrapper(): JSX.Element {
             <Routes>
                 <Route path="/offer/search" element={<OfferSearch />} />
                 <Route path="/offer/details/:hash" element={<OfferDetails />} />
+                <Route
+                    path="/offer/seatmap/:hash/:segmentId"
+                    element={<Seatmap from="offerDetails" />}
+                />
                 <Route path="/status" element={<Status />} />
+                <Route
+                    path="/status/seatmap/:flightNumber/:date/:classId"
+                    element={<Seatmap from="status" />}
+                />
                 <Route path="*" element={<Navigate to="/offer/search" />} />
             </Routes>
             <ToastContainer
