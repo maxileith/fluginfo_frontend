@@ -27,4 +27,5 @@ Standard.args = {
     defaultLabel: {
         title: "default",
     },
+    disabled: false,
 };

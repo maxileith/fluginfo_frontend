@@ -16,6 +16,7 @@ export interface ISearchDropdown {
     searchPlaceholder?: string;
     defaultLabel?: ISearchDropdownLabel;
     waitUntilSearch?: number;
+    disabled?: boolean;
 }
 
 export default function SearchDropdown({
@@ -25,6 +26,7 @@ export default function SearchDropdown({
     searchPlaceholder,
     defaultLabel,
     waitUntilSearch,
+    disabled,
 }: ISearchDropdown): JSX.Element {
     const [keyword, setKeyword] = useState<string>("");
     const keywordRef = useRef(keyword);
@@ -57,6 +59,7 @@ export default function SearchDropdown({
                 </Icon>
             }
             onClick={(e: React.MouseEvent) => e.preventDefault()}
+            disabled={disabled}
         >
             <SearchDropdownInput
                 value={keyword}

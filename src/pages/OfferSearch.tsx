@@ -148,22 +148,24 @@ export default function OfferSearch(): JSX.Element {
                 onSearch={handleSearch}
                 loading={loading}
             />
-            <Box invisible={fresh}>
-                <p>
-                    {offers.length ? (
-                        <>
-                            We have found{" "}
-                            <strong>{offers.length} flights</strong> matching
-                            your search criteria.
-                        </>
-                    ) : (
-                        <>
-                            We have found <strong>no flights</strong> matching
-                            your search criteria.
-                        </>
-                    )}
-                </p>
-            </Box>
+            {!fresh && !loading && (
+                <Box>
+                    <p>
+                        {offers.length ? (
+                            <>
+                                We have found{" "}
+                                <strong>{offers.length} flights</strong>{" "}
+                                matching your search criteria.
+                            </>
+                        ) : (
+                            <>
+                                We have found <strong>no flights</strong>{" "}
+                                matching your search criteria.
+                            </>
+                        )}
+                    </p>
+                </Box>
+            )}
             {offers
                 .slice(itemsPerPage * (page - 1), itemsPerPage * page)
                 .map((offer) => (

@@ -120,7 +120,6 @@ export default function OfferSearchForm({
                 onSubmit={(e) => {
                     e.preventDefault();
                     readyForTakeOff && !loading && onSearch();
-                    console.log("test");
                 }}
             >
                 <Columns>
@@ -133,6 +132,7 @@ export default function OfferSearchForm({
                                         type="origin"
                                         onSelect={setOriginAirport}
                                         defaultAirport={defaultOriginAirport}
+                                        disabled={loading}
                                     />
                                 </Form.Control>
                                 <Form.Control>
@@ -142,6 +142,7 @@ export default function OfferSearchForm({
                                         defaultAirport={
                                             defaultDestinationAirport
                                         }
+                                        disabled={loading}
                                     />
                                 </Form.Control>
                             </Form.Field>
@@ -153,6 +154,7 @@ export default function OfferSearchForm({
                                     onChange={(
                                         e: ChangeEvent<HTMLInputElement>
                                     ) => setNonStop(e.target.checked)}
+                                    disabled={loading}
                                 >
                                     Non-stop only
                                 </Form.Checkbox>
@@ -172,6 +174,7 @@ export default function OfferSearchForm({
                                         ) => setDepartureDate(e.target.value)}
                                         required
                                         min={moment().format("YYYY-MM-DD")}
+                                        disabled={loading}
                                     />
                                     <Icon align="left">
                                         <FontAwesomeIcon icon={faCalendar} />
@@ -185,6 +188,7 @@ export default function OfferSearchForm({
                                             e: ChangeEvent<HTMLInputElement>
                                         ) => setReturnDate(e.target.value)}
                                         min={departureDate}
+                                        disabled={loading}
                                     />
                                     <Icon align="left">
                                         <FontAwesomeIcon icon={faCalendar} />
@@ -205,6 +209,7 @@ export default function OfferSearchForm({
                                                 : ""
                                         )
                                     }
+                                    disabled={loading}
                                 >
                                     Return flight included
                                 </Form.Checkbox>
@@ -228,6 +233,7 @@ export default function OfferSearchForm({
                                         required
                                         min={1}
                                         max={9}
+                                        disabled={loading}
                                     />
                                     <Icon align="left">
                                         <FontAwesomeIcon icon={faMale} />
@@ -246,6 +252,7 @@ export default function OfferSearchForm({
                                         required
                                         min={0}
                                         max={8}
+                                        disabled={loading}
                                     />
                                     <Icon align="left">
                                         <FontAwesomeIcon icon={faChild} />
@@ -262,6 +269,7 @@ export default function OfferSearchForm({
                                         required
                                         min={0}
                                         max={8}
+                                        disabled={loading}
                                     />
                                     <Icon align="left">
                                         <FontAwesomeIcon icon={faBaby} />
@@ -284,6 +292,7 @@ export default function OfferSearchForm({
                                     }
                                     required
                                     value={travelClass}
+                                    disabled={loading}
                                 >
                                     <option value="ALL">
                                         {travelClassEnhance("ALL")}
@@ -328,6 +337,7 @@ export default function OfferSearchForm({
                                             )
                                         }
                                         value="whitelist"
+                                        disabled={loading}
                                     >
                                         Whitelist
                                     </Form.Radio>
@@ -344,6 +354,7 @@ export default function OfferSearchForm({
                                             )
                                         }
                                         value="blacklist"
+                                        disabled={loading}
                                     >
                                         Blacklist
                                     </Form.Radio>
@@ -362,6 +373,7 @@ export default function OfferSearchForm({
                                         ) => {
                                             updateListValue(e.target.value);
                                         }}
+                                        disabled={loading}
                                     />
                                 </Form.Control>
                             </Form.Field>
@@ -376,7 +388,9 @@ export default function OfferSearchForm({
                         color="info"
                         colorVariant="light"
                         disabled={
-                            airlineBlacklist !== "" || airlineWhitelist !== ""
+                            loading ||
+                            airlineBlacklist !== "" ||
+                            airlineWhitelist !== ""
                         }
                     >
                         <span>

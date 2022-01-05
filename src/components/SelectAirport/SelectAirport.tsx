@@ -15,12 +15,14 @@ export interface ISelectAirport {
     onSelect: (iata: string) => void;
     type: "origin" | "destination";
     defaultAirport?: string;
+    disabled?: boolean;
 }
 
 export default function SelectAirport({
     onSelect,
     type,
     defaultAirport,
+    disabled,
 }: ISelectAirport): JSX.Element {
     const [dropdownItems, setDropdownItems] = useState<ISearchDropdownItem[]>(
         []
@@ -95,6 +97,7 @@ export default function SelectAirport({
             onSearch={handleSearch}
             defaultLabel={defaultLabel}
             searchPlaceholder="Search"
+            disabled={disabled}
         />
     );
 }

@@ -45,6 +45,7 @@ export default function StatusSearchForm({
                                     ) => {
                                         setFlightNumber(e.target.value);
                                     }}
+                                    disabled={loading}
                                 />
                             </Form.Control>
                         </Form.Field>
@@ -61,6 +62,7 @@ export default function StatusSearchForm({
                                     ) => setDate(e.target.value)}
                                     required
                                     min={moment().format("YYYY-MM-DD")}
+                                    disabled={loading}
                                 />
                                 <Icon align="left">
                                     <FontAwesomeIcon icon={faCalendar} />
