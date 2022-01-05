@@ -1,5 +1,4 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import moment from "moment";
 import StatusDisplay, { IStatusDisplay } from "./StatusDisplay";
 
 export default {
@@ -11,8 +10,8 @@ const Template: ComponentStory<typeof StatusDisplay> = (
     args: IStatusDisplay
 ) => <StatusDisplay {...args} />;
 
-export const Standard = Template.bind({});
-Standard.args = {
+export const Overview = Template.bind({});
+Overview.args = {
     status: {
         flightNumber: "LH438",
         carrierCode: "LH",
@@ -64,4 +63,5 @@ Standard.args = {
         ],
         carrier: "LUFTHANSA",
     },
+    showSeatmap: (s) => console.log(`seatmap triggered: ${s}`),
 };

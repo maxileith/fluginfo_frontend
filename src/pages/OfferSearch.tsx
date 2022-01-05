@@ -65,6 +65,7 @@ export default function OfferSearch(): JSX.Element {
     const handleSearch = (): void => {
         setPage(1);
         setLoading(true);
+        setOffers([] as IApiOffer[]);
         var searchProps: IApiOfferSearch = {
             adults: adults,
             children: children,
@@ -89,7 +90,10 @@ export default function OfferSearch(): JSX.Element {
                 setOffers(response.data.data as IApiOffer[]);
             })
             .catch((error) => {
-                setOffers([] as IApiOffer[]);
+                if (error.response === undefined) {
+                    toast.error("Network Error.");
+                    return;
+                }
                 switch (error.response.status) {
                     case 400:
                         toast.error("Bad Request.");

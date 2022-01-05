@@ -25,17 +25,24 @@ export default function OfferDetails(): JSX.Element {
             })
             .catch((error) => {
                 setDetails(undefined);
-                switch (error.response.status) {
-                    case 404:
-                        toast.error(
-                            "The selected offer does not exist or has expired."
-                        );
-                        navigate("/offer/search", { replace: true });
-                        break;
-                    default:
-                        unknownErrorHandling(error.response.status);
-                        break;
+                if (error.response === undefined) {
+                    toast.error("Network Error.");
+                } else {
+                    switch (error.response.status) {
+                        case 400:
+                            toast.error("Bad Request.");
+                            break;
+                        case 404:
+                            toast.error(
+                                "The selected offer does not exist or has expired."
+                            );
+                            break;
+                        default:
+                            unknownErrorHandling(error.response.status);
+                            break;
+                    }
                 }
+                navigate("/offer/search", { replace: true });
             })
             .finally(() => {
                 setLoading(false);

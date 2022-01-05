@@ -26,8 +26,17 @@ export default function Status(): JSX.Element {
         setFlightNumber(flightNumber.toUpperCase());
     };
 
+    const showSeatmap = (classId: string) => {
+        console.log(classId);
+    };
+
+    const dateNotPast: boolean = date >= moment().format("YYYY-MM-DD");
+    const flightNumberIsSet: boolean = flightNumber !== "";
+    const readyForTakeOff: boolean = dateNotPast && flightNumberIsSet;
+
     const handleSearch = () => {
         setLoading(true);
+        setStatus(undefined);
         API.get("/availability/exact/", {
             params: {
                 date: date,
@@ -38,7 +47,10 @@ export default function Status(): JSX.Element {
                 setStatus(response.data as IApiStatus);
             })
             .catch((error) => {
-                setStatus(undefined);
+                if (error.response === undefined) {
+                    toast.error("Network Error.");
+                    return;
+                }
                 switch (error.response.status) {
                     case 400:
                         toast.error("Bad Request.");
@@ -57,8 +69,10 @@ export default function Status(): JSX.Element {
     };
 
     useEffect(() => {
-        console.log(status);
-    }, [status]);
+        if (readyForTakeOff) {
+            handleSearch();
+        }
+    }, []);
 
     return (
         <>
@@ -71,10 +85,13 @@ export default function Status(): JSX.Element {
                 date={date}
                 setDate={setDate}
                 onSearch={handleSearch}
+                readyForTakeOff={readyForTakeOff}
                 loading={loading}
             />
 
-            {status && <StatusDisplay status={status} />}
+            {status && (
+                <StatusDisplay status={status} showSeatmap={showSeatmap} />
+            )}
         </>
     );
 }

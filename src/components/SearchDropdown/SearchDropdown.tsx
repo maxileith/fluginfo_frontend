@@ -63,6 +63,7 @@ export default function SearchDropdown({
                 onChange={handleSearch}
                 placeholder={searchPlaceholder}
             />
+            <Dropdown.Divider />
             {dropdownItems.map((item) => (
                 <SearchDropdownItem
                     key={item.value}
