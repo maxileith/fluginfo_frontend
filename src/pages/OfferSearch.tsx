@@ -1,5 +1,5 @@
 import moment from "moment";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Box, Heading, Pagination } from "react-bulma-components";
 import IApiOfferSearch from "../api/interfaces/IApiOfferSearch";
 import TApiTravelClass from "../api/types/TApiTravelClass";
@@ -13,8 +13,11 @@ import useQueryState from "../utils/useQueryState";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import unknownErrorHandling from "../utils/unknownErrorHandling";
+import useDocumentTitle from "../utils/useDocumentTitle";
 
 export default function OfferSearch(): JSX.Element {
+    const navigate = useNavigate();
+
     const [departureDate, setDepartureDate] = useQueryState<string>(
         moment().format("YYYY-MM-DD"),
         "departureDate",
@@ -60,7 +63,14 @@ export default function OfferSearch(): JSX.Element {
     const [page, setPage] = useQueryState<number>(1, "page");
     const itemsPerPage: number = 20;
 
-    const navigate = useNavigate();
+    const { setDocumentTitle } = useDocumentTitle();
+    useEffect(() => {
+        setDocumentTitle(
+            originAirport !== "" && destinationAirport !== ""
+                ? `Offer Search - ${originAirport} -> ${destinationAirport}`
+                : "Offer Search"
+        );
+    }, [setDocumentTitle, originAirport, destinationAirport]);
 
     const handleSearch = (): void => {
         setPage(1);

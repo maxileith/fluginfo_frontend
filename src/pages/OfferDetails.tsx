@@ -7,6 +7,7 @@ import { Heading } from "react-bulma-components";
 import OD from "../components/OfferDetails/OfferDetails";
 import { toast } from "react-toastify";
 import unknownErrorHandling from "../utils/unknownErrorHandling";
+import useDocumentTitle from "../utils/useDocumentTitle";
 
 export default function OfferDetails(): JSX.Element {
     const { hash } = useParams();
@@ -48,6 +49,24 @@ export default function OfferDetails(): JSX.Element {
                 setLoading(false);
             });
     }, [hash, navigate]);
+
+    const { setDocumentTitle } = useDocumentTitle();
+    useEffect(() => {
+        if (details === undefined) {
+            setDocumentTitle("Offer Details");
+        } else {
+            var departureIata: string =
+                details.itineraries[0].segments[0].departure.airport.iata;
+            var arrivalIata: string =
+                details.itineraries[details.itineraries.length - 1].segments[
+                    details.itineraries[details.itineraries.length - 1].segments
+                        .length - 1
+                ].arrival.airport.iata;
+            setDocumentTitle(
+                `Offer Details - ${departureIata} -> ${arrivalIata}`
+            );
+        }
+    }, [setDocumentTitle, details]);
 
     const handleShowSeatmap = (segment: number) => {
         navigate(`/offer/seatmap/${hash}/${segment}`);

@@ -1,13 +1,6 @@
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    Box,
-    Button,
-    Columns,
-    Heading,
-    Icon,
-    Table,
-} from "react-bulma-components";
+import { Button, Columns, Heading, Icon, Table } from "react-bulma-components";
 import { IApiAvailableSeats } from "../../api/interfaces/IApiStatus";
 
 export interface IStatusDisplayAvailableSeats {

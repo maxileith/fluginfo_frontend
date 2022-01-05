@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 import unknownErrorHandling from "../utils/unknownErrorHandling";
 import StatusDisplay from "../components/StatusDisplay/StatusDisplay";
 import { NavigateFunction, useNavigate } from "react-router";
+import useDocumentTitle from "../utils/useDocumentTitle";
 
 export default function Status(): JSX.Element {
     const navigate: NavigateFunction = useNavigate();
@@ -32,6 +33,11 @@ export default function Status(): JSX.Element {
     const handleFlightNumberChange = (flightNumber: string) => {
         setFlightNumber(flightNumber.toUpperCase());
     };
+
+    const { setDocumentTitle } = useDocumentTitle();
+    useEffect(() => {
+        setDocumentTitle("Status");
+    }, [setDocumentTitle]);
 
     const showSeatmap = (classId: string) => {
         if (status) {
