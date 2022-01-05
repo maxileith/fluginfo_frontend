@@ -1,6 +1,13 @@
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button, Columns, Heading, Icon, Table } from "react-bulma-components";
+import {
+    Box,
+    Button,
+    Columns,
+    Heading,
+    Icon,
+    Table,
+} from "react-bulma-components";
 import { IApiAvailableSeats } from "../../api/interfaces/IApiStatus";
 
 export interface IStatusDisplayAvailableSeats {
@@ -12,16 +19,6 @@ export default function StatusDisplayAvailableSeats({
     availableSeats,
     showSeatmap,
 }: IStatusDisplayAvailableSeats): JSX.Element {
-    var columns: number = 5;
-    var rows: number = Math.ceil(availableSeats.length / columns);
-
-    var availableSeatsSlices: IApiAvailableSeats[][] = [];
-    for (let i: number = 0; i < availableSeats.length; i += rows) {
-        var start: number = i;
-        var end: number = Math.min(start + rows, availableSeats.length);
-        availableSeatsSlices.push(availableSeats.slice(start, end));
-    }
-
     return (
         <>
             <Heading size={4}>
@@ -33,29 +30,36 @@ export default function StatusDisplayAvailableSeats({
             <Heading size={4} subtitle>
                 Availability by classes
             </Heading>
-            <Columns breakpoint="mobile">
-                {availableSeatsSlices.map((slice, index) => (
-                    <Columns.Column narrow key={index}>
+            <Columns breakpoint="mobile" multiline>
+                {availableSeats.map((seats) => (
+                    <Columns.Column
+                        key={seats.classId}
+                        paddingless
+                        mx={2}
+                        narrow
+                    >
                         <Table>
                             <tbody>
-                                {slice.map((seat) => (
-                                    <tr key={seat.classId}>
-                                        <th>{seat.classId}</th>
-                                        <td>{seat.seats}</td>
-                                        <td>
-                                            <Button
-                                                onClick={() => {
-                                                    showSeatmap(seat.classId);
-                                                }}
-                                                size="small"
-                                                color="link"
-                                                colorVariant="light"
-                                            >
-                                                Seatmap
-                                            </Button>
-                                        </td>
-                                    </tr>
-                                ))}
+                                <tr>
+                                    <th style={{ padding: ".5em .375em" }}>
+                                        {seats.classId}
+                                    </th>
+                                    <td style={{ padding: ".5em .375em" }}>
+                                        {seats.seats}
+                                    </td>
+                                    <td style={{ padding: ".5em .375em" }}>
+                                        <Button
+                                            onClick={() => {
+                                                showSeatmap(seats.classId);
+                                            }}
+                                            size="small"
+                                            color="link"
+                                            colorVariant="light"
+                                        >
+                                            Seatmap
+                                        </Button>
+                                    </td>
+                                </tr>
                             </tbody>
                         </Table>
                     </Columns.Column>
