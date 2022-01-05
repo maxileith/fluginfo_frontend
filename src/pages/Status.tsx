@@ -19,6 +19,10 @@ export default function Status(): JSX.Element {
         "date",
         { alwaysInUrl: true }
     );
+    const [currentlyDisplayedFlightNumber, setCurrentDisplayedFlightNumber] =
+        useState<string>("");
+    const [currentlyDisplayedDate, setCurrentDisplayedDate] =
+        useState<string>("");
     const [loading, setLoading] = useState<boolean>(false);
     const [status, setStatus] = useState<IApiStatus | undefined>(undefined);
 
@@ -32,9 +36,15 @@ export default function Status(): JSX.Element {
 
     const dateNotPast: boolean = date >= moment().format("YYYY-MM-DD");
     const flightNumberIsSet: boolean = flightNumber !== "";
-    const readyForTakeOff: boolean = dateNotPast && flightNumberIsSet;
+    const otherThanPrevRequest: boolean =
+        flightNumber !== currentlyDisplayedFlightNumber ||
+        date !== currentlyDisplayedDate;
+    const readyForTakeOff: boolean =
+        dateNotPast && flightNumberIsSet && otherThanPrevRequest;
 
     const handleSearch = () => {
+        setCurrentDisplayedFlightNumber(flightNumber);
+        setCurrentDisplayedDate(date);
         setLoading(true);
         setStatus(undefined);
         API.get("/availability/exact/", {

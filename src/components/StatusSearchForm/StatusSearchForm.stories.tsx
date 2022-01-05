@@ -17,5 +17,6 @@ Standard.args = {
     setFlightNumber: (s) => console.log(`flightNumber: ${s}`),
     date: moment().format("YYYY-MM-DD"),
     setDate: (s) => console.log(`date: ${s}`),
+    readyForTakeOff: true,
     onSearch: () => console.log("search triggered"),
 };
