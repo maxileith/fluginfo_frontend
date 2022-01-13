@@ -1,5 +1,6 @@
 import TApiTravelClass from "../types/TApiTravelClass";
 import IApiDuration from "./IApiDuration";
+import IApiPrice from "./IApiPrice";
 import IApiStop from "./IApiStop";
 
 export interface IApiSegment {
@@ -21,6 +22,6 @@ export interface IApiItinerary {
 }
 
 export default interface IApiOfferDetails {
-    price: string;
+    price: IApiPrice;
     itineraries: IApiItinerary[];
 }

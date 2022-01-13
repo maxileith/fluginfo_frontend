@@ -27,7 +27,12 @@ export default function OfferElement({
                 </Columns.Column>
                 <hr />
                 <Columns.Column size={3} textAlign="center">
-                    <Heading>{offer.price}</Heading>
+                    <Heading>
+                        {offer.price.value}
+                        {offer.price.currency === "EURO"
+                            ? "€"
+                            : ` ${offer.price.currency}`}
+                    </Heading>
                     <Button
                         onClick={() => showDetails(offer.hash)}
                         color="info"

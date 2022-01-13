@@ -1,23 +1,31 @@
 import moment from "moment";
 import { useEffect, useState } from "react";
-import { Box, Heading, Pagination } from "react-bulma-components";
+import { Columns, Heading, Message, Pagination } from "react-bulma-components";
 import IApiOfferSearch from "../api/interfaces/IApiOfferSearch";
 import TApiTravelClass from "../api/types/TApiTravelClass";
 import OfferSearchForm, {
     TListType,
 } from "../components/OfferSearchForm/OfferSearchForm";
 import API from "../Api";
-import IApiOffer from "../api/interfaces/IApiOffer";
+import IApiOffer, { IApiCarrier } from "../api/interfaces/IApiOffer";
 import OfferElement from "../components/OfferElement/OfferElement";
 import useQueryState from "../utils/useQueryState";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import unknownErrorHandling from "../utils/unknownErrorHandling";
 import useDocumentTitle from "../utils/useDocumentTitle";
+import OfferFilterForm, {
+    IOfferFilterForm,
+    IOfferFilterFormAirlines,
+    IOfferFilterFormNumberOfStops,
+} from "../components/OfferFilterForm/OfferFilterForm";
+import * as OfferFilterFormStories from "../components/OfferFilterForm/OfferFilterForm.stories";
+import IApiDuration from "../api/interfaces/IApiDuration";
 
 export default function OfferSearch(): JSX.Element {
     const navigate = useNavigate();
 
+    // state for the offer search form
     const [departureDate, setDepartureDate] = useQueryState<string>(
         moment().format("YYYY-MM-DD"),
         "departureDate",
@@ -56,10 +64,12 @@ export default function OfferSearch(): JSX.Element {
         "airlineListType"
     );
 
+    // states for offers, etc.
     const [offers, setOffers] = useState<IApiOffer[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
     const [fresh, setFresh] = useState<boolean>(true);
 
+    // states for page settings
     const [page, setPage] = useQueryState<number>(1, "page");
     const itemsPerPage: number = 20;
 
@@ -71,6 +81,36 @@ export default function OfferSearch(): JSX.Element {
                 : "Offer Search"
         );
     }, [setDocumentTitle, originAirport, destinationAirport]);
+
+    // everything that is needed for filtering the offers
+    const [filterOffers, setFilterOffers] = useState<IApiOffer[]>([]);
+    const [filterAirlines, setFilterAirlines] = useState<
+        IOfferFilterFormAirlines[]
+    >([]);
+    const [filterNumberOfStops, setFilterNumberOfStops] = useState<
+        IOfferFilterFormNumberOfStops[]
+    >([]);
+    const [filterPriceMin, setFilterPriceMin] = useState<number>(0);
+    const [filterPriceMax, setFilterPriceMax] = useState<number>(0);
+    const [filterPriceLimit, setFilterPriceLimit] = useState<number>(0);
+    const [filterDurationMin, setDurationMin] = useState<IApiDuration>({
+        hours: 0,
+        minutes: 0,
+    });
+    const [filterDurationMax, setDurationMax] = useState<IApiDuration>({
+        hours: 0,
+        minutes: 0,
+    });
+    const [filterDurationLimit, setDurationLimit] = useState<IApiDuration>({
+        hours: 0,
+        minutes: 0,
+    });
+
+    // prepare the filter for new search results each time there
+    // are new offers
+    useEffect(() => {
+        setFilterOffers(offers);
+    }, [offers]);
 
     const handleSearch = (): void => {
         setPage(1);
@@ -159,34 +199,63 @@ export default function OfferSearch(): JSX.Element {
                 loading={loading}
             />
             {!fresh && !loading && (
-                <Box>
-                    <p>
-                        {offers.length ? (
-                            <>
+                <>
+                    {filterOffers.length ? (
+                        <Message color="success">
+                            <Message.Body>
                                 We have found{" "}
-                                <strong>{offers.length} flights</strong>{" "}
+                                <strong>{filterOffers.length} flights</strong>{" "}
                                 matching your search criteria.
-                            </>
-                        ) : (
-                            <>
+                            </Message.Body>
+                        </Message>
+                    ) : (
+                        <Message color="warning">
+                            <Message.Body>
                                 We have found <strong>no flights</strong>{" "}
                                 matching your search criteria.
-                            </>
-                        )}
-                    </p>
-                </Box>
+                            </Message.Body>
+                        </Message>
+                    )}
+                    <Columns>
+                        <Columns.Column>
+                            {filterOffers
+                                .slice(
+                                    itemsPerPage * (page - 1),
+                                    itemsPerPage * page
+                                )
+                                .map((offer) => (
+                                    <OfferElement
+                                        key={offer.hash}
+                                        offer={offer}
+                                        showDetails={handleDetails}
+                                    />
+                                ))}
+                        </Columns.Column>
+                        <Columns.Column narrow>
+                            {offers.length !== 0 && (
+                                <OfferFilterForm
+                                    airlines={filterAirlines}
+                                    onChangeAirline={(a, b) => {}}
+                                    numberOfStops={filterNumberOfStops}
+                                    onChangeNumberOfStops={(a, b) => {}}
+                                    priceMin={filterPriceMin}
+                                    priceMax={filterPriceMax}
+                                    priceLimit={filterPriceLimit}
+                                    onChangePriceLimit={setFilterPriceLimit}
+                                    durationMin={filterDurationMin}
+                                    durationMax={filterDurationMax}
+                                    durationLimit={filterDurationLimit}
+                                    onChangeDurationLimit={setDurationLimit}
+                                    numberOfFilteredOffers={filterOffers.length}
+                                    numberOfTotalOffers={offers.length}
+                                />
+                            )}
+                        </Columns.Column>
+                    </Columns>
+                </>
             )}
-            {offers
-                .slice(itemsPerPage * (page - 1), itemsPerPage * page)
-                .map((offer) => (
-                    <OfferElement
-                        key={offer.hash}
-                        offer={offer}
-                        showDetails={handleDetails}
-                    />
-                ))}
             <Pagination
-                total={Math.ceil(offers.length / itemsPerPage) || 1}
+                total={Math.ceil(filterOffers.length / itemsPerPage) || 1}
                 current={page}
                 delta={2}
                 showPrevNext={false}

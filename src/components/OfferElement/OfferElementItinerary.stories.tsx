@@ -5,7 +5,7 @@ import OfferElementItinerary, {
 } from "./OfferElementItinerary";
 
 export default {
-    title: "OfferElementItinerary/Standard",
+    title: "OfferComponents/OfferElementItinerary",
     component: OfferElementItinerary,
 } as ComponentMeta<typeof OfferElementItinerary>;
 

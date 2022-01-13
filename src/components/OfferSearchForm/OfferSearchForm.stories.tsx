@@ -3,7 +3,7 @@ import OfferSearchForm, { IOfferSearchForm } from "./OfferSearchForm";
 import moment from "moment";
 
 export default {
-    title: "OfferSearchForm/Standard",
+    title: "OfferComponents/SearchForm",
     component: OfferSearchForm,
 } as ComponentMeta<typeof OfferSearchForm>;
 

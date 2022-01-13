@@ -1,4 +1,3 @@
-import React from "react";
 import { Heading } from "react-bulma-components";
 import IApiOfferDetails from "../../api/interfaces/IApiOfferDetails";
 import OfferDetailsItinerary from "./OfferDetailsItinerary";
@@ -23,10 +22,16 @@ export default function OfferDetails({
             ))}
             <hr />
             <Heading textAlign="right" mobile={{ display: "hidden" }}>
-                {details.price}
+                {details.price.value}
+                {details.price.currency === "EURO"
+                    ? "€"
+                    : ` ${details.price.currency}`}
             </Heading>
             <Heading textAlign="center" tablet={{ display: "hidden" }}>
-                {details.price}
+                {details.price.value}
+                {details.price.currency === "EURO"
+                    ? "€"
+                    : ` ${details.price.currency}`}
             </Heading>
         </>
     );
