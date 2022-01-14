@@ -337,7 +337,7 @@ export default function OfferSearch(): JSX.Element {
                             </Message.Body>
                         </Message>
                     )}
-                    <Columns>
+                    <Columns breakpoint="desktop">
                         <Columns.Column narrow>
                             {offers.length !== 0 && (
                                 <OfferFilterForm
