@@ -65,9 +65,9 @@ export default function OfferSearch(): JSX.Element {
 
     // states for page settings
     const [page, setPage] = useQueryState<number>(1, "page");
-    const [itemsPerPage, setItemsPerPage] = useQueryState<number>(
+    const [offersPerPage, setOffersPerPage] = useQueryState<number>(
         25,
-        "itemsPerPage"
+        "offersPerPage"
     );
 
     const { setDocumentTitle } = useDocumentTitle();
@@ -375,8 +375,8 @@ export default function OfferSearch(): JSX.Element {
                         <Columns.Column>
                             {filteredOffers
                                 .slice(
-                                    itemsPerPage * (page - 1),
-                                    itemsPerPage * page
+                                    offersPerPage * (page - 1),
+                                    offersPerPage * page
                                 )
                                 .map((offer) => (
                                     <OfferElement
@@ -390,7 +390,7 @@ export default function OfferSearch(): JSX.Element {
                 </>
             )}
             <Pagination
-                total={Math.ceil(filteredOffers.length / itemsPerPage) || 1}
+                total={Math.ceil(filteredOffers.length / offersPerPage) || 1}
                 current={page}
                 delta={2}
                 showPrevNext={false}
