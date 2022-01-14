@@ -1,5 +1,5 @@
 import { ChangeEvent } from "react";
-import { Box, Columns, Form } from "react-bulma-components";
+import { Box, Form } from "react-bulma-components";
 import { IApiCarrier } from "../../api/interfaces/IApiOffer";
 import RangeInput from "../RangeInput/RangeInput";
 
@@ -76,6 +76,7 @@ export default function OfferFilterForm({
                         onChange={onChangePriceLimit}
                         color="info"
                         isCircle
+                        waitUntilChange={250}
                     />
                 </Form.Control>
             </Form.Field>
@@ -96,6 +97,7 @@ export default function OfferFilterForm({
                         }}
                         color="info"
                         isCircle
+                        waitUntilChange={250}
                     />
                 </Form.Control>
             </Form.Field>
