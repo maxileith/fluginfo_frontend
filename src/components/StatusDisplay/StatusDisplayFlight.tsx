@@ -8,11 +8,10 @@ import {
     Table,
     Image,
 } from "react-bulma-components";
-import IApiDuration from "../../api/interfaces/IApiDuration";
 import API from "../../Api";
 
 export interface IStatusDisplayFlight {
-    duration: IApiDuration;
+    duration: number;
     flightNumber: string;
     carrier?: string;
     carrierCode: string;
@@ -35,8 +34,9 @@ export default function StatusDisplayFlight({
                 Flight
             </Heading>
             <Heading size={4} subtitle>
-                {duration.hours !== 0 && `${duration.hours}h `}
-                {`${duration.minutes}min`}
+                {Math.floor(duration / 60) !== 0 &&
+                    `${Math.floor(duration / 60)}h `}
+                {`${duration % 60}min`}
             </Heading>
             <Table>
                 <tbody>

@@ -1,5 +1,4 @@
 import TApiTravelClass from "../types/TApiTravelClass";
-import IApiDuration from "./IApiDuration";
 import IApiPrice from "./IApiPrice";
 import IApiStop from "./IApiStop";
 
@@ -9,7 +8,7 @@ export interface IApiCarrier {
 }
 
 export interface IApiItinerary {
-    duration: IApiDuration;
+    duration: number;
     stops: number;
     carriers: IApiCarrier[];
     departure: IApiStop;

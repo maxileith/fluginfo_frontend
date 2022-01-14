@@ -83,9 +83,9 @@ export default function OfferElementItinerary({
                             mx={marginTagsX}
                         >
                             <Tag color="info">
-                                {itinerary.duration.hours !== 0 &&
-                                    `${itinerary.duration.hours}h `}
-                                {`${itinerary.duration.minutes}min`}
+                                {Math.floor(itinerary.duration / 60) !== 0 &&
+                                    `${Math.floor(itinerary.duration / 60)}h `}
+                                {`${itinerary.duration % 60}min`}
                             </Tag>
                             <Tag>
                                 <Icon>

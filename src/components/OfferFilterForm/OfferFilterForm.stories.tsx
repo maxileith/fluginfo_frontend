@@ -13,69 +13,33 @@ const Template: ComponentStory<typeof OfferFilterForm> = (
 
 export const Standard = Template.bind({});
 Standard.args = {
-    airlines: [
+    possibleAirlines: [
         {
-            details: {
-                carrier: "LUFTHANSA",
-                carrierCode: "LH",
-            },
-            included: false,
+            carrier: "LUFTHANSA",
+            carrierCode: "LH",
         },
         {
-            details: {
-                carrier: "EUROWINGS",
-                carrierCode: "EW",
-            },
-            included: true,
+            carrier: "EUROWINGS",
+            carrierCode: "EW",
         },
         {
-            details: {
-                carrier: "SWISS INTERNATIONAL AIR LINES",
-                carrierCode: "LX",
-            },
-            included: false,
+            carrier: "SWISS INTERNATIONAL AIR LINES",
+            carrierCode: "LX",
         },
         {
-            details: {
-                carrier: "SCANDINAVIAN AIRLINES",
-                carrierCode: "SK",
-            },
-            included: true,
+            carrier: "SCANDINAVIAN AIRLINES",
+            carrierCode: "SK",
         },
     ],
-    numberOfStops: [
-        {
-            value: 0,
-            included: true,
-        },
-        {
-            value: 1,
-            included: true,
-        },
-        {
-            value: 2,
-            included: false,
-        },
-        {
-            value: 3,
-            included: true,
-        },
-    ],
+    includedAirlineCarrierCode: ["LH", "LX"],
+    possibleNumberOfStops: [0, 1, 2, 3],
+    includedNumberOfStops: [0, 1, 3],
     priceMin: 123,
     priceMax: 1367,
     priceLimit: 500,
-    durationMin: {
-        hours: 1,
-        minutes: 20,
-    },
-    durationMax: {
-        hours: 23,
-        minutes: 42,
-    },
-    durationLimit: {
-        hours: 4,
-        minutes: 37,
-    },
+    durationMin: 80,
+    durationMax: 1422,
+    durationLimit: 277,
     numberOfTotalOffers: 150,
     numberOfFilteredOffers: 42,
 };

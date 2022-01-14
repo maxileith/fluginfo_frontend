@@ -1,4 +1,3 @@
-import IApiDuration from "./IApiDuration";
 import IApiStop from "./IApiStop";
 
 export interface IApiAvailableSeats {
@@ -12,7 +11,7 @@ export default interface IApiStatus {
     carrier?: string;
     departure: IApiStop;
     arrival: IApiStop;
-    duration: IApiDuration;
+    duration: number;
     aircraft: string;
     availableSeats: IApiAvailableSeats[];
 }

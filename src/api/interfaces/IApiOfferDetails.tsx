@@ -1,5 +1,4 @@
 import TApiTravelClass from "../types/TApiTravelClass";
-import IApiDuration from "./IApiDuration";
 import IApiPrice from "./IApiPrice";
 import IApiStop from "./IApiStop";
 
@@ -10,14 +9,14 @@ export interface IApiSegment {
     flightNumber: string;
     carrierCode: string;
     carrier: string;
-    duration: IApiDuration;
+    duration: number;
     aircraft: string;
     cabin: TApiTravelClass;
     classId: string;
 }
 
 export interface IApiItinerary {
-    duration: IApiDuration;
+    duration: number;
     segments: IApiSegment[];
 }
 

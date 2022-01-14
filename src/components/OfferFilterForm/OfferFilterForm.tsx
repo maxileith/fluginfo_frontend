@@ -1,40 +1,33 @@
 import { ChangeEvent } from "react";
-import { Box, Form } from "react-bulma-components";
-import IApiDuration from "../../api/interfaces/IApiDuration";
+import { Box, Columns, Form } from "react-bulma-components";
 import { IApiCarrier } from "../../api/interfaces/IApiOffer";
 import RangeInput from "../RangeInput/RangeInput";
 
-export interface IOfferFilterFormAirlines {
-    details: IApiCarrier;
-    included: boolean;
-}
-
-export interface IOfferFilterFormNumberOfStops {
-    value: number;
-    included: boolean;
-}
-
 export interface IOfferFilterForm {
-    airlines: IOfferFilterFormAirlines[];
-    onChangeAirline: (carrier: IApiCarrier, included: boolean) => void;
-    numberOfStops: IOfferFilterFormNumberOfStops[];
-    onChangeNumberOfStops: (numberOfStops: number, included: boolean) => void;
+    possibleAirlines: IApiCarrier[];
+    includedAirlineCarrierCode: string[];
+    onChangeAirline: (carrierCode: string, include: boolean) => void;
+    possibleNumberOfStops: number[];
+    includedNumberOfStops: number[];
+    onChangeNumberOfStops: (numberOfStops: number, include: boolean) => void;
     priceMin: number;
     priceMax: number;
     priceLimit: number;
     onChangePriceLimit: (priceLimit: number) => void;
-    durationMin: IApiDuration;
-    durationMax: IApiDuration;
-    durationLimit: IApiDuration;
-    onChangeDurationLimit: (durationLimit: IApiDuration) => void;
+    durationMin: number;
+    durationMax: number;
+    durationLimit: number;
+    onChangeDurationLimit: (durationLimit: number) => void;
     numberOfTotalOffers: number;
     numberOfFilteredOffers: number;
 }
 
 export default function OfferFilterForm({
-    airlines,
+    possibleAirlines,
+    includedAirlineCarrierCode,
     onChangeAirline,
-    numberOfStops,
+    possibleNumberOfStops,
+    includedNumberOfStops,
     onChangeNumberOfStops,
     priceMin,
     priceMax,
@@ -47,10 +40,8 @@ export default function OfferFilterForm({
     numberOfFilteredOffers,
     numberOfTotalOffers,
 }: IOfferFilterForm): JSX.Element {
-    console.log(airlines);
-
     return (
-        <Box>
+        <Box style={{ position: "sticky", top: "4rem" }}>
             <p>
                 Showing{" "}
                 <strong>
@@ -61,27 +52,22 @@ export default function OfferFilterForm({
             <hr />
             <Form.Field>
                 <Form.Label>Stops</Form.Label>
-                {numberOfStops.map((stops) => (
-                    <Form.Control key={stops.value}>
+                {possibleNumberOfStops.map((stops) => (
+                    <Form.Control key={stops}>
                         <Form.Checkbox
-                            checked={stops.included}
+                            checked={includedNumberOfStops.includes(stops)}
                             onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                                onChangeNumberOfStops(
-                                    stops.value,
-                                    e.target.checked
-                                )
+                                onChangeNumberOfStops(stops, e.target.checked)
                             }
                         >
-                            {stops.value === 0
-                                ? "Non-Stop"
-                                : `${stops.value} Stop`}
-                            {stops.value >= 2 && "s"}
+                            {stops === 0 ? "Non-Stop" : `${stops} Stop`}
+                            {stops >= 2 && "s"}
                         </Form.Checkbox>
                     </Form.Control>
                 ))}
             </Form.Field>
             <Form.Field>
-                <Form.Label>Price limit: {priceLimit}€</Form.Label>
+                <Form.Label>Price: {priceLimit}€</Form.Label>
                 <Form.Control>
                     <RangeInput
                         min={priceMin}
@@ -95,20 +81,18 @@ export default function OfferFilterForm({
             </Form.Field>
             <Form.Field>
                 <Form.Label>
-                    Duration limit:{" "}
-                    {durationLimit.hours !== 0 && `${durationLimit.hours}h `}
-                    {`${durationLimit.minutes}min`}
+                    Duration:{" "}
+                    {Math.floor(durationLimit / 60) !== 0 &&
+                        `${Math.floor(durationLimit / 60)}h `}
+                    {`${durationLimit % 60}min`}
                 </Form.Label>
                 <Form.Control>
                     <RangeInput
-                        min={durationMin.hours * 60 + durationMin.minutes}
-                        max={durationMax.hours * 60 + durationMax.minutes}
-                        value={durationLimit.hours * 60 + durationLimit.minutes}
+                        min={durationMin}
+                        max={durationMax}
+                        value={durationLimit}
                         onChange={(value: number) => {
-                            onChangeDurationLimit({
-                                hours: Math.floor(value / 60),
-                                minutes: value % 60,
-                            });
+                            onChangeDurationLimit(value);
                         }}
                         color="info"
                         isCircle
@@ -117,18 +101,20 @@ export default function OfferFilterForm({
             </Form.Field>
             <Form.Field>
                 <Form.Label>Airlines</Form.Label>
-                {airlines.map((airline) => (
-                    <Form.Control key={airline.details.carrierCode}>
+                {possibleAirlines.map((airline) => (
+                    <Form.Control key={airline.carrierCode}>
                         <Form.Checkbox
-                            checked={airline.included}
+                            checked={includedAirlineCarrierCode.includes(
+                                airline.carrierCode
+                            )}
                             onChange={(e: ChangeEvent<HTMLInputElement>) =>
                                 onChangeAirline(
-                                    airline.details,
+                                    airline.carrierCode,
                                     e.target.checked
                                 )
                             }
                         >
-                            {airline.details.carrier}
+                            {airline.carrier}
                         </Form.Checkbox>
                     </Form.Control>
                 ))}

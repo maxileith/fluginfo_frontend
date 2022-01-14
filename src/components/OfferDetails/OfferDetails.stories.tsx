@@ -19,10 +19,7 @@ Standard.args = {
         },
         itineraries: [
             {
-                duration: {
-                    hours: 37,
-                    minutes: 23,
-                },
+                duration: 2243,
                 segments: [
                     {
                         id: 31,
@@ -51,10 +48,7 @@ Standard.args = {
                         flightNumber: "UA8917",
                         carrierCode: "UA",
                         carrier: "UNITED AIRLINES",
-                        duration: {
-                            hours: 1,
-                            minutes: 5,
-                        },
+                        duration: 65,
                         aircraft: "CANADAIR REGIONAL JET 900",
                         cabin: "BUSINESS",
                         classId: "P",
@@ -86,10 +80,7 @@ Standard.args = {
                         flightNumber: "UA195",
                         carrierCode: "UA",
                         carrier: "UNITED AIRLINES",
-                        duration: {
-                            hours: 11,
-                            minutes: 45,
-                        },
+                        duration: 705,
                         aircraft: "BOEING 787-9",
                         cabin: "BUSINESS",
                         classId: "P",
@@ -97,10 +88,7 @@ Standard.args = {
                 ],
             },
             {
-                duration: {
-                    hours: 24,
-                    minutes: 35,
-                },
+                duration: 1475,
                 segments: [
                     {
                         id: 70,
@@ -129,10 +117,7 @@ Standard.args = {
                         flightNumber: "LH9177",
                         carrierCode: "LH",
                         carrier: "LUFTHANSA",
-                        duration: {
-                            hours: 5,
-                            minutes: 5,
-                        },
+                        duration: 305,
                         aircraft: "BOEING 777-200/300",
                         cabin: "BUSINESS",
                         classId: "P",
@@ -164,10 +149,7 @@ Standard.args = {
                         flightNumber: "LH459",
                         carrierCode: "LH",
                         carrier: "LUFTHANSA",
-                        duration: {
-                            hours: 11,
-                            minutes: 10,
-                        },
+                        duration: 670,
                         aircraft: "AIRBUS A350-900",
                         cabin: "BUSINESS",
                         classId: "P",
@@ -188,10 +170,7 @@ ManyStops.args = {
         },
         itineraries: [
             {
-                duration: {
-                    hours: 37,
-                    minutes: 23,
-                },
+                duration: 2243,
                 segments: [
                     {
                         id: 31,
@@ -220,10 +199,7 @@ ManyStops.args = {
                         flightNumber: "UA8917",
                         carrierCode: "UA",
                         carrier: "UNITED AIRLINES",
-                        duration: {
-                            hours: 1,
-                            minutes: 5,
-                        },
+                        duration: 65,
                         aircraft: "CANADAIR REGIONAL JET 900",
                         cabin: "BUSINESS",
                         classId: "P",
@@ -255,10 +231,7 @@ ManyStops.args = {
                         flightNumber: "UA195",
                         carrierCode: "UA",
                         carrier: "UNITED AIRLINES",
-                        duration: {
-                            hours: 11,
-                            minutes: 45,
-                        },
+                        duration: 705,
                         aircraft: "BOEING 787-9",
                         cabin: "BUSINESS",
                         classId: "P",
@@ -290,10 +263,7 @@ ManyStops.args = {
                         flightNumber: "UA1175",
                         carrierCode: "UA",
                         carrier: "UNITED AIRLINES",
-                        duration: {
-                            hours: 5,
-                            minutes: 33,
-                        },
+                        duration: 333,
                         aircraft: "BOEING 777-300ER",
                         cabin: "FIRST",
                         classId: "P",
@@ -301,10 +271,7 @@ ManyStops.args = {
                 ],
             },
             {
-                duration: {
-                    hours: 24,
-                    minutes: 35,
-                },
+                duration: 1475,
                 segments: [
                     {
                         id: 70,
@@ -333,10 +300,7 @@ ManyStops.args = {
                         flightNumber: "LH9177",
                         carrierCode: "LH",
                         carrier: "LUFTHANSA",
-                        duration: {
-                            hours: 5,
-                            minutes: 5,
-                        },
+                        duration: 305,
                         aircraft: "BOEING 777-200/300",
                         cabin: "BUSINESS",
                         classId: "P",
@@ -368,10 +332,7 @@ ManyStops.args = {
                         flightNumber: "LH459",
                         carrierCode: "LH",
                         carrier: "LUFTHANSA",
-                        duration: {
-                            hours: 11,
-                            minutes: 10,
-                        },
+                        duration: 670,
                         aircraft: "AIRBUS A350-900",
                         cabin: "BUSINESS",
                         classId: "P",
@@ -403,10 +364,7 @@ ManyStops.args = {
                         flightNumber: "LH1988",
                         carrierCode: "LH",
                         carrier: "LUFTHANSA",
-                        duration: {
-                            hours: 1,
-                            minutes: 5,
-                        },
+                        duration: 65,
                         aircraft: "AIRBUS A319",
                         cabin: "ECONOMY",
                         classId: "Y",

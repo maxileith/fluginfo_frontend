@@ -37,7 +37,7 @@ Overview.args = {
             },
             at: "2022-03-01T14:15:00",
         },
-        duration: { hours: 11, minutes: 20 },
+        duration: 680,
         aircraft: "AIRBUS A330-300",
         availableSeats: [
             { classId: "J", seats: 1 },

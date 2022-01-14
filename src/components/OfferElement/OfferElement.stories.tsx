@@ -22,10 +22,7 @@ Standard.args = {
         itineraries: [
             {
                 classes: ["ECONOMY"],
-                duration: {
-                    hours: 28,
-                    minutes: 15,
-                },
+                duration: 1695,
                 stops: 1,
                 carriers: [
                     {
@@ -58,10 +55,7 @@ Standard.args = {
             },
             {
                 classes: ["ECONOMY"],
-                duration: {
-                    hours: 28,
-                    minutes: 15,
-                },
+                duration: 1695,
                 stops: 0,
                 carriers: [
                     {

@@ -21,13 +21,12 @@ import {
     faTh,
 } from "@fortawesome/free-solid-svg-icons";
 import travelClassEnhance from "../../utils/travelClassEnhance";
-import IApiDuration from "../../api/interfaces/IApiDuration";
 
 export interface IOfferDetailsFlight {
     flightNumber: string;
     carrierCode: string;
     carrier: string;
-    duration: IApiDuration;
+    duration: number;
     aircraft: string;
     cabin: TApiTravelClass;
     classId: string;
@@ -60,8 +59,9 @@ export default function OfferDetailsFlight({
                 mr={marginTagsRight}
             >
                 <Tag color="info">
-                    {duration.hours !== 0 && `${duration.hours}h `}
-                    {`${duration.minutes}min`}
+                    {Math.floor(duration / 60) !== 0 &&
+                        `${Math.floor(duration / 60)}h `}
+                    {`${duration % 60}min`}
                 </Tag>
                 <Tag>
                     <Icon>
