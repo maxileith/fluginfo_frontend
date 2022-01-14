@@ -25,7 +25,7 @@ export default function SearchDropdown({
     onSearch,
     searchPlaceholder,
     defaultLabel,
-    waitUntilSearch,
+    waitUntilSearch = 500,
     disabled,
 }: ISearchDropdown): JSX.Element {
     const [keyword, setKeyword] = useState<string>("");
@@ -46,7 +46,7 @@ export default function SearchDropdown({
             if (value === keywordRef.current) {
                 onSearch(value);
             }
-        }, waitUntilSearch || 500);
+        }, waitUntilSearch);
         setKeyword(value);
     };
 
