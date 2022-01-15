@@ -68,7 +68,7 @@ export default function OfferSearch(): JSX.Element {
     // states for page settings
     const [page, setPage] = useState<number>(1);
     const [offersPerPage, setOffersPerPage] = useQueryState<number>(
-        25,
+        10,
         "offersPerPage"
     );
 
