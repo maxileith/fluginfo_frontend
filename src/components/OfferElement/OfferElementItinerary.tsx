@@ -128,7 +128,7 @@ export default function OfferElementItinerary({
                         ))}
                     </Content>
                 </Columns.Column>
-                <Columns.Column>
+                <Columns.Column paddingless px={4}>
                     <Media mobile={{ display: "hidden" }}>
                         {itinerary.carriers.map((carrier) => (
                             <Media.Item align="left" key={carrier.carrierCode}>

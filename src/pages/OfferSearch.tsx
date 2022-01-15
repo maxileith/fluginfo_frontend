@@ -206,7 +206,9 @@ export default function OfferSearch(): JSX.Element {
         setFilterIncludedAirlineCarrierCodes(
             Array.from(possibleAirlines).map((a) => a.carrierCode)
         );
-        setFilterPossibleNumberOfStops(Array.from(possibleNumberOfStops));
+        setFilterPossibleNumberOfStops(
+            Array.from(possibleNumberOfStops).sort()
+        );
         setFilterIncludedNumberOfStops(Array.from(possibleNumberOfStops));
         setFilterPriceMin(Math.ceil(priceMin));
         setFilterPriceMax(Math.ceil(priceMax));
@@ -278,7 +280,7 @@ export default function OfferSearch(): JSX.Element {
                     a.itineraries.forEach((x) => (aDuration += x.duration));
                     var bDuration: number = 0;
                     b.itineraries.forEach((x) => (bDuration += x.duration));
-                    return aDuration > bDuration ? 1 : -1;
+                    return aDuration - bDuration;
                 });
                 break;
         }
@@ -370,7 +372,7 @@ export default function OfferSearch(): JSX.Element {
                 <>
                     <Columns breakpoint="desktop">
                         {offers.length !== 0 && (
-                            <Columns.Column narrow>
+                            <Columns.Column size={"3-desktop" as "one-quarter"}>
                                 <OfferFilterForm
                                     possibleAirlines={filterPossibleAirlines}
                                     includedAirlineCarrierCode={
@@ -429,21 +431,25 @@ export default function OfferSearch(): JSX.Element {
                                         showDetails={handleDetails}
                                     />
                                 ))}
+                            <Pagination
+                                total={
+                                    Math.ceil(
+                                        filteredOffers.length / offersPerPage
+                                    ) || 1
+                                }
+                                current={page}
+                                delta={2}
+                                showPrevNext={false}
+                                autoHide
+                                onChange={setPage}
+                                disabled={loading}
+                                showFirstLast={false}
+                                align="center"
+                            />
                         </Columns.Column>
                     </Columns>
                 </>
             )}
-            <Pagination
-                total={Math.ceil(filteredOffers.length / offersPerPage) || 1}
-                current={page}
-                delta={2}
-                showPrevNext={false}
-                autoHide
-                onChange={setPage}
-                disabled={loading}
-                showFirstLast={false}
-                align="center"
-            />
         </>
     );
 }

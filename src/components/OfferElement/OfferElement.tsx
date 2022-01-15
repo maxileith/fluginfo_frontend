@@ -1,4 +1,12 @@
-import { Box, Button, Columns, Heading, Icon } from "react-bulma-components";
+import {
+    Block,
+    Box,
+    Button,
+    Columns,
+    Heading,
+    Icon,
+    Level,
+} from "react-bulma-components";
 import IApiOffer from "../../api/interfaces/IApiOffer";
 import OfferElementItinerary from "./OfferElementItinerary";
 import React from "react";
@@ -25,23 +33,50 @@ export default function OfferElement({
                         </React.Fragment>
                     ))}
                 </Columns.Column>
-                <hr />
-                <Columns.Column size={3} textAlign="center">
-                    <Heading>
-                        {offer.price.value.toFixed(2)}
-                        {offer.price.currency === "EURO"
-                            ? "€"
-                            : ` ${offer.price.currency}`}
-                    </Heading>
-                    <Button
-                        onClick={() => showDetails(offer.hash)}
-                        color="info"
-                    >
-                        Details
-                        <Icon ml={1}>
-                            <FontAwesomeIcon icon={faInfo} />
-                        </Icon>
-                    </Button>
+                <Columns.Column size={3}>
+                    <Block mobile={{ display: "hidden" }}>
+                        <Heading>
+                            {offer.price.value.toFixed(2)}
+                            {offer.price.currency === "EURO"
+                                ? "€"
+                                : ` ${offer.price.currency}`}
+                        </Heading>
+                        <Button
+                            onClick={() => showDetails(offer.hash)}
+                            color="info"
+                        >
+                            Details
+                            <Icon ml={1}>
+                                <FontAwesomeIcon icon={faInfo} />
+                            </Icon>
+                        </Button>
+                    </Block>
+
+                    <Level tablet={{ display: "hidden" }} breakpoint="mobile">
+                        <Level.Side align="left">
+                            <Level.Item>
+                                <Heading>
+                                    {offer.price.value.toFixed(2)}
+                                    {offer.price.currency === "EURO"
+                                        ? "€"
+                                        : ` ${offer.price.currency}`}
+                                </Heading>
+                            </Level.Item>
+                        </Level.Side>
+                        <Level.Side align="right">
+                            <Level.Item>
+                                <Button
+                                    onClick={() => showDetails(offer.hash)}
+                                    color="info"
+                                >
+                                    Details
+                                    <Icon ml={1}>
+                                        <FontAwesomeIcon icon={faInfo} />
+                                    </Icon>
+                                </Button>
+                            </Level.Item>
+                        </Level.Side>
+                    </Level>
                 </Columns.Column>
             </Columns>
         </Box>
