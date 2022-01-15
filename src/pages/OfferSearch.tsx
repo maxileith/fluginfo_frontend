@@ -14,7 +14,9 @@ import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import unknownErrorHandling from "../utils/unknownErrorHandling";
 import useDocumentTitle from "../utils/useDocumentTitle";
-import OfferFilterForm from "../components/OfferFilterForm/OfferFilterForm";
+import OfferFilterForm, {
+    TOfferOrderBy,
+} from "../components/OfferFilterForm/OfferFilterForm";
 
 export default function OfferSearch(): JSX.Element {
     const navigate = useNavigate();
@@ -64,7 +66,7 @@ export default function OfferSearch(): JSX.Element {
     const [fresh, setFresh] = useState<boolean>(true);
 
     // states for page settings
-    const [page, setPage] = useQueryState<number>(1, "page");
+    const [page, setPage] = useState<number>(1);
     const [offersPerPage, setOffersPerPage] = useQueryState<number>(
         25,
         "offersPerPage"
@@ -98,6 +100,11 @@ export default function OfferSearch(): JSX.Element {
     const [filterDurationMin, setFilterDurationMin] = useState<number>(0);
     const [filterDurationMax, setFilterDurationMax] = useState<number>(0);
     const [filterDurationLimit, setFilterDurationLimit] = useState<number>(0);
+
+    const [orderBy, setOrderBy] = useQueryState<TOfferOrderBy>(
+        "price",
+        "orderBy"
+    );
 
     const handleSearch = (): void => {
         setPage(1);
@@ -294,6 +301,15 @@ export default function OfferSearch(): JSX.Element {
         navigate(`/offer/details/${hash}/`);
     };
 
+    // set page to the last one if the current page does not
+    // exit. (Switching e.g. from 25 to 50 offers per page)
+    useEffect(() => {
+        var lastPage: number = Math.ceil(filteredOffers.length / offersPerPage);
+        if (lastPage < page) {
+            setPage(lastPage);
+        }
+    }, [offersPerPage, page, filteredOffers.length]);
+
     return (
         <>
             <Heading>Offer Search</Heading>
@@ -371,6 +387,8 @@ export default function OfferSearch(): JSX.Element {
                                     numberOfTotalOffers={offers.length}
                                     offersPerPage={offersPerPage}
                                     setOffersPerPage={setOffersPerPage}
+                                    orderBy={orderBy}
+                                    setOrderBy={setOrderBy}
                                 />
                             )}
                         </Columns.Column>

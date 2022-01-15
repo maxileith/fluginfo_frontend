@@ -3,6 +3,8 @@ import { Box, Button, Form } from "react-bulma-components";
 import { IApiCarrier } from "../../api/interfaces/IApiOffer";
 import RangeInput from "../RangeInput/RangeInput";
 
+export type TOfferOrderBy = "price" | "duration";
+
 export interface IOfferFilterForm {
     possibleAirlines: IApiCarrier[];
     includedAirlineCarrierCode: string[];
@@ -22,6 +24,8 @@ export interface IOfferFilterForm {
     numberOfFilteredOffers: number;
     offersPerPage: number;
     setOffersPerPage: (offersPerPage: number) => void;
+    orderBy: TOfferOrderBy;
+    setOrderBy: (orderBy: TOfferOrderBy) => void;
 }
 
 export default function OfferFilterForm({
@@ -43,9 +47,12 @@ export default function OfferFilterForm({
     numberOfTotalOffers,
     offersPerPage,
     setOffersPerPage,
+    orderBy,
+    setOrderBy,
 }: IOfferFilterForm): JSX.Element {
     return (
-        <Box style={{ position: "sticky", top: "4rem" }}>
+        <Box>
+            {/*style={{ position: "sticky", top: "4rem" }}*/}
             <p>
                 Showing{" "}
                 <strong>
@@ -55,19 +62,42 @@ export default function OfferFilterForm({
             </p>
             <hr />
             <Form.Field>
-                <Form.Label>Offers per page</Form.Label>
-                <Button.Group hasAddons>
-                    {[10, 25, 50, 100].map((n) => (
+                <Form.Label>Order by</Form.Label>
+                <Form.Control>
+                    <Button.Group hasAddons>
                         <Button
-                            color={n === offersPerPage ? "info" : undefined}
-                            onClick={() => setOffersPerPage(n)}
+                            color={orderBy === "price" ? "info" : undefined}
+                            onClick={() => setOrderBy("price")}
                             size="small"
-                            key={n}
                         >
-                            {n}
+                            Price
                         </Button>
-                    ))}
-                </Button.Group>
+                        <Button
+                            color={orderBy === "duration" ? "info" : undefined}
+                            onClick={() => setOrderBy("duration")}
+                            size="small"
+                        >
+                            Duration
+                        </Button>
+                    </Button.Group>
+                </Form.Control>
+            </Form.Field>
+            <Form.Field>
+                <Form.Label>Offers per page</Form.Label>
+                <Form.Control>
+                    <Button.Group hasAddons>
+                        {[10, 25, 50, 100].map((n) => (
+                            <Button
+                                color={n === offersPerPage ? "info" : undefined}
+                                onClick={() => setOffersPerPage(n)}
+                                size="small"
+                                key={n}
+                            >
+                                {n}
+                            </Button>
+                        ))}
+                    </Button.Group>
+                </Form.Control>
             </Form.Field>
             <hr />
             <Form.Field>
