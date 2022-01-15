@@ -34,7 +34,7 @@ export default function OfferElement({
                     ))}
                 </Columns.Column>
                 <Columns.Column size={3}>
-                    <Block mobile={{ display: "hidden" }}>
+                    <Block mobile={{ display: "hidden" }} textAlign="center">
                         <Heading>
                             {offer.price.value.toFixed(2)}
                             {offer.price.currency === "EURO"
