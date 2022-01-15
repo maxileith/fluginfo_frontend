@@ -2,7 +2,7 @@ import TApiTravelClass from "../api/types/TApiTravelClass";
 
 export default function travelClassEnhance(
     travelClass: TApiTravelClass
-): string {
+): "No Preference" | "Business" | "Economy" | "First" | "Premium Economy" {
     switch (travelClass) {
         case "ALL":
             return "No Preference";
@@ -14,7 +14,5 @@ export default function travelClassEnhance(
             return "First";
         case "PREMIUM_ECONOMY":
             return "Premium Economy";
-        default:
-            return travelClass;
     }
 }
