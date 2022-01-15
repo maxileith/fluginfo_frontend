@@ -28,7 +28,7 @@ export default function OfferElement({
                 <hr />
                 <Columns.Column size={3} textAlign="center">
                     <Heading>
-                        {offer.price.value}
+                        {offer.price.value.toFixed(2)}
                         {offer.price.currency === "EURO"
                             ? "€"
                             : ` ${offer.price.currency}`}

@@ -304,7 +304,8 @@ export default function OfferSearch(): JSX.Element {
     // set page to the last one if the current page does not
     // exit. (Switching e.g. from 25 to 50 offers per page)
     useEffect(() => {
-        var lastPage: number = Math.ceil(filteredOffers.length / offersPerPage);
+        var lastPage: number =
+            Math.ceil(filteredOffers.length / offersPerPage) || 1;
         if (lastPage < page) {
             setPage(lastPage);
         }
