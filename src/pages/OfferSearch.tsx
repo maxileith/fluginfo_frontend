@@ -369,6 +369,8 @@ export default function OfferSearch(): JSX.Element {
                                         filteredOffers.length
                                     }
                                     numberOfTotalOffers={offers.length}
+                                    offersPerPage={offersPerPage}
+                                    setOffersPerPage={setOffersPerPage}
                                 />
                             )}
                         </Columns.Column>

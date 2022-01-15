@@ -1,5 +1,5 @@
 import { ChangeEvent } from "react";
-import { Box, Form } from "react-bulma-components";
+import { Box, Button, Form } from "react-bulma-components";
 import { IApiCarrier } from "../../api/interfaces/IApiOffer";
 import RangeInput from "../RangeInput/RangeInput";
 
@@ -20,6 +20,8 @@ export interface IOfferFilterForm {
     onChangeDurationLimit: (durationLimit: number) => void;
     numberOfTotalOffers: number;
     numberOfFilteredOffers: number;
+    offersPerPage: number;
+    setOffersPerPage: (offersPerPage: number) => void;
 }
 
 export default function OfferFilterForm({
@@ -39,6 +41,8 @@ export default function OfferFilterForm({
     onChangeDurationLimit,
     numberOfFilteredOffers,
     numberOfTotalOffers,
+    offersPerPage,
+    setOffersPerPage,
 }: IOfferFilterForm): JSX.Element {
     return (
         <Box style={{ position: "sticky", top: "4rem" }}>
@@ -49,6 +53,22 @@ export default function OfferFilterForm({
                 </strong>{" "}
                 offers.
             </p>
+            <hr />
+            <Form.Field>
+                <Form.Label>Offers per page</Form.Label>
+                <Button.Group hasAddons>
+                    {[10, 25, 50, 100].map((n) => (
+                        <Button
+                            color={n === offersPerPage ? "info" : undefined}
+                            onClick={() => setOffersPerPage(n)}
+                            size="small"
+                            key={n}
+                        >
+                            {n}
+                        </Button>
+                    ))}
+                </Button.Group>
+            </Form.Field>
             <hr />
             <Form.Field>
                 <Form.Label>Stops</Form.Label>
