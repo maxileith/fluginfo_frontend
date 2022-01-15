@@ -368,17 +368,9 @@ export default function OfferSearch(): JSX.Element {
             />
             {!fresh && !loading && (
                 <>
-                    {filteredOffers.length === 0 && (
-                        <Message color="danger">
-                            <Message.Body>
-                                We have found <strong>no flights</strong>{" "}
-                                matching your search criteria.
-                            </Message.Body>
-                        </Message>
-                    )}
                     <Columns breakpoint="desktop">
-                        <Columns.Column narrow>
-                            {offers.length !== 0 && (
+                        {offers.length !== 0 && (
+                            <Columns.Column narrow>
                                 <OfferFilterForm
                                     possibleAirlines={filterPossibleAirlines}
                                     includedAirlineCarrierCode={
@@ -413,9 +405,18 @@ export default function OfferSearch(): JSX.Element {
                                     orderBy={orderBy}
                                     setOrderBy={setOrderBy}
                                 />
-                            )}
-                        </Columns.Column>
+                            </Columns.Column>
+                        )}
                         <Columns.Column>
+                            {filteredOffers.length === 0 && (
+                                <Message color="danger">
+                                    <Message.Body>
+                                        We have found{" "}
+                                        <strong>no flights</strong> matching
+                                        your search criteria.
+                                    </Message.Body>
+                                </Message>
+                            )}
                             {sortedOffers
                                 .slice(
                                     offersPerPage * (page - 1),
