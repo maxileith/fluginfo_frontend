@@ -101,6 +101,7 @@ export default function OfferSearch(): JSX.Element {
     const [filterDurationMax, setFilterDurationMax] = useState<number>(0);
     const [filterDurationLimit, setFilterDurationLimit] = useState<number>(0);
 
+    const [sortedOffers, setSortedOffers] = useState<IApiOffer[]>([]);
     const [orderBy, setOrderBy] = useQueryState<TOfferOrderBy>(
         "price",
         "orderBy"
@@ -215,7 +216,7 @@ export default function OfferSearch(): JSX.Element {
         setFilterDurationLimit(Math.ceil(durationMax));
     }, [offers]);
 
-    // update visible Offers to the current filter
+    // update filtered offers to the current filter
     // settings
     useEffect(() => {
         var newFilteredOffers: IApiOffer[] = [];
@@ -262,6 +263,27 @@ export default function OfferSearch(): JSX.Element {
         filterIncludedNumberOfStops,
         filterPriceLimit,
     ]);
+
+    // sort the filtered offers
+    useEffect(() => {
+        var newSortedOffers: IApiOffer[] = [...filteredOffers];
+        switch (orderBy) {
+            case "price":
+                // this is already the default
+                // order by the backend
+                break;
+            case "duration":
+                newSortedOffers = newSortedOffers.sort((a, b) => {
+                    var aDuration: number = 0;
+                    a.itineraries.forEach((x) => (aDuration += x.duration));
+                    var bDuration: number = 0;
+                    b.itineraries.forEach((x) => (bDuration += x.duration));
+                    return aDuration > bDuration ? 1 : -1;
+                });
+                break;
+        }
+        setSortedOffers(newSortedOffers);
+    }, [filteredOffers, orderBy]);
 
     const handleFilterChangeAirline = (
         carrierCode: string,
@@ -394,7 +416,7 @@ export default function OfferSearch(): JSX.Element {
                             )}
                         </Columns.Column>
                         <Columns.Column>
-                            {filteredOffers
+                            {sortedOffers
                                 .slice(
                                     offersPerPage * (page - 1),
                                     offersPerPage * page
