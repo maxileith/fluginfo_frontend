@@ -66,14 +66,20 @@ export default function OfferFilterForm({
                 <Form.Control>
                     <Button.Group hasAddons>
                         <Button
-                            color={orderBy === "price" ? "info" : undefined}
+                            color="info"
+                            colorVariant={
+                                orderBy !== "price" ? "light" : undefined
+                            }
                             onClick={() => setOrderBy("price")}
                             size="small"
                         >
                             Price
                         </Button>
                         <Button
-                            color={orderBy === "duration" ? "info" : undefined}
+                            color="info"
+                            colorVariant={
+                                orderBy !== "duration" ? "light" : undefined
+                            }
                             onClick={() => setOrderBy("duration")}
                             size="small"
                         >
@@ -88,7 +94,10 @@ export default function OfferFilterForm({
                     <Button.Group hasAddons>
                         {[10, 25, 50, 100].map((n) => (
                             <Button
-                                color={n === offersPerPage ? "info" : undefined}
+                                color="info"
+                                colorVariant={
+                                    n !== offersPerPage ? "light" : undefined
+                                }
                                 onClick={() => setOffersPerPage(n)}
                                 size="small"
                                 key={n}
