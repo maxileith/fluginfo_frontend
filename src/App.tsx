@@ -19,10 +19,6 @@ import CenteredLoader from "./components/CenteredLoader/CenteredLoader";
 import API from "./Api";
 import axios from "axios";
 import Seatmap from "./pages/Seatmap";
-import ScrollToTop from "react-scroll-to-top";
-import { Icon } from "react-bulma-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 export default function App() {
     const [baseURL, setBaseURL] = useState<string>();
