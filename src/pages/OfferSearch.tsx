@@ -1,5 +1,5 @@
 import moment from "moment";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Columns, Heading, Message, Pagination } from "react-bulma-components";
 import IApiOfferSearch from "../api/interfaces/IApiOfferSearch";
 import TApiTravelClass from "../api/types/TApiTravelClass";
@@ -321,10 +321,6 @@ export default function OfferSearch(): JSX.Element {
         }
     };
 
-    const handleDetails = (hash: string): void => {
-        navigate(`/offer/details/${hash}/`);
-    };
-
     // set page to the last one if the current page does not
     // exit. (Switching e.g. from 25 to 50 offers per page)
     useEffect(() => {
@@ -334,6 +330,22 @@ export default function OfferSearch(): JSX.Element {
             setPage(lastPage);
         }
     }, [offersPerPage, page, filteredOffers.length]);
+
+    const offerDOM = useMemo(
+        () =>
+            sortedOffers
+                .slice(offersPerPage * (page - 1), offersPerPage * page)
+                .map((offer) => (
+                    <OfferElement
+                        key={offer.hash}
+                        offer={offer}
+                        showDetails={() =>
+                            navigate(`/offer/details/${offer.hash}/`)
+                        }
+                    />
+                )),
+        [sortedOffers, offersPerPage, page, navigate]
+    );
 
     return (
         <>
@@ -419,18 +431,7 @@ export default function OfferSearch(): JSX.Element {
                                     </Message.Body>
                                 </Message>
                             )}
-                            {sortedOffers
-                                .slice(
-                                    offersPerPage * (page - 1),
-                                    offersPerPage * page
-                                )
-                                .map((offer) => (
-                                    <OfferElement
-                                        key={offer.hash}
-                                        offer={offer}
-                                        showDetails={handleDetails}
-                                    />
-                                ))}
+                            {offerDOM}
                             <Pagination
                                 total={
                                     Math.ceil(
