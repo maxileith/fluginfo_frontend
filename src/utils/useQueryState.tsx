@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { useSearchParams } from "react-router-dom";
+import useLazyStateWrapper from "./useLazyStateWrapper";
 
 export interface IUseQueryState<T> {
     serialize?: (value: T) => string;
@@ -68,5 +69,5 @@ export default function useQueryState<T>(
         setStateValue(deserializedValue || defaultValue);
     }, [searchParams]);
 
-    return [stateValue, setStateValue];
+    return useLazyStateWrapper([stateValue, setStateValue]);
 }

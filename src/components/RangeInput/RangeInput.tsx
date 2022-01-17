@@ -1,6 +1,5 @@
 import { Color } from "react-bulma-components/src/components";
 import "bulma-slider/dist/css/bulma-slider.min.css";
-import { useRef, useState } from "react";
 
 export interface IRangeInput {
     min?: number;

@@ -1,8 +1,15 @@
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ChangeEvent, useCallback, useRef, useState } from "react";
+import {
+    ChangeEvent,
+    Dispatch,
+    SetStateAction,
+    useCallback,
+    useState,
+} from "react";
 import { Block, Box, Button, Form, Icon, Level } from "react-bulma-components";
 import { IApiCarrier } from "../../api/interfaces/IApiOffer";
+import useLazyStateWrapper from "../../utils/useLazyStateWrapper";
 import useViewportDimensions from "../../utils/useViewportDimensions";
 import RangeInput from "../RangeInput/RangeInput";
 
@@ -18,11 +25,11 @@ export interface IOfferFilterForm {
     priceMin: number;
     priceMax: number;
     priceLimit: number;
-    onChangePriceLimit: (priceLimit: number) => void;
+    onChangePriceLimit: Dispatch<SetStateAction<number>>;
     durationMin: number;
     durationMax: number;
     durationLimit: number;
-    onChangeDurationLimit: (durationLimit: number) => void;
+    onChangeDurationLimit: Dispatch<SetStateAction<number>>;
     numberOfTotalOffers: number;
     numberOfFilteredOffers: number;
     offersPerPage: number;
@@ -56,35 +63,14 @@ export default function OfferFilterForm({
     const { height } = useViewportDimensions();
     const [offset, setOffset] = useState<string>("4rem");
 
-    const [priceLimitLive, setPriceLimitLive] = useState<number | undefined>(
-        undefined
-    );
-    const priceLimitLiveRef = useRef(priceLimitLive);
-    priceLimitLiveRef.current = priceLimitLive;
-    const handleChangePriceLimit = (value: number) => {
-        window.setTimeout(() => {
-            if (value === priceLimitLiveRef.current) {
-                onChangePriceLimit(value);
-                setPriceLimitLive(undefined);
-            }
-        }, 250);
-        setPriceLimitLive(value);
-    };
-
-    const [durationLimitLive, setDurationLimitLive] = useState<
-        number | undefined
-    >(undefined);
-    const durationLimitLiveRef = useRef(durationLimitLive);
-    durationLimitLiveRef.current = durationLimitLive;
-    const handleChangeDurationLimit = (value: number) => {
-        window.setTimeout(() => {
-            if (value === durationLimitLiveRef.current) {
-                onChangeDurationLimit(value);
-                setDurationLimitLive(undefined);
-            }
-        }, 250);
-        setDurationLimitLive(value);
-    };
+    const [priceLimitLazy, setPriceLimitLazy] = useLazyStateWrapper([
+        priceLimit,
+        onChangePriceLimit,
+    ]);
+    const [durationLimitLazy, setDurationLimitLazy] = useLazyStateWrapper([
+        durationLimit,
+        onChangeDurationLimit,
+    ]);
 
     const ref = useCallback(
         (node: HTMLDivElement) => {
@@ -230,39 +216,30 @@ export default function OfferFilterForm({
                             ))}
                         </Form.Field>
                         <Form.Field mr={4}>
-                            <Form.Label>
-                                Price: {priceLimitLive || priceLimit}€
-                            </Form.Label>
+                            <Form.Label>Price: {priceLimitLazy}€</Form.Label>
                             <Form.Control>
                                 <RangeInput
                                     min={priceMin}
                                     max={priceMax}
-                                    value={priceLimitLive || priceLimit}
-                                    onChange={handleChangePriceLimit}
+                                    value={priceLimitLazy}
+                                    onChange={setPriceLimitLazy}
                                     color="info"
                                     isCircle
                                 />
                             </Form.Control>
                             <Form.Label>
                                 Duration:{" "}
-                                {Math.floor(
-                                    (durationLimitLive || durationLimit) / 60
-                                ) !== 0 &&
-                                    `${Math.floor(
-                                        (durationLimitLive || durationLimit) /
-                                            60
-                                    )}h `}
-                                {`${
-                                    (durationLimitLive || durationLimit) % 60
-                                }min`}
+                                {Math.floor(durationLimitLazy / 60) !== 0 &&
+                                    `${Math.floor(durationLimitLazy / 60)}h `}
+                                {`${durationLimitLazy % 60}min`}
                             </Form.Label>
                             <Form.Control>
                                 <RangeInput
                                     min={durationMin}
                                     max={durationMax}
-                                    value={durationLimitLive || durationLimit}
+                                    value={durationLimitLazy}
                                     onChange={(value: number) => {
-                                        handleChangeDurationLimit(value);
+                                        setDurationLimitLazy(value);
                                     }}
                                     color="info"
                                     isCircle
@@ -292,6 +269,7 @@ export default function OfferFilterForm({
                                             width: "100%",
                                         }}
                                     >
+                                        {airline.carrierCode} -{" "}
                                         {airline.carrier}
                                     </Form.Checkbox>
                                 </Form.Control>
