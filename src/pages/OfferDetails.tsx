@@ -8,8 +8,11 @@ import OD from "../components/OfferDetails/OfferDetails";
 import { toast } from "react-toastify";
 import unknownErrorHandling from "../utils/unknownErrorHandling";
 import useDocumentTitle from "../utils/useDocumentTitle";
+import useIsMounted from "../utils/useIsMounted";
 
 export default function OfferDetails(): JSX.Element {
+    const isMounted = useIsMounted();
+
     const { hash } = useParams();
     const [loading, setLoading] = useState<boolean>(true);
     const [details, setDetails] = useState<IApiOfferDetails | undefined>(
@@ -22,10 +25,11 @@ export default function OfferDetails(): JSX.Element {
         setDetails(undefined);
         API.get("/offers/details/", { params: { id: hash } })
             .then((response) => {
-                setDetails(response.data as IApiOfferDetails);
+                isMounted.current &&
+                    setDetails(response.data as IApiOfferDetails);
             })
             .catch((error) => {
-                setDetails(undefined);
+                isMounted.current && setDetails(undefined);
                 if (error.response === undefined) {
                     toast.error("Network Error.");
                 } else {
@@ -43,10 +47,11 @@ export default function OfferDetails(): JSX.Element {
                             break;
                     }
                 }
-                navigate("/offer/search", { replace: true });
+                isMounted.current &&
+                    navigate("/offer/search", { replace: true });
             })
             .finally(() => {
-                setLoading(false);
+                isMounted.current && setLoading(false);
             });
     }, [hash, navigate]);
 

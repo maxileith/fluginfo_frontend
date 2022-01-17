@@ -17,8 +17,10 @@ import useDocumentTitle from "../utils/useDocumentTitle";
 import OfferFilterForm, {
     TOfferOrderBy,
 } from "../components/OfferFilterForm/OfferFilterForm";
+import useIsMounted from "../utils/useIsMounted";
 
 export default function OfferSearch(): JSX.Element {
+    const isMounted = useIsMounted();
     const navigate = useNavigate();
 
     // state for the offer search form
@@ -139,7 +141,8 @@ export default function OfferSearch(): JSX.Element {
         setSearchParamsOfCurrentOffers(JSON.stringify(searchParams));
         API.get("/offers/search/", { params: searchParams })
             .then((response) => {
-                setOffers(response.data.data as IApiOffer[]);
+                isMounted.current &&
+                    setOffers(response.data.data as IApiOffer[]);
             })
             .catch((error) => {
                 if (error.response === undefined) {
@@ -158,8 +161,8 @@ export default function OfferSearch(): JSX.Element {
                 }
             })
             .finally(() => {
-                setLoading(false);
-                setFresh(false);
+                isMounted.current && setLoading(false);
+                isMounted.current && setFresh(false);
             });
     };
 

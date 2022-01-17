@@ -10,8 +10,10 @@ import unknownErrorHandling from "../utils/unknownErrorHandling";
 import StatusDisplay from "../components/StatusDisplay/StatusDisplay";
 import { NavigateFunction, useNavigate } from "react-router";
 import useDocumentTitle from "../utils/useDocumentTitle";
+import useIsMounted from "../utils/useIsMounted";
 
 export default function Status(): JSX.Element {
+    const isMounted = useIsMounted();
     const navigate: NavigateFunction = useNavigate();
 
     const [flightNumber, setFlightNumber] = useQueryState<string>(
@@ -71,7 +73,7 @@ export default function Status(): JSX.Element {
             },
         })
             .then((response) => {
-                setStatus(response.data as IApiStatus);
+                isMounted.current && setStatus(response.data as IApiStatus);
             })
             .catch((error) => {
                 if (error.response === undefined) {
@@ -91,7 +93,7 @@ export default function Status(): JSX.Element {
                 }
             })
             .finally(() => {
-                setLoading(false);
+                isMounted.current && setLoading(false);
             });
     };
 
@@ -116,7 +118,7 @@ export default function Status(): JSX.Element {
                 loading={loading}
             />
 
-            {readyForTakeOff && (
+            {status && readyForTakeOff && (
                 <Message color="warning">
                     <Message.Body>
                         The current results <strong>do not apply</strong> to the

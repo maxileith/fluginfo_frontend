@@ -10,6 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { toast } from "react-toastify";
 import unknownErrorHandling from "../../utils/unknownErrorHandling";
+import useIsMounted from "../../utils/useIsMounted";
 
 export interface ISelectAirport {
     onSelect: (iata: string) => void;
@@ -24,6 +25,8 @@ export default function SelectAirport({
     defaultAirport,
     disabled,
 }: ISelectAirport): JSX.Element {
+    const isMounted = useIsMounted();
+
     const [dropdownItems, setDropdownItems] = useState<ISearchDropdownItem[]>(
         []
     );
@@ -69,10 +72,11 @@ export default function SelectAirport({
                         ...items,
                     ];
                 }
-                setDropdownItems(items);
+                isMounted.current && setDropdownItems(items);
             })
             .catch((error) => {
-                setDropdownItems([] as ISearchDropdownItem[]);
+                isMounted.current &&
+                    setDropdownItems([] as ISearchDropdownItem[]);
                 if (error.response === undefined) {
                     toast.error("Network Error.");
                     return;

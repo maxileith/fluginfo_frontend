@@ -5,12 +5,14 @@ import API from "../Api";
 import IApiSeatmap from "../api/interfaces/IApiSeatmap";
 import CenteredLoader from "../components/CenteredLoader/CenteredLoader";
 import unknownErrorHandling from "../utils/unknownErrorHandling";
+import useIsMounted from "../utils/useIsMounted";
 
 export interface ISeatmap {
     from: "offerDetails" | "status";
 }
 
 export default function Seatmap({ from }: ISeatmap): JSX.Element {
+    const isMounted = useIsMounted();
     const navigate: NavigateFunction = useNavigate();
     const { hash, segmentId, flightNumber, date, classId } = useParams();
 
@@ -36,7 +38,7 @@ export default function Seatmap({ from }: ISeatmap): JSX.Element {
 
         API.get(apiSeatmapEndpoint, { params: apiSeatmapParams })
             .then((response) => {
-                setSeatmap(response.data as IApiSeatmap);
+                isMounted.current && setSeatmap(response.data as IApiSeatmap);
             })
             .catch((error) => {
                 if (error.response === undefined) {
@@ -56,15 +58,16 @@ export default function Seatmap({ from }: ISeatmap): JSX.Element {
                             break;
                     }
                 }
-                navigate(
-                    from === "offerDetails"
-                        ? `/offer/details/${hash}`
-                        : `/status?date=${date}&flightNumber=${flightNumber}`,
-                    { replace: true }
-                );
+                isMounted.current &&
+                    navigate(
+                        from === "offerDetails"
+                            ? `/offer/details/${hash}`
+                            : `/status?date=${date}&flightNumber=${flightNumber}`,
+                        { replace: true }
+                    );
             })
             .finally(() => {
-                setLoading(false);
+                isMounted.current && setLoading(false);
             });
     }, [hash, segmentId, flightNumber, date, classId, from, navigate]);
 
