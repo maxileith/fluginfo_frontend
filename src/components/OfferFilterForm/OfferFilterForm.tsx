@@ -1,6 +1,6 @@
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ChangeEvent, useCallback, useState } from "react";
+import { ChangeEvent, useCallback, useRef, useState } from "react";
 import { Block, Box, Button, Form, Icon, Level } from "react-bulma-components";
 import { IApiCarrier } from "../../api/interfaces/IApiOffer";
 import useViewportDimensions from "../../utils/useViewportDimensions";
@@ -55,6 +55,36 @@ export default function OfferFilterForm({
 }: IOfferFilterForm): JSX.Element {
     const { height } = useViewportDimensions();
     const [offset, setOffset] = useState<string>("4rem");
+
+    const [priceLimitLive, setPriceLimitLive] = useState<number | undefined>(
+        undefined
+    );
+    const priceLimitLiveRef = useRef(priceLimitLive);
+    priceLimitLiveRef.current = priceLimitLive;
+    const handleChangePriceLimit = (value: number) => {
+        window.setTimeout(() => {
+            if (value === priceLimitLiveRef.current) {
+                onChangePriceLimit(value);
+                setPriceLimitLive(undefined);
+            }
+        }, 250);
+        setPriceLimitLive(value);
+    };
+
+    const [durationLimitLive, setDurationLimitLive] = useState<
+        number | undefined
+    >(undefined);
+    const durationLimitLiveRef = useRef(durationLimitLive);
+    durationLimitLiveRef.current = durationLimitLive;
+    const handleChangeDurationLimit = (value: number) => {
+        window.setTimeout(() => {
+            if (value === durationLimitLiveRef.current) {
+                onChangeDurationLimit(value);
+                setDurationLimitLive(undefined);
+            }
+        }, 250);
+        setDurationLimitLive(value);
+    };
 
     const ref = useCallback(
         (node: HTMLDivElement) => {
@@ -174,7 +204,7 @@ export default function OfferFilterForm({
                     </Form.Field>
                     <hr />
                     <Form.Field kind="group" multiline>
-                        <Form.Field mr={4}>
+                        <Form.Field mr={4} style={{ minWidth: "5rem" }}>
                             <Form.Label>Stops</Form.Label>
                             {possibleNumberOfStops.map((stops) => (
                                 <Form.Control key={stops}>
@@ -200,39 +230,46 @@ export default function OfferFilterForm({
                             ))}
                         </Form.Field>
                         <Form.Field mr={4}>
-                            <Form.Label>Price: {priceLimit}€</Form.Label>
+                            <Form.Label>
+                                Price: {priceLimitLive || priceLimit}€
+                            </Form.Label>
                             <Form.Control>
                                 <RangeInput
                                     min={priceMin}
                                     max={priceMax}
-                                    value={priceLimit}
-                                    onChange={onChangePriceLimit}
+                                    value={priceLimitLive || priceLimit}
+                                    onChange={handleChangePriceLimit}
                                     color="info"
                                     isCircle
-                                    waitUntilChange={250}
                                 />
                             </Form.Control>
                             <Form.Label>
                                 Duration:{" "}
-                                {Math.floor(durationLimit / 60) !== 0 &&
-                                    `${Math.floor(durationLimit / 60)}h `}
-                                {`${durationLimit % 60}min`}
+                                {Math.floor(
+                                    (durationLimitLive || durationLimit) / 60
+                                ) !== 0 &&
+                                    `${Math.floor(
+                                        (durationLimitLive || durationLimit) /
+                                            60
+                                    )}h `}
+                                {`${
+                                    (durationLimitLive || durationLimit) % 60
+                                }min`}
                             </Form.Label>
                             <Form.Control>
                                 <RangeInput
                                     min={durationMin}
                                     max={durationMax}
-                                    value={durationLimit}
+                                    value={durationLimitLive || durationLimit}
                                     onChange={(value: number) => {
-                                        onChangeDurationLimit(value);
+                                        handleChangeDurationLimit(value);
                                     }}
                                     color="info"
                                     isCircle
-                                    waitUntilChange={250}
                                 />
                             </Form.Control>
                         </Form.Field>
-                        <Form.Field mr={4}>
+                        <Form.Field mr={4} style={{ maxWidth: "100%" }}>
                             <Form.Label>Airlines</Form.Label>
                             {possibleAirlines.map((airline) => (
                                 <Form.Control key={airline.carrierCode}>
@@ -248,6 +285,12 @@ export default function OfferFilterForm({
                                                 e.target.checked
                                             )
                                         }
+                                        style={{
+                                            textOverflow: "ellipsis",
+                                            overflow: "hidden",
+                                            whiteSpace: "nowrap",
+                                            width: "100%",
+                                        }}
                                     >
                                         {airline.carrier}
                                     </Form.Checkbox>

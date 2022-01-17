@@ -13,7 +13,6 @@ export interface IRangeInput {
     step?: number;
     outputText?: string;
     size?: "small" | "medium" | "large";
-    waitUntilChange?: number;
 }
 
 export default function RangeInput({
@@ -27,26 +26,7 @@ export default function RangeInput({
     step = 1,
     outputText,
     size,
-    waitUntilChange = 0,
 }: IRangeInput): JSX.Element {
-    const [changingValue, setChangingValue] = useState<number | undefined>(
-        undefined
-    );
-    const changingValueRef = useRef(changingValue);
-    changingValueRef.current = changingValue;
-
-    const handleChange = (value: number) => {
-        window.setTimeout(() => {
-            //console.log(value);
-            //console.log(changingValueRef.current);
-            if (value === changingValueRef.current) {
-                onChange(value);
-                setChangingValue(undefined);
-            }
-        }, waitUntilChange);
-        setChangingValue(value);
-    };
-
     return (
         <>
             <input
@@ -57,10 +37,10 @@ export default function RangeInput({
                 }`}
                 min={min}
                 max={max}
-                value={changingValue || value}
+                value={value}
                 step={step}
                 type="range"
-                onChange={(e) => handleChange(e.target.valueAsNumber)}
+                onChange={(e) => onChange(e.target.valueAsNumber)}
                 style={{ margin: ".5rem 0" }}
             />
             {outputText && <output>{outputText}</output>}
