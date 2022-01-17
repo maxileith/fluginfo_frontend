@@ -62,6 +62,8 @@ export default function OfferSearch(): JSX.Element {
 
     // states for offers, etc.
     const [offers, setOffers] = useState<IApiOffer[]>([]);
+    const [searchParamsOfCurrentOffers, setSearchParamsOfCurrentOffers] =
+        useState<string>("");
     const [loading, setLoading] = useState<boolean>(false);
     const [fresh, setFresh] = useState<boolean>(true);
 
@@ -107,11 +109,8 @@ export default function OfferSearch(): JSX.Element {
         "orderBy"
     );
 
-    const handleSearch = (): void => {
-        setPage(1);
-        setLoading(true);
-        setOffers([] as IApiOffer[]);
-        var searchProps: IApiOfferSearch = {
+    const getSearchParams = (): IApiOfferSearch => {
+        return {
             adults: adults,
             children: children,
             infants: infants,
@@ -130,7 +129,15 @@ export default function OfferSearch(): JSX.Element {
                     : undefined,
             returnDate: returnDate !== "" ? returnDate : undefined,
         };
-        API.get("/offers/search/", { params: searchProps })
+    };
+
+    const handleSearch = (): void => {
+        setPage(1);
+        setLoading(true);
+        setOffers([] as IApiOffer[]);
+        var searchParams: IApiOfferSearch = getSearchParams();
+        setSearchParamsOfCurrentOffers(JSON.stringify(searchParams));
+        API.get("/offers/search/", { params: searchParams })
             .then((response) => {
                 setOffers(response.data.data as IApiOffer[]);
             })
@@ -428,6 +435,16 @@ export default function OfferSearch(): JSX.Element {
                                         We have found{" "}
                                         <strong>no flights</strong> matching
                                         your search criteria.
+                                    </Message.Body>
+                                </Message>
+                            )}
+                            {JSON.stringify(getSearchParams()) !==
+                                searchParamsOfCurrentOffers && (
+                                <Message color="warning">
+                                    <Message.Body>
+                                        The current results{" "}
+                                        <strong>do not apply</strong> to the
+                                        above search.
                                     </Message.Body>
                                 </Message>
                             )}

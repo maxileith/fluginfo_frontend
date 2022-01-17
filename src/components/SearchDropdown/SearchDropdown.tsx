@@ -2,6 +2,7 @@ import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useRef, useState } from "react";
 import { Dropdown, Icon } from "react-bulma-components";
+import useLazyStateWrapper from "../../utils/useLazyStateWrapper";
 import SearchDropdownInput from "./SearchDropdownInput";
 import SearchDropdownItem, { ISearchDropdownItem } from "./SearchDropdownItem";
 import SearchDropdownLabel, {
@@ -28,9 +29,10 @@ export default function SearchDropdown({
     waitUntilSearch = 500,
     disabled,
 }: ISearchDropdown): JSX.Element {
-    const [keyword, setKeyword] = useState<string>("");
-    const keywordRef = useRef(keyword);
-    keywordRef.current = keyword;
+    const [keyword, setKeyword] = useLazyStateWrapper<string>(
+        ["", onSearch],
+        waitUntilSearch
+    );
 
     const [labelProps, setLabelProps] = useState<ISearchDropdownLabel>(
         defaultLabel ? defaultLabel : { title: "-" }
@@ -39,15 +41,6 @@ export default function SearchDropdown({
     const handleSelect = (item: ISearchDropdownItem) => {
         setLabelProps(item as ISearchDropdownLabel);
         onSelect(item.value);
-    };
-
-    const handleSearch = (value: string) => {
-        window.setTimeout(() => {
-            if (value === keywordRef.current) {
-                onSearch(value);
-            }
-        }, waitUntilSearch);
-        setKeyword(value);
     };
 
     return (
@@ -63,7 +56,7 @@ export default function SearchDropdown({
         >
             <SearchDropdownInput
                 value={keyword}
-                onChange={handleSearch}
+                onChange={setKeyword}
                 placeholder={searchPlaceholder}
             />
             {dropdownItems.length !== 0 ? <Dropdown.Divider /> : <></>}

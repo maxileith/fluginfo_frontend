@@ -1,6 +1,6 @@
 import moment from "moment";
 import { useEffect, useState } from "react";
-import { Heading } from "react-bulma-components";
+import { Heading, Message } from "react-bulma-components";
 import StatusSearchForm from "../components/StatusSearchForm/StatusSearchForm";
 import useQueryState from "../utils/useQueryState";
 import API from "../Api";
@@ -115,6 +115,15 @@ export default function Status(): JSX.Element {
                 readyForTakeOff={readyForTakeOff}
                 loading={loading}
             />
+
+            {readyForTakeOff && (
+                <Message color="warning">
+                    <Message.Body>
+                        The current results <strong>do not apply</strong> to the
+                        above query.
+                    </Message.Body>
+                </Message>
+            )}
 
             {status && (
                 <StatusDisplay status={status} showSeatmap={showSeatmap} />

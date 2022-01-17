@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 
 export default function useLazyStateWrapper<T>(
-    s: [T, Dispatch<SetStateAction<T>> | ((x: T) => {})],
+    s: [T, Dispatch<SetStateAction<T>> | ((x: T) => void)],
     waitMs: number = 250,
     equals: (a: T, b: T) => boolean = (a: T, b: T) => a === b
 ): [T, Dispatch<SetStateAction<T>>] {
