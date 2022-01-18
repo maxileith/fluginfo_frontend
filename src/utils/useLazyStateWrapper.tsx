@@ -17,7 +17,7 @@ export default function useLazyStateWrapper<T>(
                 setState(stateLive);
             }
         }, waitMs);
-    }, [stateLive, waitMs, equals, setState]);
+    }, [stateLive]);
 
     useEffect(() => {
         setStateLive(state);

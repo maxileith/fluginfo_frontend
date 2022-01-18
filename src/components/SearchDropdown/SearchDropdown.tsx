@@ -1,6 +1,6 @@
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Dropdown, Icon } from "react-bulma-components";
 import useLazyStateWrapper from "../../utils/useLazyStateWrapper";
 import SearchDropdownInput from "./SearchDropdownInput";
@@ -29,10 +29,7 @@ export default function SearchDropdown({
     waitUntilSearch = 500,
     disabled,
 }: ISearchDropdown): JSX.Element {
-    const [keyword, setKeyword] = useLazyStateWrapper<string>(
-        ["", onSearch],
-        waitUntilSearch
-    );
+    const [keyword, setKeyword] = useLazyStateWrapper<string>(["", onSearch]);
 
     const [labelProps, setLabelProps] = useState<ISearchDropdownLabel>(
         defaultLabel ? defaultLabel : { title: "-" }
