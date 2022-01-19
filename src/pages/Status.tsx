@@ -62,8 +62,8 @@ export default function Status(): JSX.Element {
         dateNotPast && flightNumberIsSet && otherThanPrevRequest;
 
     const handleSearch = () => {
-        setCurrentDisplayedFlightNumber(flightNumber);
-        setCurrentDisplayedDate(date);
+        setCurrentDisplayedFlightNumber("");
+        setCurrentDisplayedDate("");
         setLoading(true);
         setStatus(undefined);
         API.get("/availability/exact/", {
@@ -73,6 +73,8 @@ export default function Status(): JSX.Element {
             },
         })
             .then((response) => {
+                setCurrentDisplayedFlightNumber(flightNumber);
+                setCurrentDisplayedDate(date);
                 isMounted.current && setStatus(response.data as IApiStatus);
             })
             .catch((error) => {
