@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
+import useIsMounted from "./useIsMounted";
 
 export default function useLazyStateWrapper<T>(
     s: [T, Dispatch<SetStateAction<T>> | ((x: T) => void)],
@@ -6,6 +7,7 @@ export default function useLazyStateWrapper<T>(
     equals: (a: T, b: T) => boolean = (a: T, b: T) => a === b
 ): [T, Dispatch<SetStateAction<T>>] {
     const [state, setState] = s;
+    const isMounted = useIsMounted();
 
     const [stateLive, setStateLive] = useState<T>(state);
     const liveStateRef = useRef(stateLive);
@@ -14,7 +16,7 @@ export default function useLazyStateWrapper<T>(
     useEffect(() => {
         window.setTimeout(() => {
             if (equals(stateLive, liveStateRef.current)) {
-                setState(stateLive);
+                isMounted.current && setState(stateLive);
             }
         }, waitMs);
     }, [stateLive]);
