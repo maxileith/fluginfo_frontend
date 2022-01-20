@@ -11,6 +11,7 @@ import StatusDisplay from "../components/StatusDisplay/StatusDisplay";
 import { NavigateFunction, useNavigate } from "react-router";
 import useDocumentTitle from "../utils/useDocumentTitle";
 import useIsMounted from "../utils/useIsMounted";
+import IApiStatusTimings from "../api/interfaces/IApiStatusTimings";
 
 export default function Status(): JSX.Element {
     const isMounted = useIsMounted();
@@ -31,6 +32,9 @@ export default function Status(): JSX.Element {
         useState<string>("");
     const [loading, setLoading] = useState<boolean>(false);
     const [status, setStatus] = useState<IApiStatus | undefined>(undefined);
+    const [liveTimings, setLiveTimings] = useState<
+        IApiStatusTimings | undefined
+    >(undefined);
 
     const handleFlightNumberChange = (flightNumber: string) => {
         setFlightNumber(flightNumber.toUpperCase());
@@ -61,11 +65,41 @@ export default function Status(): JSX.Element {
     const readyForTakeOff: boolean =
         dateNotPast && flightNumberIsSet && otherThanPrevRequest;
 
+    const updateLiveTimings = (flightNumber: string, date: string) => {
+        API.get("/status/timings/", {
+            params: { flightNumber: flightNumber, date: date },
+        })
+            .then((response) => {
+                isMounted.current &&
+                    setLiveTimings(response.data as IApiStatusTimings);
+            })
+            .catch((error) => {
+                if (error.response === undefined) {
+                    toast.error("Network Error.");
+                    return;
+                }
+                switch (error.response.status) {
+                    case 400:
+                        toast.error("Bad Request.");
+                        break;
+                    case 404:
+                        toast.error(
+                            "We could not find any information about whether the flight is on time."
+                        );
+                        break;
+                    default:
+                        unknownErrorHandling(error.response.status);
+                        break;
+                }
+            });
+    };
+
     const handleSearch = () => {
         setCurrentDisplayedFlightNumber("");
         setCurrentDisplayedDate("");
         setLoading(true);
         setStatus(undefined);
+        setLiveTimings(undefined);
         API.get("/availability/exact/", {
             params: {
                 date: date,
@@ -76,6 +110,7 @@ export default function Status(): JSX.Element {
                 setCurrentDisplayedFlightNumber(flightNumber);
                 setCurrentDisplayedDate(date);
                 isMounted.current && setStatus(response.data as IApiStatus);
+                isMounted.current && updateLiveTimings(flightNumber, date);
             })
             .catch((error) => {
                 if (error.response === undefined) {
@@ -130,7 +165,11 @@ export default function Status(): JSX.Element {
             )}
 
             {status && (
-                <StatusDisplay status={status} showSeatmap={showSeatmap} />
+                <StatusDisplay
+                    status={status}
+                    showSeatmap={showSeatmap}
+                    liveTimings={liveTimings}
+                />
             )}
         </>
     );
