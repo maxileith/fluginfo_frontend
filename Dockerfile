@@ -23,9 +23,6 @@ RUN npm run build
 
 # pull the official base image
 FROM nginx:1.20-alpine
-# copy build to webroot
-COPY --from=build /app/build /usr/share/nginx/html
-RUN rm /usr/share/nginx/html/backendBaseUrl.txt
 # copy nginx configuration
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 # copy start script
@@ -33,5 +30,8 @@ COPY ./docker-start.sh ./docker-start.sh
 RUN chmod +x ./docker-start.sh
 # open port 80
 EXPOSE 80
+# copy build to webroot
+COPY --from=build /app/build /usr/share/nginx/html
+RUN rm /usr/share/nginx/html/backendBaseUrl.txt
 # start server
 CMD ["./docker-start.sh"]
