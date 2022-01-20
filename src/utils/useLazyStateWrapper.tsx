@@ -11,12 +11,19 @@ export default function useLazyStateWrapper<T>(
     const liveStateRef = useRef(stateLive);
     liveStateRef.current = stateLive;
 
+    const isFirstRender = useRef(true);
+
     useEffect(() => {
-        window.setTimeout(() => {
-            if (equals(stateLive, liveStateRef.current)) {
-                setState(stateLive);
-            }
-        }, waitMs);
+        if (isFirstRender.current) {
+            isFirstRender.current = false;
+        } else {
+            console.log("test");
+            window.setTimeout(() => {
+                if (equals(stateLive, liveStateRef.current)) {
+                    setState(stateLive);
+                }
+            }, waitMs);
+        }
     }, [stateLive]);
 
     useEffect(() => {
