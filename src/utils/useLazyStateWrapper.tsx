@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
+import useEffectNotOnMount from "./useEffectNotOnMount";
 import useIsMounted from "./useIsMounted";
 
 export default function useLazyStateWrapper<T>(
@@ -13,18 +14,12 @@ export default function useLazyStateWrapper<T>(
     const liveStateRef = useRef(stateLive);
     liveStateRef.current = stateLive;
 
-    const isFirstRender = useRef(true);
-
-    useEffect(() => {
-        if (isFirstRender.current) {
-            isFirstRender.current = false;
-        } else {
-            window.setTimeout(() => {
-                if (equals(stateLive, liveStateRef.current)) {
-                    isMounted.current && setState(stateLive);
-                }
-            }, waitMs);
-        }
+    useEffectNotOnMount(() => {
+        window.setTimeout(() => {
+            if (equals(stateLive, liveStateRef.current)) {
+                isMounted.current && setState(stateLive);
+            }
+        }, waitMs);
     }, [stateLive]);
 
     useEffect(() => {

@@ -51,7 +51,7 @@ export default function StatusDisplayStop({
                 {moment(liveTiming || stop.at).format("h:mm a (Do MMMM)")}
                 {timeOffset !== undefined && (
                     <>
-                        {timeOffset == 0 && (
+                        {timeOffset === 0 && (
                             <Tag color="success" ml={2}>
                                 on time
                             </Tag>
