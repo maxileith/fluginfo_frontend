@@ -5,6 +5,7 @@ import API from "../Api";
 import IApiSeatmap from "../api/interfaces/IApiSeatmap";
 import CenteredLoader from "../components/CenteredLoader/CenteredLoader";
 import unknownErrorHandling from "../utils/unknownErrorHandling";
+import useEffectNotOnMount from "../utils/useEffectNotOnMount";
 import useIsMounted from "../utils/useIsMounted";
 
 export interface ISeatmap {
@@ -71,9 +72,14 @@ export default function Seatmap({ from }: ISeatmap): JSX.Element {
             });
     }, [hash, segmentId, flightNumber, date, classId, from, navigate]);
 
-    useEffect(() => {
+    useEffectNotOnMount(() => {
         console.log(seatmap);
     }, [seatmap]);
 
-    return <>{loading && <CenteredLoader />}</>;
+    return (
+        <>
+            {loading && <CenteredLoader />}
+            {seatmap && JSON.stringify(seatmap)}
+        </>
+    );
 }
