@@ -18,8 +18,17 @@ import OfferFilterForm, {
     TOfferOrderBy,
 } from "../components/OfferFilterForm/OfferFilterForm";
 import useIsMounted from "../utils/useIsMounted";
+import useEffectNotOnMount from "../utils/useEffectNotOnMount";
 
-export default function OfferSearch(): JSX.Element {
+export interface IOfferSearch {
+    addToOfferSearchCache: (key: string, offers: IApiOffer[]) => void;
+    getFromOfferSearchCache: (key: string) => IApiOffer[] | undefined;
+}
+
+export default function OfferSearch({
+    addToOfferSearchCache,
+    getFromOfferSearchCache,
+}: IOfferSearch): JSX.Element {
     const isMounted = useIsMounted();
     const navigate = useNavigate();
 
@@ -38,10 +47,7 @@ export default function OfferSearch(): JSX.Element {
         "",
         "destinationAirport"
     );
-    const [nonStop, setNonStop] = useQueryState<boolean>(false, "nonStop", {
-        serialize: (value: boolean) => (value ? "true" : "false"),
-        deserialize: (value: string | null) => value === "true",
-    });
+    const [nonStop, setNonStop] = useQueryState<boolean>(false, "nonStop");
     const [adults, setAdults] = useQueryState<number>(1, "adults");
     const [children, setChildren] = useQueryState<number>(0, "children");
     const [infants, setInfants] = useQueryState<number>(0, "infants");
@@ -60,55 +66,6 @@ export default function OfferSearch(): JSX.Element {
     const [airlineListType, setAirlineListType] = useQueryState<TListType>(
         "whitelist",
         "airlineListType"
-    );
-
-    // states for offers, etc.
-    const [offers, setOffers] = useState<IApiOffer[]>([]);
-    const [searchParamsOfCurrentOffers, setSearchParamsOfCurrentOffers] =
-        useState<string>("");
-    const [loading, setLoading] = useState<boolean>(false);
-    const [fresh, setFresh] = useState<boolean>(true);
-
-    // states for page settings
-    const [page, setPage] = useState<number>(1);
-    const [offersPerPage, setOffersPerPage] = useQueryState<number>(
-        10,
-        "offersPerPage"
-    );
-
-    const { setDocumentTitle } = useDocumentTitle();
-    useEffect(() => {
-        setDocumentTitle(
-            originAirport !== "" && destinationAirport !== ""
-                ? `Offer Search - ${originAirport} -> ${destinationAirport}`
-                : "Offer Search"
-        );
-    }, [setDocumentTitle, originAirport, destinationAirport]);
-
-    // everything that is needed for filtering the offers
-    const [filteredOffers, setFilteredOffers] = useState<IApiOffer[]>([]);
-    const [filterPossibleAirlines, setFilterPossibleAirlines] = useState<
-        IApiCarrier[]
-    >([]);
-    const [
-        filterIncludedAirlineCarrierCodes,
-        setFilterIncludedAirlineCarrierCodes,
-    ] = useState<string[]>([]);
-    const [filterPossibleNumberOfStops, setFilterPossibleNumberOfStops] =
-        useState<number[]>([]);
-    const [filterIncludedNumberOfStops, setFilterIncludedNumberOfStops] =
-        useState<number[]>([]);
-    const [filterPriceMin, setFilterPriceMin] = useState<number>(0);
-    const [filterPriceMax, setFilterPriceMax] = useState<number>(0);
-    const [filterPriceLimit, setFilterPriceLimit] = useState<number>(0);
-    const [filterDurationMin, setFilterDurationMin] = useState<number>(0);
-    const [filterDurationMax, setFilterDurationMax] = useState<number>(0);
-    const [filterDurationLimit, setFilterDurationLimit] = useState<number>(0);
-
-    const [sortedOffers, setSortedOffers] = useState<IApiOffer[]>([]);
-    const [orderBy, setOrderBy] = useQueryState<TOfferOrderBy>(
-        "price",
-        "orderBy"
     );
 
     const getSearchParams = (): IApiOfferSearch => {
@@ -133,42 +90,110 @@ export default function OfferSearch(): JSX.Element {
         };
     };
 
+    // states for offers, etc.
+    const [offers, setOffers] = useState<IApiOffer[]>([]);
+    const [searchParamsOfCurrentOffers, setSearchParamsOfCurrentOffers] =
+        useState<string>("");
+    const [loading, setLoading] = useState<boolean>(false);
+    const [fresh, setFresh] = useState<boolean>(true);
+
+    // states for page settings
+    const [page, setPage] = useQueryState<number>(1, "page");
+    const [offersPerPage, setOffersPerPage] = useQueryState<number>(
+        10,
+        "offersPerPage"
+    );
+
+    const { setDocumentTitle } = useDocumentTitle();
+    useEffect(() => {
+        setDocumentTitle(
+            originAirport !== "" && destinationAirport !== ""
+                ? `Offer Search - ${originAirport} -> ${destinationAirport}`
+                : "Offer Search"
+        );
+    }, [setDocumentTitle, originAirport, destinationAirport]);
+
+    // everything that is needed for filtering the offers
+    const [filteredOffers, setFilteredOffers] = useState<IApiOffer[]>([]);
+    const [filterPossibleAirlines, setFilterPossibleAirlines] = useState<
+        IApiCarrier[]
+    >([]);
+    const [
+        filterIncludedAirlineCarrierCodes,
+        setFilterIncludedAirlineCarrierCodes,
+    ] = useQueryState<string[]>([], "includedAirlines");
+    const [filterPossibleNumberOfStops, setFilterPossibleNumberOfStops] =
+        useState<number[]>([]);
+    const [filterIncludedNumberOfStops, setFilterIncludedNumberOfStops] =
+        useQueryState<number[]>([], "includedNumberOfStops");
+    const [filterPriceMin, setFilterPriceMin] = useState<number>(0);
+    const [filterPriceMax, setFilterPriceMax] = useState<number>(0);
+    const [filterPriceLimit, setFilterPriceLimit] = useQueryState<number>(
+        0,
+        "priceLimit"
+    );
+    const [filterDurationMin, setFilterDurationMin] = useState<number>(0);
+    const [filterDurationMax, setFilterDurationMax] = useState<number>(0);
+    const [filterDurationLimit, setFilterDurationLimit] = useQueryState<number>(
+        0,
+        "durationLimit"
+    );
+
+    const [sortedOffers, setSortedOffers] = useState<IApiOffer[]>([]);
+    const [orderBy, setOrderBy] = useQueryState<TOfferOrderBy>(
+        "price",
+        "orderBy"
+    );
+
     const handleSearch = (): void => {
         setPage(1);
         setLoading(true);
         setOffers([] as IApiOffer[]);
         var searchParams: IApiOfferSearch = getSearchParams();
-        setSearchParamsOfCurrentOffers(JSON.stringify(searchParams));
-        API.get("/offers/search/", { params: searchParams })
-            .then((response) => {
-                isMounted.current &&
-                    setOffers(response.data.data as IApiOffer[]);
-            })
-            .catch((error) => {
-                if (error.response === undefined) {
-                    toast.error("Network Error.");
-                    return;
-                }
-                switch (error.response.status) {
-                    case 400:
-                        toast.error("Bad Request.");
-                        break;
-                    case 404:
-                        break;
-                    default:
-                        unknownErrorHandling(error.response.status);
-                        break;
-                }
-            })
-            .finally(() => {
-                isMounted.current && setLoading(false);
-                isMounted.current && setFresh(false);
-            });
+        var stringSearchParams: string = JSON.stringify(searchParams);
+        setSearchParamsOfCurrentOffers(stringSearchParams);
+
+        var cacheResponse = getFromOfferSearchCache(stringSearchParams);
+        if (cacheResponse !== undefined) {
+            setOffers(cacheResponse);
+            isMounted.current && setLoading(false);
+        } else {
+            API.get("/offers/search/", { params: searchParams })
+                .then((response) => {
+                    if (isMounted.current) {
+                        setOffers(response.data.data as IApiOffer[]);
+                        addToOfferSearchCache(
+                            stringSearchParams,
+                            response.data.data as IApiOffer[]
+                        );
+                    }
+                })
+                .catch((error) => {
+                    if (error.response === undefined) {
+                        toast.error("Network Error.");
+                        return;
+                    }
+                    switch (error.response.status) {
+                        case 400:
+                            toast.error("Bad Request.");
+                            break;
+                        case 404:
+                            addToOfferSearchCache(stringSearchParams, []);
+                            break;
+                        default:
+                            unknownErrorHandling(error.response.status);
+                            break;
+                    }
+                })
+                .finally(() => {
+                    isMounted.current && setLoading(false);
+                });
+        }
     };
 
     // prepare the filter for new search results each time there
     // are new offers
-    useEffect(() => {
+    useEffectNotOnMount(() => {
         setFilteredOffers(offers);
 
         // variables to
@@ -213,19 +238,22 @@ export default function OfferSearch(): JSX.Element {
 
         // set the state for the filter form
         setFilterPossibleAirlines(Array.from(possibleAirlines));
-        setFilterIncludedAirlineCarrierCodes(
-            Array.from(possibleAirlines).map((a) => a.carrierCode)
-        );
+        !fresh &&
+            setFilterIncludedAirlineCarrierCodes(
+                Array.from(possibleAirlines).map((a) => a.carrierCode)
+            );
         setFilterPossibleNumberOfStops(
             Array.from(possibleNumberOfStops).sort()
         );
-        setFilterIncludedNumberOfStops(Array.from(possibleNumberOfStops));
+        !fresh &&
+            setFilterIncludedNumberOfStops(Array.from(possibleNumberOfStops));
         setFilterPriceMin(Math.ceil(priceMin));
         setFilterPriceMax(Math.ceil(priceMax));
-        setFilterPriceLimit(Math.ceil(priceMax));
+        !fresh && setFilterPriceLimit(Math.ceil(priceMax));
         setFilterDurationMin(Math.ceil(durationMin));
         setFilterDurationMax(Math.ceil(durationMax));
-        setFilterDurationLimit(Math.ceil(durationMax));
+        !fresh && setFilterDurationLimit(Math.ceil(durationMax));
+        setFresh(false);
     }, [offers]);
 
     // update filtered offers to the current filter
@@ -333,7 +361,7 @@ export default function OfferSearch(): JSX.Element {
 
     // set page to the last one if the current page does not
     // exit. (Switching e.g. from 25 to 50 offers per page)
-    useEffect(() => {
+    useEffectNotOnMount(() => {
         var lastPage: number =
             Math.ceil(filteredOffers.length / offersPerPage) || 1;
         if (lastPage < page) {
@@ -356,6 +384,15 @@ export default function OfferSearch(): JSX.Element {
                 )),
         [sortedOffers, offersPerPage, page, navigate]
     );
+
+    useEffect(() => {
+        const searchParamString = JSON.stringify(getSearchParams());
+        const offersFromCache = getFromOfferSearchCache(searchParamString);
+        if (offersFromCache !== undefined) {
+            setSearchParamsOfCurrentOffers(searchParamString);
+            setOffers(offersFromCache);
+        }
+    }, []);
 
     return (
         <>
