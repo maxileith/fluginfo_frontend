@@ -122,7 +122,9 @@ export default function Status(): JSX.Element {
                         toast.error("Bad Request.");
                         break;
                     case 404:
-                        toast.error("The flight does not exist.");
+                        toast.error(
+                            "Sorry, we could not find information regarding that flight."
+                        );
                         break;
                     default:
                         unknownErrorHandling(error.response.status);
