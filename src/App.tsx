@@ -100,7 +100,10 @@ function NavigateWrapper(): JSX.Element {
                     path="/status/seatmap/:flightNumber/:date/:classId"
                     element={<Seatmap from="status" />}
                 />
-                <Route path="*" element={<Navigate to="/offer/search" />} />
+                <Route
+                    path="*"
+                    element={<Navigate to="/offer/search" replace />}
+                />
             </Routes>
             <ToastContainer
                 position="bottom-right"
