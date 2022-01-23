@@ -19,6 +19,8 @@ import CenteredLoader from "./components/CenteredLoader/CenteredLoader";
 import API from "./Api";
 import axios from "axios";
 import Seatmap from "./pages/Seatmap";
+import IApiOffer from "./api/interfaces/IApiOffer";
+import { Map } from "immutable";
 
 export default function App() {
     const [baseURL, setBaseURL] = useState<string>();
@@ -59,10 +61,35 @@ export default function App() {
 
 function NavigateWrapper(): JSX.Element {
     const navigate: NavigateFunction = useNavigate();
+
+    const [offerSearchCache, setOfferSearchCache] = useState<
+        Map<string, IApiOffer[]>
+    >(Map());
+
+    const addToOfferSearchCache = (key: string, offers: IApiOffer[]): void => {
+        const newMap = offerSearchCache.set(key, offers);
+        setOfferSearchCache(newMap);
+    };
+
+    const getFromOfferSearchCache = (key: string): IApiOffer[] | undefined => {
+        if (offerSearchCache.has(key)) {
+            return offerSearchCache.get(key) as IApiOffer[];
+        }
+        return undefined;
+    };
+
     return (
         <Layout navigate={navigate}>
             <Routes>
-                <Route path="/offer/search" element={<OfferSearch />} />
+                <Route
+                    path="/offer/search"
+                    element={
+                        <OfferSearch
+                            addToOfferSearchCache={addToOfferSearchCache}
+                            getFromOfferSearchCache={getFromOfferSearchCache}
+                        />
+                    }
+                />
                 <Route path="/offer/details/:hash" element={<OfferDetails />} />
                 <Route
                     path="/offer/seatmap/:hash/:segmentId"
@@ -73,7 +100,10 @@ function NavigateWrapper(): JSX.Element {
                     path="/status/seatmap/:flightNumber/:date/:classId"
                     element={<Seatmap from="status" />}
                 />
-                <Route path="*" element={<Navigate to="/offer/search" />} />
+                <Route
+                    path="*"
+                    element={<Navigate to="/offer/search" replace />}
+                />
             </Routes>
             <ToastContainer
                 position="bottom-right"

@@ -6,6 +6,7 @@ import useLazyStateWrapper from "./useLazyStateWrapper";
 export interface IUseQueryState<T> {
     serialize?: (value: T) => string;
     deserialize?: (value: string) => T;
+    equals?: (a: T, b: T) => boolean;
     alwaysInUrl?: boolean;
 }
 
@@ -17,11 +18,22 @@ export default function useQueryState<T>(
 ): [T, Dispatch<SetStateAction<T>>] {
     // specify default values of options
     const o = {
-        serialize: (value: T) => String(value),
+        serialize: (value: T) =>
+            typeof value === "object" ? JSON.stringify(value) : String(value),
         deserialize: (value: string): T =>
             typeof defaultValue === "number"
                 ? (Number(value) as unknown as T)
+                : typeof defaultValue === "object"
+                ? JSON.parse(value)
+                : typeof defaultValue === "boolean"
+                ? value === "true"
+                    ? true
+                    : false
                 : (value as unknown as T),
+        equals: (a: T, b: T): boolean =>
+            typeof a === "object"
+                ? JSON.stringify(a) === JSON.stringify(b)
+                : a === b,
         alwaysInUrl: false,
         ...options,
     };
@@ -47,7 +59,7 @@ export default function useQueryState<T>(
                 changed = true;
             } else if (
                 serializedValue !== null &&
-                stateValue !== defaultValue
+                !o.equals(stateValue, defaultValue)
             ) {
                 searchParams.set(paramName, serializedValue);
                 changed = true;
@@ -60,14 +72,6 @@ export default function useQueryState<T>(
             }
         }
     }, [stateValue]);
-
-    // update state on query parameter change
-    useEffect(() => {
-        const deserializedValue =
-            paramValue === null ? null : o.deserialize(paramValue);
-
-        setStateValue(deserializedValue || defaultValue);
-    }, [searchParams]);
 
     return useLazyStateWrapper([stateValue, setStateValue]);
 }

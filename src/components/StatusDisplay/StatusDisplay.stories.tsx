@@ -64,4 +64,8 @@ Overview.args = {
         carrier: "LUFTHANSA",
     },
     showSeatmap: (s) => console.log(`seatmap triggered: ${s}`),
+    liveTimings: {
+        departure: "2022-03-01T10:34:00",
+        arrival: "2022-03-01T14:15:00",
+    },
 };

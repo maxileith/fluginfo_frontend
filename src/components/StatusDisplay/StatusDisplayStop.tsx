@@ -11,6 +11,7 @@ import {
     Media,
     Table,
     Image,
+    Tag,
 } from "react-bulma-components";
 import IApiStop from "../../api/interfaces/IApiStop";
 import API from "../../Api";
@@ -18,12 +19,19 @@ import API from "../../Api";
 export interface IStatusDisplayStop {
     stop: IApiStop;
     type: "arrival" | "departure";
+    liveTiming?: string;
 }
 
 export default function StatusDisplayStop({
     stop,
     type,
+    liveTiming,
 }: IStatusDisplayStop): JSX.Element {
+    const timeOffset: number | undefined = liveTiming
+        ? moment(liveTiming).diff(moment(stop.at), "minutes")
+        : undefined;
+    const timeOffsetAbs: number = Math.abs(timeOffset || 0);
+
     return (
         <>
             <Heading size={4}>
@@ -40,8 +48,38 @@ export default function StatusDisplayStop({
                 {type === "departure" ? "Departure" : "Arrival"} Airport
             </Heading>
             <Heading size={4} subtitle>
-                {moment(stop.at).format("h:mm a (Do MMMM)")}
+                {moment(liveTiming || stop.at).format("h:mm a (Do MMMM)")}
+                {timeOffset !== undefined && (
+                    <>
+                        {timeOffset === 0 && (
+                            <Tag color="success" ml={2}>
+                                on time
+                            </Tag>
+                        )}
+                        {timeOffset < 0 && (
+                            <Tag color="success" ml={2}>
+                                -{" "}
+                                {Math.floor(timeOffsetAbs / 60) !== 0 &&
+                                    `${Math.floor(timeOffsetAbs / 60)}h `}
+                                {`${timeOffsetAbs % 60}min`}
+                            </Tag>
+                        )}
+                        {timeOffset > 0 && (
+                            <Tag color="danger" ml={2}>
+                                +{" "}
+                                {Math.floor(timeOffsetAbs / 60) !== 0 &&
+                                    `${Math.floor(timeOffsetAbs / 60)}h `}
+                                {`${timeOffsetAbs % 60}min`}
+                            </Tag>
+                        )}
+                    </>
+                )}
             </Heading>
+            {timeOffset !== undefined && timeOffset !== 0 && (
+                <Heading size={6} subtitle style={{ marginTop: "-1.25rem" }}>
+                    Scheduled: {moment(stop.at).format("h:mm a (Do MMMM)")}
+                </Heading>
+            )}
             <Table>
                 <tbody>
                     <tr>
