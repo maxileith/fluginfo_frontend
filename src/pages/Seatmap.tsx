@@ -7,6 +7,8 @@ import CenteredLoader from "../components/CenteredLoader/CenteredLoader";
 import unknownErrorHandling from "../utils/unknownErrorHandling";
 import useEffectNotOnMount from "../utils/useEffectNotOnMount";
 import useIsMounted from "../utils/useIsMounted";
+import SeatmapComp from "../components/Seatmap/Seatmap";
+import { Heading } from "react-bulma-components";
 
 export interface ISeatmap {
     from: "offerDetails" | "status";
@@ -79,7 +81,13 @@ export default function Seatmap({ from }: ISeatmap): JSX.Element {
     return (
         <>
             {loading && <CenteredLoader />}
-            {seatmap && JSON.stringify(seatmap)}
+            {seatmap && (
+                <>
+                    <Heading>Seatmap</Heading>
+                    <Heading subtitle>Find your desired seat.</Heading>
+                    <SeatmapComp seatmap={seatmap} />
+                </>
+            )}
         </>
     );
 }
