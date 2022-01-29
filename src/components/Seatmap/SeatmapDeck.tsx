@@ -1,9 +1,11 @@
 import { useMemo } from "react";
-import { Block, Columns, Image } from "react-bulma-components";
+import { Columns, Image } from "react-bulma-components";
 import { IApiDeck } from "../../api/interfaces/IApiSeatmap";
+import TApiSeatmapGridItem from "../../api/types/TApiSeatmapGridItem";
 
 export interface ISeatmapDeck {
     deck: IApiDeck;
+    onFocusGridItem: (item: TApiSeatmapGridItem) => void;
 }
 
 type TShapeBase = "End" | "I" | "Island";
@@ -291,7 +293,7 @@ function getShapeComplex(
         sameBottomLeft &&
         sameLeft
     ) {
-        return { shape: "MissingThreeCorners", rotation: 180 };
+        return { shape: "MissingThreeCorners", rotation: 270 };
     } else if (
         sameTop &&
         sameTopRight &&
@@ -383,13 +385,13 @@ function getShapeComplex(
     }
 }
 
-export default function SeatmapDeck({ deck }: ISeatmapDeck) {
+export default function SeatmapDeck({ deck, onFocusGridItem }: ISeatmapDeck) {
     const gridTypes: TGridItemType[][] = useMemo(
         () =>
             deck.grid.map((row) =>
                 row.map((col) => (col === null ? "aisle" : col.type))
             ),
-        []
+        [deck.grid]
     );
 
     return (
@@ -435,15 +437,34 @@ export default function SeatmapDeck({ deck }: ISeatmapDeck) {
                                     const { shape, rotation } =
                                         getShapeRotationSeat(gridTypes, x, y);
                                     return (
-                                        <Image
-                                            src={`/seatmap/griditems/seats/seat${shape}.png`}
-                                            style={{
-                                                rotate: `${rotation}deg`,
-                                                filter: col.available
-                                                    ? ""
-                                                    : "saturate(0)",
-                                            }}
-                                        />
+                                        <>
+                                            <Image
+                                                src={`/seatmap/griditems/seats/seat${shape}.png`}
+                                                style={{
+                                                    rotate: `${rotation}deg`,
+                                                    filter: col.available
+                                                        ? ""
+                                                        : "saturate(0)",
+                                                }}
+                                                onClick={() =>
+                                                    onFocusGridItem(col)
+                                                }
+                                            />
+                                            <p
+                                                style={{
+                                                    height: 0,
+                                                    position: "relative",
+                                                    top: "calc(-45% - 1rem)",
+                                                    color: "white",
+                                                    textAlign: "center",
+                                                }}
+                                                onClick={() =>
+                                                    onFocusGridItem(col)
+                                                }
+                                            >
+                                                {col.number}
+                                            </p>
+                                        </>
                                     );
                                 })()}
                             {col &&
@@ -461,6 +482,7 @@ export default function SeatmapDeck({ deck }: ISeatmapDeck) {
                                             style={{
                                                 rotate: `${rotation}deg`,
                                             }}
+                                            onClick={() => onFocusGridItem(col)}
                                         />
                                     );
                                 })()}
@@ -478,6 +500,7 @@ export default function SeatmapDeck({ deck }: ISeatmapDeck) {
                                             style={{
                                                 rotate: `${rotation}deg`,
                                             }}
+                                            onClick={() => onFocusGridItem(col)}
                                         />
                                     );
                                 })()}

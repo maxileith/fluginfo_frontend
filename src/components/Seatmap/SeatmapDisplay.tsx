@@ -1,14 +1,17 @@
 import { Tabs } from "react-bulma-components";
 import { IApiDeck } from "../../api/interfaces/IApiSeatmap";
+import TApiSeatmapGridItem from "../../api/types/TApiSeatmapGridItem";
 import useQueryState from "../../utils/useQueryState";
 import SeatmapDeck from "./SeatmapDeck";
 
 export interface ISeatmapDisplay {
     decks: IApiDeck[];
+    onFocusGridItem: (item: TApiSeatmapGridItem) => void;
 }
 
 export default function SeatmapDisplay({
     decks,
+    onFocusGridItem,
 }: ISeatmapDisplay): JSX.Element {
     const [deck, setDeck] = useQueryState<number>(1, "deck");
 
@@ -26,7 +29,10 @@ export default function SeatmapDisplay({
                     ))}
                 </Tabs>
             )}
-            <SeatmapDeck deck={decks[deck - 1]} />
+            <SeatmapDeck
+                deck={decks[deck - 1]}
+                onFocusGridItem={onFocusGridItem}
+            />
         </>
     );
 }
