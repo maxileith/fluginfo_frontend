@@ -9,8 +9,8 @@ export interface ISeatmap {
 
 export default function Seatmap({ seatmap }: ISeatmap): JSX.Element {
     return (
-        <Columns>
-            <Columns.Column>
+        <Columns centered>
+            <Columns.Column narrow>
                 <SeatmapDisplay decks={seatmap.decks} />
             </Columns.Column>
             <Columns.Column narrow>

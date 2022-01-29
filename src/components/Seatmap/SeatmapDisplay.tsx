@@ -1,4 +1,6 @@
+import { Tabs } from "react-bulma-components";
 import { IApiDeck } from "../../api/interfaces/IApiSeatmap";
+import useQueryState from "../../utils/useQueryState";
 import SeatmapDeck from "./SeatmapDeck";
 
 export interface ISeatmapDisplay {
@@ -8,5 +10,23 @@ export interface ISeatmapDisplay {
 export default function SeatmapDisplay({
     decks,
 }: ISeatmapDisplay): JSX.Element {
-    return <SeatmapDeck deck={decks[0]} />;
+    const [deck, setDeck] = useQueryState<number>(1, "deck");
+
+    return (
+        <>
+            {decks.length > 1 && (
+                <Tabs>
+                    {decks.map((d, i) => (
+                        <Tabs.Tab
+                            active={deck === i + 1}
+                            onClick={() => setDeck(i + 1)}
+                        >
+                            Deck {i + 1}
+                        </Tabs.Tab>
+                    ))}
+                </Tabs>
+            )}
+            <SeatmapDeck deck={decks[deck - 1]} />
+        </>
+    );
 }

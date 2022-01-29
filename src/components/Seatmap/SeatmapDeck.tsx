@@ -7,9 +7,8 @@ export interface ISeatmapDeck {
 }
 
 type TShapeBase = "End" | "I" | "Island";
-type TShapeAisle = TShapeBase | "L" | "T" | "X";
 type TShapeFacility =
-    | TShapeAisle
+    | TShapeBase
     | "Corner"
     | "Edge"
     | "MissingCorner"
@@ -18,7 +17,10 @@ type TShapeFacility =
     | "MissingThreeCorners"
     | "EdgeMissingCorner1"
     | "EdgeMissingCorner2"
-    | "Full";
+    | "Full"
+    | "L"
+    | "T"
+    | "X";
 type TRotation = 0 | 90 | 180 | 270;
 type TGridItemType = "facility" | "seat" | "aisle";
 
@@ -90,50 +92,6 @@ function getSameNeighbors(
     };
 }
 
-function getShapeRotationAisle(
-    gridTypes: TGridItemType[][],
-    x: number,
-    y: number
-): { shape: TShapeAisle; rotation: TRotation } {
-    const { sameTop, sameRight, sameBottom, sameLeft } = getSameNeighbors(
-        "aisle",
-        gridTypes,
-        x,
-        y
-    );
-    if (sameTop && sameRight && sameBottom && sameLeft) {
-        return { shape: "X", rotation: 0 };
-    } else if (sameTop && sameBottom && sameLeft) {
-        return { shape: "T", rotation: 90 };
-    } else if (sameTop && sameRight && sameLeft) {
-        return { shape: "T", rotation: 180 };
-    } else if (sameTop && sameRight && sameBottom) {
-        return { shape: "T", rotation: 270 };
-    } else if (sameTop && sameBottom) {
-        return { shape: "I", rotation: 0 };
-    } else if (sameRight && sameLeft) {
-        return { shape: "I", rotation: 90 };
-    } else if (sameTop && sameRight) {
-        return { shape: "L", rotation: 0 };
-    } else if (sameRight && sameBottom) {
-        return { shape: "L", rotation: 90 };
-    } else if (sameBottom && sameLeft) {
-        return { shape: "L", rotation: 180 };
-    } else if (sameLeft && sameTop) {
-        return { shape: "L", rotation: 270 };
-    } else if (sameTop) {
-        return { shape: "End", rotation: 0 };
-    } else if (sameRight) {
-        return { shape: "End", rotation: 90 };
-    } else if (sameBottom) {
-        return { shape: "End", rotation: 180 };
-    } else if (sameLeft) {
-        return { shape: "End", rotation: 270 };
-    } else {
-        return { shape: "Island", rotation: 0 };
-    }
-}
-
 function getShapeRotationSeat(
     gridTypes: TGridItemType[][],
     x: number,
@@ -152,7 +110,8 @@ function getShapeRotationSeat(
     }
 }
 
-function getShapeRotationFacility(
+function getShapeComplex(
+    type: "facility" | "aisle",
     gridTypes: TGridItemType[][],
     x: number,
     y: number
@@ -166,7 +125,7 @@ function getShapeRotationFacility(
         sameBottomLeft,
         sameLeft,
         sameTopLeft,
-    } = getSameNeighbors("facility", gridTypes, x, y);
+    } = getSameNeighbors(type, gridTypes, x, y);
 
     if (
         sameTop &&
@@ -490,12 +449,12 @@ export default function SeatmapDeck({ deck }: ISeatmapDeck) {
                             {col &&
                                 col.type === "facility" &&
                                 (() => {
-                                    const { shape, rotation } =
-                                        getShapeRotationFacility(
-                                            gridTypes,
-                                            x,
-                                            y
-                                        );
+                                    const { shape, rotation } = getShapeComplex(
+                                        "facility",
+                                        gridTypes,
+                                        x,
+                                        y
+                                    );
                                     return (
                                         <Image
                                             src={`/seatmap/griditems/facilities/facility${shape}.png`}
@@ -507,8 +466,12 @@ export default function SeatmapDeck({ deck }: ISeatmapDeck) {
                                 })()}
                             {col === null &&
                                 (() => {
-                                    const { shape, rotation } =
-                                        getShapeRotationAisle(gridTypes, x, y);
+                                    const { shape, rotation } = getShapeComplex(
+                                        "aisle",
+                                        gridTypes,
+                                        x,
+                                        y
+                                    );
                                     return (
                                         <Image
                                             src={`/seatmap/griditems/aisle/aisle${shape}.png`}
