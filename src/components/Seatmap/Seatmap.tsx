@@ -1,6 +1,5 @@
-import moment from "moment";
 import { useState } from "react";
-import { Columns, Heading } from "react-bulma-components";
+import { Columns } from "react-bulma-components";
 import IApiSeatmap from "../../api/interfaces/IApiSeatmap";
 import TApiSeatmapGridItem from "../../api/types/TApiSeatmapGridItem";
 import AdvancedStickyWrapper from "../AdvancedStickyWrapper/AdvancedStickyWrapper";
@@ -27,13 +26,6 @@ export default function Seatmap({ seatmap }: ISeatmap): JSX.Element {
         <Columns breakpoint={bigAircraft ? "desktop" : "tablet"}>
             <Columns.Column size={"5-desktop" as "one-third"}>
                 <AdvancedStickyWrapper>
-                    <Heading>Seatmap</Heading>
-                    <Heading subtitle>
-                        Flight {seatmap.flightNumber} from{" "}
-                        {seatmap.departureIata} to {seatmap.arrivalIata} on{" "}
-                        {moment(seatmap.date).format("MMMM Mo, YYYY")}.
-                    </Heading>
-                    <hr />
                     <SeatmapLegend
                         amenities={seatmap.amenities}
                         gridItem={focusedGridItem}
