@@ -5,7 +5,6 @@ import API from "../Api";
 import IApiSeatmap from "../api/interfaces/IApiSeatmap";
 import CenteredLoader from "../components/CenteredLoader/CenteredLoader";
 import unknownErrorHandling from "../utils/unknownErrorHandling";
-import useEffectNotOnMount from "../utils/useEffectNotOnMount";
 import useIsMounted from "../utils/useIsMounted";
 import SeatmapComp from "../components/Seatmap/Seatmap";
 import { Heading } from "react-bulma-components";
