@@ -80,6 +80,7 @@ export default function Seatmap({ from }: ISeatmap): JSX.Element {
                         {seatmap.departureIata} to {seatmap.arrivalIata} on{" "}
                         {moment(seatmap.date).format("MMMM Mo, YYYY")}.
                     </Heading>
+                    <hr />
                     <SeatmapComp seatmap={seatmap} />
                 </>
             )}
