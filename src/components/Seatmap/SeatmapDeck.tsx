@@ -1,5 +1,3 @@
-import { type } from "os";
-import { useMemo } from "react";
 import { Columns, Image } from "react-bulma-components";
 import { IApiDeck } from "../../api/interfaces/IApiSeatmap";
 import TApiSeatmapGridItem from "../../api/types/TApiSeatmapGridItem";
@@ -26,11 +24,28 @@ type TShapeFacility =
     | "T"
     | "X";
 type TRotation = 0 | 90 | 180 | 270;
-type TGridItemType = "facility" | "seat" | "aisle";
+
+function gridItemMatches(
+    focusedGridItem: TApiSeatmapGridItem,
+    gridItem: TApiSeatmapGridItem
+): boolean {
+    if (focusedGridItem === null && gridItem === null) {
+        return true;
+    } else if (focusedGridItem === null || gridItem === null) {
+        return false;
+    } else if (focusedGridItem.type === "seat" && gridItem.type === "seat") {
+        return focusedGridItem.number === gridItem.number;
+    } else if (
+        focusedGridItem.type === "facility" &&
+        gridItem.type === "facility"
+    ) {
+        return focusedGridItem.name === gridItem.name;
+    }
+    return false;
+}
 
 function getSameNeighbors(
-    type: TGridItemType,
-    gridTypes: TGridItemType[][],
+    grid: TApiSeatmapGridItem[][],
     x: number,
     y: number
 ): {
@@ -53,28 +68,28 @@ function getSameNeighbors(
     var sameTopLeft: boolean = false;
 
     try {
-        sameTop = gridTypes[y - 1][x] === type;
+        sameTop = gridItemMatches(grid[y][x], grid[y - 1][x]);
     } catch {}
     try {
-        sameTopRight = gridTypes[y - 1][x + 1] === type;
+        sameTopRight = gridItemMatches(grid[y][x], grid[y - 1][x + 1]);
     } catch {}
     try {
-        sameRight = gridTypes[y][x + 1] === type;
+        sameRight = gridItemMatches(grid[y][x], grid[y][x + 1]);
     } catch {}
     try {
-        sameBottomRight = gridTypes[y + 1][x + 1] === type;
+        sameBottomRight = gridItemMatches(grid[y][x], grid[y + 1][x + 1]);
     } catch {}
     try {
-        sameBottom = gridTypes[y + 1][x] === type;
+        sameBottom = gridItemMatches(grid[y][x], grid[y + 1][x]);
     } catch {}
     try {
-        sameBottomLeft = gridTypes[y + 1][x - 1] === type;
+        sameBottomLeft = gridItemMatches(grid[y][x], grid[y + 1][x - 1]);
     } catch {}
     try {
-        sameLeft = gridTypes[y][x - 1] === type;
+        sameLeft = gridItemMatches(grid[y][x], grid[y][x - 1]);
     } catch {}
     try {
-        sameTopLeft = gridTypes[y - 1][x - 1] === type;
+        sameTopLeft = gridItemMatches(grid[y][x], grid[y - 1][x - 1]);
     } catch {}
 
     return {
@@ -90,11 +105,11 @@ function getSameNeighbors(
 }
 
 function getShapeRotationSeat(
-    gridTypes: TGridItemType[][],
+    grid: TApiSeatmapGridItem[][],
     x: number,
     y: number
 ): { shape: TShapeBase; rotation: TRotation } {
-    const { sameRight, sameLeft } = getSameNeighbors("seat", gridTypes, x, y);
+    const { sameRight, sameLeft } = getSameNeighbors(grid, x, y);
 
     if (sameRight && sameLeft) {
         return { shape: "I", rotation: 90 };
@@ -108,8 +123,7 @@ function getShapeRotationSeat(
 }
 
 function getShapeComplex(
-    type: "facility" | "aisle",
-    gridTypes: TGridItemType[][],
+    grid: TApiSeatmapGridItem[][],
     x: number,
     y: number
 ): { shape: TShapeFacility; rotation: TRotation } {
@@ -122,7 +136,7 @@ function getShapeComplex(
         sameBottomLeft,
         sameLeft,
         sameTopLeft,
-    } = getSameNeighbors(type, gridTypes, x, y);
+    } = getSameNeighbors(grid, x, y);
 
     if (
         sameTop &&
@@ -380,40 +394,11 @@ function getShapeComplex(
     }
 }
 
-function gridItemIsFocused(
-    focusedGridItem: TApiSeatmapGridItem | undefined,
-    gridItem: TApiSeatmapGridItem
-): boolean {
-    if (focusedGridItem === undefined) {
-        return false;
-    } else if (focusedGridItem === null && gridItem === null) {
-        return true;
-    } else if (focusedGridItem === null || gridItem === null) {
-        return false;
-    } else if (focusedGridItem.type === "seat" && gridItem.type === "seat") {
-        return focusedGridItem.number === gridItem.number;
-    } else if (
-        focusedGridItem.type === "facility" &&
-        gridItem.type === "facility"
-    ) {
-        return focusedGridItem.name === gridItem.name;
-    }
-    return false;
-}
-
 export default function SeatmapDeck({
     deck,
     onFocusGridItem,
     focusedGridItem,
 }: ISeatmapDeck) {
-    const gridTypes: TGridItemType[][] = useMemo(
-        () =>
-            deck.grid.map((row) =>
-                row.map((col) => (col === null ? "aisle" : col.type))
-            ),
-        [deck.grid]
-    );
-
     return (
         <>
             {deck.grid.map((row, y) => (
@@ -457,14 +442,14 @@ export default function SeatmapDeck({
                         <Columns.Column
                             key={x}
                             paddingless
-                            style={{ maxWidth: 65 }}
+                            style={{ maxWidth: 65, cursor: "pointer" }}
                             backgroundColor="light"
                         >
                             {col &&
                                 col.type === "seat" &&
                                 (() => {
                                     const { shape, rotation } =
-                                        getShapeRotationSeat(gridTypes, x, y);
+                                        getShapeRotationSeat(deck.grid, x, y);
                                     return (
                                         <>
                                             <Image
@@ -474,12 +459,15 @@ export default function SeatmapDeck({
                                                     filter: col.available
                                                         ? ""
                                                         : "saturate(0)",
-                                                    opacity: gridItemIsFocused(
-                                                        focusedGridItem,
-                                                        col
-                                                    )
-                                                        ? 0.5
-                                                        : 1,
+                                                    opacity:
+                                                        focusedGridItem !==
+                                                            undefined &&
+                                                        gridItemMatches(
+                                                            focusedGridItem,
+                                                            col
+                                                        )
+                                                            ? 0.5
+                                                            : 1,
                                                 }}
                                                 onClick={() =>
                                                     onFocusGridItem(col)
@@ -506,8 +494,7 @@ export default function SeatmapDeck({
                                 col.type === "facility" &&
                                 (() => {
                                     const { shape, rotation } = getShapeComplex(
-                                        "facility",
-                                        gridTypes,
+                                        deck.grid,
                                         x,
                                         y
                                     );
@@ -516,12 +503,15 @@ export default function SeatmapDeck({
                                             src={`/seatmap/griditems/facilities/facility${shape}.png`}
                                             style={{
                                                 rotate: `${rotation}deg`,
-                                                opacity: gridItemIsFocused(
-                                                    focusedGridItem,
-                                                    col
-                                                )
-                                                    ? 0.5
-                                                    : 1,
+                                                opacity:
+                                                    focusedGridItem !==
+                                                        undefined &&
+                                                    gridItemMatches(
+                                                        focusedGridItem,
+                                                        col
+                                                    )
+                                                        ? 0.5
+                                                        : 1,
                                             }}
                                             onClick={() => onFocusGridItem(col)}
                                         />
@@ -530,8 +520,7 @@ export default function SeatmapDeck({
                             {col === null &&
                                 (() => {
                                     const { shape, rotation } = getShapeComplex(
-                                        "aisle",
-                                        gridTypes,
+                                        deck.grid,
                                         x,
                                         y
                                     );
@@ -540,12 +529,15 @@ export default function SeatmapDeck({
                                             src={`/seatmap/griditems/aisle/aisle${shape}.png`}
                                             style={{
                                                 rotate: `${rotation}deg`,
-                                                opacity: gridItemIsFocused(
-                                                    focusedGridItem,
-                                                    col
-                                                )
-                                                    ? 0.5
-                                                    : 1,
+                                                opacity:
+                                                    focusedGridItem !==
+                                                        undefined &&
+                                                    gridItemMatches(
+                                                        focusedGridItem,
+                                                        col
+                                                    )
+                                                        ? 0.5
+                                                        : 1,
                                             }}
                                             onClick={() => onFocusGridItem(col)}
                                         />

@@ -85,7 +85,7 @@ export default function SeatmapLegend({
                     {gridItem === undefined &&
                         "Select an item of the seatmap to get to known the details."}
                     {gridItem === null &&
-                        "The selected section is an aisle to move around the plane."}
+                        "The selected section is an aisle to move around the aircraft."}
                     {gridItem &&
                         gridItem.type === "facility" &&
                         `${gridItem.name} (Facility)`}
