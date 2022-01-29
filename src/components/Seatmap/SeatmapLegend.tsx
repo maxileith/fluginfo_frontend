@@ -41,7 +41,7 @@ export default function SeatmapLegend({
                             </td>
                         </tr>
                         {amenities.entertainment.map((e) => (
-                            <tr>
+                            <tr key={e.type}>
                                 <th>Entertainment</th>
                                 <td>
                                     {e.type}

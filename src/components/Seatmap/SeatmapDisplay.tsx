@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Tabs } from "react-bulma-components";
 import { IApiDeck } from "../../api/interfaces/IApiSeatmap";
 import TApiSeatmapGridItem from "../../api/types/TApiSeatmapGridItem";
@@ -7,13 +8,24 @@ import SeatmapDeck from "./SeatmapDeck";
 export interface ISeatmapDisplay {
     decks: IApiDeck[];
     onFocusGridItem: (item: TApiSeatmapGridItem) => void;
+    focusedGridItem?: TApiSeatmapGridItem;
 }
 
 export default function SeatmapDisplay({
     decks,
     onFocusGridItem,
+    focusedGridItem,
 }: ISeatmapDisplay): JSX.Element {
-    const [deck, setDeck] = useQueryState<number>(1, "deck");
+    const [deck, setDeck] = useQueryState<number>(0, "deck");
+
+    const [focusedGridItemDeck, setFocusedGridItemDeck] = useState<
+        number | undefined
+    >(undefined);
+
+    const handleFocusGridItem = (item: TApiSeatmapGridItem) => {
+        setFocusedGridItemDeck(deck);
+        onFocusGridItem(item);
+    };
 
     return (
         <>
@@ -21,8 +33,8 @@ export default function SeatmapDisplay({
                 <Tabs>
                     {decks.map((d, i) => (
                         <Tabs.Tab
-                            active={deck === i + 1}
-                            onClick={() => setDeck(i + 1)}
+                            active={deck === i}
+                            onClick={() => setDeck(i)}
                         >
                             Deck {i + 1}
                         </Tabs.Tab>
@@ -30,8 +42,11 @@ export default function SeatmapDisplay({
                 </Tabs>
             )}
             <SeatmapDeck
-                deck={decks[deck - 1]}
-                onFocusGridItem={onFocusGridItem}
+                deck={decks[deck]}
+                onFocusGridItem={handleFocusGridItem}
+                focusedGridItem={
+                    deck === focusedGridItemDeck ? focusedGridItem : undefined
+                }
             />
         </>
     );

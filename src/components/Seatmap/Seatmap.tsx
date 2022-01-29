@@ -27,6 +27,7 @@ export default function Seatmap({ seatmap }: ISeatmap): JSX.Element {
                 <SeatmapDisplay
                     decks={seatmap.decks}
                     onFocusGridItem={setFocusedGridItem}
+                    focusedGridItem={focusedGridItem}
                 />
             </Columns.Column>
         </Columns>

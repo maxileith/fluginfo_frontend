@@ -1,3 +1,4 @@
+import { type } from "os";
 import { useMemo } from "react";
 import { Columns, Image } from "react-bulma-components";
 import { IApiDeck } from "../../api/interfaces/IApiSeatmap";
@@ -6,6 +7,7 @@ import TApiSeatmapGridItem from "../../api/types/TApiSeatmapGridItem";
 export interface ISeatmapDeck {
     deck: IApiDeck;
     onFocusGridItem: (item: TApiSeatmapGridItem) => void;
+    focusedGridItem?: TApiSeatmapGridItem;
 }
 
 type TShapeBase = "End" | "I" | "Island";
@@ -53,31 +55,24 @@ function getSameNeighbors(
     try {
         sameTop = gridTypes[y - 1][x] === type;
     } catch {}
-
     try {
         sameTopRight = gridTypes[y - 1][x + 1] === type;
     } catch {}
-
     try {
         sameRight = gridTypes[y][x + 1] === type;
     } catch {}
-
     try {
         sameBottomRight = gridTypes[y + 1][x + 1] === type;
     } catch {}
-
     try {
         sameBottom = gridTypes[y + 1][x] === type;
     } catch {}
-
     try {
         sameBottomLeft = gridTypes[y + 1][x - 1] === type;
     } catch {}
-
     try {
         sameLeft = gridTypes[y][x - 1] === type;
     } catch {}
-
     try {
         sameTopLeft = gridTypes[y - 1][x - 1] === type;
     } catch {}
@@ -385,7 +380,32 @@ function getShapeComplex(
     }
 }
 
-export default function SeatmapDeck({ deck, onFocusGridItem }: ISeatmapDeck) {
+function gridItemIsFocused(
+    focusedGridItem: TApiSeatmapGridItem | undefined,
+    gridItem: TApiSeatmapGridItem
+): boolean {
+    if (focusedGridItem === undefined) {
+        return false;
+    } else if (focusedGridItem === null && gridItem === null) {
+        return true;
+    } else if (focusedGridItem === null || gridItem === null) {
+        return false;
+    } else if (focusedGridItem.type === "seat" && gridItem.type === "seat") {
+        return focusedGridItem.number === gridItem.number;
+    } else if (
+        focusedGridItem.type === "facility" &&
+        gridItem.type === "facility"
+    ) {
+        return focusedGridItem.name === gridItem.name;
+    }
+    return false;
+}
+
+export default function SeatmapDeck({
+    deck,
+    onFocusGridItem,
+    focusedGridItem,
+}: ISeatmapDeck) {
     const gridTypes: TGridItemType[][] = useMemo(
         () =>
             deck.grid.map((row) =>
@@ -398,24 +418,33 @@ export default function SeatmapDeck({ deck, onFocusGridItem }: ISeatmapDeck) {
         <>
             {deck.grid.map((row, y) => (
                 <Columns key={y} breakpoint="mobile" centered multiline={false}>
-                    {deck.wingsX && (
+                    {(deck.wingsX || deck.exitRowsX) && (
                         <Columns.Column
                             paddingless
                             style={{
                                 maxWidth: 65,
                             }}
                         >
-                            <Image
-                                src={
-                                    deck.wingsX.start > y || deck.wingsX.end < y
-                                        ? "/seatmap/air.png"
-                                        : deck.wingsX.start === y
-                                        ? "/seatmap/wings/frontL.png"
-                                        : deck.wingsX.end === y
-                                        ? "/seatmap/wings/rearL.png"
-                                        : "/seatmap/wings/mid.png"
-                                }
-                            />
+                            {deck.wingsX && (
+                                <Image
+                                    src={
+                                        deck.wingsX.start > y ||
+                                        deck.wingsX.end < y
+                                            ? "/seatmap/air.png"
+                                            : deck.wingsX.start === y
+                                            ? "/seatmap/wings/frontL.png"
+                                            : deck.wingsX.end === y
+                                            ? "/seatmap/wings/rearL.png"
+                                            : "/seatmap/wings/mid.png"
+                                    }
+                                />
+                            )}
+                            {deck.exitRowsX && deck.exitRowsX.includes(y) && (
+                                <Image
+                                    src="/seatmap/exit.png"
+                                    style={{ marginTop: "-100%" }}
+                                />
+                            )}
                         </Columns.Column>
                     )}
                     <Columns.Column
@@ -445,6 +474,12 @@ export default function SeatmapDeck({ deck, onFocusGridItem }: ISeatmapDeck) {
                                                     filter: col.available
                                                         ? ""
                                                         : "saturate(0)",
+                                                    opacity: gridItemIsFocused(
+                                                        focusedGridItem,
+                                                        col
+                                                    )
+                                                        ? 0.5
+                                                        : 1,
                                                 }}
                                                 onClick={() =>
                                                     onFocusGridItem(col)
@@ -481,6 +516,12 @@ export default function SeatmapDeck({ deck, onFocusGridItem }: ISeatmapDeck) {
                                             src={`/seatmap/griditems/facilities/facility${shape}.png`}
                                             style={{
                                                 rotate: `${rotation}deg`,
+                                                opacity: gridItemIsFocused(
+                                                    focusedGridItem,
+                                                    col
+                                                )
+                                                    ? 0.5
+                                                    : 1,
                                             }}
                                             onClick={() => onFocusGridItem(col)}
                                         />
@@ -499,6 +540,12 @@ export default function SeatmapDeck({ deck, onFocusGridItem }: ISeatmapDeck) {
                                             src={`/seatmap/griditems/aisle/aisle${shape}.png`}
                                             style={{
                                                 rotate: `${rotation}deg`,
+                                                opacity: gridItemIsFocused(
+                                                    focusedGridItem,
+                                                    col
+                                                )
+                                                    ? 0.5
+                                                    : 1,
                                             }}
                                             onClick={() => onFocusGridItem(col)}
                                         />
@@ -512,19 +559,28 @@ export default function SeatmapDeck({ deck, onFocusGridItem }: ISeatmapDeck) {
                         style={{ width: "1rem" }}
                         narrow
                     />
-                    {deck.wingsX && (
+                    {(deck.wingsX || deck.exitRowsX) && (
                         <Columns.Column paddingless style={{ maxWidth: 65 }}>
-                            <Image
-                                src={
-                                    deck.wingsX.start > y || deck.wingsX.end < y
-                                        ? "/seatmap/air.png"
-                                        : deck.wingsX.start === y
-                                        ? "/seatmap/wings/frontR.png"
-                                        : deck.wingsX.end === y
-                                        ? "/seatmap/wings/rearR.png"
-                                        : "/seatmap/wings/mid.png"
-                                }
-                            />
+                            {deck.wingsX && (
+                                <Image
+                                    src={
+                                        deck.wingsX.start > y ||
+                                        deck.wingsX.end < y
+                                            ? "/seatmap/air.png"
+                                            : deck.wingsX.start === y
+                                            ? "/seatmap/wings/frontR.png"
+                                            : deck.wingsX.end === y
+                                            ? "/seatmap/wings/rearR.png"
+                                            : "/seatmap/wings/mid.png"
+                                    }
+                                />
+                            )}
+                            {deck.exitRowsX && deck.exitRowsX.includes(y) && (
+                                <Image
+                                    src="/seatmap/exit.png"
+                                    style={{ marginTop: "-100%" }}
+                                />
+                            )}
                         </Columns.Column>
                     )}
                 </Columns>
