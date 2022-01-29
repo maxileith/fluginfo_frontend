@@ -47,8 +47,7 @@ export default function OfferDetails(): JSX.Element {
                             break;
                     }
                 }
-                isMounted.current &&
-                    navigate("/offer/search", { replace: true });
+                isMounted.current && navigate(-1);
             })
             .finally(() => {
                 isMounted.current && setLoading(false);

@@ -61,22 +61,12 @@ export default function Seatmap({ from }: ISeatmap): JSX.Element {
                             break;
                     }
                 }
-                isMounted.current &&
-                    navigate(
-                        from === "offerDetails"
-                            ? `/offer/details/${hash}`
-                            : `/status?date=${date}&flightNumber=${flightNumber}`,
-                        { replace: true }
-                    );
+                isMounted.current && navigate(-1);
             })
             .finally(() => {
                 isMounted.current && setLoading(false);
             });
     }, [hash, segmentId, flightNumber, date, classId, from, navigate]);
-
-    useEffectNotOnMount(() => {
-        console.log(seatmap);
-    }, [seatmap]);
 
     return (
         <>
