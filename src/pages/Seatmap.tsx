@@ -9,6 +9,7 @@ import useEffectNotOnMount from "../utils/useEffectNotOnMount";
 import useIsMounted from "../utils/useIsMounted";
 import SeatmapComp from "../components/Seatmap/Seatmap";
 import { Heading } from "react-bulma-components";
+import moment from "moment";
 
 export interface ISeatmap {
     from: "offerDetails" | "status";
@@ -74,7 +75,11 @@ export default function Seatmap({ from }: ISeatmap): JSX.Element {
             {seatmap && (
                 <>
                     <Heading>Seatmap</Heading>
-                    <Heading subtitle>Find your desired seat.</Heading>
+                    <Heading subtitle>
+                        Flight {seatmap.flightNumber} from{" "}
+                        {seatmap.departureIata} to {seatmap.arrivalIata} on{" "}
+                        {moment(seatmap.date).format("MMMM Mo, YYYY")}.
+                    </Heading>
                     <SeatmapComp seatmap={seatmap} />
                 </>
             )}

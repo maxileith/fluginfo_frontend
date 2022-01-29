@@ -13,6 +13,11 @@ const Template: ComponentStory<typeof Seatmap> = (args: ISeatmap) => (
 export const Standard = Template.bind({});
 Standard.args = {
     seatmap: {
+        flightNumber: "LH438",
+        classId: "Y",
+        departureIata: "FRA",
+        arrivalIata: "DFW",
+        date: "2022-03-01T00:00:00",
         amenities: {
             power: { isChargeable: false, type: "USB-Port" },
             seat: {

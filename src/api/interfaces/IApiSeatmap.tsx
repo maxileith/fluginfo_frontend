@@ -81,6 +81,11 @@ export interface IApiDeck {
 }
 
 export default interface IApiSeatmap {
+    flightNumber: string;
+    classId: string;
+    departureIata: string;
+    arrivalIata: string;
+    date: string;
     amenities: IApiAmenities;
     decks: IApiDeck[];
 }
