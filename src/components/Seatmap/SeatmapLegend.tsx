@@ -77,6 +77,14 @@ export default function SeatmapLegend({
                                     )}
                                 </td>
                             </tr>
+                            <tr>
+                                <th>Legspace</th>
+                                <td>{amenities.seat.legSpace}</td>
+                            </tr>
+                            <tr>
+                                <th>Seat Tilt</th>
+                                <td>{amenities.seat.tilt}</td>
+                            </tr>
                         </tbody>
                     </Table>
                 </Box>
