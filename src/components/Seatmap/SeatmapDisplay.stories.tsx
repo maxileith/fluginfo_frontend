@@ -14,4 +14,7 @@ const Template: ComponentStory<typeof SeatmapDisplay> = (
 export const Standard = Template.bind({});
 Standard.args = {
     decks: SeatmapStories.Standard.args?.seatmap?.decks,
+    focusedGridItem: undefined,
+    onFocusGridItem: (s) => console.log(`focused grid item: ${s}`),
+    bigAircraft: true,
 };

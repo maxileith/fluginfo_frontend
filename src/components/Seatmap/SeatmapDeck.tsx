@@ -1,4 +1,4 @@
-import { Columns, Image } from "react-bulma-components";
+import { Columns, Content, Image } from "react-bulma-components";
 import { IApiDeck } from "../../api/interfaces/IApiSeatmap";
 import TApiSeatmapGridItem from "../../api/types/TApiSeatmapGridItem";
 
@@ -6,6 +6,7 @@ export interface ISeatmapDeck {
     deck: IApiDeck;
     onFocusGridItem: (item: TApiSeatmapGridItem) => void;
     focusedGridItem?: TApiSeatmapGridItem;
+    bigAircraft: boolean;
 }
 
 type TShapeBase = "End" | "I" | "Island";
@@ -25,6 +26,13 @@ type TShapeFacility =
     | "X";
 type TRotation = 0 | 90 | 180 | 270;
 
+function isSameSeat(a: TApiSeatmapGridItem, b: TApiSeatmapGridItem): boolean {
+    if (!a || !b || a.type !== "seat" || b.type !== "seat") {
+        return false;
+    }
+    return a.number === b.number;
+}
+
 function gridItemMatches(
     focusedGridItem: TApiSeatmapGridItem,
     gridItem: TApiSeatmapGridItem
@@ -34,7 +42,7 @@ function gridItemMatches(
     } else if (focusedGridItem === null || gridItem === null) {
         return false;
     } else if (focusedGridItem.type === "seat" && gridItem.type === "seat") {
-        return focusedGridItem.number === gridItem.number;
+        return true;
     } else if (
         focusedGridItem.type === "facility" &&
         gridItem.type === "facility"
@@ -398,6 +406,7 @@ export default function SeatmapDeck({
     deck,
     onFocusGridItem,
     focusedGridItem,
+    bigAircraft,
 }: ISeatmapDeck) {
     return (
         <>
@@ -407,7 +416,7 @@ export default function SeatmapDeck({
                         <Columns.Column
                             paddingless
                             style={{
-                                maxWidth: 65,
+                                maxWidth: 60,
                             }}
                         >
                             {deck.wingsX && (
@@ -442,7 +451,7 @@ export default function SeatmapDeck({
                         <Columns.Column
                             key={x}
                             paddingless
-                            style={{ maxWidth: 65, cursor: "pointer" }}
+                            style={{ maxWidth: 60, cursor: "pointer" }}
                             backgroundColor="light"
                         >
                             {col &&
@@ -455,14 +464,14 @@ export default function SeatmapDeck({
                                             <Image
                                                 src={`/seatmap/griditems/seats/seat${shape}.png`}
                                                 style={{
-                                                    rotate: `${rotation}deg`,
+                                                    transform: `rotate(${rotation}deg)`,
                                                     filter: col.available
                                                         ? ""
                                                         : "saturate(0)",
                                                     opacity:
                                                         focusedGridItem !==
                                                             undefined &&
-                                                        gridItemMatches(
+                                                        isSameSeat(
                                                             focusedGridItem,
                                                             col
                                                         )
@@ -473,20 +482,28 @@ export default function SeatmapDeck({
                                                     onFocusGridItem(col)
                                                 }
                                             />
-                                            <p
+                                            <Content
                                                 style={{
-                                                    height: 0,
+                                                    marginTop: "-100%",
                                                     position: "relative",
-                                                    top: "calc(-45% - 1rem)",
+                                                    top: "50%",
+                                                    zIndex: 1,
                                                     color: "white",
-                                                    textAlign: "center",
+                                                    transform:
+                                                        "translateY(-50%)",
+                                                    fontSize: `min(1rem, ${
+                                                        bigAircraft
+                                                            ? "2vw"
+                                                            : "3.5vw"
+                                                    })`,
                                                 }}
                                                 onClick={() =>
                                                     onFocusGridItem(col)
                                                 }
+                                                textAlign="center"
                                             >
-                                                {col.number}
-                                            </p>
+                                                <p>{col.number}</p>
+                                            </Content>
                                         </>
                                     );
                                 })()}
@@ -502,7 +519,7 @@ export default function SeatmapDeck({
                                         <Image
                                             src={`/seatmap/griditems/facilities/facility${shape}.png`}
                                             style={{
-                                                rotate: `${rotation}deg`,
+                                                transform: `rotate(${rotation}deg)`,
                                                 opacity:
                                                     focusedGridItem !==
                                                         undefined &&
@@ -528,7 +545,7 @@ export default function SeatmapDeck({
                                         <Image
                                             src={`/seatmap/griditems/aisle/aisle${shape}.png`}
                                             style={{
-                                                rotate: `${rotation}deg`,
+                                                transform: `rotate(${rotation}deg)`,
                                                 opacity:
                                                     focusedGridItem !==
                                                         undefined &&
@@ -552,7 +569,7 @@ export default function SeatmapDeck({
                         narrow
                     />
                     {(deck.wingsX || deck.exitRowsX) && (
-                        <Columns.Column paddingless style={{ maxWidth: 65 }}>
+                        <Columns.Column paddingless style={{ maxWidth: 60 }}>
                             {deck.wingsX && (
                                 <Image
                                     src={

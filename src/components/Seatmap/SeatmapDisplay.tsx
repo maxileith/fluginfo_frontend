@@ -9,12 +9,14 @@ export interface ISeatmapDisplay {
     decks: IApiDeck[];
     onFocusGridItem: (item: TApiSeatmapGridItem) => void;
     focusedGridItem?: TApiSeatmapGridItem;
+    bigAircraft: boolean;
 }
 
 export default function SeatmapDisplay({
     decks,
     onFocusGridItem,
     focusedGridItem,
+    bigAircraft,
 }: ISeatmapDisplay): JSX.Element {
     const [deck, setDeck] = useQueryState<number>(0, "deck");
 
@@ -47,6 +49,7 @@ export default function SeatmapDisplay({
                 focusedGridItem={
                     deck === focusedGridItemDeck ? focusedGridItem : undefined
                 }
+                bigAircraft={bigAircraft}
             />
         </>
     );

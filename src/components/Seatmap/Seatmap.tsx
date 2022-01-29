@@ -14,20 +14,28 @@ export default function Seatmap({ seatmap }: ISeatmap): JSX.Element {
         TApiSeatmapGridItem | undefined
     >(undefined);
 
+    const widestDeck: number = seatmap.decks
+        .map((d) => d.grid[0].length)
+        .sort()
+        .reverse()[0];
+
+    const bigAircraft: boolean = widestDeck > 7;
+
     return (
-        <Columns>
-            <Columns.Column>
+        <Columns breakpoint={bigAircraft ? "desktop" : "tablet"}>
+            <Columns.Column size={"5-desktop" as "one-third"}>
                 <SeatmapLegend
                     amenities={seatmap.amenities}
                     gridItem={focusedGridItem}
                 />
             </Columns.Column>
             <hr />
-            <Columns.Column narrow>
+            <Columns.Column>
                 <SeatmapDisplay
                     decks={seatmap.decks}
                     onFocusGridItem={setFocusedGridItem}
                     focusedGridItem={focusedGridItem}
+                    bigAircraft={bigAircraft}
                 />
             </Columns.Column>
         </Columns>
