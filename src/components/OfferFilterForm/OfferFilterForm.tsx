@@ -1,16 +1,10 @@
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    ChangeEvent,
-    Dispatch,
-    SetStateAction,
-    useCallback,
-    useState,
-} from "react";
+import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
 import { Block, Box, Button, Form, Icon, Level } from "react-bulma-components";
 import { IApiCarrier } from "../../api/interfaces/IApiOffer";
 import useLazyStateWrapper from "../../utils/useLazyStateWrapper";
-import useViewportDimensions from "../../utils/useViewportDimensions";
+import AdvancedStickyWrapper from "../AdvancedStickyWrapper/AdvancedStickyWrapper";
 import RangeInput from "../RangeInput/RangeInput";
 
 export type TOfferOrderBy = "price" | "duration";
@@ -60,9 +54,6 @@ export default function OfferFilterForm({
     orderBy,
     setOrderBy,
 }: IOfferFilterForm): JSX.Element {
-    const { height } = useViewportDimensions();
-    const [offset, setOffset] = useState<string>("4rem");
-
     const [priceLimitLazy, setPriceLimitLazy] = useLazyStateWrapper([
         priceLimit,
         onChangePriceLimit,
@@ -72,36 +63,10 @@ export default function OfferFilterForm({
         onChangeDurationLimit,
     ]);
 
-    const ref = useCallback(
-        (node: HTMLDivElement) => {
-            if (node !== null) {
-                var heightDifference: number =
-                    node.getBoundingClientRect().height - height;
-                setOffset(
-                    heightDifference <
-                        -8 *
-                            parseFloat(
-                                getComputedStyle(document.documentElement)
-                                    .fontSize
-                            )
-                        ? "4rem"
-                        : `calc(-4rem - ${heightDifference}px)`
-                );
-            }
-        },
-        [height]
-    );
-
     const [visible, setVisible] = useState<boolean>(false);
 
     return (
-        <div
-            ref={ref}
-            style={{
-                position: "sticky",
-                top: offset,
-            }}
-        >
+        <AdvancedStickyWrapper>
             <Box>
                 <Level marginless breakpoint="mobile">
                     <Level.Side align="left">
@@ -278,6 +243,6 @@ export default function OfferFilterForm({
                     </Form.Field>
                 </Block>
             </Box>
-        </div>
+        </AdvancedStickyWrapper>
     );
 }

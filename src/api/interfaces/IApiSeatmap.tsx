@@ -1,3 +1,5 @@
+import TApiSeatmapGridItem from "../types/TApiSeatmapGridItem";
+
 export interface IApiAmenitiesPower {
     isChargeable: boolean;
     type: "Plug" | "USB-Port" | "Adaptor" | "Plug or USB-Port";
@@ -49,9 +51,9 @@ export interface IApiAmenities {
     beverage: IApiAmenitiesBeverage;
 }
 
-export interface IApiDeckWings {
-    startX: number;
-    endX: number;
+export interface IApiDeckWingsX {
+    start: number;
+    end: number;
 }
 
 export interface IApiDeckSeatRows {
@@ -72,12 +74,18 @@ export interface IApiGridFacility {
 }
 
 export interface IApiDeck {
-    wings?: IApiDeckWings;
+    wingsX?: IApiDeckWingsX;
     seatRows?: IApiDeckSeatRows;
-    grid: (IApiGridSeat | IApiGridFacility | null)[][];
+    exitRowsX?: number[];
+    grid: TApiSeatmapGridItem[][];
 }
 
 export default interface IApiSeatmap {
+    flightNumber: string;
+    classId: string;
+    departureIata: string;
+    arrivalIata: string;
+    date: string;
     amenities: IApiAmenities;
     decks: IApiDeck[];
 }

@@ -12,6 +12,7 @@ docker-build.sh
 docker-save.sh
 .vscode/
 README.md
+gimp
 
 # Logs
 logs

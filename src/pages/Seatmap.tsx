@@ -5,8 +5,10 @@ import API from "../Api";
 import IApiSeatmap from "../api/interfaces/IApiSeatmap";
 import CenteredLoader from "../components/CenteredLoader/CenteredLoader";
 import unknownErrorHandling from "../utils/unknownErrorHandling";
-import useEffectNotOnMount from "../utils/useEffectNotOnMount";
 import useIsMounted from "../utils/useIsMounted";
+import SeatmapComp from "../components/Seatmap/Seatmap";
+import { Heading } from "react-bulma-components";
+import moment from "moment";
 
 export interface ISeatmap {
     from: "offerDetails" | "status";
@@ -59,27 +61,28 @@ export default function Seatmap({ from }: ISeatmap): JSX.Element {
                             break;
                     }
                 }
-                isMounted.current &&
-                    navigate(
-                        from === "offerDetails"
-                            ? `/offer/details/${hash}`
-                            : `/status?date=${date}&flightNumber=${flightNumber}`,
-                        { replace: true }
-                    );
+                isMounted.current && navigate(-1);
             })
             .finally(() => {
                 isMounted.current && setLoading(false);
             });
     }, [hash, segmentId, flightNumber, date, classId, from, navigate]);
 
-    useEffectNotOnMount(() => {
-        console.log(seatmap);
-    }, [seatmap]);
-
     return (
         <>
             {loading && <CenteredLoader />}
-            {seatmap && JSON.stringify(seatmap)}
+            {seatmap && (
+                <>
+                    <Heading>Seatmap</Heading>
+                    <Heading subtitle>
+                        Flight {seatmap.flightNumber} from{" "}
+                        {seatmap.departureIata} to {seatmap.arrivalIata} on{" "}
+                        {moment(seatmap.date).format("MMMM Do, YYYY")}.
+                    </Heading>
+                    <hr />
+                    <SeatmapComp seatmap={seatmap} />
+                </>
+            )}
         </>
     );
 }
