@@ -485,6 +485,7 @@ export default function OfferSearch({
                 setAirlineListType={setAirlineListType}
                 onSearch={handleSearch}
                 loading={loading}
+                navigate={navigate}
             />
             {!fresh && !loading && (
                 <>

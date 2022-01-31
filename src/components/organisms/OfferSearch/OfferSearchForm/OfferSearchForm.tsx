@@ -6,11 +6,13 @@ import {
     faMale,
     faPlane,
     faStar,
+    faUndo,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import { ChangeEvent, CSSProperties, useState } from "react";
 import { Box, Button, Columns, Form, Icon } from "react-bulma-components";
+import { NavigateFunction } from "react-router";
 import TApiTravelClass from "../../../../api/types/TApiTravelClass";
 import travelClassEnhance from "../../../../utils/travelClassEnhance";
 import SelectAirport from "../../../molecules/SelectAirport/SelectAirport";
@@ -46,6 +48,7 @@ export interface IOfferSearchForm {
     setAirlineBlacklist: (blacklist: string) => void;
     onSearch: () => void;
     loading?: boolean;
+    navigate: NavigateFunction;
 }
 
 export default function OfferSearchForm({
@@ -75,6 +78,7 @@ export default function OfferSearchForm({
     setAirlineBlacklist,
     onSearch,
     loading,
+    navigate = () => {},
 }: IOfferSearchForm): JSX.Element {
     const [showAdvanced, setShowAdvanced] = useState<boolean>(
         airlineWhitelist !== "" || airlineBlacklist !== ""
@@ -383,6 +387,17 @@ export default function OfferSearchForm({
                 )}
                 <Button.Group align="right">
                     <Button
+                        onClick={() => navigate("/")}
+                        type="button"
+                        color="warning"
+                        colorVariant="light"
+                    >
+                        Reset
+                        <Icon ml={1}>
+                            <FontAwesomeIcon icon={faUndo} />
+                        </Icon>
+                    </Button>
+                    <Button
                         onClick={() => setShowAdvanced(!showAdvanced)}
                         type="button"
                         color="info"
@@ -393,9 +408,7 @@ export default function OfferSearchForm({
                             airlineWhitelist !== ""
                         }
                     >
-                        <span>
-                            {showAdvanced ? "Hide" : "Show"} Advanced Settings
-                        </span>
+                        {showAdvanced ? "Hide" : "Show"} Advanced Settings
                         <Icon ml={1}>
                             <FontAwesomeIcon icon={faCog} />
                         </Icon>
