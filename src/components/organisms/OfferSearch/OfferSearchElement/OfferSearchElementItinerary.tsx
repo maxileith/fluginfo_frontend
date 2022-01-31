@@ -6,9 +6,9 @@ import {
     Media,
     Tag,
 } from "react-bulma-components";
-import { IApiItinerary } from "../../../api/interfaces/IApiOffer";
-import API from "../../../Api";
-import SearchDropdownLabel from "../../molecules/SearchDropdown/SearchDropdownLabel";
+import { IApiItinerary } from "../../../../api/interfaces/IApiOffer";
+import API from "../../../../Api";
+import SearchDropdownLabel from "../../../molecules/SearchDropdown/SearchDropdownLabel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faClock,
@@ -19,15 +19,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import moment from "moment";
 import React from "react";
-import travelClassEnhance from "../../../utils/travelClassEnhance";
+import travelClassEnhance from "../../../../utils/travelClassEnhance";
 
-export interface IOfferElementItinerary {
+export interface IOfferSearchElementItinerary {
     itinerary: IApiItinerary;
 }
 
-export default function OfferElementItinerary({
+export default function OfferSearchElementItinerary({
     itinerary,
-}: IOfferElementItinerary): JSX.Element {
+}: IOfferSearchElementItinerary): JSX.Element {
     const marginTagsX: number = 1;
     const marginTagsY: number = 1;
 

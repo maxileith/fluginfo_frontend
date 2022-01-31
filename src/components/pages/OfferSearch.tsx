@@ -5,13 +5,13 @@ import IApiOfferSearch from "../../api/interfaces/IApiOfferSearch";
 import TApiTravelClass from "../../api/types/TApiTravelClass";
 import API from "../../Api";
 import IApiOffer, { IApiCarrier } from "../../api/interfaces/IApiOffer";
-import OfferElement from "../organisms/OfferElement/OfferElement";
+import OfferSearchElement from "../organisms/OfferSearch/OfferSearchElement/OfferSearchElement";
 import { toast } from "react-toastify";
 import unknownErrorHandling from "../../utils/unknownErrorHandling";
 import useDocumentTitle from "../../hooks/useDocumentTitle";
 import OfferFilterForm, {
     TOfferOrderBy,
-} from "../organisms/OfferFilterForm/OfferFilterForm";
+} from "../organisms/OfferSearch/OfferFilterForm/OfferFilterForm";
 import useIsMounted from "../../hooks/useIsMounted";
 import useEffectNotOnMount from "../../hooks/useEffectNotOnMount";
 import { NavigateFunction } from "react-router";
@@ -20,7 +20,7 @@ import useSearchParamsMock from "../../mocks/useSearchParamsMock";
 import useQueryState from "../../hooks/useQueryState";
 import OfferSearchForm, {
     TListType,
-} from "../organisms/OfferSearchForm/OfferSearchForm";
+} from "../organisms/OfferSearch/OfferSearchForm/OfferSearchForm";
 
 export interface IOfferSearch {
     addToOfferSearchCache: (key: string, offers: IApiOffer[]) => void;
@@ -441,7 +441,7 @@ export default function OfferSearch({
             sortedOffers
                 .slice(offersPerPage * (page - 1), offersPerPage * page)
                 .map((offer) => (
-                    <OfferElement
+                    <OfferSearchElement
                         key={offer.hash}
                         offer={offer}
                         showDetails={() =>

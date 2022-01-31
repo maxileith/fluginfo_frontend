@@ -11,9 +11,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import { ChangeEvent, CSSProperties, useState } from "react";
 import { Box, Button, Columns, Form, Icon } from "react-bulma-components";
-import TApiTravelClass from "../../../api/types/TApiTravelClass";
-import travelClassEnhance from "../../../utils/travelClassEnhance";
-import SelectAirport from "../../molecules/SelectAirport/SelectAirport";
+import TApiTravelClass from "../../../../api/types/TApiTravelClass";
+import travelClassEnhance from "../../../../utils/travelClassEnhance";
+import SelectAirport from "../../../molecules/SelectAirport/SelectAirport";
 
 export type TListType = "whitelist" | "blacklist";
 

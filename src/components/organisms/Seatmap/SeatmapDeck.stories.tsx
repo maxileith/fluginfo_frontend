@@ -4,7 +4,7 @@ import SeatmapDeck, { ISeatmapDeck } from "./SeatmapDeck";
 import * as SeatmapDisplayStories from "./SeatmapDisplay.stories";
 
 export default {
-    title: "SeatmapComp/Deck",
+    title: "Organisms/Seatmap/Deck",
     component: SeatmapDeck,
 } as ComponentMeta<typeof SeatmapDeck>;
 
@@ -18,4 +18,10 @@ Standard.args = {
     focusedGridItem: SeatmapDisplayStories.Standard.args?.focusedGridItem,
     onFocusGridItem: SeatmapDisplayStories.Standard.args?.onFocusGridItem,
     bigAircraft: SeatmapDisplayStories.Standard.args?.bigAircraft,
+};
+
+export const Big = Template.bind({});
+Big.args = {
+    ...Standard.args,
+    deck: SeatmapStories.Big.args?.seatmap?.decks[0],
 };

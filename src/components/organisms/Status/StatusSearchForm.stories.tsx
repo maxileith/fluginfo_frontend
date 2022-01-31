@@ -3,7 +3,7 @@ import moment from "moment";
 import StatusSearchForm, { IStatusSearchForm } from "./StatusSearchForm";
 
 export default {
-    title: "StatusComp/SearchForm",
+    title: "Organisms/Status/Search Form",
     component: StatusSearchForm,
 } as ComponentMeta<typeof StatusSearchForm>;
 

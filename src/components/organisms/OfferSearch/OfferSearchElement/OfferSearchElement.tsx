@@ -7,28 +7,30 @@ import {
     Icon,
     Level,
 } from "react-bulma-components";
-import IApiOffer from "../../../api/interfaces/IApiOffer";
-import OfferElementItinerary from "./OfferElementItinerary";
+import IApiOffer from "../../../../api/interfaces/IApiOffer";
+import OfferSearchElementItinerary from "./OfferSearchElementItinerary";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfo } from "@fortawesome/free-solid-svg-icons";
 
-export interface IOfferElement {
+export interface IOfferSearchElement {
     offer: IApiOffer;
     showDetails: (hash: string) => void;
 }
 
-export default function OfferElement({
+export default function OfferSearchElement({
     offer,
     showDetails,
-}: IOfferElement): JSX.Element {
+}: IOfferSearchElement): JSX.Element {
     return (
         <Box>
             <Columns vCentered>
                 <Columns.Column size={9}>
                     {offer.itineraries.map((itinerary, index) => (
                         <React.Fragment key={index}>
-                            <OfferElementItinerary itinerary={itinerary} />
+                            <OfferSearchElementItinerary
+                                itinerary={itinerary}
+                            />
                             {offer.itineraries.length - 1 !== index && <hr />}
                         </React.Fragment>
                     ))}

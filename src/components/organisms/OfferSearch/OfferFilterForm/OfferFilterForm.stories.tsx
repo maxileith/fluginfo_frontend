@@ -1,9 +1,8 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { triggerAsyncId } from "async_hooks";
 import OfferFilterForm, { IOfferFilterForm } from "./OfferFilterForm";
 
 export default {
-    title: "OfferComponents/FilterForm",
+    title: "Organisms/Offer Search/Filter Form",
     component: OfferFilterForm,
 } as ComponentMeta<typeof OfferFilterForm>;
 

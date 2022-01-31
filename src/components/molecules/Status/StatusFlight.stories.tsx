@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import * as StatusStories from "../../organisms/Status/Status.stories";
+import * as StatusStories from "../../organisms/Status/StatusDisplay.stories";
 import StatusFlight, { IStatusFlight } from "./StatusFlight";
 
 export default {

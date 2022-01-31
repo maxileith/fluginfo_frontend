@@ -2,10 +2,10 @@ import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
 import { Block, Box, Button, Form, Icon, Level } from "react-bulma-components";
-import { IApiCarrier } from "../../../api/interfaces/IApiOffer";
-import useLazyStateWrapper from "../../../hooks/useLazyStateWrapper";
-import AdvancedStickyWrapper from "../../atoms/AdvancedStickyWrapper/AdvancedStickyWrapper";
-import RangeInput from "../../atoms/RangeInput/RangeInput";
+import { IApiCarrier } from "../../../../api/interfaces/IApiOffer";
+import useLazyStateWrapper from "../../../../hooks/useLazyStateWrapper";
+import AdvancedStickyWrapper from "../../../atoms/AdvancedStickyWrapper/AdvancedStickyWrapper";
+import RangeInput from "../../../atoms/RangeInput/RangeInput";
 
 export type TOfferOrderBy = "price" | "duration";
 

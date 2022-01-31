@@ -1,8 +1,8 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import StatusDisplay, { IStatusDisplay } from "./Status";
+import StatusDisplay, { IStatusDisplay } from "./StatusDisplay";
 
 export default {
-    title: "StatusComp/Display",
+    title: "Organisms/Status/Display",
     component: StatusDisplay,
 } as ComponentMeta<typeof StatusDisplay>;
 

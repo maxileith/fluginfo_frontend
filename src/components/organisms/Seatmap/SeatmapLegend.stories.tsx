@@ -3,7 +3,7 @@ import * as SeatmapStories from "./Seatmap.stories";
 import SeatmapLegend, { ISeatmapLegend } from "./SeatmapLegend";
 
 export default {
-    title: "SeatmapComp/Legend",
+    title: "Organisms/Seatmap/Legend",
     component: SeatmapLegend,
 } as ComponentMeta<typeof SeatmapLegend>;
 

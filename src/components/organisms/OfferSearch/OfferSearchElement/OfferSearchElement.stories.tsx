@@ -1,14 +1,14 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import OfferElement, { IOfferElement } from "./OfferElement";
+import OfferSearchElement, { IOfferSearchElement } from "./OfferSearchElement";
 
 export default {
-    title: "OfferComponents/OfferElement",
-    component: OfferElement,
-} as ComponentMeta<typeof OfferElement>;
+    title: "Organisms/Offer Search/Element/Element",
+    component: OfferSearchElement,
+} as ComponentMeta<typeof OfferSearchElement>;
 
-const Template: ComponentStory<typeof OfferElement> = (args: IOfferElement) => (
-    <OfferElement {...args} />
-);
+const Template: ComponentStory<typeof OfferSearchElement> = (
+    args: IOfferSearchElement
+) => <OfferSearchElement {...args} />;
 
 export const Standard = Template.bind({});
 Standard.args = {
