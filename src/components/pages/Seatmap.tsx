@@ -9,6 +9,7 @@ import useIsMounted from "../../hooks/useIsMounted";
 import SeatmapComp from "../organisms/Seatmap/Seatmap";
 import { Heading } from "react-bulma-components";
 import moment from "moment";
+import useDocumentTitle from "../../hooks/useDocumentTitle";
 
 export interface ISeatmap {
     from: "offerDetails" | "status";
@@ -80,6 +81,17 @@ export default function Seatmap({
                 isMounted.current && setLoading(false);
             });
     }, [hash, segmentId, flightNumber, date, classId, from, navigate]);
+
+    const { setDocumentTitle } = useDocumentTitle();
+    useEffect(() => {
+        if (seatmap === undefined) {
+            setDocumentTitle("Seatmap");
+        } else {
+            setDocumentTitle(
+                `Seatmap - ${seatmap.flightNumber} (${seatmap.classId})`
+            );
+        }
+    }, [setDocumentTitle, seatmap]);
 
     return (
         <>
