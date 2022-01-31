@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { NavigateFunction } from "react-router";
-import CenteredLoader from "../components/CenteredLoader/CenteredLoader";
-import API from "../Api";
-import IApiOfferDetails from "../api/interfaces/IApiOfferDetails";
+import CenteredLoader from "../CenteredLoader/CenteredLoader";
+import API from "../../Api";
+import IApiOfferDetails from "../../api/interfaces/IApiOfferDetails";
 import { Heading } from "react-bulma-components";
-import OD from "../components/OfferDetails/OfferDetails";
+import OD from "../OfferDetails/OfferDetails";
 import { toast } from "react-toastify";
-import unknownErrorHandling from "../utils/unknownErrorHandling";
-import useDocumentTitle from "../hooks/useDocumentTitle";
-import useIsMounted from "../hooks/useIsMounted";
+import unknownErrorHandling from "../../utils/unknownErrorHandling";
+import useDocumentTitle from "../../hooks/useDocumentTitle";
+import useIsMounted from "../../hooks/useIsMounted";
 
 export interface IOfferDetails {
     navigate: NavigateFunction;

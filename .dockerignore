@@ -1,5 +1,6 @@
 *.tar
 *.tar.gz
+*.gitkeep
 node_modules
 npm-debug.log
 build

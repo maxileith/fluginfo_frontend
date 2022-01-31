@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import * as HeaderStories from "../components/Header/Header.stories";
+import * as HeaderStories from "../Header/Header.stories";
 import Layout, { ILayout } from "./Layout";
 
 export default {

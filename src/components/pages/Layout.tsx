@@ -1,6 +1,6 @@
 import { Container } from "react-bulma-components";
-import CustomFooter from "../components/CustomFooter/CustomFooter";
-import Header, { IHeader } from "../components/Header/Header";
+import CustomFooter from "../CustomFooter/CustomFooter";
+import Header, { IHeader } from "../Header/Header";
 
 export interface ILayout extends IHeader {
     children: React.ReactNode;

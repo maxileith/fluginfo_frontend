@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { NavigateFunction } from "react-router";
 import { toast } from "react-toastify";
-import API from "../Api";
-import IApiSeatmap from "../api/interfaces/IApiSeatmap";
-import CenteredLoader from "../components/CenteredLoader/CenteredLoader";
-import unknownErrorHandling from "../utils/unknownErrorHandling";
-import useIsMounted from "../hooks/useIsMounted";
-import SeatmapComp from "../components/Seatmap/Seatmap";
+import API from "../../Api";
+import IApiSeatmap from "../../api/interfaces/IApiSeatmap";
+import CenteredLoader from "../CenteredLoader/CenteredLoader";
+import unknownErrorHandling from "../../utils/unknownErrorHandling";
+import useIsMounted from "../../hooks/useIsMounted";
+import SeatmapComp from "../Seatmap/Seatmap";
 import { Heading } from "react-bulma-components";
 import moment from "moment";
 

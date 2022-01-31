@@ -1,26 +1,24 @@
 import moment from "moment";
 import { useEffect, useMemo, useState } from "react";
 import { Columns, Heading, Message, Pagination } from "react-bulma-components";
-import IApiOfferSearch from "../api/interfaces/IApiOfferSearch";
-import TApiTravelClass from "../api/types/TApiTravelClass";
-import OfferSearchForm, {
-    TListType,
-} from "../components/OfferSearchForm/OfferSearchForm";
-import API from "../Api";
-import IApiOffer, { IApiCarrier } from "../api/interfaces/IApiOffer";
-import OfferElement from "../components/OfferElement/OfferElement";
+import IApiOfferSearch from "../../api/interfaces/IApiOfferSearch";
+import TApiTravelClass from "../../api/types/TApiTravelClass";
+import OfferSearchForm, { TListType } from "../OfferSearchForm/OfferSearchForm";
+import API from "../../Api";
+import IApiOffer, { IApiCarrier } from "../../api/interfaces/IApiOffer";
+import OfferElement from "../OfferElement/OfferElement";
 import { toast } from "react-toastify";
-import unknownErrorHandling from "../utils/unknownErrorHandling";
-import useDocumentTitle from "../hooks/useDocumentTitle";
+import unknownErrorHandling from "../../utils/unknownErrorHandling";
+import useDocumentTitle from "../../hooks/useDocumentTitle";
 import OfferFilterForm, {
     TOfferOrderBy,
-} from "../components/OfferFilterForm/OfferFilterForm";
-import useIsMounted from "../hooks/useIsMounted";
-import useEffectNotOnMount from "../hooks/useEffectNotOnMount";
+} from "../OfferFilterForm/OfferFilterForm";
+import useIsMounted from "../../hooks/useIsMounted";
+import useEffectNotOnMount from "../../hooks/useEffectNotOnMount";
 import { NavigateFunction } from "react-router";
-import TUseSearchParams from "../api/types/TUseSearchParams";
-import useSearchParamsMock from "../mocks/useSearchParamsMock";
-import useQueryState from "../hooks/useQueryState";
+import TUseSearchParams from "../../api/types/TUseSearchParams";
+import useSearchParamsMock from "../../mocks/useSearchParamsMock";
+import useQueryState from "../../hooks/useQueryState";
 
 export interface IOfferSearch {
     addToOfferSearchCache: (key: string, offers: IApiOffer[]) => void;
