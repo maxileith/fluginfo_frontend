@@ -280,9 +280,13 @@ export default function OfferSearch({
             if (o.price.value < priceMin) {
                 priceMin = o.price.value;
             }
-            var durationSum: number = 0;
             o.itineraries.forEach((i) => {
-                durationSum += i.duration;
+                if (i.duration > durationMax) {
+                    durationMax = i.duration;
+                }
+                if (i.duration < durationMin) {
+                    durationMin = i.duration;
+                }
                 possibleNumberOfStops.add(i.stops);
                 i.carriers.forEach((c) => {
                     if (
@@ -294,13 +298,6 @@ export default function OfferSearch({
                     }
                 });
             });
-            var durationAverage = durationSum / o.itineraries.length;
-            if (durationAverage > durationMax) {
-                durationMax = durationAverage;
-            }
-            if (durationAverage < durationMin) {
-                durationMin = durationAverage;
-            }
         });
 
         // set the state for the filter form
@@ -333,11 +330,11 @@ export default function OfferSearch({
                 return;
             }
 
-            var durationSum: number = 0;
-
             for (let a: number = 0; a < o.itineraries.length; a++) {
                 var i = o.itineraries[a];
-                durationSum += i.duration;
+                if (i.duration > filterDurationLimit) {
+                    return;
+                }
                 if (!filterIncludedNumberOfStops.includes(i.stops)) {
                     return;
                 }
@@ -352,11 +349,6 @@ export default function OfferSearch({
                         return;
                     }
                 }
-            }
-
-            var durationAverage = durationSum / o.itineraries.length;
-            if (durationAverage > filterDurationLimit) {
-                return;
             }
 
             newFilteredOffers.push(o);
