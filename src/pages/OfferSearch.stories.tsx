@@ -13,5 +13,5 @@ const Template: ComponentStory<typeof OfferSearch> = (args: IOfferSearch) => (
 export const Standard = Template.bind({});
 Standard.args = {
     addToOfferSearchCache: (key, offers) => {},
-    getFromOfferSearchCache: (key) => [],
+    getFromOfferSearchCache: (key) => undefined,
 };
