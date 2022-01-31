@@ -89,9 +89,9 @@ export default function OfferSearchForm({
 
     const updateListValue = (value: string) => {
         if (airlineListType === "blacklist") {
-            setAirlineBlacklist(value);
+            setAirlineBlacklist(value.toUpperCase());
         } else {
-            setAirlineWhitelist(value);
+            setAirlineWhitelist(value.toUpperCase());
         }
     };
 
