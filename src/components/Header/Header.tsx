@@ -6,7 +6,7 @@ export interface IHeader {
     navigate: NavigateFunction;
 }
 
-export default function Header({ navigate }: IHeader): JSX.Element {
+export default function Header({ navigate = () => {} }: IHeader): JSX.Element {
     const [isActive, setIsActive] = useState<boolean>(false);
 
     const navigateWrapper = (location: string) => {

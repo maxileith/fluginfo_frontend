@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavigateFunction, useNavigate, useParams } from "react-router";
+import { NavigateFunction } from "react-router";
 import { toast } from "react-toastify";
 import API from "../Api";
 import IApiSeatmap from "../api/interfaces/IApiSeatmap";
@@ -12,11 +12,24 @@ import moment from "moment";
 
 export interface ISeatmap {
     from: "offerDetails" | "status";
+    navigate: NavigateFunction;
+    useParams: Function;
 }
 
-export default function Seatmap({ from }: ISeatmap): JSX.Element {
+export default function Seatmap({
+    from,
+    navigate = () => {},
+    useParams = () => {
+        return {
+            hash: 0,
+            segmentId: 1,
+            flightNumber: "",
+            date: "1970-01-01",
+            classId: "Y",
+        };
+    },
+}: ISeatmap): JSX.Element {
     const isMounted = useIsMounted();
-    const navigate: NavigateFunction = useNavigate();
     const { hash, segmentId, flightNumber, date, classId } = useParams();
 
     const [loading, setLoading] = useState<boolean>(true);
@@ -80,7 +93,7 @@ export default function Seatmap({ from }: ISeatmap): JSX.Element {
                         {moment(seatmap.date).format("MMMM Do, YYYY")}.
                     </Heading>
                     <hr />
-                    <SeatmapComp seatmap={seatmap} />
+                    <SeatmapComp seatmap={seatmap} navigate={navigate} />
                 </>
             )}
         </>

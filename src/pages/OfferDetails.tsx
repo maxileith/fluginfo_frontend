@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavigateFunction, useNavigate, useParams } from "react-router";
+import { NavigateFunction } from "react-router";
 import CenteredLoader from "../components/CenteredLoader/CenteredLoader";
 import API from "../Api";
 import IApiOfferDetails from "../api/interfaces/IApiOfferDetails";
@@ -10,7 +10,19 @@ import unknownErrorHandling from "../utils/unknownErrorHandling";
 import useDocumentTitle from "../utils/useDocumentTitle";
 import useIsMounted from "../utils/useIsMounted";
 
-export default function OfferDetails(): JSX.Element {
+export interface IOfferDetails {
+    navigate: NavigateFunction;
+    useParams?: Function;
+}
+
+export default function OfferDetails({
+    navigate = () => {},
+    useParams = () => {
+        return {
+            hash: 0,
+        };
+    },
+}: IOfferDetails): JSX.Element {
     const isMounted = useIsMounted();
 
     const { hash } = useParams();
@@ -18,7 +30,6 @@ export default function OfferDetails(): JSX.Element {
     const [details, setDetails] = useState<IApiOfferDetails | undefined>(
         undefined
     );
-    const navigate: NavigateFunction = useNavigate();
 
     useEffect(() => {
         setLoading(true);

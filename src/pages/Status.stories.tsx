@@ -1,9 +1,16 @@
-import { ComponentMeta } from "@storybook/react";
-import Status from "./Status";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+import Status, { IStatus } from "./Status";
 
 export default {
     title: "Status",
     component: Status,
 } as ComponentMeta<typeof Status>;
 
-export const Standard = <Status />;
+const Template: ComponentStory<typeof Status> = (args: IStatus) => (
+    <Status {...args} />
+);
+
+export const Standard = Template.bind({});
+Standard.args = {
+    navigate: () => {},
+};

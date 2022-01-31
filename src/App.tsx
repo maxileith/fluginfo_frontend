@@ -2,10 +2,11 @@ import "bulma/css/bulma.css";
 import {
     BrowserRouter,
     Navigate,
-    NavigateFunction,
     Route,
     Routes,
     useNavigate,
+    useParams,
+    useSearchParams,
 } from "react-router-dom";
 import Layout from "./pages/Layout";
 import OfferDetails from "./pages/OfferDetails";
@@ -60,8 +61,6 @@ export default function App() {
 }
 
 function NavigateWrapper(): JSX.Element {
-    const navigate: NavigateFunction = useNavigate();
-
     const [offerSearchCache, setOfferSearchCache] = useState<
         Map<string, IApiOffer[]>
     >(Map());
@@ -79,7 +78,7 @@ function NavigateWrapper(): JSX.Element {
     };
 
     return (
-        <Layout navigate={navigate}>
+        <Layout navigate={useNavigate()}>
             <Routes>
                 <Route
                     path="/offer/search"
@@ -87,18 +86,48 @@ function NavigateWrapper(): JSX.Element {
                         <OfferSearch
                             addToOfferSearchCache={addToOfferSearchCache}
                             getFromOfferSearchCache={getFromOfferSearchCache}
+                            navigate={useNavigate()}
+                            useSearchParams={useSearchParams}
                         />
                     }
                 />
-                <Route path="/offer/details/:hash" element={<OfferDetails />} />
+                <Route
+                    path="/offer/details/:hash"
+                    element={
+                        <OfferDetails
+                            navigate={useNavigate()}
+                            useParams={useParams}
+                        />
+                    }
+                />
                 <Route
                     path="/offer/seatmap/:hash/:segmentId"
-                    element={<Seatmap from="offerDetails" />}
+                    element={
+                        <Seatmap
+                            from="offerDetails"
+                            navigate={useNavigate()}
+                            useParams={useParams}
+                        />
+                    }
                 />
-                <Route path="/status" element={<Status />} />
+                <Route
+                    path="/status"
+                    element={
+                        <Status
+                            navigate={useNavigate()}
+                            useSearchParams={useSearchParams}
+                        />
+                    }
+                />
                 <Route
                     path="/status/seatmap/:flightNumber/:date/:classId"
-                    element={<Seatmap from="status" />}
+                    element={
+                        <Seatmap
+                            from="status"
+                            navigate={useNavigate()}
+                            useParams={useParams}
+                        />
+                    }
                 />
                 <Route
                     path="*"

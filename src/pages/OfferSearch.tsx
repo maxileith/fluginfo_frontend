@@ -10,7 +10,6 @@ import API from "../Api";
 import IApiOffer, { IApiCarrier } from "../api/interfaces/IApiOffer";
 import OfferElement from "../components/OfferElement/OfferElement";
 import useQueryState from "../utils/useQueryState";
-import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import unknownErrorHandling from "../utils/unknownErrorHandling";
 import useDocumentTitle from "../utils/useDocumentTitle";
@@ -19,53 +18,98 @@ import OfferFilterForm, {
 } from "../components/OfferFilterForm/OfferFilterForm";
 import useIsMounted from "../utils/useIsMounted";
 import useEffectNotOnMount from "../utils/useEffectNotOnMount";
+import { NavigateFunction } from "react-router";
+import TUseSearchParams from "../api/types/TUseSearchParams";
+import useSearchParamsMock from "../utils/useSearchParamsMock";
 
 export interface IOfferSearch {
     addToOfferSearchCache: (key: string, offers: IApiOffer[]) => void;
     getFromOfferSearchCache: (key: string) => IApiOffer[] | undefined;
+    navigate: NavigateFunction;
+    useSearchParams: TUseSearchParams;
 }
 
 export default function OfferSearch({
     addToOfferSearchCache,
     getFromOfferSearchCache,
+    navigate = () => {},
+    useSearchParams = useSearchParamsMock,
 }: IOfferSearch): JSX.Element {
     const isMounted = useIsMounted();
-    const navigate = useNavigate();
 
     // state for the offer search form
     const [departureDate, setDepartureDate] = useQueryState<string>(
         moment().format("YYYY-MM-DD"),
         "departureDate",
+        navigate,
+        useSearchParams,
         { alwaysInUrl: true }
     );
-    const [returnDate, setReturnDate] = useQueryState<string>("", "returnDate");
+    const [returnDate, setReturnDate] = useQueryState<string>(
+        "",
+        "returnDate",
+        navigate,
+        useSearchParams
+    );
     const [originAirport, setOriginAirport] = useQueryState<string>(
         "",
-        "originAirport"
+        "originAirport",
+        navigate,
+        useSearchParams
     );
     const [destinationAirport, setDestinationAirport] = useQueryState<string>(
         "",
-        "destinationAirport"
+        "destinationAirport",
+        navigate,
+        useSearchParams
     );
-    const [nonStop, setNonStop] = useQueryState<boolean>(false, "nonStop");
-    const [adults, setAdults] = useQueryState<number>(1, "adults");
-    const [children, setChildren] = useQueryState<number>(0, "children");
-    const [infants, setInfants] = useQueryState<number>(0, "infants");
+    const [nonStop, setNonStop] = useQueryState<boolean>(
+        false,
+        "nonStop",
+        navigate,
+        useSearchParams
+    );
+    const [adults, setAdults] = useQueryState<number>(
+        1,
+        "adults",
+        navigate,
+        useSearchParams
+    );
+    const [children, setChildren] = useQueryState<number>(
+        0,
+        "children",
+        navigate,
+        useSearchParams
+    );
+    const [infants, setInfants] = useQueryState<number>(
+        0,
+        "infants",
+        navigate,
+        useSearchParams
+    );
     const [travelClass, setTravelClass] = useQueryState<TApiTravelClass>(
         "ALL",
-        "travelClass"
+        "travelClass",
+        navigate,
+        useSearchParams
     );
     const [airlineWhitelist, setAirlineWhitelist] = useQueryState<string>(
         "",
-        "airlineWhitelist"
+        "airlineWhitelist",
+        navigate,
+        useSearchParams
     );
     const [airlineBlacklist, setAirlineBlacklist] = useQueryState<string>(
         "",
-        "airlineBlacklist"
+        "airlineBlacklist",
+        navigate,
+        useSearchParams
     );
     const [airlineListType, setAirlineListType] = useQueryState<TListType>(
         "whitelist",
-        "airlineListType"
+        "airlineListType",
+        navigate,
+        useSearchParams
     );
 
     const getSearchParams = (): IApiOfferSearch => {
@@ -98,10 +142,17 @@ export default function OfferSearch({
     const [fresh, setFresh] = useState<boolean>(true);
 
     // states for page settings
-    const [page, setPage] = useQueryState<number>(1, "page");
+    const [page, setPage] = useQueryState<number>(
+        1,
+        "page",
+        navigate,
+        useSearchParams
+    );
     const [offersPerPage, setOffersPerPage] = useQueryState<number>(
         10,
-        "offersPerPage"
+        "offersPerPage",
+        navigate,
+        useSearchParams
     );
 
     const { setDocumentTitle } = useDocumentTitle();
@@ -121,28 +172,44 @@ export default function OfferSearch({
     const [
         filterIncludedAirlineCarrierCodes,
         setFilterIncludedAirlineCarrierCodes,
-    ] = useQueryState<string[]>([], "includedAirlines");
+    ] = useQueryState<string[]>(
+        [],
+        "includedAirlines",
+        navigate,
+        useSearchParams
+    );
     const [filterPossibleNumberOfStops, setFilterPossibleNumberOfStops] =
         useState<number[]>([]);
     const [filterIncludedNumberOfStops, setFilterIncludedNumberOfStops] =
-        useQueryState<number[]>([], "includedNumberOfStops");
+        useQueryState<number[]>(
+            [],
+            "includedNumberOfStops",
+            navigate,
+            useSearchParams
+        );
     const [filterPriceMin, setFilterPriceMin] = useState<number>(0);
     const [filterPriceMax, setFilterPriceMax] = useState<number>(0);
     const [filterPriceLimit, setFilterPriceLimit] = useQueryState<number>(
         0,
-        "priceLimit"
+        "priceLimit",
+        navigate,
+        useSearchParams
     );
     const [filterDurationMin, setFilterDurationMin] = useState<number>(0);
     const [filterDurationMax, setFilterDurationMax] = useState<number>(0);
     const [filterDurationLimit, setFilterDurationLimit] = useQueryState<number>(
         0,
-        "durationLimit"
+        "durationLimit",
+        navigate,
+        useSearchParams
     );
 
     const [sortedOffers, setSortedOffers] = useState<IApiOffer[]>([]);
     const [orderBy, setOrderBy] = useQueryState<TOfferOrderBy>(
         "price",
-        "orderBy"
+        "orderBy",
+        navigate,
+        useSearchParams
     );
 
     const handleSearch = (): void => {

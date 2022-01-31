@@ -8,22 +8,35 @@ import IApiStatus from "../api/interfaces/IApiStatus";
 import { toast } from "react-toastify";
 import unknownErrorHandling from "../utils/unknownErrorHandling";
 import StatusDisplay from "../components/StatusDisplay/StatusDisplay";
-import { NavigateFunction, useNavigate } from "react-router";
+import { NavigateFunction } from "react-router";
 import useDocumentTitle from "../utils/useDocumentTitle";
 import useIsMounted from "../utils/useIsMounted";
 import IApiStatusTimings from "../api/interfaces/IApiStatusTimings";
+import TUseSearchParams from "../api/types/TUseSearchParams";
+import useSearchParamsMock from "../utils/useSearchParamsMock";
 
-export default function Status(): JSX.Element {
+export interface IStatus {
+    navigate: NavigateFunction;
+    useSearchParams: TUseSearchParams;
+}
+
+export default function Status({
+    navigate = () => {},
+    useSearchParams = useSearchParamsMock,
+}: IStatus): JSX.Element {
     const isMounted = useIsMounted();
-    const navigate: NavigateFunction = useNavigate();
 
     const [flightNumber, setFlightNumber] = useQueryState<string>(
         "",
-        "flightNumber"
+        "flightNumber",
+        navigate,
+        useSearchParams
     );
     const [date, setDate] = useQueryState<string>(
         moment().format("YYYY-MM-DD"),
         "date",
+        navigate,
+        useSearchParams,
         { alwaysInUrl: true }
     );
     const [currentlyDisplayedFlightNumber, setCurrentDisplayedFlightNumber] =

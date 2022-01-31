@@ -1,7 +1,8 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { useNavigate } from "react-router";
-import { useSearchParams } from "react-router-dom";
+import { NavigateFunction } from "react-router-dom";
+import TUseSearchParams from "../api/types/TUseSearchParams";
 import useLazyStateWrapper from "./useLazyStateWrapper";
+import useSearchParamsMock from "./useSearchParamsMock";
 
 export interface IUseQueryState<T> {
     serialize?: (value: T) => string;
@@ -14,6 +15,8 @@ export interface IUseQueryState<T> {
 export default function useQueryState<T>(
     defaultValue: T,
     paramName: string,
+    navigate: NavigateFunction = () => {},
+    useSearchParams: TUseSearchParams = useSearchParamsMock,
     options: IUseQueryState<T> = {}
 ): [T, Dispatch<SetStateAction<T>>] {
     // specify default values of options
@@ -39,7 +42,6 @@ export default function useQueryState<T>(
     };
 
     const [searchParams] = useSearchParams();
-    const navigate = useNavigate();
 
     const paramValue = searchParams.get(paramName);
 

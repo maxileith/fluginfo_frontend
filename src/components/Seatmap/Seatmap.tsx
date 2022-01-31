@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Columns } from "react-bulma-components";
+import { NavigateFunction } from "react-router";
 import IApiSeatmap from "../../api/interfaces/IApiSeatmap";
 import TApiSeatmapGridItem from "../../api/types/TApiSeatmapGridItem";
 import AdvancedStickyWrapper from "../AdvancedStickyWrapper/AdvancedStickyWrapper";
@@ -8,9 +9,13 @@ import SeatmapLegend from "./SeatmapLegend";
 
 export interface ISeatmap {
     seatmap: IApiSeatmap;
+    navigate: NavigateFunction;
 }
 
-export default function Seatmap({ seatmap }: ISeatmap): JSX.Element {
+export default function Seatmap({
+    seatmap,
+    navigate = () => {},
+}: ISeatmap): JSX.Element {
     const [focusedGridItem, setFocusedGridItem] = useState<
         TApiSeatmapGridItem | undefined
     >(undefined);
@@ -39,6 +44,7 @@ export default function Seatmap({ seatmap }: ISeatmap): JSX.Element {
                     onFocusGridItem={setFocusedGridItem}
                     focusedGridItem={focusedGridItem}
                     bigAircraft={bigAircraft}
+                    navigate={navigate}
                 />
             </Columns.Column>
         </Columns>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Tabs } from "react-bulma-components";
+import { NavigateFunction } from "react-router";
 import { IApiDeck } from "../../api/interfaces/IApiSeatmap";
 import TApiSeatmapGridItem from "../../api/types/TApiSeatmapGridItem";
 import useQueryState from "../../utils/useQueryState";
@@ -10,6 +11,7 @@ export interface ISeatmapDisplay {
     onFocusGridItem: (item: TApiSeatmapGridItem) => void;
     focusedGridItem?: TApiSeatmapGridItem;
     bigAircraft: boolean;
+    navigate: NavigateFunction;
 }
 
 export default function SeatmapDisplay({
@@ -17,8 +19,9 @@ export default function SeatmapDisplay({
     onFocusGridItem,
     focusedGridItem,
     bigAircraft,
+    navigate = () => {},
 }: ISeatmapDisplay): JSX.Element {
-    const [deck, setDeck] = useQueryState<number>(0, "deck");
+    const [deck, setDeck] = useQueryState<number>(0, "deck", navigate);
 
     const [focusedGridItemDeck, setFocusedGridItemDeck] = useState<
         number | undefined
