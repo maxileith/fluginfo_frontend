@@ -23,9 +23,8 @@ export default function SeatmapDisplay({
 }: ISeatmapDisplay): JSX.Element {
     const [deck, setDeck] = useQueryState<number>(0, "deck", navigate);
 
-    const [focusedGridItemDeck, setFocusedGridItemDeck] = useState<
-        number | undefined
-    >(undefined);
+    const [focusedGridItemDeck, setFocusedGridItemDeck] =
+        useState<number | undefined>(undefined);
 
     const handleFocusGridItem = (item: TApiSeatmapGridItem) => {
         setFocusedGridItemDeck(deck);
@@ -40,6 +39,7 @@ export default function SeatmapDisplay({
                         <Tabs.Tab
                             active={deck === i}
                             onClick={() => setDeck(i)}
+                            key={i}
                         >
                             Deck {i + 1}
                         </Tabs.Tab>
