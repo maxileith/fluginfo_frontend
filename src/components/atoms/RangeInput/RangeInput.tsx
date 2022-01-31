@@ -4,8 +4,8 @@ import "bulma-slider/dist/css/bulma-slider.min.css";
 export interface IRangeInput {
     min?: number;
     max?: number;
-    value: number;
-    onChange: (value: number) => void;
+    value?: number;
+    onChange?: (value: number) => void;
     isFullWidth?: boolean;
     color?: Color;
     isCircle?: boolean;
@@ -39,7 +39,9 @@ export default function RangeInput({
                 value={value}
                 step={step}
                 type="range"
-                onChange={(e) => onChange(e.target.valueAsNumber)}
+                onChange={(e) => {
+                    onChange && onChange(e.target.valueAsNumber);
+                }}
                 style={{ margin: ".5rem 0" }}
             />
             {outputText && <output>{outputText}</output>}

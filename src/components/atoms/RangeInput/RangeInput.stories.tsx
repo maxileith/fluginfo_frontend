@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import RangeInput, { IRangeInput } from "./RangeInput";
 
 export default {
-    title: "RangeInput/Circle",
+    title: "Atoms/RangeInput",
     component: RangeInput,
 } as ComponentMeta<typeof RangeInput>;
 
@@ -12,13 +12,37 @@ const Template: ComponentStory<typeof RangeInput> = (args: IRangeInput) => (
 
 export const Standard = Template.bind({});
 Standard.args = {
-    min: 333,
-    max: 888,
-    onChange: (s) => console.log(`change: ${s}`),
+    min: 1,
+    max: 10,
+};
+
+export const Colored = Template.bind({});
+Colored.args = {
+    min: 1,
+    max: 10,
     color: "info",
+};
+
+export const CircleKnob = Template.bind({});
+CircleKnob.args = {
+    min: 1,
+    max: 10,
+    color: "warning",
     isCircle: true,
-    step: 10,
+};
+
+export const FullWidth = Template.bind({});
+FullWidth.args = {
+    min: 1,
+    max: 100,
+    color: "success",
     isFullWidth: true,
-    value: 500,
-    outputText: "yeet",
+};
+
+export const WithOutputText = Template.bind({});
+WithOutputText.args = {
+    min: 1,
+    max: 100,
+    color: "primary",
+    outputText: "test",
 };

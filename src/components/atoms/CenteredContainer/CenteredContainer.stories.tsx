@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import CenteredContainer, { ICenteredContainer } from "./CenteredContainer";
 
 export default {
-    title: "Centered/CenteredContainer",
+    title: "Atoms/CenteredContainer",
     component: CenteredContainer,
 } as ComponentMeta<typeof CenteredContainer>;
 
@@ -12,5 +12,5 @@ const Template: ComponentStory<typeof CenteredContainer> = (
 
 export const Standard = Template.bind({});
 Standard.args = {
-    children: <p>Das ist ein Test!</p>,
+    children: <p>This Container is always in the middle of the screen.</p>,
 };

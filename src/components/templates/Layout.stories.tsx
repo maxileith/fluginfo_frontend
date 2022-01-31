@@ -3,7 +3,7 @@ import * as HeaderStories from "../organisms/Header/Header.stories";
 import Layout, { ILayout } from "./Layout";
 
 export default {
-    title: "Layout",
+    title: "Templates/Layout",
     component: Layout,
 } as ComponentMeta<typeof Layout>;
 

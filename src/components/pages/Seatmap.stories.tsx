@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import Seatmap, { ISeatmap } from "./Seatmap";
 
 export default {
-    title: "Seatmap",
+    title: "Pages/Seatmap",
     component: Seatmap,
 } as ComponentMeta<typeof Seatmap>;
 

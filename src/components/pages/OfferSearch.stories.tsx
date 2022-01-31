@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import OfferSearch, { IOfferSearch } from "./OfferSearch";
 
 export default {
-    title: "OfferSearch",
+    title: "Pages/OfferSearch",
     component: OfferSearch,
 } as ComponentMeta<typeof OfferSearch>;
 
