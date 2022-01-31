@@ -6,10 +6,14 @@ export interface ILayout extends IHeader {
     children: React.ReactNode;
 }
 
-export default function Layout({ children, navigate }: ILayout): JSX.Element {
+export default function Layout({
+    children,
+    navigate,
+    currentPath,
+}: ILayout): JSX.Element {
     return (
         <>
-            <Header navigate={navigate} />
+            <Header navigate={navigate} currentPath={currentPath} />
             <Container breakpoint="fullhd" max p={4} pb={0}>
                 {children}
             </Container>

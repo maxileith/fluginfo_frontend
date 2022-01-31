@@ -4,6 +4,7 @@ import {
     Navigate,
     Route,
     Routes,
+    useLocation,
     useNavigate,
     useParams,
     useSearchParams,
@@ -78,7 +79,7 @@ function NavigateWrapper(): JSX.Element {
     };
 
     return (
-        <Layout navigate={useNavigate()}>
+        <Layout navigate={useNavigate()} currentPath={useLocation().pathname}>
             <Routes>
                 <Route
                     path="/offer/search"
