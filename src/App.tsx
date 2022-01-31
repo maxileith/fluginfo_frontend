@@ -8,7 +8,6 @@ import {
     useParams,
     useSearchParams,
 } from "react-router-dom";
-import Layout from "./components/pages/Layout";
 import OfferDetails from "./components/pages/OfferDetails";
 import OfferSearch from "./components/pages/OfferSearch";
 import Status from "./components/pages/Status";
@@ -16,12 +15,13 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./toastify.scss";
 import { useEffect, useState } from "react";
-import CenteredLoader from "./components/CenteredLoader/CenteredLoader";
+import CenteredLoader from "./components/molecules/CenteredLoader/CenteredLoader";
 import API from "./Api";
 import axios from "axios";
 import Seatmap from "./components/pages/Seatmap";
 import IApiOffer from "./api/interfaces/IApiOffer";
 import { Map } from "immutable";
+import Layout from "./components/templates/Layout";
 
 export default function App() {
     const [baseURL, setBaseURL] = useState<string>();

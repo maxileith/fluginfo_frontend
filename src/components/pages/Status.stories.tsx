@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import Status, { IStatus } from "./Status";
 
 export default {
-    title: "Status",
+    title: "Pages/Status",
     component: Status,
 } as ComponentMeta<typeof Status>;
 
