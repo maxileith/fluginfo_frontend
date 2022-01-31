@@ -1,26 +1,26 @@
 import moment from "moment";
 import { useEffect, useMemo, useState } from "react";
 import { Columns, Heading, Message, Pagination } from "react-bulma-components";
-import IApiOfferSearch from "../../api/interfaces/IApiOfferSearch";
-import TApiTravelClass from "../../api/types/TApiTravelClass";
-import API from "../../Api";
-import IApiOffer, { IApiCarrier } from "../../api/interfaces/IApiOffer";
-import OfferElement from "../organisms/OfferElement/OfferElement";
+import IApiOfferSearch from "../api/interfaces/IApiOfferSearch";
+import TApiTravelClass from "../api/types/TApiTravelClass";
+import API from "../Api";
+import IApiOffer, { IApiCarrier } from "../api/interfaces/IApiOffer";
+import OfferElement from "../components/organisms/OfferElement/OfferElement";
 import { toast } from "react-toastify";
-import unknownErrorHandling from "../../utils/unknownErrorHandling";
-import useDocumentTitle from "../../hooks/useDocumentTitle";
+import unknownErrorHandling from "../utils/unknownErrorHandling";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 import OfferFilterForm, {
     TOfferOrderBy,
-} from "../organisms/OfferFilterForm/OfferFilterForm";
-import useIsMounted from "../../hooks/useIsMounted";
-import useEffectNotOnMount from "../../hooks/useEffectNotOnMount";
+} from "../components/organisms/OfferFilterForm/OfferFilterForm";
+import useIsMounted from "../hooks/useIsMounted";
+import useEffectNotOnMount from "../hooks/useEffectNotOnMount";
 import { NavigateFunction } from "react-router";
-import TUseSearchParams from "../../api/types/TUseSearchParams";
-import useSearchParamsMock from "../../mocks/useSearchParamsMock";
-import useQueryState from "../../hooks/useQueryState";
+import TUseSearchParams from "../api/types/TUseSearchParams";
+import useSearchParamsMock from "../mocks/useSearchParamsMock";
+import useQueryState from "../hooks/useQueryState";
 import OfferSearchForm, {
     TListType,
-} from "../organisms/OfferSearchForm/OfferSearchForm";
+} from "../components/organisms/OfferSearchForm/OfferSearchForm";
 
 export interface IOfferSearch {
     addToOfferSearchCache: (key: string, offers: IApiOffer[]) => void;

@@ -3,10 +3,10 @@ import { NavigateFunction } from "react-router";
 import { toast } from "react-toastify";
 import API from "../../Api";
 import IApiSeatmap from "../../api/interfaces/IApiSeatmap";
-import CenteredLoader from "../CenteredLoader/CenteredLoader";
+import CenteredLoader from "../molekules/CenteredLoader/CenteredLoader";
 import unknownErrorHandling from "../../utils/unknownErrorHandling";
 import useIsMounted from "../../hooks/useIsMounted";
-import SeatmapComp from "../Seatmap/Seatmap";
+import SeatmapComp from "../organisms/Seatmap/Seatmap";
 import { Heading } from "react-bulma-components";
 import moment from "moment";
 
