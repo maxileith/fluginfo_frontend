@@ -3,7 +3,7 @@ import { Tabs } from "react-bulma-components";
 import { NavigateFunction } from "react-router";
 import { IApiDeck } from "../../api/interfaces/IApiSeatmap";
 import TApiSeatmapGridItem from "../../api/types/TApiSeatmapGridItem";
-import useQueryState from "../../utils/useQueryState";
+import useQueryState from "../../hooks/useQueryState";
 import SeatmapDeck from "./SeatmapDeck";
 
 export interface ISeatmapDisplay {

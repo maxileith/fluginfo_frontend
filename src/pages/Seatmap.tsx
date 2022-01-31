@@ -5,7 +5,7 @@ import API from "../Api";
 import IApiSeatmap from "../api/interfaces/IApiSeatmap";
 import CenteredLoader from "../components/CenteredLoader/CenteredLoader";
 import unknownErrorHandling from "../utils/unknownErrorHandling";
-import useIsMounted from "../utils/useIsMounted";
+import useIsMounted from "../hooks/useIsMounted";
 import SeatmapComp from "../components/Seatmap/Seatmap";
 import { Heading } from "react-bulma-components";
 import moment from "moment";

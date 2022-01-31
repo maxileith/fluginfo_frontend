@@ -1,5 +1,5 @@
 import { ReactNode, useCallback, useState } from "react";
-import useViewportDimensions from "../../utils/useViewportDimensions";
+import useViewportDimensions from "../../hooks/useViewportDimensions";
 
 export interface IAdvancedStickyWrapper {
     children?: ReactNode;

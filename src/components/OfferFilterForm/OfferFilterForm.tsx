@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
 import { Block, Box, Button, Form, Icon, Level } from "react-bulma-components";
 import { IApiCarrier } from "../../api/interfaces/IApiOffer";
-import useLazyStateWrapper from "../../utils/useLazyStateWrapper";
+import useLazyStateWrapper from "../../hooks/useLazyStateWrapper";
 import AdvancedStickyWrapper from "../AdvancedStickyWrapper/AdvancedStickyWrapper";
 import RangeInput from "../RangeInput/RangeInput";
 

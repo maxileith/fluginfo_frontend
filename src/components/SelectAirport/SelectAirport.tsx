@@ -10,7 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { toast } from "react-toastify";
 import unknownErrorHandling from "../../utils/unknownErrorHandling";
-import useIsMounted from "../../utils/useIsMounted";
+import useIsMounted from "../../hooks/useIsMounted";
 
 export interface ISelectAirport {
     onSelect: (iata: string) => void;

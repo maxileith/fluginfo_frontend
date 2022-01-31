@@ -7,8 +7,8 @@ import { Heading } from "react-bulma-components";
 import OD from "../components/OfferDetails/OfferDetails";
 import { toast } from "react-toastify";
 import unknownErrorHandling from "../utils/unknownErrorHandling";
-import useDocumentTitle from "../utils/useDocumentTitle";
-import useIsMounted from "../utils/useIsMounted";
+import useDocumentTitle from "../hooks/useDocumentTitle";
+import useIsMounted from "../hooks/useIsMounted";
 
 export interface IOfferDetails {
     navigate: NavigateFunction;

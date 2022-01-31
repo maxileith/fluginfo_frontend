@@ -9,18 +9,18 @@ import OfferSearchForm, {
 import API from "../Api";
 import IApiOffer, { IApiCarrier } from "../api/interfaces/IApiOffer";
 import OfferElement from "../components/OfferElement/OfferElement";
-import useQueryState from "../utils/useQueryState";
 import { toast } from "react-toastify";
 import unknownErrorHandling from "../utils/unknownErrorHandling";
-import useDocumentTitle from "../utils/useDocumentTitle";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 import OfferFilterForm, {
     TOfferOrderBy,
 } from "../components/OfferFilterForm/OfferFilterForm";
-import useIsMounted from "../utils/useIsMounted";
-import useEffectNotOnMount from "../utils/useEffectNotOnMount";
+import useIsMounted from "../hooks/useIsMounted";
+import useEffectNotOnMount from "../hooks/useEffectNotOnMount";
 import { NavigateFunction } from "react-router";
 import TUseSearchParams from "../api/types/TUseSearchParams";
-import useSearchParamsMock from "../utils/useSearchParamsMock";
+import useSearchParamsMock from "../mocks/useSearchParamsMock";
+import useQueryState from "../hooks/useQueryState";
 
 export interface IOfferSearch {
     addToOfferSearchCache: (key: string, offers: IApiOffer[]) => void;

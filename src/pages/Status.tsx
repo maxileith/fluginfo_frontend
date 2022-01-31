@@ -2,18 +2,18 @@ import moment from "moment";
 import { useEffect, useState } from "react";
 import { Heading, Message } from "react-bulma-components";
 import StatusSearchForm from "../components/StatusSearchForm/StatusSearchForm";
-import useQueryState from "../utils/useQueryState";
 import API from "../Api";
 import IApiStatus from "../api/interfaces/IApiStatus";
 import { toast } from "react-toastify";
 import unknownErrorHandling from "../utils/unknownErrorHandling";
 import StatusDisplay from "../components/StatusDisplay/StatusDisplay";
 import { NavigateFunction } from "react-router";
-import useDocumentTitle from "../utils/useDocumentTitle";
-import useIsMounted from "../utils/useIsMounted";
+import useDocumentTitle from "../hooks/useDocumentTitle";
+import useIsMounted from "../hooks/useIsMounted";
 import IApiStatusTimings from "../api/interfaces/IApiStatusTimings";
 import TUseSearchParams from "../api/types/TUseSearchParams";
-import useSearchParamsMock from "../utils/useSearchParamsMock";
+import useSearchParamsMock from "../mocks/useSearchParamsMock";
+import useQueryState from "../hooks/useQueryState";
 
 export interface IStatus {
     navigate: NavigateFunction;

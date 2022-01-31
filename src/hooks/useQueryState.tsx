@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { NavigateFunction } from "react-router-dom";
 import TUseSearchParams from "../api/types/TUseSearchParams";
 import useLazyStateWrapper from "./useLazyStateWrapper";
-import useSearchParamsMock from "./useSearchParamsMock";
+import useSearchParamsMock from "../mocks/useSearchParamsMock";
 
 export interface IUseQueryState<T> {
     serialize?: (value: T) => string;

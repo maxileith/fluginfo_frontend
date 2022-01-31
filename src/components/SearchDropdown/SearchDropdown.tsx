@@ -2,7 +2,7 @@ import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Dropdown, Icon } from "react-bulma-components";
-import useLazyStateWrapper from "../../utils/useLazyStateWrapper";
+import useLazyStateWrapper from "../../hooks/useLazyStateWrapper";
 import SearchDropdownInput from "./SearchDropdownInput";
 import SearchDropdownItem, { ISearchDropdownItem } from "./SearchDropdownItem";
 import SearchDropdownLabel, {
