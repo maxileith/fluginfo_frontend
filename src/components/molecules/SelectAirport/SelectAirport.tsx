@@ -1,6 +1,6 @@
-import SearchDropdown from "../../molecules/SearchDropdown/SearchDropdown";
+import SearchDropdown from "../SearchDropdown/SearchDropdown";
 import API from "../../../Api";
-import { ISearchDropdownItem } from "../../molecules/SearchDropdown/SearchDropdownItem";
+import { ISearchDropdownItem } from "../SearchDropdown/SearchDropdownItem";
 import { useState } from "react";
 import IApiAirport from "../../../api/interfaces/IApiAirport";
 import {

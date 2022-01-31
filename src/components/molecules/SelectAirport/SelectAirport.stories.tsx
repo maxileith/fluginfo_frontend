@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import SelectAirport, { ISelectAirport } from "./SelectAirport";
 
 export default {
-    title: "SelectAirport/Standard",
+    title: "Molecules/Select Airport",
     component: SelectAirport,
 } as ComponentMeta<typeof SelectAirport>;
 
