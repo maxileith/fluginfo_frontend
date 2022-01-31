@@ -4,7 +4,7 @@ import AdvancedStickyWrapper, {
 } from "./AdvancedStickyWrapper";
 
 export default {
-    title: "Atoms/AdvancedStickyWrapper",
+    title: "Atoms/Advanced Sticky Wrapper",
     component: AdvancedStickyWrapper,
 } as ComponentMeta<typeof AdvancedStickyWrapper>;
 

@@ -1,11 +1,9 @@
-import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import SearchDropdownItem, { ISearchDropdownItem } from "./SearchDropdownItem";
-import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import * as SearchDropdownLabelStories from "./SearchDropdownLabel.stories";
 
 export default {
-    title: "SearchDropdown/Item",
+    title: "Molecules/Search Dropdown/Item",
     component: SearchDropdownItem,
 } as ComponentMeta<typeof SearchDropdownItem>;
 

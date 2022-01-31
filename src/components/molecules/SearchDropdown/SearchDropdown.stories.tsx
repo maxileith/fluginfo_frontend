@@ -1,12 +1,10 @@
-import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import SearchDropdown, { ISearchDropdown } from "./SearchDropdown";
 import * as SearchDropdownItemStories from "./SearchDropdownItem.stories";
 import { ISearchDropdownItem } from "./SearchDropdownItem";
-import * as SearchDropdownInputStories from "./SearchDropdownInput.stories";
 
 export default {
-    title: "SearchDropdown/Dropdown",
+    title: "Molecules/Search Dropdown/Overview",
     component: SearchDropdown,
 } as ComponentMeta<typeof SearchDropdown>;
 
@@ -18,7 +16,7 @@ export const Standard = Template.bind({});
 Standard.args = {
     onSelect: console.log,
     onSearch: console.log,
-    searchPlaceholder: SearchDropdownInputStories.Standard.args?.placeholder,
+    searchPlaceholder: "Search",
     dropdownItems: [
         SearchDropdownItemStories.Plain.args as ISearchDropdownItem,
         SearchDropdownItemStories.Icon.args as ISearchDropdownItem,

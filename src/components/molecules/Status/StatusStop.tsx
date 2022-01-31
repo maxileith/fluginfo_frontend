@@ -16,17 +16,17 @@ import {
 import IApiStop from "../../../api/interfaces/IApiStop";
 import API from "../../../Api";
 
-export interface IStatusDisplayStop {
+export interface IStatusStop {
     stop: IApiStop;
     type: "arrival" | "departure";
     liveTiming?: string;
 }
 
-export default function StatusDisplayStop({
+export default function StatusStop({
     stop,
     type,
     liveTiming,
-}: IStatusDisplayStop): JSX.Element {
+}: IStatusStop): JSX.Element {
     const timeOffset: number | undefined = liveTiming
         ? moment(liveTiming).diff(moment(stop.at), "minutes")
         : undefined;

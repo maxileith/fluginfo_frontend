@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import StatusDisplay, { IStatusDisplay } from "./StatusDisplay";
+import StatusDisplay, { IStatusDisplay } from "./Status";
 
 export default {
     title: "StatusComp/Display",

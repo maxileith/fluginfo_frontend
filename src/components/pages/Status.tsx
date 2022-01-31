@@ -6,7 +6,7 @@ import API from "../../Api";
 import IApiStatus from "../../api/interfaces/IApiStatus";
 import { toast } from "react-toastify";
 import unknownErrorHandling from "../../utils/unknownErrorHandling";
-import StatusDisplay from "../organisms/StatusDisplay/StatusDisplay";
+import StatusDisplay from "../organisms/Status/Status";
 import { NavigateFunction } from "react-router";
 import useDocumentTitle from "../../hooks/useDocumentTitle";
 import useIsMounted from "../../hooks/useIsMounted";

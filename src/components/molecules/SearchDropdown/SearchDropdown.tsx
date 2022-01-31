@@ -1,9 +1,8 @@
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import { Dropdown, Icon } from "react-bulma-components";
+import { Dropdown, Form, Icon } from "react-bulma-components";
 import useLazyStateWrapper from "../../../hooks/useLazyStateWrapper";
-import SearchDropdownInput from "./SearchDropdownInput";
 import SearchDropdownItem, { ISearchDropdownItem } from "./SearchDropdownItem";
 import SearchDropdownLabel, {
     ISearchDropdownLabel,
@@ -16,7 +15,6 @@ export interface ISearchDropdown {
     title?: string;
     searchPlaceholder?: string;
     defaultLabel?: ISearchDropdownLabel;
-    waitUntilSearch?: number;
     disabled?: boolean;
 }
 
@@ -26,7 +24,6 @@ export default function SearchDropdown({
     onSearch,
     searchPlaceholder,
     defaultLabel,
-    waitUntilSearch = 500,
     disabled,
 }: ISearchDropdown): JSX.Element {
     const [keyword, setKeyword] = useLazyStateWrapper<string>(["", onSearch]);
@@ -51,11 +48,18 @@ export default function SearchDropdown({
             onClick={(e: React.MouseEvent) => e.preventDefault()}
             disabled={disabled}
         >
-            <SearchDropdownInput
-                value={keyword}
-                onChange={setKeyword}
-                placeholder={searchPlaceholder}
-            />
+            <Form.Control m="2">
+                <Form.Input
+                    value={keyword}
+                    onChange={(e) => {
+                        setKeyword(e.target.value);
+                    }}
+                    placeholder={searchPlaceholder}
+                />
+                <Icon align="left">
+                    <FontAwesomeIcon icon={faSearch} />
+                </Icon>
+            </Form.Control>
             {dropdownItems.length !== 0 ? <Dropdown.Divider /> : <></>}
             {dropdownItems.map((item) => (
                 <SearchDropdownItem

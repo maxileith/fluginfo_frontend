@@ -66,7 +66,6 @@ export default function OfferDetailsItinerary({
                                 <Columns.Column paddingless pt={2}>
                                     <OfferDetailsAirport
                                         airport={segment.departure.airport}
-                                        type="origin"
                                     />
                                 </Columns.Column>
                             )}
@@ -89,11 +88,6 @@ export default function OfferDetailsItinerary({
                             <Columns.Column paddingless pt={2}>
                                 <OfferDetailsAirport
                                     airport={segment.arrival.airport}
-                                    type={
-                                        index + 1 === itinerary.segments.length
-                                            ? "destination"
-                                            : "change"
-                                    }
                                 />
                             </Columns.Column>
                         </React.Fragment>

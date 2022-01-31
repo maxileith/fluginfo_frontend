@@ -3,15 +3,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Columns, Heading, Icon, Table } from "react-bulma-components";
 import { IApiAvailableSeats } from "../../../api/interfaces/IApiStatus";
 
-export interface IStatusDisplayAvailableSeats {
+export interface IStatusAvailableSeats {
     availableSeats: IApiAvailableSeats[];
     showSeatmap: (classId: string) => void;
 }
 
-export default function StatusDisplayAvailableSeats({
+export default function StatusAvailableSeats({
     availableSeats,
     showSeatmap,
-}: IStatusDisplayAvailableSeats): JSX.Element {
+}: IStatusAvailableSeats): JSX.Element {
     return (
         <>
             <Heading size={4}>

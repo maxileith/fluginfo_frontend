@@ -13,7 +13,6 @@ import IApiAirport from "../../../api/interfaces/IApiAirport";
 
 export interface IOfferDetailsAirport {
     airport: IApiAirport;
-    type: "origin" | "change" | "destination";
 }
 
 export default function OfferDetailsAirport({

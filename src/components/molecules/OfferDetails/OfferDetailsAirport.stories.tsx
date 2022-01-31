@@ -5,7 +5,7 @@ import OfferDetailsAirport, {
 } from "./OfferDetailsAirport";
 
 export default {
-    title: "OfferDetailsComponent/Airport",
+    title: "Molecules/Offer Details/Airport",
     component: OfferDetailsAirport,
 } as ComponentMeta<typeof OfferDetailsAirport>;
 
@@ -18,4 +18,11 @@ Standard.args = {
     airport:
         OfferDetailsItineraryStories.Standard.args?.itinerary?.segments[0]
             .departure.airport,
+};
+
+export const OnlyIata = Template.bind({});
+OnlyIata.args = {
+    airport: {
+        iata: "DXB",
+    },
 };

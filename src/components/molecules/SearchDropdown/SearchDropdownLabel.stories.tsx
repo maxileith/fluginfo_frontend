@@ -1,4 +1,3 @@
-import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import SearchDropdownLabel, {
     ISearchDropdownLabel,
@@ -6,7 +5,7 @@ import SearchDropdownLabel, {
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 
 export default {
-    title: "SearchDropdown/Label",
+    title: "Molecules/Search Dropdown/Label",
     component: SearchDropdownLabel,
 } as ComponentMeta<typeof SearchDropdownLabel>;
 

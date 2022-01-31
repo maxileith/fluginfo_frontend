@@ -10,7 +10,7 @@ import {
 } from "react-bulma-components";
 import API from "../../../Api";
 
-export interface IStatusDisplayFlight {
+export interface IStatusFlight {
     duration: number;
     flightNumber: string;
     carrier?: string;
@@ -18,13 +18,13 @@ export interface IStatusDisplayFlight {
     aircraft: string;
 }
 
-export default function StatusDisplayFlight({
+export default function StatusFlight({
     duration,
     flightNumber,
     carrier,
     carrierCode,
     aircraft,
-}: IStatusDisplayFlight): JSX.Element {
+}: IStatusFlight): JSX.Element {
     return (
         <>
             <Heading size={4}>

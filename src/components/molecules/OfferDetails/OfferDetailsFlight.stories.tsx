@@ -3,7 +3,7 @@ import * as OfferDetailsItineraryStories from "../../organisms/OfferDetails/Offe
 import OfferDetailsFlight, { IOfferDetailsFlight } from "./OfferDetailsFlight";
 
 export default {
-    title: "OfferDetailsComponent/Flight",
+    title: "Molecules/Offer Details/Flight",
     component: OfferDetailsFlight,
 } as ComponentMeta<typeof OfferDetailsFlight>;
 

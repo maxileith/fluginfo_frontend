@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import RangeInput, { IRangeInput } from "./RangeInput";
 
 export default {
-    title: "Atoms/RangeInput",
+    title: "Atoms/Range Input",
     component: RangeInput,
 } as ComponentMeta<typeof RangeInput>;
 
