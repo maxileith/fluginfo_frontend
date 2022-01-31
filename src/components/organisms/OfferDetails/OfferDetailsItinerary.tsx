@@ -7,8 +7,8 @@ import {
     faPlaneDeparture,
 } from "@fortawesome/free-solid-svg-icons";
 import moment from "moment";
-import OfferDetailsAirport from "../../molekules/OfferDetails/OfferDetailsAirport";
-import OfferDetailsFlight from "../../molekules/OfferDetails/OfferDetailsFlight";
+import OfferDetailsAirport from "../../molecules/OfferDetails/OfferDetailsAirport";
+import OfferDetailsFlight from "../../molecules/OfferDetails/OfferDetailsFlight";
 
 export interface IOfferDetailsItinerary {
     itinerary: IApiItinerary;

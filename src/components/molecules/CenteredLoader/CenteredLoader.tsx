@@ -1,6 +1,8 @@
 import { Loader } from "react-bulma-components";
 
-export default function CenteredLoader(): JSX.Element {
+export interface ICenteredLoader {}
+
+export default function CenteredLoader({}: ICenteredLoader): JSX.Element {
     return (
         <Loader
             style={{

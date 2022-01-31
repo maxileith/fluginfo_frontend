@@ -8,7 +8,7 @@ import {
 } from "react-bulma-components";
 import { IApiItinerary } from "../../../api/interfaces/IApiOffer";
 import API from "../../../Api";
-import SearchDropdownLabel from "../../molekules/SearchDropdown/SearchDropdownLabel";
+import SearchDropdownLabel from "../../molecules/SearchDropdown/SearchDropdownLabel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faClock,

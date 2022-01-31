@@ -3,9 +3,9 @@ import IApiStatus, {
     IApiAvailableSeats,
 } from "../../../api/interfaces/IApiStatus";
 import IApiStatusTimings from "../../../api/interfaces/IApiStatusTimings";
-import StatusDisplayAvailableSeats from "../../molekules/StatusDisplay/StatusDisplayAvailableSeats";
-import StatusDisplayFlight from "../../molekules/StatusDisplay/StatusDisplayFlight";
-import StatusDisplayStop from "../../molekules/StatusDisplay/StatusDisplayStop";
+import StatusDisplayAvailableSeats from "../../molecules/StatusDisplay/StatusDisplayAvailableSeats";
+import StatusDisplayFlight from "../../molecules/StatusDisplay/StatusDisplayFlight";
+import StatusDisplayStop from "../../molecules/StatusDisplay/StatusDisplayStop";
 
 export interface IStatusDisplay {
     status: IApiStatus;

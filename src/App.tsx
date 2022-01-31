@@ -15,7 +15,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./toastify.scss";
 import { useEffect, useState } from "react";
-import CenteredLoader from "./components/molekules/CenteredLoader/CenteredLoader";
+import CenteredLoader from "./components/molecules/CenteredLoader/CenteredLoader";
 import API from "./Api";
 import axios from "axios";
 import Seatmap from "./components/pages/Seatmap";

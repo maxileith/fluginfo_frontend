@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavigateFunction } from "react-router";
-import CenteredLoader from "../molekules/CenteredLoader/CenteredLoader";
+import CenteredLoader from "../molecules/CenteredLoader/CenteredLoader";
 import API from "../../Api";
 import IApiOfferDetails from "../../api/interfaces/IApiOfferDetails";
 import { Heading } from "react-bulma-components";
