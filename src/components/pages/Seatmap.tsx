@@ -98,7 +98,7 @@ export default function Seatmap({
             {loading && <CenteredLoader />}
             {seatmap && (
                 <>
-                    <Heading>Seatmap</Heading>
+                    <Heading>Seatmap {seatmap.classId}</Heading>
                     <Heading subtitle>
                         Flight {seatmap.flightNumber} from{" "}
                         {seatmap.departureIata} to {seatmap.arrivalIata} on{" "}
