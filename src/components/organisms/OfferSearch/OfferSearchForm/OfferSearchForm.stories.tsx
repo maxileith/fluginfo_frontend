@@ -29,7 +29,7 @@ Standard.args = {
     setChildren: (s) => console.log(`children: ${s}`),
     infants: 0,
     setInfants: (s) => console.log(`infants: ${s}`),
-    travelClass: "ECONOMY",
+    travelClass: "ALL",
     setTravelClass: (s) => console.log(`travel class: ${s}`),
     setAirlineWhitelist: (s) => console.log(`airline whitelist: ${s}`),
     setAirlineBlacklist: (s) => console.log(`airline blacklist: ${s}`),
