@@ -2,25 +2,27 @@ import "bulma/css/bulma.css";
 import {
     BrowserRouter,
     Navigate,
-    NavigateFunction,
     Route,
     Routes,
+    useLocation,
     useNavigate,
+    useParams,
+    useSearchParams,
 } from "react-router-dom";
-import Layout from "./pages/Layout";
-import OfferDetails from "./pages/OfferDetails";
-import OfferSearch from "./pages/OfferSearch";
-import Status from "./pages/Status";
+import OfferDetails from "./components/pages/OfferDetails";
+import OfferSearch from "./components/pages/OfferSearch";
+import Status from "./components/pages/Status";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./toastify.scss";
 import { useEffect, useState } from "react";
-import CenteredLoader from "./components/CenteredLoader/CenteredLoader";
+import CenteredLoader from "./components/molecules/CenteredLoader/CenteredLoader";
 import API from "./Api";
 import axios from "axios";
-import Seatmap from "./pages/Seatmap";
+import Seatmap from "./components/pages/Seatmap";
 import IApiOffer from "./api/interfaces/IApiOffer";
 import { Map } from "immutable";
+import Layout from "./components/templates/Layout";
 
 export default function App() {
     const [baseURL, setBaseURL] = useState<string>();
@@ -60,8 +62,6 @@ export default function App() {
 }
 
 function NavigateWrapper(): JSX.Element {
-    const navigate: NavigateFunction = useNavigate();
-
     const [offerSearchCache, setOfferSearchCache] = useState<
         Map<string, IApiOffer[]>
     >(Map());
@@ -79,7 +79,7 @@ function NavigateWrapper(): JSX.Element {
     };
 
     return (
-        <Layout navigate={navigate}>
+        <Layout navigate={useNavigate()} currentPath={useLocation().pathname}>
             <Routes>
                 <Route
                     path="/offer/search"
@@ -87,18 +87,48 @@ function NavigateWrapper(): JSX.Element {
                         <OfferSearch
                             addToOfferSearchCache={addToOfferSearchCache}
                             getFromOfferSearchCache={getFromOfferSearchCache}
+                            navigate={useNavigate()}
+                            useSearchParams={useSearchParams}
                         />
                     }
                 />
-                <Route path="/offer/details/:hash" element={<OfferDetails />} />
+                <Route
+                    path="/offer/details/:hash"
+                    element={
+                        <OfferDetails
+                            navigate={useNavigate()}
+                            useParams={useParams}
+                        />
+                    }
+                />
                 <Route
                     path="/offer/seatmap/:hash/:segmentId"
-                    element={<Seatmap from="offerDetails" />}
+                    element={
+                        <Seatmap
+                            from="offerDetails"
+                            navigate={useNavigate()}
+                            useParams={useParams}
+                        />
+                    }
                 />
-                <Route path="/status" element={<Status />} />
+                <Route
+                    path="/status"
+                    element={
+                        <Status
+                            navigate={useNavigate()}
+                            useSearchParams={useSearchParams}
+                        />
+                    }
+                />
                 <Route
                     path="/status/seatmap/:flightNumber/:date/:classId"
-                    element={<Seatmap from="status" />}
+                    element={
+                        <Seatmap
+                            from="status"
+                            navigate={useNavigate()}
+                            useParams={useParams}
+                        />
+                    }
                 />
                 <Route
                     path="*"
