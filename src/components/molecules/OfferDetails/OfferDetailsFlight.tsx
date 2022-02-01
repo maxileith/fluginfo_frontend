@@ -164,7 +164,7 @@ export default function OfferDetailsFlight({
                         marginTop: -500,
                         marginBottom: -500,
                         transform: "translateX(23px)",
-                        zIndex: 1,
+                        width: 0,
                     }}
                 />
                 <Columns breakpoint="mobile" vCentered>
