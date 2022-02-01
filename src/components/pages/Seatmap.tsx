@@ -67,7 +67,7 @@ export default function Seatmap({
                             break;
                         case 404:
                             toast.error(
-                                "The requested Seatmap is not available."
+                                "The requested Seatmap is unavailable."
                             );
                             break;
                         default:

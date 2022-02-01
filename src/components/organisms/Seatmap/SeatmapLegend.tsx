@@ -108,7 +108,7 @@ export default function SeatmapLegend({
                                 </Tag>
                             ) : (
                                 <Tag color="danger" ml={2}>
-                                    not available
+                                    unavailable
                                 </Tag>
                             )}
                             <ul>
