@@ -67,7 +67,7 @@ export default function Seatmap({
                             break;
                         case 404:
                             toast.error(
-                                "The requested Seatmap is not available."
+                                "The requested Seatmap is unavailable."
                             );
                             break;
                         default:
@@ -98,7 +98,7 @@ export default function Seatmap({
             {loading && <CenteredLoader />}
             {seatmap && (
                 <>
-                    <Heading>Seatmap</Heading>
+                    <Heading>Seatmap ({seatmap.classId})</Heading>
                     <Heading subtitle>
                         Flight {seatmap.flightNumber} from{" "}
                         {seatmap.departureIata} to {seatmap.arrivalIata} on{" "}

@@ -160,7 +160,7 @@ export default function OfferSearchForm({
                                     ) => setNonStop(e.target.checked)}
                                     disabled={loading}
                                 >
-                                    Non-stop only
+                                    Non-Stop only
                                 </Form.Checkbox>
                             </Form.Control>
                         </Form.Field>
