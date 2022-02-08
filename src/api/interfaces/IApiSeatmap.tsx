@@ -65,7 +65,7 @@ export interface IApiGridSeat {
     type: "seat";
     number: string;
     available: boolean;
-    characteristics: string[];
+    characteristics?: string[];
 }
 
 export interface IApiGridFacility {
