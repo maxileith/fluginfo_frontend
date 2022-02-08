@@ -175,7 +175,12 @@ export default function OfferSearchForm({
                                         value={departureDate}
                                         onChange={(
                                             e: ChangeEvent<HTMLInputElement>
-                                        ) => setDepartureDate(e.target.value)}
+                                        ) => {
+                                            setDepartureDate(e.target.value);
+                                            returnDate &&
+                                                returnDate < e.target.value &&
+                                                setReturnDate(e.target.value);
+                                        }}
                                         required
                                         min={moment().format("YYYY-MM-DD")}
                                         disabled={loading}
