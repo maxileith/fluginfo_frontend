@@ -111,11 +111,13 @@ export default function SeatmapLegend({
                                     unavailable
                                 </Tag>
                             )}
-                            <ul>
-                                {gridItem.characteristics.map((c) => (
-                                    <li key={c}>{c}</li>
-                                ))}
-                            </ul>
+                            {gridItem.characteristics && (
+                                <ul>
+                                    {gridItem.characteristics.map((c) => (
+                                        <li key={c}>{c}</li>
+                                    ))}
+                                </ul>
+                            )}
                         </>
                     )}
                 </Content>
