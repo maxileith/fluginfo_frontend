@@ -41,9 +41,7 @@ export default function Seatmap({
         setLoading(true);
 
         const apiSeatmapEndpoint =
-            from === "offerDetails"
-                ? "/offers/seatmaps/"
-                : "/availability/seatmap/";
+            from === "offerDetails" ? "/offers/seatmaps/" : "/status/seatmap/";
         const apiSeatmapParams =
             from === "offerDetails"
                 ? { id: hash, segment: segmentId }

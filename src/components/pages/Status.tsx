@@ -45,9 +45,8 @@ export default function Status({
         useState<string>("");
     const [loading, setLoading] = useState<boolean>(false);
     const [status, setStatus] = useState<IApiStatus | undefined>(undefined);
-    const [liveTimings, setLiveTimings] = useState<
-        IApiStatusTimings | undefined
-    >(undefined);
+    const [liveTimings, setLiveTimings] =
+        useState<IApiStatusTimings | undefined>(undefined);
 
     const handleFlightNumberChange = (flightNumber: string) => {
         setFlightNumber(flightNumber.toUpperCase());
@@ -113,7 +112,7 @@ export default function Status({
         setLoading(true);
         setStatus(undefined);
         setLiveTimings(undefined);
-        API.get("/availability/exact/", {
+        API.get("/status/exact/", {
             params: {
                 date: date,
                 flightNumber: flightNumber,
