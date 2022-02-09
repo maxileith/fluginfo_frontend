@@ -55,7 +55,6 @@ Standard.args = {
         decks: [
             {
                 exitRowsX: [9],
-                seatRows: { start: 4, end: 31 },
                 wingsX: { start: 8, end: 9 },
                 grid: [
                     [
@@ -1849,7 +1848,6 @@ Big.args = {
         decks: [
             {
                 exitRowsX: [20],
-                seatRows: { start: 10, end: 43 },
                 wingsX: { start: 0, end: 7 },
                 grid: [
                     [
@@ -4635,7 +4633,6 @@ MultiDeck.args = {
         },
         decks: [
             {
-                seatRows: { start: 24, end: 39 },
                 wingsX: { start: 10, end: 15 },
                 grid: [
                     [
@@ -5922,7 +5919,6 @@ MultiDeck.args = {
             },
             {
                 exitRowsX: [0, 26, 27, 39],
-                seatRows: { start: 40, end: 88 },
                 wingsX: { start: 11, end: 30 },
                 grid: [
                     [

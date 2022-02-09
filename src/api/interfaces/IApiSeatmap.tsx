@@ -56,11 +56,6 @@ export interface IApiDeckWingsX {
     end: number;
 }
 
-export interface IApiDeckSeatRows {
-    start: number;
-    end: number;
-}
-
 export interface IApiGridSeat {
     type: "seat";
     number: string;
@@ -75,7 +70,6 @@ export interface IApiGridFacility {
 
 export interface IApiDeck {
     wingsX?: IApiDeckWingsX;
-    seatRows?: IApiDeckSeatRows;
     exitRowsX?: number[];
     grid: TApiSeatmapGridItem[][];
 }
