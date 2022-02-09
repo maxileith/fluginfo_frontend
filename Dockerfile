@@ -10,7 +10,8 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 # install dependencies
 COPY ./package.json /app/
-RUN npm install
+COPY ./package-lock.json /app/
+RUN npm ci
 # copy projects
 COPY . ./
 # build the production version
