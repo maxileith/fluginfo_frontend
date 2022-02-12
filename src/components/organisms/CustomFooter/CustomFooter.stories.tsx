@@ -1,11 +1,16 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import CustomFooter from "./CustomFooter";
+import CustomFooter, { ICustomFooter } from "./CustomFooter";
 
 export default {
     title: "Organisms/Footer",
     component: CustomFooter,
 } as ComponentMeta<typeof CustomFooter>;
 
-const Template: ComponentStory<typeof CustomFooter> = () => <CustomFooter />;
+const Template: ComponentStory<typeof CustomFooter> = (args: ICustomFooter) => (
+    <CustomFooter {...args} />
+);
 
 export const Standard = Template.bind({});
+Standard.args = {
+    navigate: () => {},
+};

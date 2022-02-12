@@ -22,6 +22,7 @@ import Seatmap from "./components/pages/Seatmap";
 import IApiOffer from "./api/interfaces/IApiOffer";
 import { Map } from "immutable";
 import Layout from "./components/templates/Layout";
+import IFrameWrapper from "./components/pages/IFrameWrapper";
 
 export default function App() {
     const [baseURL, setBaseURL] = useState<string>();
@@ -126,6 +127,18 @@ function NavigateWrapper(): JSX.Element {
                             from="status"
                             navigate={useNavigate()}
                             useParams={useParams}
+                        />
+                    }
+                />
+                <Route
+                    path="/storybook"
+                    element={<IFrameWrapper src="/sb/" />}
+                />
+                <Route
+                    path="/swagger"
+                    element={
+                        <IFrameWrapper
+                            src={`${API.defaults.baseURL}/swagger/`}
                         />
                     }
                 />

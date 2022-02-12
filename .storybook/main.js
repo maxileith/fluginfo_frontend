@@ -15,4 +15,17 @@ module.exports = {
     core: {
         builder: "webpack5",
     },
+    webpackFinal: async (config, { configType }) => {
+        if (configType === "PRODUCTION") {
+            config.output.publicPath = "/sb/";
+        }
+        return config;
+    },
+    managerWebpack: async (config, { configType }) => {
+        if (configType === "PRODUCTION") {
+            config.output.publicPath = "/sb/";
+        }
+        return config;
+    },
+    staticDirs: ["../public"],
 };

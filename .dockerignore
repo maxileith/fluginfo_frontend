@@ -3,7 +3,7 @@
 *.gitkeep
 node_modules
 npm-debug.log
-build
+build/
 **/.git
 docker-compose.yaml
 docker-compose.yaml.example
@@ -14,6 +14,7 @@ docker-save.sh
 .vscode/
 README.md
 gimp
+public/backendBaseUrl.txt
 
 # Logs
 logs

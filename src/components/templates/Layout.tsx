@@ -14,10 +14,14 @@ export default function Layout({
     return (
         <>
             <Header navigate={navigate} currentPath={currentPath} />
-            <Container breakpoint="fullhd" max p={4} pb={0}>
-                {children}
-            </Container>
-            <CustomFooter />
+            {currentPath !== "/storybook" && currentPath !== "/swagger" ? (
+                <Container breakpoint="fullhd" max p={4} pb={0}>
+                    {children}
+                </Container>
+            ) : (
+                children
+            )}
+            <CustomFooter navigate={navigate} />
         </>
     );
 }
