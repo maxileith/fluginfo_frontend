@@ -2,6 +2,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container, Content, Footer } from "react-bulma-components";
 import { NavigateFunction } from "react-router-dom";
+import packageJson from "../../../../package.json";
 
 export interface ICustomFooter {
     navigate: NavigateFunction;
@@ -14,6 +15,7 @@ export default function CustomFooter({
         <Container>
             <Content style={{ textAlign: "center" }}>
                 <p>
+                    {packageJson.version} |{" "}
                     <a onClick={() => navigate("/storybook")}>Storybook</a> |{" "}
                     <a onClick={() => navigate("/swagger")}>Swagger</a> | Made
                     with <FontAwesomeIcon icon={faHeart} /> by{" "}
