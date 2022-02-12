@@ -15,6 +15,7 @@ docker-save.sh
 README.md
 gimp
 public/backendBaseUrl.txt
+docimg/
 
 # Logs
 logs
