@@ -7,7 +7,7 @@ import CenteredLoader from "../molecules/CenteredLoader/CenteredLoader";
 import unknownErrorHandling from "../../utils/unknownErrorHandling";
 import useIsMounted from "../../hooks/useIsMounted";
 import SeatmapComp from "../organisms/Seatmap/Seatmap";
-import { Heading } from "react-bulma-components";
+import { Breadcrumb, Heading } from "react-bulma-components";
 import moment from "moment";
 import useDocumentTitle from "../../hooks/useDocumentTitle";
 
@@ -102,6 +102,30 @@ export default function Seatmap({
                         {seatmap.departureIata} to {seatmap.arrivalIata} on{" "}
                         {moment(seatmap.date).format("MMMM Do, YYYY")}.
                     </Heading>
+                    {from === "offerDetails" ? (
+                        <Breadcrumb>
+                            <Breadcrumb.Item>
+                                <a onClick={() => navigate(-2)}>Offer Search</a>
+                            </Breadcrumb.Item>
+                            <Breadcrumb.Item>
+                                <a onClick={() => navigate(-1)}>
+                                    Offer Details
+                                </a>
+                            </Breadcrumb.Item>
+                            <Breadcrumb.Item active>
+                                <a>Seatmap</a>
+                            </Breadcrumb.Item>
+                        </Breadcrumb>
+                    ) : (
+                        <Breadcrumb>
+                            <Breadcrumb.Item>
+                                <a onClick={() => navigate(-1)}>Status</a>
+                            </Breadcrumb.Item>
+                            <Breadcrumb.Item active>
+                                <a>Seatmap</a>
+                            </Breadcrumb.Item>
+                        </Breadcrumb>
+                    )}
                     <hr />
                     <SeatmapComp seatmap={seatmap} navigate={navigate} />
                 </>

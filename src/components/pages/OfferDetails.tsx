@@ -3,7 +3,7 @@ import { NavigateFunction } from "react-router";
 import CenteredLoader from "../molecules/CenteredLoader/CenteredLoader";
 import API from "../../Api";
 import IApiOfferDetails from "../../api/interfaces/IApiOfferDetails";
-import { Heading } from "react-bulma-components";
+import { Breadcrumb, Heading } from "react-bulma-components";
 import OD from "../organisms/OfferDetails/OfferDetails";
 import { toast } from "react-toastify";
 import unknownErrorHandling from "../../utils/unknownErrorHandling";
@@ -27,9 +27,8 @@ export default function OfferDetails({
 
     const { hash } = useParams();
     const [loading, setLoading] = useState<boolean>(true);
-    const [details, setDetails] = useState<IApiOfferDetails | undefined>(
-        undefined
-    );
+    const [details, setDetails] =
+        useState<IApiOfferDetails | undefined>(undefined);
 
     useEffect(() => {
         setLoading(true);
@@ -93,9 +92,15 @@ export default function OfferDetails({
             {details && (
                 <>
                     <Heading>Offer Details</Heading>
-                    <Heading subtitle mb={6}>
-                        A closer look at the offer.
-                    </Heading>
+                    <Heading subtitle>A closer look at the offer.</Heading>
+                    <Breadcrumb>
+                        <Breadcrumb.Item>
+                            <a onClick={() => navigate(-1)}>Offer Search</a>
+                        </Breadcrumb.Item>
+                        <Breadcrumb.Item active>
+                            <a>Offer Details</a>
+                        </Breadcrumb.Item>
+                    </Breadcrumb>
                     <hr />
                     <OD details={details} showSeatmap={handleShowSeatmap} />
                 </>
