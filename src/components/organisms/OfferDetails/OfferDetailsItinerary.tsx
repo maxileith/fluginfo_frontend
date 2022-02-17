@@ -59,7 +59,7 @@ export default function OfferDetailsItinerary({
 
             <Box style={{ overflow: "hidden" }}>
                 <Container mobile={{ display: "hidden" }} mb={5} />
-                <Columns>
+                <Columns breakpoint="tablet">
                     {itinerary.segments.map((segment, index) => (
                         <React.Fragment key={segment.id}>
                             {index === 0 && (
