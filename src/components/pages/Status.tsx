@@ -156,7 +156,7 @@ export default function Status({
 
     return (
         <>
-            <Heading>Status Request</Heading>
+            <Heading>Status</Heading>
             <Heading subtitle>Information regarding a specific flight.</Heading>
 
             <StatusSearchForm

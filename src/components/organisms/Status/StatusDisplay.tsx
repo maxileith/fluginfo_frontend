@@ -25,7 +25,7 @@ export default function StatusDisplay({
 
     return (
         <Box>
-            <Columns>
+            <Columns breakpoint="tablet">
                 <Columns.Column size={4}>
                     <StatusDisplayStop
                         stop={status.departure}
