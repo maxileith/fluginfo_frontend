@@ -13,10 +13,7 @@ const Template: ComponentStory<typeof OfferDetails> = (args: IOfferDetails) => (
 export const Standard = Template.bind({});
 Standard.args = {
     details: {
-        price: {
-            value: 3558.58,
-            currency: "EURO",
-        },
+        price: 3558.58,
         itineraries: [
             {
                 duration: 2243,
@@ -164,10 +161,7 @@ Standard.args = {
 export const ManyStops = Template.bind({});
 ManyStops.args = {
     details: {
-        price: {
-            value: 3558.58,
-            currency: "EURO",
-        },
+        price: 3558.58,
         itineraries: [
             {
                 duration: 2243,

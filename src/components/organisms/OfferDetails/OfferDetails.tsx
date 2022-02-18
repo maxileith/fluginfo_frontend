@@ -22,16 +22,10 @@ export default function OfferDetails({
             ))}
             <hr />
             <Heading textAlign="right" mobile={{ display: "hidden" }}>
-                {details.price.value.toFixed(2)}
-                {details.price.currency === "EURO"
-                    ? "€"
-                    : ` ${details.price.currency}`}
+                {details.price.toFixed(2)}€
             </Heading>
             <Heading textAlign="center" tablet={{ display: "hidden" }}>
-                {details.price.value.toFixed(2)}
-                {details.price.currency === "EURO"
-                    ? "€"
-                    : ` ${details.price.currency}`}
+                {details.price.toFixed(2)}€
             </Heading>
         </>
     );

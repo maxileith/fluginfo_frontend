@@ -37,12 +37,7 @@ export default function OfferSearchElement({
                 </Columns.Column>
                 <Columns.Column size={3}>
                     <Block mobile={{ display: "hidden" }} textAlign="center">
-                        <Heading>
-                            {offer.price.value.toFixed(2)}
-                            {offer.price.currency === "EURO"
-                                ? "€"
-                                : ` ${offer.price.currency}`}
-                        </Heading>
+                        <Heading>{offer.price.toFixed(2)}€</Heading>
                         <Button
                             onClick={() => showDetails(offer.hash)}
                             color="info"
@@ -57,12 +52,7 @@ export default function OfferSearchElement({
                     <Level tablet={{ display: "hidden" }} breakpoint="mobile">
                         <Level.Side align="left">
                             <Level.Item>
-                                <Heading>
-                                    {offer.price.value.toFixed(2)}
-                                    {offer.price.currency === "EURO"
-                                        ? "€"
-                                        : ` ${offer.price.currency}`}
-                                </Heading>
+                                <Heading>{offer.price.toFixed(2)}€</Heading>
                             </Level.Item>
                         </Level.Side>
                         <Level.Side align="right">

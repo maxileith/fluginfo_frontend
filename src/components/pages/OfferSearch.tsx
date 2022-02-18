@@ -274,11 +274,11 @@ export default function OfferSearch({
         // iterate through all offers to get min / max
         // price, duration, possible airlines and number of stops
         offers.forEach((o) => {
-            if (o.price.value > priceMax) {
-                priceMax = o.price.value;
+            if (o.price > priceMax) {
+                priceMax = o.price;
             }
-            if (o.price.value < priceMin) {
-                priceMin = o.price.value;
+            if (o.price < priceMin) {
+                priceMin = o.price;
             }
             o.itineraries.forEach((i) => {
                 if (i.duration > durationMax) {
@@ -326,7 +326,7 @@ export default function OfferSearch({
         var newFilteredOffers: IApiOffer[] = [];
 
         offers.forEach((o) => {
-            if (o.price.value > filterPriceLimit) {
+            if (o.price > filterPriceLimit) {
                 return;
             }
 

@@ -15,10 +15,7 @@ Standard.args = {
     showDetails: console.log,
     offer: {
         hash: "df2fc6770ac36b7caf9c64f4526eef4508398fbafca6cd2be009af517aafe7bfe551108978e7e7c573b54c9266dfa0f122652d0e65e9f874e094a4c563b1b72d",
-        price: {
-            value: 565.09,
-            currency: "EURO",
-        },
+        price: 565.09,
         itineraries: [
             {
                 classes: ["ECONOMY"],
