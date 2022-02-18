@@ -85,6 +85,19 @@ export default function SeatmapLegend({
                         </tr>
                     </tbody>
                 </Table>
+                {(amenities.beverage.isChargeable ||
+                    amenities.food.isChargeable ||
+                    amenities.wifi.isChargeable ||
+                    amenities.power.isChargeable ||
+                    amenities.entertainment.filter((e) => e.isChargeable)
+                        .length !== 0) && (
+                    <p>
+                        <Tag ml={2} color="warning">
+                            €
+                        </Tag>{" "}
+                        Chargeable
+                    </p>
+                )}
             </Box>
             <hr />
             <Heading size={4}>Seatmap Details</Heading>
