@@ -23,5 +23,5 @@ To run the app in production it is recommended to use **Docker**.\
 Just fire up the `docker-build.sh` script and wait for it to finish.
 
 Then you can fire up the container on it's own or use the\
-preconfigured `docker-compose.yaml.example` file and set up\
+preconfigured `docker-compose.example.yaml` file and set up\
 your own docker stack.

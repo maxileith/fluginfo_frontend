@@ -6,7 +6,7 @@ npm-debug.log
 build/
 **/.git
 docker-compose.yaml
-docker-compose.yaml.example
+docker-compose.example.yaml
 .dockerignore
 Dockerfile
 docker-build.sh
