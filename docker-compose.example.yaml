@@ -1,11 +1,11 @@
 version: "3"
 
 services:
-  frontend:
-    image: maxileith/fluginfo-frontend:latest
-    container_name: fluginfo_frontend
-    restart: always
-    environment:
-      - FLUGINFO_BACKEND_BASE_URL=https://domain.tld
-    ports:
-      - 0.0.0.0:80:80
+    frontend:
+        image: maxileith/fluginfo-frontend:latest
+        container_name: fluginfo_frontend
+        restart: always
+        environment:
+            - FLUGINFO_BACKEND_BASE_URL=https://domain.tld
+        ports:
+            - 0.0.0.0:80:80
