@@ -16,16 +16,15 @@ export default function Seatmap({
     seatmap,
     navigate = () => {},
 }: ISeatmap): JSX.Element {
-    const [focusedGridItem, setFocusedGridItem] = useState<
-        TApiSeatmapGridItem | undefined
-    >(undefined);
+    const [focusedGridItem, setFocusedGridItem] =
+        useState<TApiSeatmapGridItem | undefined>(undefined);
 
     const widestDeck: number = seatmap.decks
         .map((d) => d.grid[0].length)
         .sort()
         .reverse()[0];
 
-    const bigAircraft: boolean = widestDeck > 7;
+    const bigAircraft: boolean = widestDeck >= 8;
 
     return (
         <Columns breakpoint={bigAircraft ? "desktop" : "tablet"}>
