@@ -1,4 +1,4 @@
-import { ReactNode, useCallback, useState } from "react";
+import { createRef, ReactNode, useEffect, useState } from "react";
 import useViewportDimensions from "../../../hooks/useViewportDimensions";
 
 export interface IAdvancedStickyWrapper {
@@ -10,26 +10,24 @@ export default function AdvancedStickyWrapper({
 }: IAdvancedStickyWrapper): JSX.Element {
     const { height } = useViewportDimensions();
     const [offset, setOffset] = useState<string>("4rem");
+    const ref = createRef<HTMLDivElement>();
 
-    const ref = useCallback(
-        (node: HTMLDivElement) => {
-            if (node !== null) {
-                var heightDifference: number =
-                    node.getBoundingClientRect().height - height;
-                setOffset(
-                    heightDifference <
-                        -8 *
-                            parseFloat(
-                                getComputedStyle(document.documentElement)
-                                    .fontSize
-                            )
-                        ? "4rem"
-                        : `calc(-4rem - ${heightDifference}px)`
-                );
-            }
-        },
-        [height]
-    );
+    useEffect(() => {
+        if (ref.current !== null) {
+            var heightDifference: number =
+                ref.current.getBoundingClientRect().height - height;
+            setOffset(
+                heightDifference <
+                    -8 *
+                        parseFloat(
+                            getComputedStyle(document.documentElement).fontSize
+                        )
+                    ? "4rem"
+                    : `calc(-4rem - ${heightDifference}px)`
+            );
+        }
+    }, [ref, height]);
+
     return (
         <div
             ref={ref}
