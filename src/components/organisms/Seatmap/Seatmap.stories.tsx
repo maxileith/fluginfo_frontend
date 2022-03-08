@@ -61,7 +61,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "4A",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Chargeable seats",
                                 "Left side of aircraft",
@@ -74,7 +74,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "4C",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -88,7 +88,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "4D",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -101,7 +101,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "4E",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                                 "Chargeable seats",
@@ -114,7 +114,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "4F",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Chargeable seats",
                                 "Preferential seat",
@@ -129,7 +129,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "5A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Left side of aircraft",
@@ -141,7 +141,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "5C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -154,7 +154,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "5D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -166,7 +166,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "5E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                                 "Chargeable seats",
@@ -178,7 +178,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "5F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Preferential seat",
@@ -192,7 +192,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "6A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Left side of aircraft",
@@ -204,7 +204,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "6C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -217,7 +217,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "6D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -229,7 +229,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "6E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                                 "Chargeable seats",
@@ -241,7 +241,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "6F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Preferential seat",
@@ -255,7 +255,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "7A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Left side of aircraft",
@@ -267,7 +267,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "7C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -280,7 +280,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "7D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -292,7 +292,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "7E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                                 "Chargeable seats",
@@ -304,7 +304,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "7F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Preferential seat",
@@ -318,7 +318,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "8A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -331,7 +331,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "8C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -344,7 +344,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "8D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -356,7 +356,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "8E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                                 "Chargeable seats",
@@ -368,7 +368,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "8F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -383,7 +383,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "9A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -396,7 +396,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "9C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -409,7 +409,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "9D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -421,7 +421,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "9E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                                 "Chargeable seats",
@@ -433,7 +433,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "9F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -448,7 +448,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "10A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -461,7 +461,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "10C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -474,7 +474,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "10D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -486,7 +486,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "10E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                                 "Chargeable seats",
@@ -498,7 +498,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "10F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -513,7 +513,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "11A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat not allowed for infant",
                                 "Chargeable seats",
@@ -526,7 +526,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "11C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat not allowed for infant",
                                 "Aisle seat",
@@ -540,7 +540,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "11D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat not allowed for infant",
                                 "Aisle seat",
@@ -553,7 +553,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "11E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat not allowed for infant",
                                 "Center seat (not window, not aisle)",
@@ -566,7 +566,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "11F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat not allowed for infant",
                                 "Chargeable seats",
@@ -581,7 +581,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "12A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat not allowed for infant",
                                 "Seat not allowed for medical",
@@ -596,7 +596,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "12C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat not allowed for infant",
                                 "Seat not allowed for medical",
@@ -612,7 +612,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "12D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat not allowed for infant",
                                 "Seat not allowed for medical",
@@ -627,7 +627,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "12E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat not allowed for infant",
                                 "Seat not allowed for medical",
@@ -642,7 +642,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "12F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat not allowed for infant",
                                 "Seat not allowed for medical",
@@ -659,7 +659,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "14A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat not allowed for infant",
                                 "Seat not allowed for medical",
@@ -676,7 +676,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "14C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat not allowed for infant",
                                 "Seat not allowed for medical",
@@ -694,7 +694,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "14D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat not allowed for infant",
                                 "Seat not allowed for medical",
@@ -711,7 +711,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "14E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat not allowed for infant",
                                 "Seat not allowed for medical",
@@ -728,7 +728,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "14F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat not allowed for infant",
                                 "Seat not allowed for medical",
@@ -747,7 +747,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "15A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat not allowed for infant",
                                 "Chargeable seats",
@@ -760,7 +760,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "15C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat not allowed for infant",
                                 "Aisle seat",
@@ -774,7 +774,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "15D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat not allowed for infant",
                                 "Aisle seat",
@@ -787,7 +787,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "15E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat not allowed for infant",
                                 "Center seat (not window, not aisle)",
@@ -800,7 +800,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "15F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat not allowed for infant",
                                 "Chargeable seats",
@@ -815,7 +815,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "16A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -828,7 +828,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "16C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -841,7 +841,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "16D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -853,7 +853,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "16E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                                 "Chargeable seats",
@@ -865,7 +865,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "16F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -880,7 +880,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "17A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -893,7 +893,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "17C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -906,7 +906,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "17D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -918,7 +918,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "17E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                                 "Chargeable seats",
@@ -930,7 +930,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "17F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -945,7 +945,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "18A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -957,7 +957,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "18C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -969,7 +969,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "18D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -980,7 +980,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "18E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                                 "Chargeable seats",
@@ -991,7 +991,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "18F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1005,7 +1005,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "19A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1017,7 +1017,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "19C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1029,7 +1029,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "19D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1040,7 +1040,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "19E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                                 "Chargeable seats",
@@ -1051,7 +1051,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "19F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1065,7 +1065,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "20A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1077,7 +1077,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "20C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1089,7 +1089,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "20D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1100,7 +1100,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "20E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                                 "Chargeable seats",
@@ -1111,7 +1111,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "20F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1125,7 +1125,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "21A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1137,7 +1137,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "21C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1149,7 +1149,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "21D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1160,7 +1160,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "21E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                                 "Chargeable seats",
@@ -1171,7 +1171,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "21F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1185,7 +1185,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "22A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1197,7 +1197,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "22C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1209,7 +1209,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "22D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1220,7 +1220,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "22E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                                 "Chargeable seats",
@@ -1231,7 +1231,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "22F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1245,7 +1245,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "23A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1257,7 +1257,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "23C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1269,7 +1269,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "23D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1280,7 +1280,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "23E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                                 "Chargeable seats",
@@ -1291,7 +1291,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "23F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1305,7 +1305,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "24A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1317,7 +1317,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "24C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1329,7 +1329,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "24D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1340,7 +1340,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "24E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                                 "Chargeable seats",
@@ -1351,7 +1351,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "24F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1365,7 +1365,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "25A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1377,7 +1377,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "25C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1389,7 +1389,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "25D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1400,7 +1400,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "25E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                                 "Chargeable seats",
@@ -1411,7 +1411,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "25F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1425,7 +1425,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "26A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1437,7 +1437,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "26C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1449,7 +1449,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "26D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1460,7 +1460,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "26E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                                 "Chargeable seats",
@@ -1471,7 +1471,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "26F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1485,7 +1485,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "27A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1497,7 +1497,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "27C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1509,7 +1509,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "27D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1520,7 +1520,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "27E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                                 "Chargeable seats",
@@ -1531,7 +1531,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "27F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1545,7 +1545,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "28A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1557,7 +1557,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "28C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1569,7 +1569,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "28D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1580,7 +1580,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "28E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                                 "Chargeable seats",
@@ -1591,7 +1591,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "28F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1605,7 +1605,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "29A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1617,7 +1617,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "29C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1629,7 +1629,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "29D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1640,7 +1640,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "29E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                                 "Chargeable seats",
@@ -1651,7 +1651,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "29F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1665,7 +1665,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "30A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1677,7 +1677,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "30C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1689,7 +1689,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "30D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1700,7 +1700,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "30E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                                 "Chargeable seats",
@@ -1711,7 +1711,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "30F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1725,7 +1725,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "31A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Restricted recline seat",
                                 "Chargeable seats",
@@ -1738,7 +1738,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "31C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Restricted recline seat",
                                 "Aisle seat",
@@ -1751,7 +1751,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "31D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Restricted recline seat",
                                 "Aisle seat",
@@ -1763,7 +1763,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "31E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Restricted recline seat",
                                 "Center seat (not window, not aisle)",
@@ -1775,7 +1775,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "31F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Restricted recline seat",
                                 "Chargeable seats",
@@ -1878,7 +1878,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "10A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1891,7 +1891,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "10C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1904,7 +1904,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "10D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1916,7 +1916,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "10E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Leg space seat",
@@ -1926,7 +1926,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "10F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Leg space seat",
@@ -1936,7 +1936,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "10G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1949,7 +1949,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "10H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -1961,7 +1961,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "10K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1976,7 +1976,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "11A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -1988,7 +1988,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "11C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2000,7 +2000,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "11D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2010,7 +2010,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "11E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Preferential seat",
@@ -2019,7 +2019,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "11F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Preferential seat",
@@ -2028,7 +2028,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "11G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2041,7 +2041,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "11H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2052,7 +2052,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "11K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -2066,7 +2066,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "12A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -2079,7 +2079,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "12C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2092,7 +2092,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "12D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2104,7 +2104,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "12E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Preferential seat",
@@ -2114,7 +2114,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "12F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Preferential seat",
@@ -2124,7 +2124,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "12G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2137,7 +2137,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "12H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2149,7 +2149,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "12K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -2164,7 +2164,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "13A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -2177,7 +2177,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "13C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2190,7 +2190,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "13D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2201,7 +2201,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "13E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Preferential seat",
@@ -2211,7 +2211,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "13F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Preferential seat",
@@ -2221,7 +2221,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "13G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2235,7 +2235,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "13H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2247,7 +2247,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "13K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -2262,7 +2262,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "14A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -2275,7 +2275,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "14C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2288,7 +2288,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "14D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2300,7 +2300,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "14E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Preferential seat",
@@ -2310,7 +2310,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "14F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Preferential seat",
@@ -2320,7 +2320,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "14G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2333,7 +2333,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "14H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2345,7 +2345,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "14K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -2360,7 +2360,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "15A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -2373,7 +2373,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "15C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2386,7 +2386,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "15D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2397,7 +2397,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "15E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Preferential seat",
@@ -2407,7 +2407,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "15F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Preferential seat",
@@ -2417,7 +2417,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "15G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2431,7 +2431,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "15H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2443,7 +2443,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "15K",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -2458,7 +2458,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "16A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -2471,7 +2471,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "16C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2484,7 +2484,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "16D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2496,7 +2496,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "16E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Preferential seat",
@@ -2506,7 +2506,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "16F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Preferential seat",
@@ -2516,7 +2516,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "16G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2529,7 +2529,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "16H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2541,7 +2541,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "16K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -2556,7 +2556,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "17A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -2568,7 +2568,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "17C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2580,7 +2580,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "17D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2591,7 +2591,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "17E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Preferential seat",
@@ -2601,7 +2601,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "17F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Preferential seat",
@@ -2611,7 +2611,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "17G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2625,7 +2625,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "17H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2636,7 +2636,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "17K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -2650,7 +2650,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "18A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -2662,7 +2662,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "18C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2674,7 +2674,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "18D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2686,7 +2686,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "18E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Preferential seat",
@@ -2696,7 +2696,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "18F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Preferential seat",
@@ -2706,7 +2706,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "18G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2719,7 +2719,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "18H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2730,7 +2730,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "18K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -2744,7 +2744,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "19A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -2756,7 +2756,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "19C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2768,7 +2768,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "19D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2779,7 +2779,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "19E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Preferential seat",
@@ -2789,7 +2789,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "19F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Preferential seat",
@@ -2799,7 +2799,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "19G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2813,7 +2813,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "19H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2824,7 +2824,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "19K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -2838,7 +2838,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "20A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -2850,7 +2850,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "20C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2862,7 +2862,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "20D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2874,7 +2874,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "20E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Preferential seat",
@@ -2884,7 +2884,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "20F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Preferential seat",
@@ -2894,7 +2894,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "20G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2907,7 +2907,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "20H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2918,7 +2918,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "20K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -2932,7 +2932,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "21A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -2944,7 +2944,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "21C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2956,7 +2956,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "21D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -2967,7 +2967,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "21E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Preferential seat",
@@ -2977,7 +2977,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "21F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Preferential seat",
@@ -2987,7 +2987,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "21G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3001,7 +3001,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "21H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3012,7 +3012,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "21K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -3026,7 +3026,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "22A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -3037,7 +3037,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "22C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3048,7 +3048,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "22D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3059,7 +3059,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "22E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Overwing seat(s)",
@@ -3068,7 +3068,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "22F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Overwing seat(s)",
@@ -3077,7 +3077,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "22G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3090,7 +3090,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "22H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3100,7 +3100,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "22K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -3113,7 +3113,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "23A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -3124,7 +3124,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "23C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3136,7 +3136,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "23D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3147,7 +3147,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "23E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Overwing seat(s)",
@@ -3156,7 +3156,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "23F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Overwing seat(s)",
@@ -3165,7 +3165,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "23G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3177,7 +3177,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "23H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3187,7 +3187,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "23K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -3200,7 +3200,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "24A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -3211,7 +3211,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "24C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3223,7 +3223,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "24D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3234,7 +3234,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "24E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Overwing seat(s)",
@@ -3243,7 +3243,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "24F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Overwing seat(s)",
@@ -3252,7 +3252,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "24G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3265,7 +3265,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "24H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3275,7 +3275,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "24K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -3288,7 +3288,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "25A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -3299,7 +3299,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "25C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3310,7 +3310,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "25D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3321,7 +3321,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "25E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Overwing seat(s)",
@@ -3330,7 +3330,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "25F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Overwing seat(s)",
@@ -3339,7 +3339,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "25G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3351,7 +3351,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "25H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3361,7 +3361,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "25K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -3374,7 +3374,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "26A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -3384,14 +3384,14 @@ Big.args = {
                         {
                             type: "seat",
                             number: "26C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "26D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3401,19 +3401,19 @@ Big.args = {
                         {
                             type: "seat",
                             number: "26E",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "26F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "26G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3425,13 +3425,13 @@ Big.args = {
                         {
                             type: "seat",
                             number: "26H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "26K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -3455,7 +3455,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "27A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat not allowed for infant",
                                 "Seat not allowed for medical",
@@ -3468,7 +3468,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "27C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat not allowed for infant",
                                 "Seat not allowed for medical",
@@ -3482,7 +3482,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "27D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Seat with bassinet facility",
@@ -3493,19 +3493,19 @@ Big.args = {
                         {
                             type: "seat",
                             number: "27E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "27F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "27G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Seat with bassinet facility",
@@ -3517,7 +3517,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "27H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat not allowed for infant",
                                 "Seat not allowed for medical",
@@ -3530,7 +3530,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "27K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat not allowed for infant",
                                 "Seat not allowed for medical",
@@ -3545,7 +3545,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "28A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -3555,32 +3555,32 @@ Big.args = {
                         {
                             type: "seat",
                             number: "28C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "28D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "28E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "28F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "28G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3592,13 +3592,13 @@ Big.args = {
                         {
                             type: "seat",
                             number: "28H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "28K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -3610,7 +3610,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "29A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -3620,14 +3620,14 @@ Big.args = {
                         {
                             type: "seat",
                             number: "29C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "29D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3637,19 +3637,19 @@ Big.args = {
                         {
                             type: "seat",
                             number: "29E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "29F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "29G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3660,13 +3660,13 @@ Big.args = {
                         {
                             type: "seat",
                             number: "29H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "29K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -3678,7 +3678,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "30A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -3688,32 +3688,32 @@ Big.args = {
                         {
                             type: "seat",
                             number: "30C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "30D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "30E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "30F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "30G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3725,13 +3725,13 @@ Big.args = {
                         {
                             type: "seat",
                             number: "30H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "30K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -3743,7 +3743,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "31A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -3753,14 +3753,14 @@ Big.args = {
                         {
                             type: "seat",
                             number: "31C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "31D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3770,19 +3770,19 @@ Big.args = {
                         {
                             type: "seat",
                             number: "31E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "31F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "31G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3793,13 +3793,13 @@ Big.args = {
                         {
                             type: "seat",
                             number: "31H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "31K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -3811,7 +3811,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "32A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -3821,32 +3821,32 @@ Big.args = {
                         {
                             type: "seat",
                             number: "32C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "32D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "32E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "32F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "32G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3858,13 +3858,13 @@ Big.args = {
                         {
                             type: "seat",
                             number: "32H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "32K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -3876,7 +3876,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "33A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -3886,14 +3886,14 @@ Big.args = {
                         {
                             type: "seat",
                             number: "33C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "33D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3903,19 +3903,19 @@ Big.args = {
                         {
                             type: "seat",
                             number: "33E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "33F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "33G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3926,13 +3926,13 @@ Big.args = {
                         {
                             type: "seat",
                             number: "33H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "33K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -3944,7 +3944,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "34A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -3954,32 +3954,32 @@ Big.args = {
                         {
                             type: "seat",
                             number: "34C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "34D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "34E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "34F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "34G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -3991,13 +3991,13 @@ Big.args = {
                         {
                             type: "seat",
                             number: "34H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "34K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -4009,7 +4009,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "35A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -4019,14 +4019,14 @@ Big.args = {
                         {
                             type: "seat",
                             number: "35C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "35D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -4036,19 +4036,19 @@ Big.args = {
                         {
                             type: "seat",
                             number: "35E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "35F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "35G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -4059,13 +4059,13 @@ Big.args = {
                         {
                             type: "seat",
                             number: "35H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "35K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -4077,7 +4077,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "36A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -4087,32 +4087,32 @@ Big.args = {
                         {
                             type: "seat",
                             number: "36C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "36D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "36E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "36F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "36G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -4124,13 +4124,13 @@ Big.args = {
                         {
                             type: "seat",
                             number: "36H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "36K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -4142,7 +4142,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "37A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -4152,14 +4152,14 @@ Big.args = {
                         {
                             type: "seat",
                             number: "37C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "37D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -4169,19 +4169,19 @@ Big.args = {
                         {
                             type: "seat",
                             number: "37E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "37F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "37G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -4192,13 +4192,13 @@ Big.args = {
                         {
                             type: "seat",
                             number: "37H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "37K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -4210,7 +4210,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "38A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -4220,32 +4220,32 @@ Big.args = {
                         {
                             type: "seat",
                             number: "38C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "38D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "38E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "38F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "38G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -4257,13 +4257,13 @@ Big.args = {
                         {
                             type: "seat",
                             number: "38H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "38K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -4275,7 +4275,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "39A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -4285,14 +4285,14 @@ Big.args = {
                         {
                             type: "seat",
                             number: "39C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "39D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -4302,19 +4302,19 @@ Big.args = {
                         {
                             type: "seat",
                             number: "39E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "39F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "39G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -4325,13 +4325,13 @@ Big.args = {
                         {
                             type: "seat",
                             number: "39H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "39K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -4343,7 +4343,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "40A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -4353,20 +4353,20 @@ Big.args = {
                         {
                             type: "seat",
                             number: "40C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "40D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "40E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -4375,7 +4375,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "40G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -4386,13 +4386,13 @@ Big.args = {
                         {
                             type: "seat",
                             number: "40H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "40K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -4405,7 +4405,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "41A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -4415,20 +4415,20 @@ Big.args = {
                         {
                             type: "seat",
                             number: "41C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "41D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "41E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -4437,7 +4437,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "41G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -4448,13 +4448,13 @@ Big.args = {
                         {
                             type: "seat",
                             number: "41H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "41K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -4467,7 +4467,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "42A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -4477,20 +4477,20 @@ Big.args = {
                         {
                             type: "seat",
                             number: "42C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "42D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "42E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -4499,7 +4499,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "42G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -4510,13 +4510,13 @@ Big.args = {
                         {
                             type: "seat",
                             number: "42H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "42K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -4532,13 +4532,13 @@ Big.args = {
                         {
                             type: "seat",
                             number: "43D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat", "Chargeable seats"],
                         },
                         {
                             type: "seat",
                             number: "43E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat suitable for adult with an infant",
@@ -4547,7 +4547,7 @@ Big.args = {
                         {
                             type: "seat",
                             number: "43G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -4639,7 +4639,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "24A",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Bulkhead seat",
@@ -4651,7 +4651,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "24B",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Seat with bassinet facility",
@@ -4672,7 +4672,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "24J",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Seat with bassinet facility",
@@ -4685,7 +4685,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "24K",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Bulkhead seat",
@@ -4699,7 +4699,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "25A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -4709,7 +4709,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "25B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -4721,7 +4721,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "25D",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Leg space seat",
@@ -4732,7 +4732,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "25E",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Seat with bassinet facility",
@@ -4744,7 +4744,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "25F",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Seat with bassinet facility",
@@ -4756,7 +4756,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "25G",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Leg space seat",
@@ -4769,7 +4769,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "25J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -4779,7 +4779,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "25K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -4791,7 +4791,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "26A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -4800,7 +4800,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "26B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -4811,7 +4811,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "26D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -4820,7 +4820,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "26E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -4829,7 +4829,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "26F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -4838,7 +4838,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "26G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -4849,7 +4849,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "26J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -4858,7 +4858,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "26K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -4869,7 +4869,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "27A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -4878,7 +4878,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "27B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -4889,7 +4889,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "27D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -4898,7 +4898,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "27E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -4907,7 +4907,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "27F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -4916,7 +4916,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "27G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -4927,7 +4927,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "27J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -4936,7 +4936,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "27K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -4947,7 +4947,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "28A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -4956,7 +4956,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "28B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -4967,7 +4967,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "28D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -4976,7 +4976,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "28E",
-                            available: true,
+                            available: "BLOCKED",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -4985,7 +4985,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "28F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -4994,7 +4994,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "28G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -5005,7 +5005,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "28J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -5014,7 +5014,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "28K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -5025,7 +5025,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "29A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -5034,7 +5034,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "29B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -5045,7 +5045,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "29D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -5054,7 +5054,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "29E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -5063,7 +5063,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "29F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -5072,7 +5072,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "29G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -5083,7 +5083,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "29J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -5092,7 +5092,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "29K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -5103,7 +5103,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "30A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -5112,7 +5112,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "30B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -5123,7 +5123,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "30D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -5132,7 +5132,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "30E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -5141,7 +5141,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "30F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -5150,7 +5150,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "30G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -5161,7 +5161,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "30J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -5170,7 +5170,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "30K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -5181,7 +5181,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "31A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -5190,7 +5190,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "31B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -5201,7 +5201,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "31D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -5210,7 +5210,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "31E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -5219,7 +5219,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "31F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -5228,7 +5228,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "31G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -5239,7 +5239,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "31J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -5248,7 +5248,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "31K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -5259,7 +5259,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "32A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -5268,7 +5268,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "32B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -5279,7 +5279,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "32D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -5288,7 +5288,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "32E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -5297,7 +5297,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "32F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -5306,7 +5306,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "32G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -5317,7 +5317,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "32J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -5326,7 +5326,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "32K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -5337,7 +5337,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "33A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -5346,7 +5346,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "33B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -5363,7 +5363,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "33J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -5372,7 +5372,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "33K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -5383,7 +5383,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "34A",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Seat with bassinet facility",
@@ -5396,7 +5396,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "34B",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Bulkhead seat",
@@ -5410,7 +5410,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "34D",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Bulkhead seat",
@@ -5422,7 +5422,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "34E",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Seat with bassinet facility",
@@ -5435,7 +5435,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "34F",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Seat with bassinet facility",
@@ -5448,7 +5448,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "34G",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Bulkhead seat",
@@ -5462,7 +5462,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "34J",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Bulkhead seat",
@@ -5474,7 +5474,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "34K",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Seat with bassinet facility",
@@ -5489,7 +5489,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "35A",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5499,7 +5499,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "35B",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5511,7 +5511,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "35D",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5521,7 +5521,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "35E",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5531,7 +5531,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "35F",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5541,7 +5541,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "35G",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5553,7 +5553,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "35J",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5563,7 +5563,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "35K",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5575,7 +5575,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "36A",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5585,7 +5585,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "36B",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5597,7 +5597,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "36D",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5607,7 +5607,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "36E",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5617,7 +5617,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "36F",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5627,7 +5627,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "36G",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5639,7 +5639,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "36J",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5649,7 +5649,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "36K",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5661,7 +5661,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "37A",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5671,7 +5671,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "37B",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5683,7 +5683,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "37D",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5693,7 +5693,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "37E",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5703,7 +5703,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "37F",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5713,7 +5713,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "37G",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5725,7 +5725,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "37J",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5735,7 +5735,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "37K",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5747,7 +5747,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "38A",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5757,7 +5757,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "38B",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5769,7 +5769,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "38D",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5779,7 +5779,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "38E",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5789,7 +5789,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "38F",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5799,7 +5799,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "38G",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5811,7 +5811,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "38J",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5821,7 +5821,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "38K",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5833,7 +5833,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "39A",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5843,7 +5843,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "39B",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5855,7 +5855,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "39D",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5865,7 +5865,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "39E",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5875,7 +5875,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "39F",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5885,7 +5885,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "39G",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5897,7 +5897,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "39J",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5907,7 +5907,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "39K",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Upper deck",
                                 "Restricted seat - General",
@@ -5925,7 +5925,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "41A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat not allowed for infant",
@@ -5938,7 +5938,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "41B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat not allowed for infant",
@@ -5951,7 +5951,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "41C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat not allowed for infant",
@@ -5970,7 +5970,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "41H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat not allowed for infant",
@@ -5983,7 +5983,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "41J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat not allowed for infant",
@@ -5996,7 +5996,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "41K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat not allowed for infant",
@@ -6011,19 +6011,19 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "42A",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "42B",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "42C",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         null,
@@ -6035,19 +6035,19 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "42H",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "42J",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "42K",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                     ],
@@ -6055,19 +6055,19 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "43A",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "43B",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "43C",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         null,
@@ -6079,7 +6079,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "43H",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                                 "Preferential seat",
@@ -6088,13 +6088,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "43J",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "43K",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                     ],
@@ -6102,19 +6102,19 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "44A",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "44B",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "44C",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         null,
@@ -6126,7 +6126,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "44H",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                                 "Preferential seat",
@@ -6135,13 +6135,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "44J",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "44K",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                     ],
@@ -6149,7 +6149,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "45A",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Preferential seat",
                                 "Seat suitable for adult with an infant",
@@ -6158,7 +6158,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "45B",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Preferential seat",
                                 "Seat suitable for adult with an infant",
@@ -6167,7 +6167,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "45C",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                                 "Preferential seat",
@@ -6178,7 +6178,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "45D",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Leg space seat",
                                 "Seat suitable for adult with an infant",
@@ -6188,7 +6188,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "45E",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Leg space seat",
                                 "Seat suitable for adult with an infant",
@@ -6198,7 +6198,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "45F",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat with bassinet facility",
                                 "Leg space seat",
@@ -6209,7 +6209,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "45G",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Leg space seat",
                                 "Seat suitable for adult with an infant",
@@ -6220,7 +6220,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "45H",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                                 "Preferential seat",
@@ -6230,7 +6230,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "45J",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Preferential seat",
                                 "Seat suitable for adult with an infant",
@@ -6239,7 +6239,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "45K",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Preferential seat",
                                 "Seat suitable for adult with an infant",
@@ -6250,19 +6250,19 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "46A",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "46B",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "46C",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                                 "Preferential seat",
@@ -6272,7 +6272,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "46D",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                                 "Preferential seat",
@@ -6281,19 +6281,19 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "46E",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "46F",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "46G",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                                 "Preferential seat",
@@ -6303,7 +6303,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "46H",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                                 "Preferential seat",
@@ -6312,13 +6312,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "46J",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "46K",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                     ],
@@ -6326,19 +6326,19 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "47A",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "47B",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "47C",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                                 "Preferential seat",
@@ -6348,7 +6348,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "47D",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                                 "Preferential seat",
@@ -6357,19 +6357,19 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "47E",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "47F",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "47G",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                                 "Preferential seat",
@@ -6379,7 +6379,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "47H",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                                 "Preferential seat",
@@ -6388,13 +6388,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "47J",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "47K",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                     ],
@@ -6402,63 +6402,63 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "48A",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "48B",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "48C",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "48D",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "48E",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "48F",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "48G",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "48H",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "48J",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "48K",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                     ],
@@ -6466,63 +6466,63 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "49A",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "49B",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "49C",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "49D",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "49E",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "49F",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "49G",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "49H",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "49J",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "49K",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                     ],
@@ -6530,63 +6530,63 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "50A",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "50B",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "50C",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "50D",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "50E",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "50F",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "50G",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "50H",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "50J",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "50K",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                     ],
@@ -6598,25 +6598,25 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "51D",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "51E",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "51F",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         {
                             type: "seat",
                             number: "51G",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Preferential seat"],
                         },
                         null,
@@ -6628,7 +6628,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "52A",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Bulkhead seat",
                                 "Leg space seat",
@@ -6639,7 +6639,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "52B",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat with bassinet facility",
                                 "Bulkhead seat",
@@ -6651,7 +6651,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "52C",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Bulkhead seat",
                                 "Leg space seat",
@@ -6663,7 +6663,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "52D",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Bulkhead seat",
                                 "Leg space seat",
@@ -6674,7 +6674,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "52E",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat with bassinet facility",
                                 "Bulkhead seat",
@@ -6686,7 +6686,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "52F",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat with bassinet facility",
                                 "Bulkhead seat",
@@ -6698,7 +6698,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "52G",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Bulkhead seat",
                                 "Leg space seat",
@@ -6710,7 +6710,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "52H",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Bulkhead seat",
                                 "Leg space seat",
@@ -6721,7 +6721,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "52J",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat with bassinet facility",
                                 "Bulkhead seat",
@@ -6733,7 +6733,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "52K",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Bulkhead seat",
                                 "Leg space seat",
@@ -6746,13 +6746,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "53A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                         {
                             type: "seat",
                             number: "53B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -6760,20 +6760,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "53C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "53D",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "53E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -6781,7 +6781,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "53F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -6789,20 +6789,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "53G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "53H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "53J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -6810,7 +6810,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "53K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -6818,13 +6818,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "54A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                         {
                             type: "seat",
                             number: "54B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -6832,20 +6832,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "54C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "54D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "54E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -6853,7 +6853,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "54F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -6861,20 +6861,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "54G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "54H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "54J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -6882,7 +6882,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "54K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -6890,13 +6890,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "55A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                         {
                             type: "seat",
                             number: "55B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -6904,20 +6904,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "55C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "55D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "55E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -6925,7 +6925,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "55F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -6933,20 +6933,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "55G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "55H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "55J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -6954,7 +6954,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "55K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -6962,13 +6962,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "56A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                         {
                             type: "seat",
                             number: "56B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -6976,20 +6976,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "56C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "56D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "56E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -6997,7 +6997,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "56F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7005,20 +7005,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "56G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "56H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "56J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7026,7 +7026,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "56K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -7034,13 +7034,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "57A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                         {
                             type: "seat",
                             number: "57B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7048,20 +7048,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "57C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "57D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "57E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7069,7 +7069,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "57F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7077,20 +7077,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "57G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "57H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "57J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7098,7 +7098,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "57K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -7106,13 +7106,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "58A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                         {
                             type: "seat",
                             number: "58B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7120,20 +7120,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "58C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "58D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "58E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7141,7 +7141,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "58F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7149,20 +7149,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "58G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "58H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "58J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7170,7 +7170,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "58K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -7178,13 +7178,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "59A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                         {
                             type: "seat",
                             number: "59B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7192,20 +7192,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "59C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "59D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "59E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7213,7 +7213,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "59F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7221,20 +7221,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "59G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "59H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "59J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7242,7 +7242,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "59K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -7250,13 +7250,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "60A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                         {
                             type: "seat",
                             number: "60B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7264,20 +7264,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "60C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "60D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "60E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7285,7 +7285,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "60F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7293,20 +7293,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "60G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "60H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "60J",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7314,7 +7314,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "60K",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -7322,13 +7322,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "61A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                         {
                             type: "seat",
                             number: "61B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7336,20 +7336,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "61C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "61D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "61E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7357,7 +7357,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "61F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7365,20 +7365,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "61G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "61H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "61J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7386,7 +7386,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "61K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -7394,13 +7394,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "62A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                         {
                             type: "seat",
                             number: "62B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7408,7 +7408,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "62C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -7417,7 +7417,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "62D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -7425,7 +7425,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "62E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7433,7 +7433,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "62F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7441,7 +7441,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "62G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -7450,7 +7450,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "62H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -7458,7 +7458,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "62J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7466,7 +7466,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "62K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -7474,13 +7474,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "63A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                         {
                             type: "seat",
                             number: "63B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7488,7 +7488,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "63C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -7497,7 +7497,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "63D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -7505,7 +7505,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "63E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7513,7 +7513,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "63F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7521,7 +7521,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "63G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -7530,7 +7530,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "63H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -7538,7 +7538,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "63J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7546,7 +7546,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "63K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -7554,13 +7554,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "64A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                         {
                             type: "seat",
                             number: "64B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7568,7 +7568,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "64C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -7577,7 +7577,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "64D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -7585,7 +7585,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "64E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7593,7 +7593,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "64F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7601,7 +7601,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "64G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -7610,7 +7610,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "64H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -7618,7 +7618,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "64J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7626,7 +7626,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "64K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -7634,13 +7634,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "65A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                         {
                             type: "seat",
                             number: "65B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7648,7 +7648,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "65C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -7657,7 +7657,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "65D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -7665,7 +7665,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "65E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7673,7 +7673,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "65F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7681,7 +7681,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "65G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -7690,7 +7690,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "65H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -7698,7 +7698,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "65J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7706,7 +7706,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "65K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -7723,7 +7723,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "66H",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat to be left vacant or offered last",
                             ],
@@ -7731,7 +7731,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "66J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7739,7 +7739,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "66K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -7748,7 +7748,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "67B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat not allowed for infant",
@@ -7761,7 +7761,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "67C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat not allowed for infant",
@@ -7775,7 +7775,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "67D",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Bulkhead seat",
                                 "Leg space seat",
@@ -7786,7 +7786,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "67E",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat with bassinet facility",
                                 "Bulkhead seat",
@@ -7798,7 +7798,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "67F",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat with bassinet facility",
                                 "Bulkhead seat",
@@ -7810,7 +7810,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "67G",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Bulkhead seat",
                                 "Leg space seat",
@@ -7822,7 +7822,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "67H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat not allowed for infant",
@@ -7835,7 +7835,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "67J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat not allowed for infant",
@@ -7851,7 +7851,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "68A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat not allowed for infant",
@@ -7863,7 +7863,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "68B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7871,7 +7871,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "68C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -7880,7 +7880,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "68D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -7888,7 +7888,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "68E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7896,7 +7896,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "68F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7904,7 +7904,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "68G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -7913,7 +7913,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "68H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -7921,7 +7921,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "68J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7929,7 +7929,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "68K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat not allowed for infant",
@@ -7943,7 +7943,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "69A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat suitable for unaccompanied minors",
                             ],
@@ -7951,7 +7951,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "69B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat suitable for unaccompanied minors",
                             ],
@@ -7959,7 +7959,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "69C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat suitable for unaccompanied minors",
                             ],
@@ -7968,7 +7968,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "69D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -7976,7 +7976,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "69E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7984,7 +7984,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "69F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -7992,7 +7992,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "69G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -8001,7 +8001,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "69H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -8009,7 +8009,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "69J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8017,7 +8017,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "69K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -8025,7 +8025,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "70A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat suitable for unaccompanied minors",
                             ],
@@ -8033,7 +8033,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "70B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat suitable for unaccompanied minors",
                             ],
@@ -8041,7 +8041,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "70C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat suitable for unaccompanied minors",
                             ],
@@ -8050,7 +8050,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "70D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -8058,7 +8058,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "70E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8066,7 +8066,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "70F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8074,7 +8074,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "70G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -8083,7 +8083,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "70H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -8091,7 +8091,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "70J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8099,7 +8099,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "70K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -8107,7 +8107,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "71A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat suitable for unaccompanied minors",
                             ],
@@ -8115,7 +8115,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "71B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat suitable for unaccompanied minors",
                             ],
@@ -8123,7 +8123,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "71C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat suitable for unaccompanied minors",
                             ],
@@ -8132,7 +8132,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "71D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -8140,7 +8140,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "71E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8148,7 +8148,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "71F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8156,7 +8156,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "71G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -8165,7 +8165,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "71H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Seat with facilities for handicapped/incapacitated passenger",
                             ],
@@ -8173,7 +8173,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "71J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8181,7 +8181,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "71K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -8189,13 +8189,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "72A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                         {
                             type: "seat",
                             number: "72B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8203,20 +8203,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "72C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "72D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "72E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8224,7 +8224,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "72F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8232,20 +8232,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "72G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "72H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "72J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8253,7 +8253,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "72K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -8261,13 +8261,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "73A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                         {
                             type: "seat",
                             number: "73B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8275,20 +8275,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "73C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "73D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "73E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8296,7 +8296,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "73F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8304,20 +8304,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "73G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "73H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "73J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8325,7 +8325,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "73K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -8333,13 +8333,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "74A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                         {
                             type: "seat",
                             number: "74B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8347,20 +8347,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "74C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "74D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "74E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8368,7 +8368,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "74F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8376,20 +8376,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "74G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "74H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "74J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8397,7 +8397,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "74K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -8405,13 +8405,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "75A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                         {
                             type: "seat",
                             number: "75B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8419,20 +8419,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "75C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "75D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "75E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8440,7 +8440,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "75F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8448,20 +8448,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "75G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "75H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "75J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8469,7 +8469,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "75K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -8477,13 +8477,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "76A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                         {
                             type: "seat",
                             number: "76B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8491,20 +8491,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "76C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "76D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "76E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8512,7 +8512,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "76F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8520,20 +8520,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "76G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "76H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "76J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8541,7 +8541,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "76K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -8549,13 +8549,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "77A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                         {
                             type: "seat",
                             number: "77B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8563,20 +8563,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "77C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "77D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "77E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8584,7 +8584,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "77F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8592,20 +8592,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "77G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "77H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "77J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8613,7 +8613,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "77K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -8621,13 +8621,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "78A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                         {
                             type: "seat",
                             number: "78B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8635,20 +8635,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "78C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "78D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "78E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8656,7 +8656,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "78F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8664,20 +8664,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "78G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "78H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "78J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8685,7 +8685,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "78K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -8693,13 +8693,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "79A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                         {
                             type: "seat",
                             number: "79B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8707,7 +8707,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "79C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
@@ -8719,13 +8719,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "79H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "79J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8733,7 +8733,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "79K",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -8741,7 +8741,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "80A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat not allowed for infant",
@@ -8754,7 +8754,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "80B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat not allowed for infant",
@@ -8767,7 +8767,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "80C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat not allowed for infant",
@@ -8786,7 +8786,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "80H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat not allowed for infant",
@@ -8799,7 +8799,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "80J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat not allowed for infant",
@@ -8812,7 +8812,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "80K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Chargeable seats",
                                 "Seat not allowed for infant",
@@ -8827,7 +8827,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "81A",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat suitable for adult with an infant",
                                 "Restricted seat - General",
@@ -8836,7 +8836,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "81B",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat suitable for adult with an infant",
                                 "Restricted seat - General",
@@ -8845,7 +8845,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "81C",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat suitable for adult with an infant",
                                 "Restricted seat - General",
@@ -8855,7 +8855,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "81D",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat with bassinet facility",
                                 "Leg space seat",
@@ -8866,7 +8866,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "81E",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Leg space seat",
                                 "Seat suitable for adult with an infant",
@@ -8876,7 +8876,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "81F",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Leg space seat",
                                 "Seat suitable for adult with an infant",
@@ -8886,7 +8886,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "81G",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat with bassinet facility",
                                 "Leg space seat",
@@ -8898,7 +8898,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "81H",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat suitable for adult with an infant",
                                 "Restricted seat - General",
@@ -8907,7 +8907,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "81J",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat suitable for adult with an infant",
                                 "Restricted seat - General",
@@ -8916,7 +8916,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "81K",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: [
                                 "Seat suitable for adult with an infant",
                                 "Restricted seat - General",
@@ -8927,13 +8927,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "82A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                         {
                             type: "seat",
                             number: "82B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8941,20 +8941,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "82C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "82D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "82E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8962,7 +8962,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "82F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8970,20 +8970,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "82G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "82H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "82J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -8991,7 +8991,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "82K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -8999,13 +8999,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "83A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                         {
                             type: "seat",
                             number: "83B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -9013,20 +9013,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "83C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "83D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "83E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -9034,7 +9034,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "83F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -9042,20 +9042,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "83G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "83H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "83J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -9063,7 +9063,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "83K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -9071,13 +9071,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "84A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                         {
                             type: "seat",
                             number: "84B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -9085,20 +9085,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "84C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "84D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "84E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -9106,7 +9106,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "84F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -9114,20 +9114,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "84G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "84H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "84J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -9135,7 +9135,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "84K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -9143,13 +9143,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "85A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                         {
                             type: "seat",
                             number: "85B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -9157,20 +9157,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "85C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "85D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "85E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -9178,7 +9178,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "85F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -9186,20 +9186,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "85G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "85H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "85J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -9207,7 +9207,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "85K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -9215,13 +9215,13 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "86A",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                         {
                             type: "seat",
                             number: "86B",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -9229,20 +9229,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "86C",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "86D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "86E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -9250,7 +9250,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "86F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -9258,20 +9258,20 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "86G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "86H",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "86J",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -9279,7 +9279,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "86K",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Window seat"],
                         },
                     ],
@@ -9287,32 +9287,32 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "87A",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Restricted seat - General"],
                         },
                         {
                             type: "seat",
                             number: "87B",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Restricted seat - General"],
                         },
                         {
                             type: "seat",
                             number: "87C",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Restricted seat - General"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "87D",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         {
                             type: "seat",
                             number: "87E",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -9320,7 +9320,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "87F",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: [
                                 "Center seat (not window, not aisle)",
                             ],
@@ -9328,26 +9328,26 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "87G",
-                            available: true,
+                            available: "AVAILABLE",
                             characteristics: ["Aisle seat"],
                         },
                         null,
                         {
                             type: "seat",
                             number: "87H",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Restricted seat - General"],
                         },
                         {
                             type: "seat",
                             number: "87J",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Restricted seat - General"],
                         },
                         {
                             type: "seat",
                             number: "87K",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Restricted seat - General"],
                         },
                     ],
@@ -9355,19 +9355,19 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "88A",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Restricted seat - General"],
                         },
                         {
                             type: "seat",
                             number: "88B",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Restricted seat - General"],
                         },
                         {
                             type: "seat",
                             number: "88C",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Restricted seat - General"],
                         },
                         null,
@@ -9379,19 +9379,19 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "88H",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Restricted seat - General"],
                         },
                         {
                             type: "seat",
                             number: "88J",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Restricted seat - General"],
                         },
                         {
                             type: "seat",
                             number: "88K",
-                            available: false,
+                            available: "OCCUPIED",
                             characteristics: ["Restricted seat - General"],
                         },
                     ],

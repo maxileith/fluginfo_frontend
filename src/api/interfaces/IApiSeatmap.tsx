@@ -59,7 +59,7 @@ export interface IApiDeckWingsX {
 export interface IApiGridSeat {
     type: "seat";
     number: string;
-    available: boolean;
+    available: "AVAILABLE" | "BLOCKED" | "OCCUPIED";
     characteristics?: string[];
 }
 

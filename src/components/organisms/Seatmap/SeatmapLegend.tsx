@@ -115,13 +115,19 @@ export default function SeatmapLegend({
                     {gridItem && gridItem.type === "seat" && (
                         <>
                             <strong>Seat {gridItem.number}</strong>
-                            {gridItem.available ? (
+                            {gridItem.available === "AVAILABLE" && (
                                 <Tag color="success" ml={2}>
                                     available
                                 </Tag>
-                            ) : (
+                            )}
+                            {gridItem.available === "OCCUPIED" && (
                                 <Tag color="danger" ml={2}>
-                                    unavailable
+                                    occupied
+                                </Tag>
+                            )}
+                            {gridItem.available === "BLOCKED" && (
+                                <Tag color="warning" ml={2}>
+                                    blocked
                                 </Tag>
                             )}
                             {gridItem.characteristics && (
