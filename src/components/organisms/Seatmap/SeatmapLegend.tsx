@@ -18,79 +18,93 @@ export default function SeatmapLegend({
             <Box>
                 <Table>
                     <tbody>
-                        <tr>
-                            <th>Power</th>
-                            <td>
-                                {amenities.power.type}{" "}
-                                {amenities.power.isChargeable && (
-                                    <Tag ml={2} color="warning">
-                                        €
-                                    </Tag>
-                                )}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>WiFi</th>
-                            <td>
-                                {amenities.wifi.type}{" "}
-                                {amenities.wifi.isChargeable && (
-                                    <Tag ml={2} color="warning">
-                                        €
-                                    </Tag>
-                                )}
-                            </td>
-                        </tr>
-                        {amenities.entertainment.map((e) => (
-                            <tr key={e.type}>
-                                <th>Entertainment</th>
+                        {amenities.power && (
+                            <tr>
+                                <th>Power</th>
                                 <td>
-                                    {e.type}
-                                    {e.isChargeable && (
+                                    {amenities.power.type}{" "}
+                                    {amenities.power.isChargeable && (
                                         <Tag ml={2} color="warning">
                                             €
                                         </Tag>
                                     )}
                                 </td>
                             </tr>
-                        ))}
-                        <tr>
-                            <th>Food</th>
-                            <td>
-                                {amenities.food.type}{" "}
-                                {amenities.food.isChargeable && (
-                                    <Tag ml={2} color="warning">
-                                        €
-                                    </Tag>
-                                )}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Beverage</th>
-                            <td>
-                                {amenities.beverage.type}{" "}
-                                {amenities.beverage.isChargeable && (
-                                    <Tag ml={2} color="warning">
-                                        €
-                                    </Tag>
-                                )}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Legspace</th>
-                            <td>{amenities.seat.legSpace}</td>
-                        </tr>
-                        <tr>
-                            <th>Seat Tilt</th>
-                            <td>{amenities.seat.tilt}</td>
-                        </tr>
+                        )}
+                        {amenities.wifi && (
+                            <tr>
+                                <th>WiFi</th>
+                                <td>
+                                    {amenities.wifi.type}{" "}
+                                    {amenities.wifi.isChargeable && (
+                                        <Tag ml={2} color="warning">
+                                            €
+                                        </Tag>
+                                    )}
+                                </td>
+                            </tr>
+                        )}
+                        {amenities.entertainment &&
+                            amenities.entertainment.map((e) => (
+                                <tr key={e.type}>
+                                    <th>Entertainment</th>
+                                    <td>
+                                        {e.type}
+                                        {e.isChargeable && (
+                                            <Tag ml={2} color="warning">
+                                                €
+                                            </Tag>
+                                        )}
+                                    </td>
+                                </tr>
+                            ))}
+                        {amenities.food && (
+                            <tr>
+                                <th>Food</th>
+                                <td>
+                                    {amenities.food.type}{" "}
+                                    {amenities.food.isChargeable && (
+                                        <Tag ml={2} color="warning">
+                                            €
+                                        </Tag>
+                                    )}
+                                </td>
+                            </tr>
+                        )}
+                        {amenities.beverage && (
+                            <tr>
+                                <th>Beverage</th>
+                                <td>
+                                    {amenities.beverage.type}{" "}
+                                    {amenities.beverage.isChargeable && (
+                                        <Tag ml={2} color="warning">
+                                            €
+                                        </Tag>
+                                    )}
+                                </td>
+                            </tr>
+                        )}
+                        {amenities.seat && (
+                            <>
+                                <tr>
+                                    <th>Legspace</th>
+                                    <td>{amenities.seat.legSpace}</td>
+                                </tr>
+                                <tr>
+                                    <th>Seat Tilt</th>
+                                    <td>{amenities.seat.tilt}</td>
+                                </tr>
+                            </>
+                        )}
                     </tbody>
                 </Table>
-                {(amenities.beverage.isChargeable ||
-                    amenities.food.isChargeable ||
-                    amenities.wifi.isChargeable ||
-                    amenities.power.isChargeable ||
-                    amenities.entertainment.filter((e) => e.isChargeable)
-                        .length !== 0) && (
+                {((amenities.beverage && amenities.beverage.isChargeable) ||
+                    (amenities.food && amenities.food.isChargeable) ||
+                    (amenities.wifi && amenities.wifi.isChargeable) ||
+                    (amenities.power && amenities.power.isChargeable) ||
+                    (amenities.entertainment &&
+                        amenities.entertainment.filter((e) => e.isChargeable)
+                            .length !== 0)) && (
                     <p>
                         <Tag ml={2} color="warning">
                             €

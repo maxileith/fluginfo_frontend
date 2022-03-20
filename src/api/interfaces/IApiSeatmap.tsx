@@ -43,12 +43,12 @@ export interface IApiAmenitiesBeverage {
 }
 
 export interface IApiAmenities {
-    power: IApiAmenitiesPower;
-    seat: IApiAmenitiesSeat;
-    wifi: IApiAmenitiesWifi;
-    entertainment: IApiAmenitiesEntertainment[];
-    food: IApiAmenitiesFood;
-    beverage: IApiAmenitiesBeverage;
+    power?: IApiAmenitiesPower;
+    seat?: IApiAmenitiesSeat;
+    wifi?: IApiAmenitiesWifi;
+    entertainment?: IApiAmenitiesEntertainment[];
+    food?: IApiAmenitiesFood;
+    beverage?: IApiAmenitiesBeverage;
 }
 
 export interface IApiDeckWingsX {
