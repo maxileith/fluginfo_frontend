@@ -70,10 +70,12 @@ export default function SearchDropdown({
                         </Form.Control>
                         <Form.Control>
                             <Button
+                                type="button"
                                 color="warning"
                                 colorVariant="light"
                                 onClick={() => setActive(false)}
                                 disabled={disabled}
+                                tabIndex={-1}
                             >
                                 <Icon>
                                     <FontAwesomeIcon icon={faX} />
@@ -85,14 +87,16 @@ export default function SearchDropdown({
                     <Form.Field className="has-addons">
                         <Form.Control>
                             <Button
+                                type="button"
                                 disabled={disabled}
-                                onClick={() => setActive(true)}
+                                onFocus={() => setActive(true)}
                             >
                                 <SearchDropdownLabel {...labelProps} />
                             </Button>
                         </Form.Control>
                         <Form.Control>
                             <Button
+                                type="button"
                                 color="warning"
                                 colorVariant="light"
                                 onClick={handleReset}
@@ -101,6 +105,7 @@ export default function SearchDropdown({
                                     JSON.stringify(defaultLabel) ===
                                         JSON.stringify(labelProps)
                                 }
+                                tabIndex={-1}
                             >
                                 <Icon>
                                     <FontAwesomeIcon icon={faUndo} />
@@ -121,6 +126,7 @@ export default function SearchDropdown({
                             />
                         ))}
                     </div>
+                    <a href="#!" onFocus={() => setActive(false)}></a>
                 </div>
             )}
         </div>

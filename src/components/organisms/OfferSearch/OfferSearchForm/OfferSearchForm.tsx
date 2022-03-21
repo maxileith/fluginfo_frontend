@@ -463,6 +463,8 @@ export default function OfferSearchForm({
                         type="button"
                         color="warning"
                         colorVariant="light"
+                        tabIndex={-1}
+                        disabled={loading}
                     >
                         Reset
                         <Icon ml={1}>
@@ -479,6 +481,7 @@ export default function OfferSearchForm({
                             airlineBlacklist !== "" ||
                             airlineWhitelist !== ""
                         }
+                        tabIndex={-1}
                     >
                         {showAdvanced ? "Hide" : "Show"} Advanced Settings
                         <Icon ml={1}>
