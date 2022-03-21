@@ -462,17 +462,9 @@ export default function SeatmapDeck({
                                     return (
                                         <>
                                             <Image
-                                                src={`/seatmap/griditems/seats/seat${shape}.png`}
+                                                src={`/seatmap/griditems/seats/${col.available.toLowerCase()}/seat${shape}.png`}
                                                 style={{
                                                     transform: `rotate(${rotation}deg)`,
-                                                    filter:
-                                                        col.available ===
-                                                        "AVAILABLE"
-                                                            ? ""
-                                                            : col.available ===
-                                                              "BLOCKED"
-                                                            ? "saturate(0.5)"
-                                                            : "saturate(0)",
                                                     opacity:
                                                         focusedGridItem !==
                                                             undefined &&

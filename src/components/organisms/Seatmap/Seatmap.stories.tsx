@@ -154,7 +154,7 @@ Standard.args = {
                         {
                             type: "seat",
                             number: "5D",
-                            available: "AVAILABLE",
+                            available: "BLOCKED",
                             characteristics: [
                                 "Aisle seat",
                                 "Chargeable seats",
@@ -163,18 +163,7 @@ Standard.args = {
                                 "Premium seat",
                             ],
                         },
-                        {
-                            type: "seat",
-                            number: "5E",
-                            available: "AVAILABLE",
-                            characteristics: [
-                                "Center seat (not window, not aisle)",
-                                "Chargeable seats",
-                                "Preferential seat",
-                                "Right side of aircraft",
-                                "Premium seat",
-                            ],
-                        },
+                        null,
                         {
                             type: "seat",
                             number: "5F",
@@ -4956,7 +4945,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "28B",
-                            available: "AVAILABLE",
+                            available: "BLOCKED",
                             characteristics: [
                                 "Upper deck",
                                 "Window and aisle together",
@@ -4967,7 +4956,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "28D",
-                            available: "AVAILABLE",
+                            available: "BLOCKED",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",
@@ -4985,7 +4974,7 @@ MultiDeck.args = {
                         {
                             type: "seat",
                             number: "28F",
-                            available: "AVAILABLE",
+                            available: "BLOCKED",
                             characteristics: [
                                 "Upper deck",
                                 "Center section seat(s)",

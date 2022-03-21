@@ -118,6 +118,51 @@ export default function OfferSearchForm({
     const readyForTakeOff: boolean =
         routeComplete && travelersComplete && datesComplete;
 
+    const handleAdultsChange = (value: number) => {
+        var leftOver = 9;
+        const newAdults = Math.max(1, Math.min(value, 9));
+        setAdults(newAdults);
+        if (!newAdults) {
+            return;
+        }
+        leftOver -= newAdults;
+        const newChildren = Math.min(children, leftOver);
+        leftOver -= newChildren;
+        setChildren(newChildren);
+        const newInfants = Math.min(infants, leftOver);
+        setInfants(newInfants);
+    };
+
+    const handleChildrenChange = (value: number) => {
+        var leftOver = 9;
+        const newChildren = Math.min(value, 8);
+        setChildren(newChildren);
+        if (!newChildren) {
+            return;
+        }
+        leftOver -= newChildren;
+        const newAdults = Math.min(adults, leftOver);
+        leftOver -= newAdults;
+        setAdults(newAdults);
+        const newInfants = Math.min(infants, leftOver);
+        setInfants(newInfants);
+    };
+
+    const handleInfantsChange = (value: number) => {
+        var leftOver = 9;
+        const newInfants = Math.min(value, 8);
+        setInfants(newInfants);
+        if (!newInfants) {
+            return;
+        }
+        leftOver -= newInfants;
+        const newAdults = Math.min(adults, leftOver);
+        leftOver -= newAdults;
+        setAdults(newAdults);
+        const newChildren = Math.min(children, leftOver);
+        setChildren(newChildren);
+    };
+
     return (
         <Box>
             <form
@@ -237,7 +282,14 @@ export default function OfferSearchForm({
                                         value={adults}
                                         onChange={(
                                             e: ChangeEvent<HTMLInputElement>
-                                        ) => setAdults(e.target.valueAsNumber)}
+                                        ) =>
+                                            handleAdultsChange(
+                                                e.target.valueAsNumber
+                                            )
+                                        }
+                                        onBlur={() => {
+                                            !adults && handleAdultsChange(1);
+                                        }}
                                         style={travelerStyle}
                                         required
                                         min={1}
@@ -255,8 +307,14 @@ export default function OfferSearchForm({
                                         onChange={(
                                             e: ChangeEvent<HTMLInputElement>
                                         ) =>
-                                            setChildren(e.target.valueAsNumber)
+                                            handleChildrenChange(
+                                                e.target.valueAsNumber
+                                            )
                                         }
+                                        onBlur={() => {
+                                            !children &&
+                                                handleChildrenChange(0);
+                                        }}
                                         style={travelerStyle}
                                         required
                                         min={0}
@@ -273,7 +331,14 @@ export default function OfferSearchForm({
                                         value={infants}
                                         onChange={(
                                             e: ChangeEvent<HTMLInputElement>
-                                        ) => setInfants(e.target.valueAsNumber)}
+                                        ) =>
+                                            handleInfantsChange(
+                                                e.target.valueAsNumber
+                                            )
+                                        }
+                                        onBlur={() => {
+                                            !infants && handleInfantsChange(0);
+                                        }}
                                         style={travelerStyle}
                                         required
                                         min={0}
