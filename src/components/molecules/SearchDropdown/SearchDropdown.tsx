@@ -1,7 +1,7 @@
 import { faSearch, faUndo, faX } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import { Button, Dropdown, Form, Icon } from "react-bulma-components";
+import { Button, Form, Icon } from "react-bulma-components";
 import useLazyStateWrapper from "../../../hooks/useLazyStateWrapper";
 import SearchDropdownItem, { ISearchDropdownItem } from "./SearchDropdownItem";
 import SearchDropdownLabel, {
@@ -126,7 +126,9 @@ export default function SearchDropdown({
                             />
                         ))}
                     </div>
-                    <a href="#!" onFocus={() => setActive(false)}></a>
+                    <a href="#!" onFocus={() => setActive(false)}>
+                        &nbsp;
+                    </a>
                 </div>
             )}
         </div>
