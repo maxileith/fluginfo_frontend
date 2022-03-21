@@ -17,6 +17,7 @@ export interface ISelectAirport {
     type: "origin" | "destination";
     defaultAirport?: string;
     disabled?: boolean;
+    autoFocus?: boolean;
 }
 
 export default function SelectAirport({
@@ -24,6 +25,7 @@ export default function SelectAirport({
     type,
     defaultAirport,
     disabled,
+    autoFocus,
 }: ISelectAirport): JSX.Element {
     const isMounted = useIsMounted();
 
@@ -102,6 +104,7 @@ export default function SelectAirport({
             defaultLabel={defaultLabel}
             searchPlaceholder="Search"
             disabled={disabled}
+            autoFocus={autoFocus}
         />
     );
 }

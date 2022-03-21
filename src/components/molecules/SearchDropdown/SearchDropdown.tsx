@@ -16,6 +16,7 @@ export interface ISearchDropdown {
     searchPlaceholder?: string;
     defaultLabel?: ISearchDropdownLabel;
     disabled?: boolean;
+    autoFocus?: boolean;
 }
 
 export default function SearchDropdown({
@@ -25,6 +26,7 @@ export default function SearchDropdown({
     searchPlaceholder,
     defaultLabel,
     disabled,
+    autoFocus,
 }: ISearchDropdown): JSX.Element {
     const [keyword, setKeyword] = useLazyStateWrapper<string>(["", onSearch]);
 
@@ -43,7 +45,9 @@ export default function SearchDropdown({
         setActive(false);
     };
 
-    const [active, setActive] = useState<boolean>(false);
+    const [active, setActive] = useState<boolean>(
+        autoFocus ? autoFocus : false
+    );
 
     return (
         <div className={`dropdown ${active ? "is-active" : ""}`}>

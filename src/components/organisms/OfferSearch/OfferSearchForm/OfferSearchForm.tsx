@@ -182,6 +182,7 @@ export default function OfferSearchForm({
                                         onSelect={setOriginAirport}
                                         defaultAirport={defaultOriginAirport}
                                         disabled={loading}
+                                        autoFocus
                                     />
                                 </Form.Control>
                                 <Form.Control>

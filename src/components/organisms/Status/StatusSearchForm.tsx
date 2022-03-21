@@ -50,6 +50,7 @@ export default function StatusSearchForm({
                                         );
                                     }}
                                     disabled={loading}
+                                    autoFocus
                                 />
                             </Form.Control>
                         </Form.Field>
