@@ -6,7 +6,7 @@ import SearchDropdownLabel, {
 
 export interface ISearchDropdownItem extends ISearchDropdownLabel {
     value: string;
-    onSelect?: () => void;
+    onClick?: () => void;
 }
 
 export default function SearchDropdownItem({
@@ -14,10 +14,19 @@ export default function SearchDropdownItem({
     value,
     icon,
     imageUrl,
-    onSelect,
+    onClick,
 }: ISearchDropdownItem): JSX.Element {
     return (
-        <Dropdown.Item renderAs="a" value={value} onClick={onSelect} pr={4}>
+        <Dropdown.Item
+            value={value}
+            key={value}
+            renderAs="a"
+            href="#!"
+            onClick={(e: any) => {
+                e.preventDefault();
+                onClick && onClick();
+            }}
+        >
             <SearchDropdownLabel
                 title={title}
                 icon={icon}
