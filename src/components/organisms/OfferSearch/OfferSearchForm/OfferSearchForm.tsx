@@ -259,7 +259,9 @@ export default function OfferSearchForm({
                                     ) =>
                                         setReturnDate(
                                             e.target.checked
-                                                ? departureDate
+                                                ? moment(departureDate)
+                                                      .add(7, "days")
+                                                      .format("YYYY-MM-DD")
                                                 : ""
                                         )
                                     }

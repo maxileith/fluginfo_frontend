@@ -96,33 +96,40 @@ export default function Seatmap({
             {loading && <CenteredLoader />}
             {seatmap && (
                 <>
-                    <Heading>Seatmap ({seatmap.classId})</Heading>
+                    <Heading>
+                        Seatmap ({seatmap.classId}
+                        {seatmap.aircraft && ` - ${seatmap.aircraft}`})
+                    </Heading>
                     <Heading subtitle>
                         Flight {seatmap.flightNumber} from{" "}
                         {seatmap.departureIata} to {seatmap.arrivalIata} on{" "}
-                        {moment(seatmap.date).format("MMMM Do, YYYY")}.
+                        {moment(seatmap.date).format("DD.MM.YYYY")}.
                     </Heading>
                     {from === "offerDetails" ? (
                         <Breadcrumb>
                             <Breadcrumb.Item>
-                                <a onClick={() => navigate(-2)}>Offer Search</a>
+                                <a onClick={() => navigate(-2)} href="#!">
+                                    Offer Search
+                                </a>
                             </Breadcrumb.Item>
                             <Breadcrumb.Item>
-                                <a onClick={() => navigate(-1)}>
+                                <a onClick={() => navigate(-1)} href="#!">
                                     Offer Details
                                 </a>
                             </Breadcrumb.Item>
                             <Breadcrumb.Item active>
-                                <a>Seatmap</a>
+                                <a href="#!">Seatmap</a>
                             </Breadcrumb.Item>
                         </Breadcrumb>
                     ) : (
                         <Breadcrumb>
                             <Breadcrumb.Item>
-                                <a onClick={() => navigate(-1)}>Status</a>
+                                <a onClick={() => navigate(-1)} href="#!">
+                                    Status
+                                </a>
                             </Breadcrumb.Item>
                             <Breadcrumb.Item active>
-                                <a>Seatmap</a>
+                                <a href="#!">Seatmap</a>
                             </Breadcrumb.Item>
                         </Breadcrumb>
                     )}

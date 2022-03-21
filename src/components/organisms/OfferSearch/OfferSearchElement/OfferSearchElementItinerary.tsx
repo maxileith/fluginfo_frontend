@@ -12,7 +12,6 @@ import SearchDropdownLabel from "../../../molecules/SearchDropdown/SearchDropdow
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faClock,
-    faMapMarker,
     faPlaneArrival,
     faPlaneDeparture,
     faStar,
@@ -45,10 +44,10 @@ export default function OfferSearchElementItinerary({
         : undefined;
 
     const departureTime: string = moment(itinerary.departure.at).format(
-        "h:mm a (Do MMMM)"
+        "h:mm a (DD.MM.YYYY)"
     );
     const arrivalTime: string = moment(itinerary.arrival.at).format(
-        "h:mm a (Do MMMM)"
+        "h:mm a (DD.MM.YYYY)"
     );
 
     return (
@@ -104,7 +103,10 @@ export default function OfferSearchElementItinerary({
                             </Tag>
                             <Tag>
                                 <Icon>
-                                    <FontAwesomeIcon icon={faMapMarker} />
+                                    <FontAwesomeIcon icon={faPlaneDeparture} />
+                                </Icon>
+                                <Icon>
+                                    <FontAwesomeIcon icon={faPlaneArrival} />
                                 </Icon>
                             </Tag>
                         </Tag.Group>

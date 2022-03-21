@@ -43,7 +43,11 @@ export default function StatusSearchForm({
                                     onChange={(
                                         e: ChangeEvent<HTMLInputElement>
                                     ) => {
-                                        setFlightNumber(e.target.value);
+                                        setFlightNumber(
+                                            e.target.value
+                                                .toUpperCase()
+                                                .replace(/[^A-Z0-9]/g, "")
+                                        );
                                     }}
                                     disabled={loading}
                                 />

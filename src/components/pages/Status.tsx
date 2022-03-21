@@ -48,10 +48,6 @@ export default function Status({
     const [liveTimings, setLiveTimings] =
         useState<IApiStatusTimings | undefined>(undefined);
 
-    const handleFlightNumberChange = (flightNumber: string) => {
-        setFlightNumber(flightNumber.toUpperCase());
-    };
-
     const { setDocumentTitle } = useDocumentTitle();
     useEffect(() => {
         setDocumentTitle("Status");
@@ -161,7 +157,7 @@ export default function Status({
 
             <StatusSearchForm
                 flightNumber={flightNumber}
-                setFlightNumber={handleFlightNumberChange}
+                setFlightNumber={setFlightNumber}
                 date={date}
                 setDate={setDate}
                 onSearch={handleSearch}

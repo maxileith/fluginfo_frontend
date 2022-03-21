@@ -48,7 +48,7 @@ export default function StatusStop({
                 {type === "departure" ? "Departure" : "Arrival"} Airport
             </Heading>
             <Heading size={4} subtitle>
-                {moment(liveTiming || stop.at).format("h:mm a (Do MMMM)")}
+                {moment(liveTiming || stop.at).format("h:mm a (DD.MM.YYYY)")}
                 {timeOffset !== undefined && (
                     <>
                         {timeOffset === 0 && (
@@ -77,7 +77,7 @@ export default function StatusStop({
             </Heading>
             {timeOffset !== undefined && timeOffset !== 0 && (
                 <Heading size={6} subtitle style={{ marginTop: "-1.25rem" }}>
-                    Scheduled: {moment(stop.at).format("h:mm a (Do MMMM)")}
+                    Scheduled: {moment(stop.at).format("h:mm a (DD.MM.YYYY)")}
                 </Heading>
             )}
             <Table>

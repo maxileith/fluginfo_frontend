@@ -34,7 +34,7 @@ export default function OfferDetailsItinerary({
                     </Heading>
                     <Heading subtitle>
                         {moment(itinerary.segments[0].departure.at).format(
-                            "h:mm a (Do MMMM)"
+                            "h:mm a (DD.MM.YYYY)"
                         )}
                     </Heading>
                 </Columns.Column>
@@ -52,7 +52,7 @@ export default function OfferDetailsItinerary({
                         {moment(
                             itinerary.segments[itinerary.segments.length - 1]
                                 .arrival.at
-                        ).format("h:mm a (Do MMMM)")}
+                        ).format("h:mm a (DD.MM.YYYY)")}
                     </Heading>
                 </Columns.Column>
             </Columns>
