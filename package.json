@@ -1,6 +1,6 @@
 {
     "name": "fluginfo-frontend",
-    "version": "b0.4.1",
+    "version": "b0.5",
     "private": true,
     "dependencies": {
         "@fortawesome/fontawesome-free": "^6.0.0",
