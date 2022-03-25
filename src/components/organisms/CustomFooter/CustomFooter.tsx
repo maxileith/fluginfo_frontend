@@ -16,9 +16,14 @@ export default function CustomFooter({
             <Content style={{ textAlign: "center" }}>
                 <p>
                     {packageJson.version} |{" "}
-                    <a onClick={() => navigate("/storybook")}>Storybook</a> |{" "}
-                    <a onClick={() => navigate("/swagger")}>Swagger</a> | Made
-                    with <FontAwesomeIcon icon={faHeart} /> by{" "}
+                    <a onClick={() => navigate("/storybook")} href="#!">
+                        Storybook
+                    </a>{" "}
+                    |{" "}
+                    <a onClick={() => navigate("/swagger")} href="#!">
+                        Swagger
+                    </a>{" "}
+                    | Made with <FontAwesomeIcon icon={faHeart} /> by{" "}
                     <a
                         href="https://de.linkedin.com/in/maxileith"
                         target="_blank"

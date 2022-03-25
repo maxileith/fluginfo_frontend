@@ -103,10 +103,10 @@ export default function OfferSearchElementItinerary({
                             </Tag>
                             <Tag>
                                 <Icon>
-                                    <FontAwesomeIcon icon={faPlaneDeparture} />
+                                    <FontAwesomeIcon icon={faPlaneArrival} />
                                 </Icon>
                                 <Icon>
-                                    <FontAwesomeIcon icon={faPlaneArrival} />
+                                    <FontAwesomeIcon icon={faPlaneDeparture} />
                                 </Icon>
                             </Tag>
                         </Tag.Group>

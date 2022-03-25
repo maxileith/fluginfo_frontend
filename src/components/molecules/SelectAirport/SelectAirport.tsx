@@ -11,6 +11,7 @@ import {
 import { toast } from "react-toastify";
 import unknownErrorHandling from "../../../utils/unknownErrorHandling";
 import useIsMounted from "../../../hooks/useIsMounted";
+import { arrayMoveImmutable } from "array-move";
 
 export interface ISelectAirport {
     onSelect: (iata: string) => void;
@@ -58,21 +59,22 @@ export default function SelectAirport({
                     value: airport.iata,
                 }));
 
-                if (
-                    keyword !== "" &&
-                    keyword.indexOf(" ") <= -1 &&
-                    !items.find(
+                if (keyword !== "" && keyword.indexOf(" ") <= -1) {
+                    var iataAirportIndex = items.findIndex(
                         (i) => i.value.toUpperCase() === keyword.toUpperCase()
-                    )
-                ) {
-                    items = [
-                        {
-                            title: keyword.toUpperCase(),
-                            value: keyword.toUpperCase(),
-                            icon: faQuestion,
-                        },
-                        ...items,
-                    ];
+                    );
+                    if (iataAirportIndex !== -1) {
+                        items = arrayMoveImmutable(items, iataAirportIndex, 0);
+                    } else {
+                        items = [
+                            {
+                                title: keyword.toUpperCase(),
+                                value: keyword.toUpperCase(),
+                                icon: faQuestion,
+                            },
+                            ...items,
+                        ];
+                    }
                 }
                 isMounted.current && setDropdownItems(items);
             })

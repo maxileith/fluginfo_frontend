@@ -1,6 +1,6 @@
 {
     "name": "fluginfo-frontend",
-    "version": "b0.5",
+    "version": "v1.0",
     "private": true,
     "dependencies": {
         "@fortawesome/fontawesome-free": "^6.0.0",
@@ -14,6 +14,7 @@
         "@types/node": "^16.11.14",
         "@types/react": "^17.0.37",
         "@types/react-dom": "^17.0.11",
+        "array-move": "^4.0.0",
         "axios": "^0.24.0",
         "bulma": "^0.9.3",
         "bulma-slider": "^2.0.4",

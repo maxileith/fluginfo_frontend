@@ -95,10 +95,12 @@ export default function OfferDetails({
                     <Heading subtitle>A closer look at the offer.</Heading>
                     <Breadcrumb>
                         <Breadcrumb.Item>
-                            <a onClick={() => navigate(-1)}>Offer Search</a>
+                            <a onClick={() => navigate(-1)} href="#!">
+                                Offer Search
+                            </a>
                         </Breadcrumb.Item>
                         <Breadcrumb.Item active>
-                            <a>Offer Details</a>
+                            <a href="#!">Offer Details</a>
                         </Breadcrumb.Item>
                     </Breadcrumb>
                     <hr />

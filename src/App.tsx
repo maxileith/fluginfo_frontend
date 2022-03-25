@@ -132,13 +132,21 @@ function NavigateWrapper(): JSX.Element {
                 />
                 <Route
                     path="/storybook"
-                    element={<IFrameWrapper src="/sb/" />}
+                    element={
+                        <IFrameWrapper
+                            src="/sb/"
+                            title="Storybook"
+                            makeTitleOfTab
+                        />
+                    }
                 />
                 <Route
                     path="/swagger"
                     element={
                         <IFrameWrapper
                             src={`${API.defaults.baseURL}/swagger/`}
+                            title="Swagger"
+                            makeTitleOfTab
                         />
                     }
                 />
